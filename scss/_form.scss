@@ -1,51 +1,50 @@
 %textInput {
   -webkit-appearance: none;
+  box-sizing: border-box;
   height: 2.4em;
   line-height: 2.4em;
   padding: 0 6px;
   margin: 3px;
-  border-radius: 4px;
+  // border-radius: 4px;
   border: 1px solid $border-color-light;
   vertical-align: middle;
   font-size: inherit;
   background-color: #fff;
+
+  &:hover{border-color: $border-color-dark;}
+  &:focus{border-color: $btn-bg1;box-shadow: $btn-bg1 0 0 0 1px;outline: none;}
 }
 
 %selectStyle {
   -webkit-appearance: none;
+  box-sizing: border-box;
   height: 2.4em;
   line-height: 2.4em;
   padding: 0 1.5em 0 6px;
   margin: 3px;
-  border-radius: 4px;
   border: 1px solid $border-color-light;
   vertical-align: middle;
   font-size: inherit;
   background: #fff url(../images/selectBg.png) no-repeat right 1em;
   background-size: 16px auto;
   box-sizing: content-box;
+  
+  &:hover{border-color: $border-color-dark;}
+  &:focus{border-color: $btn-bg1;box-shadow: $btn-bg1 0 0 0 1px;outline: none;}
+
 }
 
-$disabled-color: #565959;
+$disabled-color: #666;
 
 // ------------------------------------------------------
-form {
-  margin: 0;
-  padding: 0;
-}
+form {margin: 0;padding: 0;}
 
-label {
-  display: inline-block;
-  font-weight: normal;
-}
+label { display: inline-block; font-weight: normal;}
 
 input,
 textarea,
 select,
-button {
-  font-size: inherit;
-  font-family: inherit;
-}
+button {font-size: inherit;font-family: inherit;}
 
 // 文字、數字型態的 input
 input[type="text"],
@@ -60,9 +59,7 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-input[type="week"] {
-  @extend %textInput;
-}
+input[type="week"] { @extend %textInput; }
 
 // 下拉選單
 select {
@@ -71,22 +68,30 @@ select {
   @extend %selectStyle;
 }
 
+// 按鈕樣式
 button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   -webkit-appearance: none;
+  box-sizing: border-box;
   height: 2.4em;
   line-height: 2.4em;
   padding: 0 .8em;
-  margin: 0 3px;
-  border-radius: 4px;
-  border: none;
-  box-sizing: content-box;
+  margin: 3px;
   transition: .2s;
-  font-size: inherit;
+  border: 1px solid $btn-bg1;
   background-color: $btn-bg1;
   color: #fff;
+  vertical-align: middle;
+  box-shadow: rgba(0,0,0,.3) 0 2px 3px;
+  &:hover {
+    background-color: $btn-bg2;
+    border-color: $btn-bg2;
+    box-shadow: $btn-bg2 0 0 0 1px;
+    color: #fff;
+    cursor: pointer;
+  }
 }
 
 textarea {
@@ -96,45 +101,8 @@ textarea {
   height: 10em;
 }
 
-
-// hover
-select:hover,
-textarea:hover,
-input[type="text"]:hover,
-input[type="date"]:hover,
-input[type="datetime-local"]:hover,
-input[type="email"]:hover,
-input[type="file"]:hover,
-input[type="month"]:hover,
-input[type="number"]:hover,
-input[type="password"]:hover,
-input[type="search"]:hover,
-input[type="tel"]:hover,
-input[type="time"]:hover,
-input[type="url"]:hover,
-input[type="week"]:hover {
-  border-color: $border-color-dark;
-}
-
-select:focus,
-textarea:focus,
-input[type="text"]:focus,
-input[type="date"]:focus,
-input[type="datetime-local"]:focus,
-input[type="email"]:focus,
-input[type="file"]:focus,
-input[type="month"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-input[type="week"]:focus {
-  border-color: $btn-bg1;
-  box-shadow: $btn-bg1 0 0 0 2px;
-}
-
+// -----------------------------------------
+// disabled
 select[disabled],
 textarea[disabled],
 textarea[disabled]:hover,
@@ -148,6 +116,8 @@ input[disabled]:focus {
   box-shadow: none;
 }
 
+
+// readonly
 textarea[readonly],
 textarea[readonly]:hover,
 textarea[readonly]:focus,
@@ -160,20 +130,11 @@ input[readonly]:focus {
 }
 
 select[disabled],
-// input[readonly]{color: $font-color}
 input[disabled] {
   color: $font-color-lighter
 }
 
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover {
-  background-color: $btn-bg2;
-  color: #fff;
-  box-shadow: $btn-bg2 0 0 0 2px;
-  cursor: pointer;
-}
+
 
 /*readonly and disabled*/
 button[disabled],
@@ -204,3 +165,28 @@ fieldset {
     padding: 0 8px;
   }
 }
+
+////////////////////////////////////
+// formLayout
+.formA{
+  // margin: 0 auto;
+
+  outline: 1px solid red;
+
+}
+table.formLayout{
+  outline: 1px dashed pink;
+  margin: 0 auto;
+  border: none; border-collapse: collapse;
+  width: auto; min-width: 700px;
+  td{ padding:6px 4px; vertical-align: top;
+    &:nth-child(odd){text-align: right; padding-left: 0;}
+    &:nth-child(even){padding-right: 0;}
+  }
+
+  & ~ .btnDv{padding: 1.5em 0; margin-top: 1.5em; border-top: 1px solid #000;}
+}
+
+
+// 表單送出按鈕群
+.btnDv{clear:both;text-align:center;margin:0 auto;}
