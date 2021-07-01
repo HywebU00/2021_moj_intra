@@ -1,0 +1,218 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: '微軟正黑體', Arial, Helvetica, sans-serif;
+  color: #444;
+}
+
+.required {
+  text-decoration: none;
+  color: #d11;
+  font-size: 1.5em;
+  line-height: .6;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"], textarea {
+  -webkit-appearance: none;
+  height: 2.4em;
+  line-height: 2.4em;
+  padding: 0 6px;
+  margin: 3px;
+  border-radius: 4px;
+  border: 1px solid #afbabb;
+  vertical-align: middle;
+  font-size: inherit;
+  background-color: #fff;
+}
+
+select {
+  -webkit-appearance: none;
+  height: 2.4em;
+  line-height: 2.4em;
+  padding: 0 1.5em 0 6px;
+  margin: 3px;
+  border-radius: 4px;
+  border: 1px solid #afbabb;
+  vertical-align: middle;
+  font-size: inherit;
+  background: #fff url(../images/selectBg.png) no-repeat right 1em;
+  background-size: 16px auto;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: inline-block;
+  font-weight: normal;
+}
+
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  -webkit-appearance: none;
+  height: 2.4em;
+  line-height: 2.4em;
+  padding: 0 .8em;
+  margin: 0 3px;
+  border-radius: 4px;
+  border: none;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: .2s;
+  transition: .2s;
+  font-size: inherit;
+  background-color: #7d979e;
+  color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.6;
+  height: 10em;
+}
+
+select:hover,
+textarea:hover,
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[type="datetime-local"]:hover,
+input[type="email"]:hover,
+input[type="file"]:hover,
+input[type="month"]:hover,
+input[type="number"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="time"]:hover,
+input[type="url"]:hover,
+input[type="week"]:hover {
+  border-color: #778b8e;
+}
+
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus {
+  border-color: #7d979e;
+  -webkit-box-shadow: #7d979e 0 0 0 2px;
+          box-shadow: #7d979e 0 0 0 2px;
+}
+
+select[disabled],
+textarea[disabled],
+textarea[disabled]:hover,
+textarea[disabled]:focus,
+input[disabled],
+input[disabled]:hover,
+input[disabled]:focus {
+  background-color: #f3f4f5;
+  border-color: #d7dfdd;
+  color: #565959;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+textarea[readonly],
+textarea[readonly]:hover,
+textarea[readonly]:focus,
+input[readonly],
+input[readonly]:hover,
+input[readonly]:focus {
+  background-color: #f3f4f5;
+  border-color: #afbabb;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+select[disabled],
+input[disabled] {
+  color: #8f9b9a;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background-color: #436672;
+  color: #fff;
+  -webkit-box-shadow: #436672 0 0 0 2px;
+          box-shadow: #436672 0 0 0 2px;
+  cursor: pointer;
+}
+
+/*readonly and disabled*/
+button[disabled],
+button.disabled,
+input[type="button"][disabled],
+input[type="submit"][disabled],
+button[disabled]:hover,
+input[type="submit"][disabled]:hover,
+button[disabled]:focus,
+input[type="submit"][disabled]:focus {
+  background-color: #ddd;
+  color: #888;
+  border-radius: 4px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: default;
+}
+
+fieldset {
+  border: 1px solid #d7dfdd;
+  border-radius: 6px;
+}
+
+fieldset + fieldset {
+  margin-top: 1em;
+}
+
+fieldset legend {
+  background: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0 8px;
+}
+/*# sourceMappingURL=design.css.map */
