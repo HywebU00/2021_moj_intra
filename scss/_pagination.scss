@@ -1,0 +1,127 @@
+.pagination {
+    display: block; clear: both;text-align: center;
+    margin: 1em auto;padding: 0;
+    font-size: 1em;
+    a{text-decoration: none;}
+    ul, ol{list-style: none; margin: 0; padding: 0;}
+    em {
+        font-style: normal; font-weight: bold; font-size: 1.15em;
+        margin: 0 .3em;
+    }
+    .total {
+        display: inline-block; vertical-align: middle;
+        select {
+            margin: 0 .5em;
+        }
+        input[type="button"] {
+            border: 1px solid #CCC;
+            color: #222;
+            padding: .4em 1em;
+            min-width: 3em;
+            display: inline-block;
+            vertical-align: middle;
+            box-shadow: none;
+            text-shadow: none;
+            &:hover, &:focus {
+                color: #fff;
+                background: #ccc;
+            }
+        }
+    }
+    .items {
+        display: inline-block;vertical-align: middle;
+        line-height: 1.4em; line-height: 1.5em;
+        ul{
+          display: inline-block; overflow: hidden;vertical-align: middle;
+          box-shadow: #fff 0 0 0 1px;border-radius: 3px; padding: 2px 0;
+        }
+        li{ 
+          float: left; margin: 0 2px 0 0; padding-left: 2px; 
+          border-left: 1px solid #fff; font-weight: bold;
+          &:first-child{border-left: none;}
+          &.active{
+            a{background-color: $bg-color-dark; color: #fff;}
+          }
+        }
+        a{
+            display: block; padding: 0 6px; border-radius: 3px;
+            color: $font-color;  
+            &:hover{background-color: #fff;}
+        }
+    }
+
+
+
+    .page {
+        margin: 10px 0; padding: 0; text-align: center;
+        li {
+            margin:2px 0;display: inline-block; 
+            a {
+                display: block; white-space: nowrap;
+                height: 2.2em; line-height: 2.2em; min-width: 2.2em;
+                padding: 0 10px; margin: 1px 1px 1px 0;
+                color: $font-color; background-color: #fff;
+                border-radius: 4px; transition: .2s;
+                &:hover, &:focus {
+                  box-shadow: $lightColor 0 0 0 2px;
+                }
+            }
+            &.active {
+                a {
+                  background:$lightColor;color: #fff; 
+                  box-shadow: $lightColor 0 0 0 2px;
+                }
+            }
+            %arrow {
+                content: "";
+                position: absolute;top: 50%;left: 50%;
+                width: 6px;height: 6px;margin-top: -4px;
+                border: 2px solid $font-color; border-left: none;border-bottom: none;
+            }
+            &.first, &.prev, &.next, &.last {
+                a {
+                  position: relative;text-indent: -9999px;
+                    &:hover, &:focus {
+                      background: $lightColor;
+                        &:before, &:after {
+                          border: 2px solid #FFF;
+                          border-left: none;border-bottom: none;
+                        }
+                    }
+                }
+            }
+            &.first {
+                a::before {
+                    @extend %arrow;
+                    margin-left: -6px;transform: rotate(-135deg);
+                }
+                a::after {
+                    @extend %arrow;
+                    margin-left: 0;transform: rotate(-135deg);
+                }
+            }
+            &.prev {
+                a::before {
+                    @extend %arrow;
+                    margin-left: -2px;transform: rotate(-135deg);
+                }
+            }
+            &.next {
+                a::before {
+                    @extend %arrow;
+                    margin-left: -6px;transform: rotate(45deg);
+                }
+            }
+            &.last {
+                a::before {
+                    @extend %arrow;
+                    margin-left: -3px;transform: rotate(45deg);
+                }
+                a::after {
+                    @extend %arrow;
+                    margin-left: -9px;transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}

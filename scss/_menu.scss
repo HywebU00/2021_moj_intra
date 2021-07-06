@@ -1,0 +1,44 @@
+.menu{z-index: 99;
+  background-image: linear-gradient($gradient-p2 5%, $gradient-p1 50%, $gradient-p0 95%);
+  ul, li{list-style: none; margin: 0; padding: 0; line-height: 1.2;}
+  li{ 
+    position: relative;
+    a{
+      display: block;text-decoration: none; color: #000;
+      &:focus{outline: none;}
+    }
+    &.hasChild{
+      &>a{
+         position: relative;padding-right: 32px;
+        &::before{
+          content: ''; position: absolute; right: 12px; top: 50%; 
+          width: 9px; height: 9px;margin-top: -6px;transform: rotate(45deg);
+          border: 3px solid $lightColor; border-left: none; border-bottom: none;
+        }
+      }
+    }
+    li.hasChild{
+      a::before{border-color: $btn-bg2;}
+    }
+  }
+  &>ul>li{
+    font-size: 18px; border-bottom: 1px solid #fff6;
+    &>a{
+      padding:.9em 20px .8em; transition:background-color .2s;
+      &:hover{background-color: rgba(0,0,0,.2); color: #fff;}
+    }
+    ul{position: absolute; width: 220px; font-size: 16px; z-index: 9;
+       background: $menu-bg2; box-shadow: rgba(0,0,0,.3) 1px 2px 12px;
+       li{border-bottom: 1px solid rgba(0,0,0,.2); 
+        &:last-child{border-bottom: none;}
+      }
+      a{ padding:.9em 1em .8em; transition: .15s;
+          &:hover, &:focus{ background-color: darken($menu-bg2, 10);}
+      }
+    }
+  }
+  ul ul{ left: 16rem; top: 0; display: none;}
+  ul ul ul{ left: 220px;}
+
+
+}

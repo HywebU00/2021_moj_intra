@@ -1,0 +1,75 @@
+.topBar{
+  position: relative; background: $primaryColor; padding: 6px 20px; font-size: 14px;
+  display: flex; flex-flow: row nowrap; justify-content: flex-end;
+  .links{
+    list-style: none; margin: 0;padding: 0; overflow: hidden; line-height: 1.5;
+    li{
+      float: left; margin: 0;
+      &+li{margin-left: 1.6em;}
+      a{
+        display: block; position: relative; padding: 0 2px; text-decoration: none; color: #000;
+        &::before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0);
+          background: $lightColor2; transition: .2s;}
+        &:hover{
+          &::before{transform: scaleX(1)}
+        }
+      }
+    }
+  }
+  .visitors{ margin: 0 2.4em;
+    em{ font-style: normal; color: #000;}
+  }
+
+  .allCourts{position: absolute; left: 20px; top: 4px;
+    a{ display: block; cursor: pointer; border: 1px solid darken($primaryColor , 20 ); line-height: 1.8; height: 1.8em; padding: 0 10px;
+      &:hover, &:focus{border: 1px solid $lightColor2}
+    }
+  }
+}
+.fontSize{
+  overflow: hidden;
+  ul, li{list-style: none; margin: 0;padding: 0;}
+  .label{ float: left;
+    &::after{content: '：';}
+  }
+  ul{float: left; line-height: 1;text-align: center;}
+  li{float: left; margin: 0 2px; 
+    a{display: block; width: 1.5em; height: 1.5em; line-height: 1.5; border-radius: 50%; cursor: pointer; color: #000;
+      &:hover{background-color: rgba(255,255,255,.5);}
+    }
+    &.active a{background-color: #fff;}
+  }
+}
+
+.topSearch{
+  .searchForm{
+    display: inline-block; vertical-align: top; position: relative; padding: 0;
+    box-shadow: rgba(0,0,0,.25) 0 1px 2px;background: #fff;
+    &::before{content: ""; position: absolute; bottom: 5px; right: 45px; top: 5px; width: 1px; background: #ccc;}
+  }
+  input[type="text"]{
+    border: none;  width: 180px; float: left;
+    &:focus{box-shadow: none;}
+  }
+  input[type="button"]{
+    float: left; width: 2.4em; height: 2.4em;padding: 0;margin-left: 6px; background: url(../images/icon_search.png) center center no-repeat; background-size:22px; border: none; box-shadow: none;
+    &:hover{background-color: $bg-color-light; box-shadow: none;}
+  }
+  .btn{
+    display: inline-block; margin: 2px 3px 8px ; vertical-align: top;
+    a{
+      display: block; height: 2.6em; line-height: 2.6; padding: 0 1.3em; 
+      background:$primaryColor; color: #fff;text-decoration: none;
+    }
+  }
+}
+
+.webHeader{
+  height: 120px;overflow: hidden;
+  h1{
+    float: left;padding:20px 0 0 20px; margin: 0;
+  }
+  .topSearch{
+    float: right; margin: 20px 20px 0 0;
+  }
+}
