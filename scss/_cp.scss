@@ -1,25 +1,40 @@
 .cp{
-  padding: 20px; background: #fff; 
+  // margin: 15px auto;
+  @extend %marginSet;
+
+  .published{
+    text-align: right; margin:-10px 0 30px; padding: 0; color: $font-color-lighter;
+    li{ display: inline-block; margin-left: 1em;
+      em{display: inline-block; font-style: normal; color: $font-color;}
+    }
+  }
+  article ~ .published{margin-top: 30px; margin-bottom: 0;}
   &>article{
-    overflow: hidden; line-height: 1.8;
+    overflow: hidden; line-height: 1.8; font-size: 1.1rem;
+    padding: 0 0 2em;
     .image{
-      float: left; margin: 0 15px 10px 0;
+      float: left; margin: .5em 25px .5em 0;
       img{ max-width: 40vw; max-height: 40vw;}
     }
+    p{ margin: 0 0 1.2em; line-height: inherit;}
+    * + p {margin-top: 1.2em;}
+    ul, ol{ line-height: inherit; margin-bottom: 1.8em;}
+    li + li{margin-top: .6em;}
   }
 
   .related{
-    margin:  0; padding: 2.5em 0;
-    border-top: 1px solid #000;
-    h3{ font-size: 1.2; margin: 0 0 .5em;}
+    margin:0; padding: 2.8em 0 1.8em;
+    border-top: 3px solid $border-color-pale;
+
+    h3{ font-size: 1.4em; margin: 0 0 .5em; font-weight: normal; color: $font-color-darker;}
 
     .pagesLinks, .attachments{
       margin: 0; padding: 0 0 0 2em; line-height: 1.5;
       li{ margin: 0 0 .5em;
         a{
           display: block; padding: .5em 0 .2em; text-decoration: none; 
-          border-bottom: 1px dashed $border-color-light; color: $font-color;
-          &:hover{border-bottom-style: solid;}
+          border-bottom: 1px dashed $border-color-pale; color: $font-color;
+          &:hover{border-bottom-style: solid; border-bottom-color: $border-color-light;}
         }
       }
     }

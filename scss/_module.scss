@@ -1,6 +1,6 @@
 // 現在位置
 .breadcrumb {
-  padding: 2px 0 10px;margin: 0 auto; overflow: hidden;
+  padding: 2px 0;margin: 0 auto 3px; overflow: hidden;
   font-size: .93em;color:lighten($font-color, 10) ;
   &::before{
     float: left; content: attr(title)"："; 
@@ -23,6 +23,8 @@
 
 }
 
+.pageHeader{margin:5px 0 10px; font-size: 1.8em;}
+
 
 .closeThis{
   position: relative;width: 46px; height: 46px; cursor: pointer; transition: .2s;
@@ -41,38 +43,52 @@
 }
 
 
-.function{ outline: 1px dashed pink; overflow: hidden;
+.function{ 
+  // outline: 1px dashed pink; 
+  overflow: hidden;
   ul, li{ list-style: none; margin: 0; padding: 0;}
   ul{ float: right; overflow: hidden;}
   li{float: left; margin: 3px;
     a{
-      display: block; position: relative; height: 40px; line-height: 40px;
-      padding:0 16px 0 36px;
-      background: #666; color: #fff; border-radius: 20px; text-decoration: none;
+      display: block; position: relative; height: 44px; line-height: 44px;
+      padding:0 14px 0 36px;
+      background: #fff; color: $font-color; border-radius: 25px; text-decoration: none;
       transition: .2s;
-      &:hover{ box-shadow:#666 0 0 0 3px;}
+      &:hover{ box-shadow:$border-color-light 0 0 0 2px;}
     }
     &.back{
       a::before{ 
         content: '';position: absolute; left: 16px; top: 50%; margin-top: -6px;
         width: 10px;height: 10px;transform: rotate(45deg);
-         border: 2px solid #fff; border-top: none; border-right: none;
+         border: 2px solid $border-color-dark; border-top: none; border-right: none;
+      }
+    }
+    &.print{
+      a{
+        background-image: url(../images/icon_print.png);
+        background-repeat: no-repeat;
+        background-position: 10px -28px;
+        background-size: 22px auto;
       }
     }
     &.goTop{ 
-      position: fixed; right: 10px; bottom: 10px; text-indent: -20em;
+      position: fixed; z-index: 900;
+      right: 10px; bottom: -50px;text-indent: -20em; 
+      text-align: center; transition: .4s;
+      &.show{bottom: 10px;}
       a{ 
-        padding: 0; width: 40px;  overflow: hidden;
+        padding: 0; width: 44px;  overflow: hidden;
         box-shadow:rgba(50,50,50,.5) 0 0 0 3px; background-color: rgba(50,50,50,.7);
         &::before, &::after{content: '';position: absolute;}
         &::before{
-          left: 12px; top: 15px;
-          width: 14px; height: 14px; transform: rotate(45deg);
-          border: 2px solid #fff; border-bottom: none; border-right: none;
+          left: 17px; top: 10px;
+          width: 8px; height: 8px; transform: rotate(45deg);
+          border: 2px solid #fff; border-bottom: none; border-right: none;  
         }
         // &::after{
         //   left: 19px; top: 16px; width: 2px; height: 12px; background: #fff;
         // }
+        &::after{content: 'TOP'; width: 44px;  left: 0; top: 6px; font-size: 11px; text-indent: 0; color: #fff;}
 
         &:hover{
           box-shadow:rgba(50,50,50,1) 0 0 0 3px; background-color: rgba(50,50,50,1);
@@ -82,19 +98,58 @@
   }
 
 }
+.contBox ~ .function { margin-top: 20px;}
 
-.cp ~ .function { margin-top: 30px;}
+
+// .articleInfo{
+//   color: $font-color-lighter;
+//   ul{ 
+//     margin: 0;padding: 0; list-style: none; text-align: right;
+//     overflow: hidden; font-size: .9em; line-height: 1.3;
+//   }
+//   li{
+//     display: inline-block; margin-left: 1em;
+//     em{ display: inline-block; color: $font-color; font-style: normal; font-size: 1.2em;}
+//   }
+
+// }
+
+// button division
+.btnDv{ padding: 1.2em 0 1.5em;}
 
 
-.articleInfo{
-  color: $font-color-lighter;
-  ul{ 
-    margin: 0;padding: 0; list-style: none; text-align: right;
-    overflow: hidden; font-size: .9em; line-height: 1.3;
+// 開合區
+.slideToggle{
+  
+  position: relative;
+  .slideCtrl{
+    position: absolute; right: 5px; top: 5px; 
+    margin: 0; padding: 0 5px 0 26px;
+    height: 2.4em; line-height: 2.4em;
+    color: $font-color; background: none;
+    border: none; box-shadow: none;
+    transition: .2s;
+    &:hover{ background: $bg-color;}
+    &::before{
+      content: ''; width: 8px; height: 8px; 
+      position: absolute; left: 10px; top: 50%; margin-top:-2px;
+      border: 2px solid #666; border-left: none; border-top: none;
+      transform: rotate(225deg); transition: .5s;
+    }
+    &.openIt{
+      &::before{
+        transform: rotate(45deg); margin-top: -7px;
+      }
+    }
   }
-  li{
-    display: inline-block; margin-left: 1em;
-    em{ display: inline-block; color: $font-color; font-style: normal; font-size: 1.2em;}
+  .slideHeader{
+    font-size: 1.45em;
+  }
+  .drawer{ 
+    margin: 0; padding:0;
   }
 
 }
+
+
+

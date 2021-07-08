@@ -166,10 +166,60 @@ fieldset {
   }
 }
 
+
+////////////////////////////////////
+////////// 表單送出按鈕群 //////////
+.btnDv{clear:both;text-align:center;margin:0 auto;
+  input[type="button"], input[type="submit"], input[type="reset"] {
+    margin: 4px;
+    &:hover{
+      //  box-shadow: none;
+       transform: translateY(3px);
+    }
+  }
+}
+
+////////// 日期區間 //////////
+.duration{
+  // outline: 1px dashed pink;
+  display: flex;
+  &::before{
+    content: '～'; height: 2.4em; line-height: 2.7em;
+    order: 1; width: 1.2em; text-align: center;
+    flex: 0 0 1.2em;
+  }
+  input{
+    flex:0 1 calc(50% - .6em)
+  }
+  input:last-child{ order: 2;}
+}
+
+////////// 條件查詢 //////////
+.search{
+  $space : 15px;
+  margin: 0 0 $space*2;
+  box-shadow: rgba(0,0,0,.3) 0 0 4px;
+  .formlayout{
+    width: calc(100% - #{$space}*2); margin: .5em auto 1em;
+    td{
+      padding: 3px 0;
+      &:nth-child(even){ padding-right: 20px;}
+      &:nth-child(odd){text-align: right; width: 18%; padding-right: 5px;}
+      .duration{width: calc(90% + 6px);}
+      &>input[type="text"]:only-child{width: 90%;}
+    }
+  }
+  .slideHeader{ padding:8px $space; }
+
+  .btnDv{border-top: 1px solid $border-color-pale; margin: 0 15px;}
+}
+
+
 ////////////////////////////////////
 // formLayout
 .formA{
   // margin: 0 auto;
+  background: #fff;
 
   outline: 1px solid red;
 
@@ -188,5 +238,3 @@ table.formLayout{
 }
 
 
-// 表單送出按鈕群
-.btnDv{clear:both;text-align:center;margin:0 auto;}

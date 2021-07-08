@@ -2,3 +2,7 @@ $wwSlim: 500px; //更小的螢幕斷點
 $wwMedium: 700px; //min-width此值以下是手機
 $wwWide: 1000px;  //min-width此值以上是電腦
 $wwMaximum: 1300px;
+
+%marginSet{
+  margin: 15px auto;
+}
