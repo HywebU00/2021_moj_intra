@@ -6,7 +6,7 @@
   padding: 0 6px;
   margin: 3px;
   // border-radius: 4px;
-  border: 1px solid $border-color-light;
+  border: 1px solid $border-color;
   vertical-align: middle;
   font-size: inherit;
   background-color: #fff;
@@ -22,7 +22,7 @@
   line-height: 2.4em;
   padding: 0 1.5em 0 6px;
   margin: 3px;
-  border: 1px solid $border-color-light;
+  border: 1px solid $border-color;
   vertical-align: middle;
   font-size: inherit;
   background: #fff url(../images/selectBg.png) no-repeat right 1em;
@@ -111,7 +111,7 @@ input[disabled],
 input[disabled]:hover,
 input[disabled]:focus {
   background-color: #f3f4f5;
-  border-color: $border-color-pale;
+  border-color: $border-color-light;
   color: $disabled-color;
   box-shadow: none;
 }
@@ -125,13 +125,13 @@ input[readonly],
 input[readonly]:hover,
 input[readonly]:focus {
   background-color: #f3f4f5;
-  border-color: $border-color-light;
+  border-color: $border-color;
   box-shadow: none;
 }
 
 select[disabled],
 input[disabled] {
-  color: $font-color-lighter
+  color: $font-color-light
 }
 
 
@@ -153,7 +153,7 @@ input[type="submit"][disabled]:focus {
 }
 
 fieldset {
-  border: 1px solid $border-color-pale;
+  border: 1px solid $border-color-light;
   border-radius: 6px;
   &+fieldset {
     margin-top: 1em;
@@ -211,7 +211,7 @@ fieldset {
   }
   .slideHeader{ padding:8px $space; }
 
-  .btnDv{border-top: 1px solid $border-color-pale; margin: 0 15px;}
+  .btnDv{border-top: 1px solid $border-color-light; margin: 0 15px;}
 }
 
 

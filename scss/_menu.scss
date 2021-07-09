@@ -18,7 +18,7 @@
       }
     }
     li.hasChild{
-      a::before{border-color: $btn-bg2;}
+      a::before{border-color: $lightColor;}
     }
   }
   &>ul>li{
@@ -28,12 +28,12 @@
       &:hover{background-color: rgba(0,0,0,.2); color: #fff;}
     }
     ul{position: absolute; width: 220px; font-size: 16px; z-index: 9;
-       background: $menu-bg2; box-shadow: rgba(0,0,0,.3) 1px 2px 12px;
-       li{border-bottom: 1px solid rgba(0,0,0,.2); 
+       background:lighten($primaryColor, 15) ; box-shadow: rgba(0,0,0,.3) 1px 2px 12px;
+       li{border-bottom: 1px solid rgba(255,255,255,.4); 
         &:last-child{border-bottom: none;}
       }
       a{ padding:.9em 1em .8em; transition: .15s;
-          &:hover, &:focus{ background-color: darken($menu-bg2, 10);}
+          &:hover, &:focus{ background-color: darken($primaryColor, 5); color: #fff;}
       }
     }
   }

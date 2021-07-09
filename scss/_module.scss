@@ -1,7 +1,7 @@
 // 現在位置
 .breadcrumb {
   padding: 2px 0;margin: 0 auto 3px; overflow: hidden;
-  font-size: .93em;color:lighten($font-color, 10) ;
+  color:lighten($font-color, 10) ;
   &::before{
     float: left; content: attr(title)"："; 
   }
@@ -16,14 +16,15 @@
       }
     }
     &:first-child{padding-left: 0;}
-    a{display: block; color: $font-color-darker; text-decoration: none;
+    a{display: block; color: $font-color-dark; text-decoration: none;
         &:hover{ color: $linkColor;}
     }
   }
 
 }
 
-.pageHeader{margin:5px 0 10px; font-size: 1.8em;}
+.pageHeader{margin:18px 0 6px; font-size: 1.8em;}
+.function + .pageHeader{margin-top: 0;}
 
 
 .closeThis{
@@ -54,7 +55,7 @@
       padding:0 14px 0 36px;
       background: #fff; color: $font-color; border-radius: 25px; text-decoration: none;
       transition: .2s;
-      &:hover{ box-shadow:$border-color-light 0 0 0 2px;}
+      &:hover{ box-shadow:$border-color 0 0 0 2px;}
     }
     &.back{
       a::before{ 
@@ -73,9 +74,9 @@
     }
     &.goTop{ 
       position: fixed; z-index: 900;
-      right: 10px; bottom: -50px;text-indent: -20em; 
-      text-align: center; transition: .4s;
-      &.show{bottom: 10px;}
+      right: 10px; bottom: -60px;text-indent: -20em; 
+      text-align: center; transition: .8s;
+      &.show{bottom: 10px;transition: .4s;}
       a{ 
         padding: 0; width: 44px;  overflow: hidden;
         box-shadow:rgba(50,50,50,.5) 0 0 0 3px; background-color: rgba(50,50,50,.7);
@@ -98,11 +99,11 @@
   }
 
 }
-.contBox ~ .function { margin-top: 20px;}
+// .contBox .function { margin-top: 20px; font-size: 1rem;}
 
 
 // .articleInfo{
-//   color: $font-color-lighter;
+//   color: $font-color-light;
 //   ul{ 
 //     margin: 0;padding: 0; list-style: none; text-align: right;
 //     overflow: hidden; font-size: .9em; line-height: 1.3;

@@ -1,5 +1,5 @@
 .topBar{
-  position: relative; background: $primaryColor; padding: 6px 20px; font-size: 14px;
+  position: relative; background: $primaryColor; padding: 6px 20px; font-size:1rem;
   display: flex; flex-flow: row nowrap; justify-content: flex-end;
   .links{
     list-style: none; margin: 0;padding: 0; overflow: hidden; line-height: 1.5;

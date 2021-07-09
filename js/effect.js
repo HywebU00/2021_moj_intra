@@ -49,7 +49,7 @@ $(function(){
 		if ( $(this).scrollTop() > 200){
 			_goTop.addClass('show');
 		} else {
-			_goTop.removeClass('show');
+      _goTop.removeClass('show');
 		}
 	});
 
@@ -70,8 +70,6 @@ $(function(){
     let text1 = _ctrl.text();
     let text2 = _ctrl.attr('data-altTitle');
 
-    // console.log(text1, text2)
-
     _ctrl.click(function(){
       if (_drawer.is(':visible')) {
         _drawer.slideUp();
@@ -82,6 +80,45 @@ $(function(){
       }
     })
   })
+
+
+
+  // 升降冪箭頭 GUI demo, 程式套版後可能要刪除
+  var _sortingTr = $('.list').find('tr').has('.sortingTh');
+  _sortingTr.each(function(){
+    let _sortingTh = $(this).find('.sortingTh');
+    _sortingTh.click(function() {
+      _this = $(this);
+      _sortingTh.not(_this).removeClass('descending').removeClass('ascending');
+      if (_this.hasClass('descending')) {
+        _this.removeClass('descending').addClass('ascending');
+      } else if (_this.hasClass('ascending')) {
+        _this.removeClass('ascending').addClass('descending');
+      } else {
+        _this.addClass('ascending');
+      }
+    })
+  })
+
+
+  // 字體大小
+  var _fontSize = $('.fontSize');
+  var _sizeSelect = _fontSize.find('li');
+  var _fsArea = $('.contBox');
+  _sizeSelect.click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+    if ($(this).hasClass('large')) {
+      _fsArea.css('font-size', '1.4rem')
+    }
+    if ($(this).hasClass('medium')) {
+      _fsArea.css('font-size', '1.16rem')
+    }
+    if ($(this).hasClass('small')) {
+      _fsArea.css('font-size', '1rem')
+    }
+  })
+
+
 
 
   
