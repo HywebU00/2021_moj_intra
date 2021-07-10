@@ -99,6 +99,10 @@
         }
         .source, time{display: block; text-align: center; color: $font-color;}
         .source{min-width: 6.5em;}
+
+        &>p{margin: 0;
+          &+p{margin-top: 1em;}
+        }
       }
     }
   }
