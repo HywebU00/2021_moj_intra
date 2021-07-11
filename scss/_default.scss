@@ -12,8 +12,10 @@ body{
   display: flex; flex-flow: row nowrap;
   .sideBar{ 
     flex:0 0 16rem; background: $primaryColor;
+    // flex-basis: 18vw;
+    flex-basis:240px
   }
-  .main{flex:1 1 auto; padding:15px 30px 45px 20px; background: $bg-color;
+  .main{flex:1 1 auto; padding:15px 20px 45px 20px; background: $bg-color;
     .contBox{
       font-size: 1.13rem;
       background: #fff; margin: 0 0 15px; padding: 20px;
