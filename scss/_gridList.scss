@@ -19,20 +19,21 @@
     list-style: none; margin: 0;padding: 0;
     display: flex; flex-flow: row wrap;
     &>li{
-      flex:0 0 calc(50% - 10px); 
-      margin: 0 20px 20px 0; 
-      position: relative;background: #fff;padding: 0;
+      position: relative;flex:0 0 calc(50% - 10px); 
+      margin: 0 20px 20px 0; padding: 0;
+      background: #fff;
       &:nth-child(2n){margin-right: 0;}
+      &:hover{z-index: 99;}
       a{
         display: block; height: 100%; padding: 0 0 10px;
         box-shadow:$border-color 0 0 0 1px;
         transition: .2s;
         text-decoration: none; color: $font-color;
         &:hover{
-          box-shadow:#fff 0 0 0 2px, $border-color 0 0 16px;
+          box-shadow:$border-color-dark 0 0 0 1px, $border-color 0 0 30px 2px;
           .playIcon{
             transform: scale(1.2);
-            background-color:rgba(0,0,0,.9) ;
+            background-color:rgba(0,0,0,.85) ;
           }
         }
       }
@@ -40,7 +41,7 @@
       // 100% = 100vw - 80px - #{$sideBarWidth}
       .imgThumb, .vPreview{
         img{
-          display: block;
+          display: block; 
           width: 100%; height: 100%; object-fit: cover;
         }
       }
@@ -54,12 +55,28 @@
           margin: -24px auto auto -24px;
         }
       }
+
       // 相簿縮圖
       .imgThumb{
-        position: relative;
+        // outline: 1px solid red;
+        position: relative;overflow: hidden;
         width: 100%; margin: 0 0 10px;
-        height: calc( (50vw - 50px - #{$sideBarWidth}*.5)*.56 );
+        height: calc( (50vw - 50px - #{$sideBarWidth}*.5) );
+        background: #d5d8d9; border: #fff solid 3px;
+        img{object-fit: contain;  transition: .4s;}
       }
+      a:hover{
+        .imgThumb img{transform: scale(1.1);}
+      }
+
+      // 照片張數
+      .count{
+        display: inline-block; height: 1.4em; line-height: 1.4;
+        padding: 0 5px; border-radius: 3px; margin: 5px 10px 0;
+        border: 1px solid $border-color;
+        &::before{content: attr(title)"："; font-size: .85em; color: $font-color-light;}
+      }
+
       p{ margin: 0 10px;}
     }
 
@@ -73,22 +90,30 @@
       .vPreview{
         height: calc((100vw - 122px - #{$sideBarWidth})*.186);
       }
+      // 相簿縮圖
+      .imgThumb{
+        height: calc((100vw - 122px - #{$sideBarWidth})*.3333);
+      }
     }
   }
 
-  @media screen and (min-width: $wwWide){
+  @media screen and (min-width: $wwWide+100){
     .list>li{
       flex-basis: calc(25% - 15px);
       &:nth-child(n){margin: 0 20px 20px 0;}
       &:nth-child(4n){ margin-right: 0;}
       .vPreview{
-        // height: calc(((100vw - 80px - #{$sideBarWidth})*.25 - 15px)*.56);
         height: calc((25vw - 35px - #{$sideBarWidth}*.25)*.56);
+      }
+            // 100% = 100vw - 80px - #{$sideBarWidth}
+
+      .imgThumb{
+        height: calc((25vw - 35px - #{$sideBarWidth}*.25));
       }
     }
   }
 
-  @media screen and (min-width: $wwMaximum){
+  @media screen and (min-width: $wwMaximum+100){
     .list>li{
       flex-basis: calc(20% - 16px);
       &:nth-child(n){margin-right: 20px;}
@@ -96,7 +121,6 @@
       .vPreview{
         height: calc((20vw - 32px - #{$sideBarWidth}*.2)*.56);
       }
-
     }
   }
   
