@@ -16,10 +16,10 @@
       .no{display: inline-block; white-space: nowrap; margin-right:.4em; font-family: monospace;}
     }
     &>li{
-      flex: 0 1 32%; margin:1em 2% 3em 0; margin-bottom: 2em;
+      flex: 0 1 32%; margin:1em 2% 5em 0; margin-bottom: 2em;
       // outline: 1px dashed pink;
       &:nth-child(3n){ margin-right: 0;}
-      &>a{font-size: 1.18em; border-bottom: 3px solid $border-color-light;
+      &>a{font-size: 1.18em; border-bottom: 3px solid $border-color-light; color: $font-color-dark;
         padding-left: 2em; 
         &>.no{width: 1.6em; margin-left: -2em;}
       }
