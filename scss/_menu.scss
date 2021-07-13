@@ -1,18 +1,21 @@
 .menu{z-index: 99;
-  background-image: linear-gradient($gradient-p2 5%, $gradient-p1 50%, $gradient-p0 95%);
+  // background-image: linear-gradient($gradient-p2 5%, $gradient-p1 50%, $gradient-p0 95%);
+  @extend %menubg;
+  background-color: $primaryColor;
   ul, li{list-style: none; margin: 0; padding: 0; line-height: 1.2;}
   li{ 
     position: relative;
     a{
-      display: block;text-decoration: none; color: #000;
+      display: block;text-decoration: none;
+      &:hover, &:focus{background-color: rgba(0,0,0,.2);}
       &:focus{outline: none;}
     }
     &.hasChild{
       &>a{
          position: relative;padding-right: 32px;
         &::before{
-          content: ''; position: absolute; right: 12px; top: 50%; 
-          width: 9px; height: 9px;margin-top: -6px;transform: rotate(45deg);
+          content: ''; position: absolute; right: 12px; top: 1.05em; 
+          width: 9px; height: 9px;transform: rotate(45deg);
           border: 3px solid $lightColor; border-left: none; border-bottom: none;
         }
       }
@@ -25,16 +28,15 @@
     font-size: 18px; border-bottom: 1px solid #fff6;
     &>a{
       padding:.9em 20px .8em; transition:background-color .2s;
-      &:hover{background-color: rgba(0,0,0,.2); color: #fff;}
     }
     ul{position: absolute; width: 220px; font-size: 16px; z-index: 9;
-       background:lighten($primaryColor, 15) ; box-shadow: rgba(0,0,0,.3) 1px 2px 12px;
+       box-shadow: rgba(0,0,0,.3) 1px 2px 12px;
+       background-color: $primaryColor;
+     
        li{border-bottom: 1px solid rgba(255,255,255,.4); 
         &:last-child{border-bottom: none;}
       }
-      a{ padding:.9em 1em .8em; transition: .15s;
-          &:hover, &:focus{ background-color: darken($primaryColor, 5); color: #fff;}
-      }
+      a{ padding:.9em 1em .8em; transition: .15s;}
     }
   }
   ul ul{ left: 16rem; top: 0; display: none;}

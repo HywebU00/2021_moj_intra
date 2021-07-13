@@ -16,20 +16,21 @@ body{
     // flex-basis: 18vw;
     flex-basis:240px
   }
-  .main{flex:1 1 auto; padding:15px 20px 45px 20px; background: $bg-color;
+  .main{flex:1 1 auto; padding:15px $pdOuter*2 45px $pdOuter; background: $bg-color;
     .contBox{
       font-size: 1.13rem;
-      background: #fff; margin: 0 0 15px; padding: 20px;
+      background: #fff; margin: 0 0 15px; padding: 20px $pdInner;
     }
   }
 }
 
 .footer{
-  background: $primaryColor; padding: 5px 30px; text-align: center;line-height: 1.5;
+  background: $primaryColor; color:#fff;
+  padding: 5px 30px; text-align: center;line-height: 1.5;
   p{ margin: .8em 0;
     &+p{margin-top: 1.5em;}
   }
   a{color: #fff;
-    &:hover{ text-decoration: none; color: $lightColor;}
+    &:hover{ text-decoration: none; }
   }
 }

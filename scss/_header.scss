@@ -1,5 +1,6 @@
 .topBar{
-  position: relative; background: $primaryColor; padding: 6px 20px; font-size:1rem;
+  @extend %topBarStyle;
+  position: relative; padding: 6px $pdOuter; font-size:1rem;
   display: flex; flex-flow: row nowrap; justify-content: flex-end;
   .links{
     list-style: none; margin: 0;padding: 0; overflow: hidden; line-height: 1.5;
@@ -7,9 +8,9 @@
       float: left; margin: 0;
       &+li{margin-left: 1.6em;}
       a{
-        display: block; position: relative; padding: 0 2px; text-decoration: none; color: #000;
+        display: block; position: relative; padding: 0 2px; text-decoration: none; 
         &::before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0);
-          background: $lightColor2; transition: .2s;}
+          background: $secondaryColor; transition: .2s;}
         &:hover{
           &::before{transform: scaleX(1)}
         }
@@ -17,12 +18,12 @@
     }
   }
   .visitors{ margin: 0 2.4em;
-    em{ font-style: normal; color: #000;}
+    em{ font-style: normal; }
   }
 
   .allCourts{position: absolute; left: 20px; top: 4px;
-    a{ display: block; cursor: pointer; border: 1px solid darken($primaryColor , 20 ); line-height: 1.8; height: 1.8em; padding: 0 10px;
-      &:hover, &:focus{border: 1px solid $lightColor2}
+    a{ display: block; cursor: pointer; border: 1px solid #fff8; line-height: 1.8; height: 1.8em; padding: 0 10px;
+      &:hover, &:focus{border: 1px solid #fff}
     }
   }
 }
@@ -34,10 +35,10 @@
   }
   ul{float: left; line-height: 1;text-align: center;}
   li{float: left; margin: 0 2px; 
-    a{display: block; width: 1.5em; height: 1.5em; line-height: 1.5; border-radius: 50%; cursor: pointer; color: #000;
-      &:hover{background-color: rgba(255,255,255,.5);}
+    a{display: block; width: 1.5em; height: 1.5em; line-height: 1.55; border-radius: 50%; cursor: pointer;
+      &:hover{background-color: rgba(0,0,0,.3);}
     }
-    &.active a{background-color: #fff;}
+    &.active a{background-color: #fff; color: $font-color-dark;}
   }
 }
 
@@ -45,21 +46,24 @@
   .searchForm{
     display: inline-block; vertical-align: top; position: relative; padding: 0;
     box-shadow: rgba(0,0,0,.25) 0 1px 2px;background: #fff;
-    &::before{content: ""; position: absolute; bottom: 5px; right: 45px; top: 5px; width: 1px; background: #ccc;}
+    &::before{content: ""; position: absolute; bottom: 5px; right: 45px; top: 5px; width: 1px; background: $border-color;}
   }
   input[type="text"]{
     border: none;  width: 180px; float: left;
     &:focus{box-shadow: none;}
   }
   input[type="button"]{
-    float: left; width: 2.4em; height: 2.4em;padding: 0;margin-left: 6px; background: url(../images/icon_search.png) center center no-repeat; background-size:22px; border: none; box-shadow: none;
+    float: left; width: 2.4em; height: 2.4em;padding: 0;margin-left: 6px;
+    background-repeat: no-repeat; background-color: transparent;
+    background-position: center center; background-size:24px;
+     border: none; box-shadow: none;
     &:hover{background-color: $bg-color-light; box-shadow: none;}
   }
   .btn{
-    display: inline-block; margin: 2px 3px 8px ; vertical-align: top;
+    display: inline-block; margin: 0 3px 8px ; vertical-align: top;
     a{
-      display: block; height: 2.6em; line-height: 2.6; padding: 0 1.3em; 
-      background:$primaryColor; color: #fff;text-decoration: none;
+      display: block; height: calc(2.4em + 6px); line-height: 2.8; padding: 0 1.3em; 
+      background:$secondaryColor; color: #fff;text-decoration: none;
     }
   }
 }
@@ -79,6 +83,6 @@
     }
   }
   .topSearch{
-    float: right; margin: 20px 20px 0 0;
+    float: right; margin: 20px $pdOuter 0 0;
   }
 }

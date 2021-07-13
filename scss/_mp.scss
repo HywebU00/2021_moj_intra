@@ -1,0 +1,57 @@
+// ///////// 首頁模組 //////////
+// 區塊標題 h2 ----------------------------------------------
+.blockHeader{
+  text-align: center; font-size: 1.35em; color: $font-color-dark;
+  line-height: 1.3; position: relative;
+  margin: 0 auto 20px; padding: 10px 0 20px;
+  &::after{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 8px; border-radius: 4px; background: $primaryColor;}
+}
+
+// 排版用橫列 ----------------------------------------------
+.row{ 
+  
+}
+
+// 公布欄 ----------------------------------------------
+.bulletin{
+  padding: 20px 30px;
+  width: calc(100vw - #{$sideBarWidth} - 80px);
+  background: #fff;
+  .blockHeader{
+    &::after{content: '';
+      position: absolute; bottom: 0; left: 0; 
+      width: 100%; height: 8px; border-radius: 4px;
+      background: $primaryColor;
+    }
+  }
+  .list{
+    list-style: none; line-height: 1.5; margin: 0; padding: 0;
+    li{ 
+      margin: 15px 0; padding: 0;
+      position: relative;
+      a{
+        display: block; text-decoration: none; 
+        padding: .2em 0;
+        color: $font-color;
+        border-bottom: 1px solid transparent;
+        overflow: hidden;
+        &:hover{border-bottom-color: $primaryColor;}
+        outline:1px dashed gray;
+      }
+      time{
+        float: left;
+      }
+      p{
+        margin: 0 0 0 8em; padding: 0;
+        outline:1px solid pink;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 1.4em;
+
+      }
+    }
+
+    &+.more{margin-top: 2em;}
+  }
+}

@@ -2,12 +2,12 @@
 .category{ 
   ul, li{list-style: none; margin:10px 0;padding: 0;}
   ul{overflow: hidden; line-height: 1;}
-  li{ float: left; margin: 2px;
+  li{ float: left; margin:2px 3px 3px 2px;
     a{display: block; 
-      height: 2.5em; line-height: 2.6em; padding: 0 1em; 
+      height: 2.4em; line-height: 2.5em; padding: 0 1em; 
       background: #fff; box-shadow: $border-color-light 0 0 0 1px inset;
       cursor: pointer;
-      &:hover{box-shadow: $primaryColor 0 0 0 2px inset;}
+      &:hover{box-shadow: $primaryColor 0 0 0 1px inset;}
     }
     &.active{
       a{ background: $primaryColor;  box-shadow: $primaryColor 0 0 0 1px; color: #fff;}
@@ -20,21 +20,21 @@
 .sortingTh{display: inline-block; min-width: 2em; position: relative;padding: 0 24px 0 5px; cursor: pointer;
   &:hover{color: $font-color-dark;}
   &::before, &::after{content: '';position: absolute;right: 5px;top:50%;  border-style: solid;}
-  &::before{border-width: 0 8px 8px 8px;border-color:transparent transparent $bg-color transparent;margin-top: -9px;}
-  &::after{border-width: 8px 8px 0 8px;border-color:$bg-color transparent transparent  transparent;margin-top: 1px;}
+  &::before{border-width: 0 8px 8px 8px;border-color:transparent transparent $border-color-light transparent;margin-top: -9px;}
+  &::after{border-width: 8px 8px 0 8px;border-color:$border-color-light transparent transparent  transparent;margin-top: 1px;}
   &.descending{
-    &::before{border-bottom-color: $bg-color;}
-    &::after{border-top-color:$lightColor;}
+    &::before{border-bottom-color: $border-color-light;}
+    &::after{border-top-color:$border-color-dark;}
   }
   &.ascending{
-    &::before{border-bottom-color:$lightColor;}
-    &::after{border-top-color: $bg-color;}
+    &::before{border-bottom-color:$border-color-dark;}
+    &::after{border-top-color: $border-color-light;}
   }
 }
 
 %number{
   position: absolute; left: 0;
-  width: 3em; text-align: right;
+  width: 3em; text-align: right; white-space: nowrap;
   &::after{content: '.';}
 }
 

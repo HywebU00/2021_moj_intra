@@ -5,7 +5,18 @@ $wwWide: 1440px;
 $wwMaximum: 1920px;
 
 $sideBarWidth : 240px; //左側欄寬
+$pdInner:40px; //主要內容區左右邊界
+$pdOuter:30px; //主要內容區左右邊界
 
 %marginSet{
   margin: 15px auto;
+}
+
+%btnGradBg{
+  background-color: #9ba1a2; color: #fff;
+  text-decoration: none;
+  background-image: linear-gradient(#afb4b4 0, #95999a 80%);
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 inset, rgba(0, 0, 0, .2) 0 1px 2px;
+  transition: .2s;
+  &:hover{ box-shadow: rgba(0, 0, 0, .2) 0 -30px 30px  inset, rgba(0, 0, 0, .2) 0 1px 2px;}
 }

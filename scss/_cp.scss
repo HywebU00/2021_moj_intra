@@ -21,6 +21,12 @@
     * + p {margin-top: 1.2em;}
     ul, ol{ line-height: inherit; margin-bottom: 1.8em;}
     li + li{margin-top: .6em;}
+
+    .articleHeader{
+      margin: 0 0 1.2em;
+      font-size: 1.2em; color: $font-color-dark; line-height: 1.5;
+      h3{ font-size: inherit; margin: 0;}
+    }
   }
 
   .related{

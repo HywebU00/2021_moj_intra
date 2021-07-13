@@ -1,0 +1,34 @@
+$primaryColor: #B282CF; //主色
+$secondaryColor: #644799; //輔色
+$lightColor: #FFCA3E; //點綴
+$linkColor: #0381a4; //連結
+$importantColor: #d11; //重要
+
+%topBarStyle{
+  background-color: #E5D2F4; color: #333;
+  a {color: #333;}
+}
+%menubg{
+  background-image: linear-gradient( #D4B9E8 10%,  #B282CF 60%);
+  li a{color: #222;}
+}
+
+$font-color: #666;
+$font-color-light:#7b8383;
+$font-color-dark:#000;
+
+$bg-color:#FBF2FF;
+$bg-color-pale: #eaf6f4;
+$bg-color-light:#dce7e8;
+$bg-color-dark:#909ea2;
+
+$border-color: #afbabb;
+$border-color-light: #d7dfdd;
+$border-color-dark:#778b8e;
+
+$btn-bg1:#69BBAB;
+$btn-bg2: $primaryColor;
+
+.topSearch{
+  input[type="button"]{ background-image: url(../images/icon_searchB.png);}
+}

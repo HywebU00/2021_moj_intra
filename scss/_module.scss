@@ -27,85 +27,12 @@
 .function + .pageHeader{margin-top: 0;}
 
 
-.closeThis{
-  position: relative;width: 46px; height: 46px; cursor: pointer; transition: .2s;
-  &::before, &::after{
-    content: ''; position: absolute; top: 50%; left: 50%;
-    width: 32px; height: 2px; margin: -1px auto auto -16px;
-    background: #eee;
-  }
-  &::before{ transform: rotate(45deg);}
-  &::after{transform: rotate(135deg);}
-
-  &:hover{
-    transform: scale(1.25);
-    &::before, &::after{ background: #fff;}
-  }
-}
 
 
 
 
-// ///////// 首頁模組 //////////
-// 區塊標題 h2
-.blockHeader{
-  text-align: center; font-size: 1.35em; color: $font-color-dark;
-  line-height: 1.3; position: relative;
-  margin: 0 auto 20px; padding: 10px 0 20px;
-  &::after{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 8px; border-radius: 4px; background: $primaryColor;}
-}
-.row{ 
-  
-}
-.bulletin{
-  padding: 20px 30px;
-  width: calc(100vw - #{$sideBarWidth} - 80px);
-  background: #fff;
-  .blockHeader{
-    &::after{content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 8px; border-radius: 4px; background: $primaryColor;}
-  }
-  .list{list-style: none; line-height: 1.5; margin: 0; padding: 0;
-    // width: 100%;
-    // width: calc(100% - 60px);
-    li{ 
-      margin: 10px 0; padding: 0;
-      // width: 100%;
-      position: relative;
-      a{
-        display: block;
-        // width: 100%;
-        padding: 0 0 .2em;
-        text-decoration: none; color: $font-color;
-        border-bottom: 1px solid transparent;
-        &:hover{border-bottom-color: $primaryColor;}
-        outline:1px dashed red;
-        overflow: hidden;
-        // width: calc(100% - 60px);
 
-      
-      }
-      time{
-        // position: absolute; left: 3px; top: .6em;
-         background: #eee;
-         display: inline-block;
-         float: left;
-      }
-      p{
-        margin: 0 0 0 8em; padding: 0;
-        // width:calc(100vw - 80px - #{$sideBarWidth} - 9em - 60px);
-        // width: 20em;
-        outline:1px solid red;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        height: 1.4em;
-
-      }
-    }
-  }
-}
-
-
+// 回前一頁、友善列印
 .function{ 
   // outline: 1px dashed pink; 
   overflow: hidden;
@@ -115,11 +42,7 @@
     a{
       display: block; position: relative; height: 2.6em; line-height: 2.5em;
       padding:0 1.2em 0 44px;
-      background: #9ba1a2; color: #fff; border-radius: 4px; text-decoration: none;
-      background-image: linear-gradient(#9ba1a2, #7a7f80);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
-      transition: .2s;
-      &:hover{background-image: linear-gradient(#5f6363, #8d9495); box-shadow: none;}
+      @extend %btnGradBg;
     }
     &.back{
       a::before{ 
@@ -164,29 +87,13 @@
   }
 
 }
-// .contBox .function { margin-top: 20px; font-size: 1rem;}
 
 
-// .articleInfo{
-//   color: $font-color-light;
-//   ul{ 
-//     margin: 0;padding: 0; list-style: none; text-align: right;
-//     overflow: hidden; font-size: .9em; line-height: 1.3;
-//   }
-//   li{
-//     display: inline-block; margin-left: 1em;
-//     em{ display: inline-block; color: $font-color; font-style: normal; font-size: 1.2em;}
-//   }
-
-// }
-
-// button division
 .btnDv{ padding: 1.2em 0 1.5em;}
 
 
 // 開合區
 .slideToggle{
-  
   position: relative;
   .slideCtrl{
     position: absolute; right: 5px; top: 5px; 
