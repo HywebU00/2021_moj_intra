@@ -1,7 +1,4 @@
 .cp{
-  // margin: 15px auto;
-  @extend %marginSet;
-
   .published{
     font-size: 1rem;
     text-align: right; margin:15px 0 30px; padding: 0; color: $font-color-light;

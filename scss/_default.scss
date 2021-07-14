@@ -13,7 +13,6 @@ body{
   display: flex; flex-flow: row nowrap;
   .sideBar{ 
     flex:0 0 16rem; background: $primaryColor;
-    // flex-basis: 18vw;
     flex-basis:240px
   }
   .main{flex:1 1 auto; padding:15px $pdOuter*2 45px $pdOuter; background: $bg-color;

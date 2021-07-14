@@ -1,57 +1,195 @@
 // ///////// 首頁模組 //////////
 // 區塊標題 h2 ----------------------------------------------
+$decoH : 8px;
+
 .blockHeader{
   text-align: center; font-size: 1.35em; color: $font-color-dark;
   line-height: 1.3; position: relative;
   margin: 0 auto 20px; padding: 10px 0 20px;
-  &::after{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 8px; border-radius: 4px; background: $primaryColor;}
+
+  &.deco{
+    &::after{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: $decoH; border-radius: $decoH*.5; background: $primaryColor;}
+  }
 }
 
 // 排版用橫列 ----------------------------------------------
-.row{ 
+.row{
+  &>section{padding: 30px $pdInner; font-size: 1.13rem;}
   
+}
+
+.mpTopMost{
+  outline: 1px dash pink;
+  position: relative;
+}
+
+
+.loginBtn{
+  a{
+    display: block; width: 42px; height: 42px;border-radius: 50%;
+    background-color: #999;
+  }
 }
 
 // 公布欄 ----------------------------------------------
 .bulletin{
-  padding: 20px 30px;
-  width: calc(100vw - #{$sideBarWidth} - 80px);
+  margin: 20px 0;
+  padding: 20px $pdInner;
+  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
   background: #fff;
-  .blockHeader{
-    &::after{content: '';
-      position: absolute; bottom: 0; left: 0; 
-      width: 100%; height: 8px; border-radius: 4px;
-      background: $primaryColor;
-    }
-  }
   .list{
-    list-style: none; line-height: 1.5; margin: 0; padding: 0;
+    list-style: none; line-height: 1.5; margin: 0 -10px; padding: 0;
     li{ 
-      margin: 15px 0; padding: 0;
+      margin: 5px 0; padding: 0;
       position: relative;
       a{
-        display: block; text-decoration: none; 
-        padding: .2em 0;
-        color: $font-color;
-        border-bottom: 1px solid transparent;
-        overflow: hidden;
-        &:hover{border-bottom-color: $primaryColor;}
-        outline:1px dashed gray;
+        display: block; text-decoration: none; padding: 10px; overflow: hidden;
+        color: $font-color; border-bottom: 1px solid transparent; border-radius: 4px;
+        transition: .2s;
+        &:hover{ color: $font-color-dark; text-decoration: underline;
+          background-color: $bg-color-pale;
+        }
       }
-      time{
-        float: left;
-      }
+      time{ float: left; }
       p{
-        margin: 0 0 0 8em; padding: 0;
-        outline:1px solid pink;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        height: 1.4em;
-
+        margin: 0 0 0 7em; padding: 0;
+      }
+      
+    }
+    
+    &.ellipsis{
+      li {
+        p{
+          text-overflow: ellipsis; white-space: nowrap; overflow: hidden; height: 1.4em;
+        }
       }
     }
-
     &+.more{margin-top: 2em;}
+  }
+}
+
+// 快速連結 ----------------------------------------------
+.directLink1{
+  margin: 20px 0;
+  background: #fff;
+  ul{ list-style: none; margin: 0 auto; padding: 0;
+    display: flex; flex-flow: row wrap; font-size: 1.1em;
+  }
+  li{
+    flex: 0 0 calc(25% - 9px); width: calc(25% - 9px); margin:6px 12px 6px 0;
+    &:nth-child(4n){ margin-right: 0;}
+    &>a{
+      display: block; height: 100%; padding: 0 1em; height: 2.8em; line-height: 2.8;
+      text-align-last: left;
+      color: #fff; text-decoration: none;
+      text-overflow: ellipsis; overflow: hidden; white-space: nowrap;
+      transition: .2s;
+      &:hover{ transform: translateY(-2px); box-shadow: rgba(0,0,0,.3) 0 4px 8px;}
+    }
+    &:nth-child(5n+1)>a{ @extend %gradient-1;}
+    &:nth-child(5n+2)>a{ @extend %gradient-2;}
+    &:nth-child(5n+3)>a{ @extend %gradient-3;}
+    &:nth-child(5n+4)>a{ @extend %gradient-4;}
+    &:nth-child(5n)  >a{ @extend %gradient-5;}
+
+  }
+
+}
+
+// 圖示＋文字連結（icon區塊_Nx4方形）
+.directLink2{
+  margin: 20px 0;
+  background: #fff;
+  ul{
+    list-style: none; margin: 0 auto; padding: 0;
+    display: flex; flex-flow: row wrap; 
+    align-items: flex-start;
+  }
+  li{
+    flex: 0 0 calc(25% - 9px); width: calc(25% - 9px); margin:6px 12px 6px 0; padding: 0;
+    &:nth-child(4n){ margin-right: 0;}
+    &>a{
+      display: flex; flex-flow: row nowrap;  align-items: center;
+      text-align: left; text-decoration: none; background-color: #f9f9f9; color: $font-color;
+      box-shadow: rgba(0,0,0,.1) 0 1px 1px; height: 100%;transition: .2s;
+      &:hover{ transform: translateY(-2px); box-shadow: rgba(0,0,0,.2) 0 4px 8px;}
+
+      &>.icon{ 
+        flex: 0 0 52px; align-self: stretch;
+        margin-right: 12px;width:52px; min-height: 52px;
+        position: relative; 
+        img{
+          position: absolute; left: 50%; top: 50%; 
+          width: 32px; height: 32px; margin:-16px auto auto -16px; object-fit: contain;
+        }
+      }
+      &>p{
+        flex: 0 1  auto; 
+        margin:0 ; padding:.1em .5em 0 0; line-height: 1.25;
+      }
+      
+    }
+    &:nth-child(5n+1)>a>.icon{ @extend %gradient-1;}
+    &:nth-child(5n+2)>a>.icon{ @extend %gradient-2;}
+    &:nth-child(5n+3)>a>.icon{ @extend %gradient-3;}
+    &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
+    &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
+  }
+
+}
+
+// 圓形圖示陣列（icon區塊_Nx6圓形）
+.disks{
+  margin: 20px auto;
+  background: #fff;
+  ul{
+    list-style: none; margin: 0;padding: 0;
+    display: flex; flex-flow: row wrap;
+  }
+  li{
+    flex:0 0 15%; margin:5px 2% 15px 0;
+    &:nth-child(6n){margin-right: 0;}
+    &>a{
+      display: block; text-align: center; height: 100%; padding: 12px 10px 10px;
+      text-decoration: none; color: $font-color; border-radius: 6px; 
+     transition: .2s;
+      &:hover{ transform: translateY(-2px); box-shadow: rgba(0,0,0,.2) 0 2px 8px;}
+
+      &>.icon{
+        display: block;margin: 0 auto 10px;overflow: hidden;
+        width: 76px; height: 76px; border-radius: 50%; 
+        img{display: block;width: 40px; height: 40px; object-fit: contain; margin:18px auto 0;}
+      }
+      p{margin: 0;}
+    }
+    &:nth-child(5n+1)>a>.icon{ @extend %gradient-1;}
+    &:nth-child(5n+2)>a>.icon{ @extend %gradient-2;}
+    &:nth-child(5n+3)>a>.icon{ @extend %gradient-3;}
+    &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
+    &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
+  }
+
+}
+
+
+// 小廣告圖（圖片_Nx4連結）
+.imgBanners{
+  margin: 20px auto;
+  background: #fff;
+  ul{
+    list-style: none; margin: 0;padding: 0;
+    display: flex; flex-flow: row wrap;
+  }
+  li{
+    flex: 0 0 auto;
+    margin: 6px; padding: 0;
+    &>a{display: block;
+      img{display: block; width: 200px; height: 52px;}
+
+      transition: .2s;
+      &:hover{ transform: translateY(-2px); box-shadow: rgba(0,0,0,.2) 0 2px 8px;}
+
+    }
+
   }
 }

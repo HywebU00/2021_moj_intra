@@ -1,40 +1,51 @@
 $primaryColor: #07847C; //主色
 $secondaryColor: #FCA824; //輔色
 $lightColor: #FCA824; //點綴
-$linkColor: #0381a4; //連結
+$linkColor: #008a9f; //連結
 $importantColor: #d11; //重要
-
-%topBarStyle{
-  background-color: $primaryColor; color: #fff;
-  a {color: #fff;}
-}
-
-// 主色漸層
-// $gradient-p0: $primaryColor;
-// $gradient-p1:#73C8BA;
-// $gradient-p2:#bbf2ea;
-%menubg{
-  background-image: linear-gradient( #1F9D8C 0%, #07847C 45%);
-  li a{color: #fff;}
-
-}
 
 $font-color: #666;
 $font-color-light:#7b8383;
 $font-color-dark:#000;
 
 $bg-color:#dff9f4;
-$bg-color-pale: #eaf6f4;
-$bg-color-light:#dce7e8;
-$bg-color-dark:#909ea2;
+$bg-color-pale: #ecf6f4;
+$bg-color-light:#d4eae7;
+$bg-color-dark:#90a2a2;
 
-$border-color: #afbabb;
-$border-color-light: #d7dfdd;
-$border-color-dark:#778b8e;
+$border-color: #afbbb9;
+$border-color-light: #dee6e4;
+$border-color-dark:#778e8c;
 
 $btn-bg1:#69BBAB;
 $btn-bg2: $primaryColor;
 
+%gradient-1{
+  background:#0DA0B6 linear-gradient(90deg, #0DA0B6 -4.86%, #0E8CB9 67.78%);
+}
+%gradient-2{
+  background: linear-gradient(321.69deg, #B78AFF 0%, #5404FE 100%);
+}
+%gradient-3{
+  background: linear-gradient(321.69deg, #FF6188 0%, #FFB199 100%);
+}
+%gradient-4{
+  background: linear-gradient(321.69deg, #6B94DA 0%, #1AB3E8 100%);
+}
+%gradient-5{
+  background: linear-gradient(132.9deg, rgba(0, 217, 204, 0.82) 1.3%, #3BE995 98.06%);
+}
+
+
+%topBarStyle{
+  background-color: $primaryColor; color: #fff;
+  a {color: #fff;}
+}
+
+%menubg{
+  background-image: linear-gradient( #1F9D8C 0%, #07847C 45%);
+  li a{color: #fff;}
+}
 
 .topSearch{
   input[type="button"]{ background-image: url(../images/icon_searchA.png);}
