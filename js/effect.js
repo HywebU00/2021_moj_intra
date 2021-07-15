@@ -27,7 +27,7 @@ $(function(){
     )
   })
 
-
+  // 所屬單位清單 顯示／隱藏
   var _allCourts = $('.allCourts');
   var _courtsList = $('.courtsList');
   var _closeCourtsList = _courtsList.find('.closeThis');
@@ -36,6 +36,17 @@ $(function(){
   })
   _closeCourtsList.click(function(){
     _courtsList.stop(true, false).slideUp(250);
+  })
+
+  // 登入區 顯示／隱藏
+  var _loginBtn = $('.loginBtn');
+  var _loginHere = $('.loginHere');
+  var _closeLogin = _loginHere.find('.closeThis');
+  _loginBtn.click(function(){
+    _loginHere.stop(true, false).slideDown(400).addClass('show');
+  })
+  _closeLogin.click(function(){
+    _loginHere.stop(true, false).slideUp(250).removeClass('show');
   })
 
   //go top and bottom------------------------------------------

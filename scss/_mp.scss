@@ -5,9 +5,10 @@ $decoH : 8px;
 .blockHeader{
   text-align: center; font-size: 1.35em; color: $font-color-dark;
   line-height: 1.3; position: relative;
-  margin: 0 auto 20px; padding: 10px 0 20px;
+  margin: 0 auto 10px; padding: 10px 0;
 
   &.deco{
+    padding-bottom: 18px;
     &::after{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: $decoH; border-radius: $decoH*.5; background: $primaryColor;}
   }
 }
@@ -19,16 +20,57 @@ $decoH : 8px;
 }
 
 .mpTopMost{
-  outline: 1px dash pink;
-  position: relative;
+  position: relative; display: flex; justify-content: space-between;
+  margin: 5px auto;
+
+  .jumpTo{ flex: 0 1 50%;}
+  .loginBtn{ flex:0 0 auto;}
+  .logoutBtn{ flex:0 0 auto;}
 }
 
+// 快速連結 select
+.jumpTo{
+  white-space: nowrap;
+  label{font-size: 1.2rem; line-height: 2em; height: 2em; vertical-align: middle; color: $font-color-dark;}
+  select{ 
+    width: calc(100% - 5em - 10px);max-width: 28em;
+    height: 2.8em; line-height: 2.8;
+    box-sizing: border-box; border-color: #fff;
+  }
+}
 
+// 登入／登出
+.loginBtn, .logoutBtn{
+  font-size: 1.2rem; margin-right: -10px;
+  a{
+    display: block; position: relative; cursor: pointer;
+    height: 50px; line-height: 50px; padding: 0 15px 0 54px;
+    color: $font-color-dark;border-radius: 2em;
+    transition: .2s;
+    &:hover{background:#fff; }
+  }
+}
 .loginBtn{
   a{
-    display: block; width: 42px; height: 42px;border-radius: 50%;
-    background-color: #999;
+    &::before{
+      content: ''; position: absolute; left: 3px; top: 3px;
+      width: 44px; height: 44px;border-radius: 50%;
+      background: $gray url(../images/icon_login.png) no-repeat center center;
+      background-size: 42px;
+      transition: .2s;
+    }
+    &:hover::before{background-color: $grayDark;}
   }
+}
+.logoutBtn{
+  a{
+    &>img{
+      position: absolute; left: 3px; top: 3px;
+      width: 44px; height: 44px;border-radius: 50%;
+      transition: .2s;
+    }
+  }
+
 }
 
 // 公布欄 ----------------------------------------------
@@ -193,3 +235,6 @@ $decoH : 8px;
 
   }
 }
+
+
+

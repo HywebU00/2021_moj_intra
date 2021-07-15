@@ -1,0 +1,74 @@
+// 登入區 ----------------------
+.loginHere{
+  display: none;
+  position: fixed; top: 80px;  z-index: 990; 
+  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*2); min-width: 710px;
+  padding:20px 40px; margin-left: $pdOuter*-.5;
+  overflow: hidden; font-size: 1.2rem;
+  background: #fff; box-shadow: rgba(0,0,0,.4) 0 0 36px;
+  transform: translateY(0);
+  transition:transform .3s; 
+  &.show{
+    transform: translateY(30px);
+  }
+  
+  .blockHeader{text-align: left;}
+
+  .closeThis{ position: absolute; right: 5px;top: 5px; z-index: 9;
+    a{background: $gray;
+      &:hover{background-color: $grayDark;}
+    }
+  }
+
+  .viewIcon{
+    display: inline-block; vertical-align: top; cursor: pointer;
+    width: 42px; height: 42px; border-radius: 50%; margin: 2px;
+    background:  $gray url(../images/icon_eye.png) no-repeat center center;
+    background-size: 32px;
+    &:hover{ background-color:  $grayDark;}
+  }
+
+  .formLayout{
+    float: left;width:calc(60% - 40px) ; margin: 0;
+    min-width: 0;
+    td{
+      &:nth-child(odd){ padding-top: 1em; white-space: nowrap; color: $font-color-dark;}
+      input{width: calc(96% - 50px);}
+      p.hint{font-size: 1rem; margin: .3em 4px;}
+    }
+  }
+
+  .btnDv{
+    clear: none; float: right; width: calc(40% - 60px);
+    margin: 0 20px 0 0 !important; padding: 0 !important; border:none !important;
+    input{
+      display: block; margin: 5px auto 10px; height: 2.8em; line-height: 2.8em; border-radius: 4px;
+      width:98% ; min-width: 6em;
+    }
+
+    &::after{
+      content: ''; position: absolute; left:calc(60% - 20px) ; top: 10px; bottom: 10px; 
+      width: 1px; background: $border-color;  
+    }
+  }
+
+  .logLinks{
+    list-style: none; display: inline-block;
+    width: calc(40% - 30px);
+    margin: 0 0 0 calc(60% + 20px); padding:25px 0 10px;
+    text-align: center; font-size: 1rem;
+    border-top: 1px solid $border-color;
+    li{display: inline-block; margin: 0;
+      &+li{margin-left: 5px;}
+      a {
+        display: block; padding: 0 1em; width: 7em;
+        height: 2em; line-height: 2em;
+        box-shadow: $border-color 0 0 0 1px; background: #fff;color: $font-color; 
+        text-decoration: none; text-align: center; border-radius: 3px;
+        &:hover{box-shadow: $border-color-dark 0 0 0 1px; color: $font-color-dark;}
+      }
+    }
+  }
+
+
+}

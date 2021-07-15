@@ -37,7 +37,7 @@
   }
 
 
-  .closeThis{position: fixed; right:calc(3vw + 15px) ;top: 6px; z-index: 9;background-color: #0003;
+  .closeThis{ right:calc(3vw + 15px) ;top: 6px; z-index: 9;background-color: #0003;
       &:hover{background-color: #0008;}
   }
 }
