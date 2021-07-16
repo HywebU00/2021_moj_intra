@@ -41,11 +41,13 @@ $decoH : 8px;
 
 // 快速連結 select
 .jumpTo{
-  white-space: nowrap;
-  label{font-size: 1.2rem; line-height: 2em; height: 2em; vertical-align: middle; color: $font-color-dark;}
+  white-space: nowrap; font-size: 1.2rem;
+  label{
+    line-height: 2em; height: 2em; vertical-align: middle; color: $font-color-dark;
+  }
   select{ 
-    width: calc(100% - 5em - 10px);max-width: 28em;
-    height: 2.8em; line-height: 2.8;
+    width: calc(100% - 5em - 10px); max-width: 28em;
+    height: 2.5em; line-height: 2.5;
     box-sizing: border-box; border-color: #fff;
   }
 }

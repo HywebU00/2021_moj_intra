@@ -90,8 +90,8 @@
         &:hover{background: $bg-color-pale;}
       }
       td{vertical-align: top;
-        a{display: block; text-decoration: none; color: $font-color;
-          &:hover{text-decoration: underline; color: $font-color-dark; }
+        a{display: block; text-decoration: underline; color: $font-color-dark;
+          &:hover{text-decoration: none; color: $linkColor; }
         }
         &.number{ text-align: right;
           &::after{content: '.';}
