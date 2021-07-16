@@ -17,3 +17,11 @@ $pdOuter:30px; //主要內容區左右邊界
   transition: .2s;
   &:hover{ box-shadow: rgba(0, 0, 0, .2) 0 -30px 30px  inset, rgba(0, 0, 0, .2) 0 1px 2px;}
 }
+
+%mpBlock {
+  margin: 20px 0; padding: 30px $pdInner; 
+  background: #fff;font-size: 1.13rem;
+}
+.row.col21>section{
+  margin-top: 10px; margin-bottom: 10px;
+}

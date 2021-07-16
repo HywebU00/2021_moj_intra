@@ -15,10 +15,21 @@ $decoH : 8px;
 
 // 排版用橫列 ----------------------------------------------
 .row{
-  &>section{padding: 30px $pdInner; font-size: 1.13rem;}
-  
+  &.col21{
+    display: flex; justify-content: space-between;
+    &>section{
+      flex-grow: 0; flex-shrink: 1;
+      &:first-child{
+        flex-basis: calc(66% - 25px); margin-right: 25px;
+      }
+      &:last-child{
+        flex-basis: 34%;
+      }
+    }
+  }
 }
 
+// 首頁最上方， 快速連結 和 登入／登出----------------------------------------------
 .mpTopMost{
   position: relative; display: flex; justify-content: space-between;
   margin: 5px auto;
@@ -39,7 +50,7 @@ $decoH : 8px;
   }
 }
 
-// 登入／登出
+// 登入／登出 
 .loginBtn, .logoutBtn{
   font-size: 1.2rem; margin-right: -10px;
   a{
@@ -50,18 +61,20 @@ $decoH : 8px;
     &:hover{background:#fff; }
   }
 }
+// 登入圖示
 .loginBtn{
   a{
     &::before{
       content: ''; position: absolute; left: 3px; top: 3px;
       width: 44px; height: 44px;border-radius: 50%;
       background: $gray url(../images/icon_login.png) no-repeat center center;
-      background-size: 42px;
+      background-size: 30px;
       transition: .2s;
     }
     &:hover::before{background-color: $grayDark;}
   }
 }
+// 登出圖示
 .logoutBtn{
   a{
     &>img{
@@ -73,14 +86,126 @@ $decoH : 8px;
 
 }
 
+
+
+
+.myInfo, .bulletin, .directLink1, .directLink2, .disks, .imgBanners, .announce, .notice {
+  @extend %mpBlock;
+}
+
+// 個人訊息 ----------------------------------------------
+.myInfo{
+  @extend %mpBlock;
+  display: flex; flex-flow:row wrap; justify-content: space-between;
+  .blockHeader{
+    flex:0 0 100%;
+  }
+  .leftDv{
+    flex: 0 0 auto; margin: 10px 3% 0 0; 
+    position: relative; padding-left: 106px ;
+  }
+  .rightDv{
+    margin: 10px 0 0;
+    // outline: 1px dashed pink;
+    flex: 1 1 47%; 
+    max-width: 33em;
+  }
+
+  img.avatar{
+    position: absolute; top: 0; left: 0;
+    width: 84px; height: 84px; border-radius: 50%;
+  }
+
+  .myName{
+    display: inline-block; vertical-align: middle; 
+    min-width: 4em;margin: 2px 10px 0 0;
+    color: $font-color-dark; line-height: 1.2;
+  }
+  .myLinks{
+    display: inline-block; vertical-align: middle;
+    list-style: none; margin: 0; padding: 0; overflow: hidden;
+    li{
+      float: left; margin: 2px 3px;
+      a{
+        @extend %btnGradBg; padding: 0 .8em;
+        display: block; height: 2.4em; line-height: 2.5;
+      }
+    }
+  }
+
+  .dutyOnOff{
+    clear: both; margin:1.3em 0 0;
+    // outline: 1px dashed pink; 
+    overflow: hidden;
+    dt, dd{float: left; margin: 0; padding: 0;}
+    dt{line-height: 1.9;}
+    dd{margin-left: .3em; font-size: 1.6em; color: $primaryColor; line-height: 1.1;}
+    dd + dt{ margin-left: 1.5em;}
+  }
+
+  .toDoList{
+    list-style: none; margin: 0; padding: 0;
+    display: flex;
+    li{
+      flex:0 0 calc(33.33% - 4px);
+      margin: 0 6px 0 0; padding: 12px 8px 15px;
+      &:last-child{margin-right: 0;}
+      background-color: $primaryColor; color: #fff; text-align: center;
+      .count, .label{display: block; }
+      .count{
+        margin: 0 auto;
+        font-size:2.2rem; height: 1.3em; line-height: 1.3; letter-spacing: 5px;
+      }
+      .label{ margin: 5px auto 0; white-space: nowrap;}
+      em{font-style: normal; color: $secondaryColor;}
+    }
+  }
+}
+
+// 首頁查詢區 ----------------------------------------------
+.searchBlk{
+  @extend %mpBlock;
+  background: $primaryColor; color: #fff;
+  .formLayout{
+    // outline: 1px solid red; 
+    width: 100%; 
+    min-width: 400px;
+    input[type="text"], input[type="date"], input[type="number"],
+    select{border-color: #fff;
+      &:focus{border-color: #fff; box-shadow: $secondaryColor 0 0 0 3px;}
+    }
+
+    td{
+      &:nth-child(odd){text-align: left; width: 7em; white-space: nowrap;}
+      &:nth-child(even) {padding-bottom: 16px;}
+
+      &>input[type="text"]:only-child,
+      &>input[type="date"]:only-child,
+      &>input[type="number"]:only-child{width:98%;}
+      &>select:only-child{ width: calc(98% - 2em);}
+
+      .duration{width: calc(98% + 6px);}
+
+    }
+  }
+
+  .btnDv{
+    padding:15px 0 5px;
+    input[type="button"]{width: 6em; background: #fff; color: $font-color-dark; border: none;}
+  }
+
+  @media screen and (min-width: $wwWide){
+    margin-left: 8%; margin-right: 8%;
+  }
+
+
+}
+
 // 公布欄 ----------------------------------------------
-.bulletin{
-  margin: 20px 0;
-  padding: 20px $pdInner;
+.bulletin {
   width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
-  background: #fff;
   .list{
-    list-style: none; line-height: 1.5; margin: 0 -10px; padding: 0;
+    list-style: none; line-height: 1.5; margin:25px 0 0; padding: 0;
     li{ 
       margin: 5px 0; padding: 0;
       position: relative;
@@ -110,10 +235,45 @@ $decoH : 8px;
   }
 }
 
+// 資安宣導（不同底色） ----------------------------------------------
+.notice{
+  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
+  background-color: #FDF7D6;
+  box-shadow: rgba(0,0,0,.1) 5px 2px 0;
+  article{
+    line-height: 2.4;
+    p{
+      margin: 0;padding: 0;line-height: inherit;
+      border-bottom: 1px solid rgba($color: $primaryColor, $alpha: .25);
+      &.ellipsis {
+        white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+      }
+    }
+  }
+}
+.row.col21>.notice{
+  width: 500px;
+}
+
+// 本校公布欄 （一則顯示不完整內容的訊息） ----------------------------------------------
+.announce{
+  article{
+    line-height: 1.8;
+    h3{
+      font-size: 1em; color: $font-color-dark;
+    }
+    p{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+    }
+
+  }
+}
+
 // 快速連結 ----------------------------------------------
 .directLink1{
-  margin: 20px 0;
-  background: #fff;
   ul{ list-style: none; margin: 0 auto; padding: 0;
     display: flex; flex-flow: row wrap; font-size: 1.1em;
   }
@@ -140,8 +300,6 @@ $decoH : 8px;
 
 // 圖示＋文字連結（icon區塊_Nx4方形）
 .directLink2{
-  margin: 20px 0;
-  background: #fff;
   ul{
     list-style: none; margin: 0 auto; padding: 0;
     display: flex; flex-flow: row wrap; 
@@ -182,8 +340,6 @@ $decoH : 8px;
 
 // 圓形圖示陣列（icon區塊_Nx6圓形）
 .disks{
-  margin: 20px auto;
-  background: #fff;
   ul{
     list-style: none; margin: 0;padding: 0;
     display: flex; flex-flow: row wrap;
@@ -216,8 +372,6 @@ $decoH : 8px;
 
 // 小廣告圖（圖片_Nx4連結）
 .imgBanners{
-  margin: 20px auto;
-  background: #fff;
   ul{
     list-style: none; margin: 0;padding: 0;
     display: flex; flex-flow: row wrap;
