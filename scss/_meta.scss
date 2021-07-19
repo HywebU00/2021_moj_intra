@@ -31,9 +31,12 @@
   margin: 0 0 20px; padding: 0;
   iframe{
     display: block; margin: 0 auto; padding:0;
-    width: 64vw; height: 36vw;
-    width: calc(100vw - 80px - #{$sideBarWidth});
-    height: calc(56.25vw - 45px - #{$sideBarWidth}*.5625);
+    // width: 64vw; height: 36vw;
+    // width: calc(100vw - 80px - #{$sideBarWidth});
+    // height: calc(56.25vw - 45px - #{$sideBarWidth}*.5625);
+    width: calc(100vw - #{$sideBarWidth} - #{$pdInner}*2 - #{$pdOuter}*3 );
+    height: calc( (100vw - #{$sideBarWidth} - #{$pdInner}*2 - #{$pdOuter}*3)*.5625 );
+    
     // min-width: 560px; min-height: 315px;
     min-height: 315px;
   }

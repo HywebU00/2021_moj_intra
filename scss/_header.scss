@@ -46,24 +46,25 @@
   .searchForm{
     display: inline-block; vertical-align: top; position: relative; padding: 0;
     box-shadow: rgba(0,0,0,.25) 0 1px 2px;background: #fff;
-    &::before{content: ""; position: absolute; bottom: 5px; right: 45px; top: 5px; width: 1px; background: $border-color;}
+    &::before{content: ""; position: absolute; bottom: 5px; right: 43px; top: 5px; width: 1px; background: $border-color;}
   }
   input[type="text"]{
     border: none;  width: 180px; float: left;
-    &:focus{box-shadow: none;}
+    &:focus{box-shadow: $secondaryColor 0 0 0 1px inset;}
   }
   input[type="button"]{
     float: left; width: 2.4em; height: 2.4em;padding: 0;margin-left: 6px;
     background-repeat: no-repeat; background-color: transparent;
     background-position: center center; background-size:24px;
      border: none; box-shadow: none;
-    &:hover{background-color: $bg-color-light; box-shadow: none;}
+    &:hover{background-color:rgba(0,0,0,.6); box-shadow: none;}
   }
   .btn{
     display: inline-block; margin: 0 3px 8px ; vertical-align: top;
     a{
       display: block; height: calc(2.4em + 6px); line-height: 2.8; padding: 0 1.3em; 
       background:$secondaryColor; color: #fff;text-decoration: none;
+      &:hover{ background-color: darken($secondaryColor, 10);}
     }
   }
 }

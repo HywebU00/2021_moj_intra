@@ -2,7 +2,7 @@ html{ font-size: 15px;}
 body{
   margin: 0;padding: 0; font-family:'微軟正黑體', Arial, Helvetica, sans-serif;
   color: $font-color; 
-  min-width: 880px; // 此站是彈性寬度排版，但不支援此數值以下的小螢幕的排版
+  min-width: 880px; // 此站是彈性寬度排版，但不支援此數值以下的小螢幕`-的排版
 }
 *{
   box-sizing: border-box;

@@ -27,6 +27,19 @@ $decoH : 8px;
       }
     }
   }
+
+  &.col334{
+    display: flex; justify-content: space-between;
+    &>section{
+      flex:0 1 auto; margin: 10px 21px 10px 0;
+      &:nth-child(1), &:nth-child(2) {
+        flex-basis: calc(30% - 14px);
+      }
+      &:nth-child(3){margin-right: 0;flex-basis: calc(40% - 14px);
+      }
+
+    }
+  }
 }
 
 // 首頁最上方， 快速連結 和 登入／登出----------------------------------------------
@@ -90,8 +103,9 @@ $decoH : 8px;
 
 
 
-
-.myInfo, .bulletin, .directLink1, .directLink2, .disks, .imgBanners, .announce, .notice {
+// 區塊共用屬性
+.myInfo, .bulletin, .directLink1, .directLink2, .disks, .imgBanners,
+.announce, .notice, .calendar, .directLink3, .bannerSlide {
   @extend %mpBlock;
 }
 
@@ -380,15 +394,45 @@ $decoH : 8px;
   }
   li{
     flex: 0 0 auto;
-    margin: 6px; padding: 0;
+    margin: 3px; padding: 0;
     &>a{display: block;
       img{display: block; width: 200px; height: 52px;}
-
       transition: .2s;
       &:hover{ transform: translateY(-2px); box-shadow: rgba(0,0,0,.2) 0 2px 8px;}
 
     }
 
+  }
+}
+
+// 文字連結
+.directLink3{
+  width: 200px;
+  ul{list-style: none; margin: 1em auto 0;padding: 0; text-align: center;}
+  li{ margin: 3px 0;
+    a{ display: block; height: 2.4em; line-height: 2.5; padding: 0 1em;
+      text-decoration: underline; color: $font-color;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      border-radius: 4px;
+      &:hover{
+        color: $linkColor; text-decoration: none; background-color: $bg-color-pale;
+      }
+    }
+  }
+}
+
+// 垂直滑動的小廣告圖
+.bannerSlide{
+  ul{list-style: none; margin: 0;padding: 0;}
+  li{ margin: 8px 0; position: relative;
+    a{display: block;width: 200px;margin: 0 auto;
+      img{
+        display: block; width: 100%;height: 52px; 
+      }
+      transition: .2s;
+      &:hover{ transform: translateY(-1px);  box-shadow:#fff 0 0 0 1px, rgba(0,0,0,.4) 0 2px 12px;}
+    }
+    &:hover{z-index: 99;}
   }
 }
 
