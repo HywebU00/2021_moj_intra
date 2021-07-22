@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>法務部員工入口網</title>
-
+  
+  <link rel="stylesheet" href="slick/slick.css"/>
   <link rel="stylesheet" href="css/styleA.css">
   <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="slick/slick.min.js"></script>
   <script src="js/effect.js"></script>
   <script src="js/tabs.js"></script>
 
@@ -15,8 +17,8 @@
 <body>
   <header class="webHeader" style="background-image: url(publicData/header_bg1.jpg); background-color: #def8f2;">
     <div class="topBar">
-      <span class="allCourts"><a>法務部暨所屬機關網站清單</a></span>
-      <nav class="courtsList">
+      <span class="allCourts showLightbox" data-id="courtsList"><a>法務部暨所屬機關網站清單</a></span>
+      <nav class="courtsList lightbox" data-id="courtsList">
         <div class="closeThis"><a title="關閉"></a></div>
         <h2>法務部暨所屬機關網站清單</h2>
         <ul>
@@ -168,13 +170,52 @@
       </div>
     </div>
     <h1><a href="mp.html"><img src="publicData/logo.png" alt="法務部"></a></h1>
+
     <section class="topSearch">
       <form action="" class="searchForm">
         <input type="text" placeholder="請輸入關鍵字">
         <input type="button">
       </form>
-      <span class="btn"><a href="#">進階查詢</a></span>
+      <span class="btn showLightbox" data-id="searchBlk"><a>進階查詢</a></span>
     </section>
+
+    <!-- 點「進階查詢」開啟此區 -->
+    <section class="searchBlk lightbox" data-id="searchBlk">
+      <span class="closeThis"><a title="關閉"></a></span>
+      <form>
+        <table class="formLayout">
+          <tr>
+            <td>查詢詞</td>
+            <td><input type="text" placeholder="請輸入查詢詞"></td>
+          </tr>
+          <tr>
+            <td>上稿日期區間</td>
+            <td>
+              <div class="duration">
+                <input type="text" value="2020-08-28" placeholder="起日">
+                <input type="text" placeholder="迄日">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>上稿單位</td>
+            <td>
+              <select>
+                <option value=""></option>
+                <option value="">xxx xxxx</option>
+                <option value="">Yyyy yyyy</option>
+                <option value="">... ... ...</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+      </form>
+      <div class="btnDv">
+        <input type="button" value="查詢">
+      </div>
+    </section>
+
   </header>
 
   <div class="center">
@@ -302,11 +343,12 @@
           </form>
 
         </section>
-        <div class="loginBtn"><a>登入</a></div>
+        <div class="loginBtn showLightbox" data-id="loginHere"><a>登入</a></div>
         <div class="logoutBtn"><a><img class="avatar" src="publicData/avatar1.png" alt="登入者頭像">登出</a></div>    
 
       </div>
-      <section class="loginHere">
+
+      <section class="loginHere lightbox" data-id="loginHere">
         <span class="closeThis"><a title="關閉"></a></span>
         <h2 class="blockHeader">行政資訊入口網</h2>
         <form action="">
@@ -350,24 +392,30 @@
               <li><a href="x">通訊錄</a></li>
               <li><a href="x">個人管理介面</a></li>
             </ul>
-            <dl class="dutyOnOff">
-              <dt>今日上班</dt><dd>08:45</dd>
-              <dt>昨日下班</dt><dd>18:55</dd>
-            </dl>
+            <ul class="dutyOnOff">
+              <li>今日上班<time>08:45</time></li>
+              <li>昨日下班<time>18:55</time></li>
+            </ul>
           </div>
           <div class="rightDv">
             <ul class="toDoList">
               <li>
-                <span class="count">5</span>
-                <span class="label">表單代辦</span>
+                <a href="x">
+                  <span class="count">5</span>
+                  <span class="label">表單代辦</span>
+                </a>
               </li>
               <li>
-                <span class="count">4/<em>1</em></span>
-                <span class="label">公文待辦/<em>逾期</em></span>
+                <a href="x">
+                  <span class="count">4/<em>1</em></span>
+                  <span class="label">公文待辦/<em>逾期</em></span>
+                </a>
               </li>
               <li>
-                <span class="count">1</span>
-                <span class="label">帳號申請單</span>
+                <a href="x">
+                  <span class="count">1</span>
+                  <span class="label">帳號申請單</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -376,11 +424,11 @@
 
       <div class="row">
         <section class="bulletin">
-          <h2 class="blockHeader deco">本校公布欄</h2>
+          <h2 class="blockHeader deco">訊息_條列式</h2>
           <ul class="list ellipsis">
             <li><a href="x">
                 <time>2020/12/28</time>
-                <p>農曆春節將屆，請同仁避免接受與職務上有利害關係之個人、法人或團體之餽贈或出知體類爭子人課對！無座到且了方的花視，我位從全點時和費是有者的如無畫者名小可片慢你總，過小可管人媽都備心！</p>
+                <p>＊標題只顯示一行，超過顯示刪節號＊農曆春節將屆，請同仁避免接受與職務上有利害關係之個人、法人或團體之餽贈或出知體類爭子人課對！無座到且了方的花視，我位從全點時和費是有者的如無畫者名小可片慢你總，過小可管人媽都備心！</p>
               </a></li>
             <li><a href="x">
                 <time>2020/12/28</time>
@@ -404,74 +452,15 @@
       </div>
 
       <div class="row">
-        <section class="searchBlk">
-          <form>
-            <table class="formLayout">
-              <tr>
-                <td>查詢詞</td>
-                <td><input type="text" placeholder="請輸入查詢詞"></td>
-              </tr>
-              <tr>
-                <td>上稿日期區間</td>
-                <td>
-                  <div class="duration">
-                    <input type="text" value="2020-08-28" placeholder="起日">
-                    <input type="text" placeholder="迄日">
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>上稿單位</td>
-                <td>
-                  <select>
-                    <option value=""></option>
-                    <option value="">xxx xxxx</option>
-                    <option value="">Yyyy yyyy</option>
-                    <option value="">... ... ...</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-
-          </form>
-          <div class="btnDv">
-            <input type="button" value="查詢">
-          </div>
-        </section>
-      </div>
-
-      <div class="row col21">
-        <section class="notice">
-          <h2 class="blockHeader deco">資安宣導</h2>
-          <article>
-            <p>各位同仁，社交工程演練已開始，請勿點選以下信件:</p>
-            <p class="ellipsis">1.（寄件者：生活電子報）2021連假攻略一覽!8大連假最心一上一下腦媽度親了的著生子女具部該學驗青些有裡就賽課生以十部。</p>
-            <p class="ellipsis">2.（寄件者：行政院電子報）2021來了!新措施上路總整理</p>
-            <p class="ellipsis">3.（寄件者：科技新訊）十大科技趨勢報你哉</p>
-            <p class="ellipsis">4.（寄件者：商業報導）台積電500元可以進場嗎?些有裡就賽課生以十部氣響片製頭由中急新事年感消身。</p>
-            <p>若有新增郵件，將再通知同仁， 請同仁配合~~~</p>
-          </article>
-        </section>
-        <section class="announce">
-          <h2 class="blockHeader deco">本校公布欄</h2>
-          <article>
-            <h3>足跡蒐尋(Footprinting)</h3>
-            <p class="ellipsis">足跡蒐尋(Footprinting)是一種蒐集資訊的藝術(或稱為pre-hacking)，駭客會面對預先決定好的受害主機時，藉由電話或是假扮身份問些看似無關緊要的問題等各種方法來獲取資訊，然後利用足跡蒐尋到的資訊來決定出最。館府應國登時，解亮真家氣響片製頭由中急新事年感消身位，好親可有外理進，些有裡就賽課生以十部。必地葉是手中跑，張體當自，為位的庭爸也難頭我成代法，個氣臺另以，最心一上一下腦媽度親了的著生子女具部該學驗青自人問是：都錢無其其問在校，下蘭安男查性候結束結束結束。</p>
-          </article>
-          <div class="more"><a href="x">更多資料</a></div>
-        </section>
-      </div>
-
-      <div class="row">
         <section class="bulletin">
-          <h2 class="blockHeader">公布欄</h2>
+          <h2 class="blockHeader">訊息_頁籤式</h2>
           <div class="tabs equal">
             <span class="tabItem active"><a href="javascript:;">公文待辦 <span class="count">4</span></a></span>
             <div class="tabContent">
               <ul class="list ellipsis">
                 <li><a href="x">
                     <time>110/07/13</time>
-                    <p>檢送『資訊處資訊人力陞遷暨採購會議』會議記錄乙份，請査照</p>
+                    <p>＊標題只顯示一行，超過顯示刪節號＊。檢送『資訊處資訊人力陞遷暨採購會議』會議記錄乙份，請査照</p>
                   </a></li>
                 <li><a href="x">
                   <time>110/07/12</time>
@@ -535,14 +524,14 @@
 
       <div class="row">
         <section class="bulletin">
-          <h2 class="blockHeader">最新消息</h2>
+          <h2 class="blockHeader">訊息_頁籤式</h2>
           <div class="tabs equal">
             <span class="tabItem active"><a href="javascript:;">電子公布欄</a></span>
             <div class="tabContent">
               <ul class="list">
                 <li><a href="x">
                     <time>2021/07/13</time>
-                    <p>公告：本部訂於110年3月9日（星期二）下午2時至5時在本部2樓簡報室舉辦「110年度國際及兩岸專題系列演講座談會」，邀請東吳大學政治系劉必榮教授以「你必須要學會的談判技巧」進行專題演講。請各機關有興趣之同仁自由報名，並於110年3月5日前填妥附件報名表(請正楷或打字填寫各欄資料，經機關首長同意並蓋機關戳章)，由各機關彙整後，以電子郵件傳送至：lincy58@mail.moj.gov.tw。總人數以30人為限，依報名先後順序錄取。</p>
+                    <p>公告：（標題內容全部顯示）本部訂於110年3月9日（星期二）下午2時至5時在本部2樓簡報室舉辦「110年度國際及兩岸專題系列演講座談會」，邀請東吳大學政治系劉必榮教授以「你必須要學會的談判技巧」進行專題演講。請各機關有興趣之同仁自由報名，並於110年3月5日前填妥附件報名表(請正楷或打字填寫各欄資料，經機關首長同意並蓋機關戳章)，由各機關彙整後，以電子郵件傳送至：lincy58@mail.moj.gov.tw。總人數以30人為限，依報名先後順序錄取。</p>
                   </a></li>
                 <li><a href="x">
                     <time>2021/07/12</time>
@@ -612,10 +601,285 @@
           </div>
         </section>
       </div>
+      
+      <div class="row">
+        <section class="notice">
+          <h2 class="blockHeader deco">便利貼樣式</h2>
+          <article>
+            <!-- html 編輯的內容放在這裏 -->
+            <p>各位同仁，社交工程演練已開始，請勿點選以下信件:</p>
+            <p>1.（寄件者：生活電子報）2021連假攻略一覽!8大連假最心一上一下腦媽度親了的著生子女具部該學驗青些有裡就賽課生以十部。
+            <br>2.（寄件者：行政院電子報）2021來了!新措施上路總整理
+            <br>3.（寄件者：科技新訊）十大科技趨勢報你哉
+            <br>4.（寄件者：商業報導）台積電500元可以進場嗎?
+            <p>若有新增郵件，將再通知同仁， 請同仁配合~~~</p>
+          </article>
+        </section>
+      </div>
 
       <div class="row">
-        <section class="directLink1">
-          <h2 class="blockHeader">快速連結</h2>
+        <section class="announce">
+          <h2 class="blockHeader deco">文字_內容區塊</h2>
+          <article>
+            <h3>足跡蒐尋(Footprinting)</h3>
+            <p class="ellipsis">足跡蒐尋(Footprinting)是一種蒐集資訊的藝術(或稱為pre-hacking)，駭客會面對預先決定好的受害主機時，藉由電話或是假扮身份問些看似無關緊要的問題等各種方法來獲取資訊，然後利用足跡蒐尋到的資訊來決定出最。館府應國登時，解亮真家氣響片製頭由中急新事年感消身位，好親可有外理進，些有裡就賽課生以十部。必地葉是手中跑，張體當自，為位的庭爸也難頭我成代法，個氣臺另以，最心一上一下腦媽度親了的著生子女具部該學驗青自人問是：都錢無其其問在校，下蘭安男查性候結束結束結束。</p>
+          </article>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+      </div>
+
+
+      <div class="row col84">
+        <section class="notice">
+          <h2 class="blockHeader deco">便利貼樣式</h2>
+          <article>
+            <!-- html 編輯的內容放在這裏 -->
+            <p>各位同仁，社交工程演練已開始，請勿點選以下信件:</p>
+            <p>1.（寄件者：生活電子報）2021連假攻略一覽!8大連假最心一上一下腦媽度親了的著生子女具部該學驗青些有裡就賽課生以十部。
+            <br>2.（寄件者：行政院電子報）2021來了!新措施上路總整理
+            <br>3.（寄件者：科技新訊）十大科技趨勢報你哉
+            <br>4.（寄件者：商業報導）台積電500元可以進場嗎?
+            <p>若有新增郵件，將再通知同仁， 請同仁配合~~~</p>
+          </article>
+        </section>
+        <section class="announce">
+          <h2 class="blockHeader deco">文字_內容區塊</h2>
+          <article>
+            <h3>足跡蒐尋(Footprinting)</h3>
+            <p class="ellipsis">足跡蒐尋(Footprinting)是一種蒐集資訊的藝術(或稱為pre-hacking)，駭客會面對預先決定好的受害主機時，藉由電話或是假扮身份問些看似無關緊要的問題等各種方法來獲取資訊，然後利用足跡蒐尋到的資訊來決定出最。館府應國登時，解亮真家氣響片製頭由中急新事年感消身位，好親可有外理進，些有裡就賽課生以十部。必地葉是手中跑，張體當自，為位的庭爸也難頭我成代法，個氣臺另以，最心一上一下腦媽度親了的著生子女具部該學驗青自人問是：都錢無其其問在校，下蘭安男查性候結束結束結束。</p>
+          </article>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+      </div>
+
+
+      <div class="row">
+        <section class="bulletin2">
+          <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2>
+          <ul class="simuTable">
+            <li class="header">
+              <span class="th">日期</span>
+              <span class="th">主旨</span>
+            </li>
+            <li>
+              <time>2020/03/06</time>
+              <p>
+                <span class="title">本部團體保險承辦公司及聯絡方式</span>
+                農別不不死請今增，老壓便一子不過節中李了，此五看微改詩服面外生去果破年、非處名更回臺。刻比。
+              </p>
+              <span class="more"><a href="x">詳細內容</a></span>
+            </li>
+            <li>
+              <time>2021/02/25</time>
+              <p>
+                <span class="title">110年退撫基金提撥與健保費率調整</span>
+                回開城開旅水價種大媽政場數問們取金亮公格不再量來一快了就，評要家東上保界類可心和
+              </p>
+              <span class="more"><a href="x">詳細內容</a></span>
+            </li>
+            <li>
+              <time>2021/02/09</time>
+              <p>
+                <span class="title">109年司法官考試錄取人員榜單</span>
+                不開現低相同停，致文少身命學；地力說你預希，由這手司的國運英一到畫場水任求岸朋流展興因過，產兒信？手部的後空花所，不媽在兒不於兒學，少法以氣產時我民路間成
+              </p>
+              <span class="more"><a href="x">詳細內容</a></span>
+            </li>
+            <li>
+              <time>2021/02/09</time>
+              <p>
+                <span class="title">赴香港或澳門地區－請填報赴港澳(含轉機)請示單陳核★★★</span>
+                道再爸的依新合於容實影小級！工年辦致方出濟，定部問保舉間動導市漸作：不有心又現那詩所使西灣想自毛前意得兩地得何那著的選同人程們望說上，了品往重行便去是。知機突五臺亮到不香福的要牛導病一時又首也水列，故夫知成差分整。完美可會經！來通水是種空對問戲什頭士參知法再了意我。
+              </p>
+              <span class="more"><a href="x">詳細內容</a></span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+
+      <div class="row col48">
+        <section class="bulletin">
+          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <ul class="list ellipsis" >
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>＊標題只顯示一行，超過顯示刪節號＊農曆春節將屆，請同仁避免接受與職務上有利害關係之個人、法人或團體之餽贈或出知體類爭子人課對！無座到且了方的花視，我位從全點時和費是有者的如無畫者名小可片慢你總，過小可管人媽都備心！</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>消費者維護宣導，請同仁遇案消費注意防範。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/08/07</time>
+                <p>宣導監察院錄製「公職人員利益衝突迴避法」宣導影片，置於該院陽光法令主題網</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>本校「109年6月處遇措施辦理情形」有關指派學生作業彙整項目未填報科別及教師。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>館府應國登時，解亮真家氣響片製頭由中急新事年感消身位，好親可有外理進，些有裡就賽課生以十部。</p>
+              </a></li>
+          </ul>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+        <section class="bulletin">
+          <h2 class="blockHeader">訊息_頁籤式</h2>
+          <div class="tabs equal">
+            <span class="tabItem active"><a href="javascript:;">公文待辦 <span class="count">4</span></a></span>
+            <div class="tabContent">
+              <ul class="list">
+                <li><a href="x">
+                    <time>110/07/13</time>
+                    <p>＊標題只顯示一行，超過顯示刪節號＊檢送『資訊處資訊人力陞遷暨採購會議』會議記錄乙份，請査照</p>
+                  </a></li>
+                <li><a href="x">
+                  <time>110/07/12</time>
+                  <p>檢送『資訊處資訊人力陞遷暨採購會議』會議記錄乙份，請査照</p>
+                  </a></li>
+                <li><a href="x">
+                  <time>110/07/11</time>
+                  <p>檢送『法務部人事資訊規劃專案小組』第七次會議會議記錄乙份，請査照</p>
+                </a></li>
+                <li><a href="x">
+                  <time>110/07/10</time>
+                  <p>檢送『法務部110年度本部及所屬機關全球資訊網』網站功能新增及維護委外服務案，文改人以生因類演就國精益了腦形陸新而一頭學；同大試期大家去就片了否眼海在社、病財表字物思始技水出發然生使養。</p>
+                  </a></li>
+              </ul>
+            </div>
+            <span class="tabItem"><a href="javascript:;">公文逾期 <span class="count em">1</span></a></span>
+            <div class="tabContent">
+              <ul class="list ellipsis">
+                <li><a href="x">
+                    <time>110/06/13</time>
+                    <p>公文逾期公文逾期靈園利政當家提。高影半環快亞布的都學國他研機由性萬排年麼叫種洋名子告？老太重很解說人其得來的們日論。</p>
+                  </a></li>
+              </ul>
+            </div>
+            <span class="tabItem"><a href="javascript:;">公文電子公布欄</a></span>
+            <div class="tabContent">
+              <ul class="list ellipsis">
+                <li><a href="x">
+                    <time>110/06/13</time>
+                    <p>公文電子公布欄公文電子公布欄公文電子公布欄</p>
+                  </a></li>
+                <li><a href="x">
+                  <time>110/05/12</time>
+                  <p>戲到用神學，外天我據速打無個，都臺她，不聽更就引包型花故！成與房我代，花媽獎國係投自開一公道文，了不葉想小官話放。</p>
+                </a></li>
+                <li><a href="x">
+                  <time>110/04/11</time>
+                  <p>是應後力場交主色羅有活他準起才單開念；未出然中也然清</p>
+                </a></li>
+                <li><a href="x">
+                  <time>110/03/10</time>
+                  <p>備麼好來件傳運關何起力作看想結家光百一聲字流靈園利政當家提。</p>
+                </a></li>
+                <li><a href="x">
+                  <time>110/03/12</time>
+                  <p>減清旅果無拉然的片公見大注南紀體腦內服心想遠。</p>
+                  </a></li>
+                <li><a href="x">
+                  <time>110/03/11</time>
+                  <p>的上一改外白因時一樣來成去認子後養上舞你麼種要們言十路大類原建起回在，全戲文終學畫高說黃出你動力對，教難不排，統總長資我通死錢海氣叫推灣樣來他點票登</p>
+                </a></li>
+                <li><a href="x">
+                  <time>110/03/10</time>
+                  <p>他究視動影好支幾樣一光有馬顧行灣止海部，情出紀產。</p>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="row col444">
+        <section class="bulletin">
+          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <ul class="list ellipsis">
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>＊標題只顯示一行，超過顯示刪節號＊農曆春節將屆，請同仁避免接受與職務上有利害關係之個人、法人或團體之餽贈或出知體類爭子人課對！無座到且了方的花視，我位從全點時和費是有者的如無畫者名小可片慢你總，過小可管人媽都備心！</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>消費者維護宣導，請同仁遇案消費注意防範。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/08/07</time>
+                <p>宣導監察院錄製「公職人員利益衝突迴避法」宣導影片，置於該院陽光法令主題網</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>本校「109年6月處遇措施辦理情形」有關指派學生作業彙整項目未填報科別及教師。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>館府應國登時，解亮真家氣響片製頭由中急新事年感消身位，好親可有外理進，些有裡就賽課生以十部。</p>
+              </a></li>
+          </ul>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+        <section class="bulletin">
+          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <ul class="list ellipsis">
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>＊標題只顯示一行，超過顯示刪節號＊農曆春節將屆，請同仁避免接受與職務上有利害關係之個人、法人或團體之餽贈或出知體類爭子人課對！無座到且了方的花視，我位從全點時和費是有者的如無畫者名小可片慢你總，過小可管人媽都備心！</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>消費者維護宣導，請同仁遇案消費注意防範。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/08/07</time>
+                <p>宣導監察院錄製「公職人員利益衝突迴避法」宣導影片，置於該院陽光法令主題網</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>本校「109年6月處遇措施辦理情形」有關指派學生作業彙整項目未填報科別及教師。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>館府應國登時，解亮真家氣響片製頭由中急新事年感消身位，好親可有外理進，些有裡就賽課生以十部。</p>
+              </a></li>
+          </ul>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+        <section class="bulletin">
+          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <ul class="list ellipsis">
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>＊標題只顯示一行，超過顯示刪節號＊農曆春節將屆，請同仁避免接受與職務上有利害關係之個人、法人或團體之餽贈或出知體類爭子人課對！無座到且了方的花視，我位從全點時和費是有者的如無畫者名小可片慢你總，過小可管人媽都備心！</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/12/28</time>
+                <p>消費者維護宣導，請同仁遇案消費注意防範。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/08/07</time>
+                <p>宣導監察院錄製「公職人員利益衝突迴避法」宣導影片，置於該院陽光法令主題網</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>本校「109年6月處遇措施辦理情形」有關指派學生作業彙整項目未填報科別及教師。</p>
+              </a></li>
+            <li><a href="x">
+                <time>2020/07/31</time>
+                <p>館府應國登時，解亮真家氣響片製頭由中急新事年感消身位，好親可有外理進，些有裡就賽課生以十部。</p>
+              </a></li>
+          </ul>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+      </div>
+
+
+      <div class="row">
+        <section class="textLink1">
+          <h2 class="blockHeader">文字_Nx4區塊連結</h2>
           <ul>
             <li><a href="x">司處業務</a></li>
             <li><a href="x">單一窗口連線作業</a></li>
@@ -628,8 +892,8 @@
       </div>
 
       <div class="row">
-        <section class="directLink2">
-          <h2 class="blockHeader">資訊系統</h2>
+        <section class="iconSqaure">
+          <h2 class="blockHeader">icon區塊_Nx4方形</h2>
           <ul>
             <li><a href="x"> 
               <span class="icon"><img src="publicData/icon_sp01.png"></span>
@@ -664,7 +928,7 @@
       </div>
 
       <div class="row">
-        <section class="disks">
+        <section class="iconDisk">
           <h2 class="blockHeader">icon區塊 Nx6 圓形</h2>
           <ul>
             <li><a href="x">
@@ -713,10 +977,15 @@
       </div>
 
       <div class="row">
-        <section class="imgBanners">
-          <ul>
-            <li><a href="x"><img src="publicData/item01.png"></a></li>
-            <li><a href="x"><img src="publicData/item02.png"></a></li>
+        <section class="bigBannerSlick"></section>
+      </div>
+
+      <div class="row">
+        <section class="imgLink">
+          <h2 class="blockHeader">圖片_Nx4連結</h2>
+          <ul class="imgList">
+            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
+            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
             <li><a href="x"><img src="publicData/item03.jpg"></a></li>
             <li><a href="x"><img src="publicData/item04.png"></a></li>
             <li><a href="x"><img src="publicData/item05.jpg"></a></li>
@@ -726,10 +995,228 @@
           </ul>
         </section>
       </div>
+      <div class="row col66">
+        <section class="imgLink">
+          <h2 class="blockHeader">圖片_Nx4連結</h2>
+          <ul class="imgList">
+            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
+            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item04.png"></a></li>
+            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item07.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+          </ul>
+        </section>
+        <section class="imgLink">
+          <h2 class="blockHeader">圖片_Nx4連結</h2>
+          <ul class="imgList">
+            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
+            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item04.png"></a></li>
+            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item07.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+          </ul>
+        </section>       
+      </div>
 
-      <div class="row col334">
-        <section class="directLink3">
-          <h2 class="blockHeader deco">資訊系統區</h2>
+      <div class="row col66">
+        <section class="textLink1">
+          <h2 class="blockHeader">文字_Nx4區塊連結</h2>
+          <ul>
+            <li><a href="x">司處業務</a></li>
+            <li><a href="x">單一窗口連線作業</a></li>
+            <li><a href="x">業務系統查詢</a></li>
+            <li><a href="x">法規資料庫查詢</a></li>
+            <li><a href="x">主管法規維護系統</a></li>
+            <li><a href="x">上電包基裡務說同食假事今至拿製灣技分生收全母轉出變部</a></li>
+          </ul>
+        </section>
+        <section class="iconDisk">
+          <h2 class="blockHeader">icon區塊 Nx6 圓形</h2>
+          <ul>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>服務名稱</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <p>我們選種兩的業送獲</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>員制洋強</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>運界氣親取靈本</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>有至社止人</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>濟願對時問神</p>
+            </a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="row col48">
+        <section class="iconSqaure">
+          <h2 class="blockHeader">icon區塊_Nx4方形</h2>
+          <ul>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>行政資訊入口網</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <p>公文線上簽核系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp03.png"></span>
+              <p>新表單簽核流程系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp04.png"></span>
+              <p>線上簽核電子服務台</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp05.png"></span>
+              <p>經費結報系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp06.png"></span>
+              <p>法務語音辨識系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>步能集李的體件品北一老解一沒</p>
+            </a></li>
+          </ul>
+        </section>
+        <section class="iconSqaure">
+          <h2 class="blockHeader">icon區塊_Nx4方形</h2>
+          <ul>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>行政資訊入口網</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <p>公文線上簽核系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp03.png"></span>
+              <p>新表單簽核流程系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp04.png"></span>
+              <p>線上簽核電子服務台</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp05.png"></span>
+              <p>經費結報系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp06.png"></span>
+              <p>法務語音辨識系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>步能集李的體件品北一老解一沒</p>
+            </a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="row col444">
+        <section class="textLink1">
+          <h2 class="blockHeader">文字_Nx4區塊連結</h2>
+          <ul>
+            <li><a href="x">司處業務</a></li>
+            <li><a href="x">單一窗口連線作業</a></li>
+            <li><a href="x">業務系統查詢</a></li>
+            <li><a href="x">法規資料庫查詢</a></li>
+            <li><a href="x">主管法規維護系統</a></li>
+            <li><a href="x">上電包基裡務說同食假事今至拿製灣技分生收全母轉出變部</a></li>
+          </ul>
+        </section>
+        <section class="iconDisk">
+          <h2 class="blockHeader">icon區塊 Nx6 圓形</h2>
+          <ul>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>服務名稱</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <p>我們選種兩的業送獲</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>員制洋強</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>運界氣親取靈本</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>有至社止人</p>
+            </a></li>
+            <li><a href="x">
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>濟願對時問神</p>
+            </a></li>
+          </ul>
+        </section>
+        <section class="iconSqaure">
+          <h2 class="blockHeader">icon區塊_Nx4方形</h2>
+          <ul>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>行政資訊入口網</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <p>公文線上簽核系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp03.png"></span>
+              <p>新表單簽核流程系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp04.png"></span>
+              <p>線上簽核電子服務台</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp05.png"></span>
+              <p>經費結報系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp06.png"></span>
+              <p>法務語音辨識系統</p>
+            </a></li>
+            <li><a href="x"> 
+              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <p>步能集李的體件品北一老解一沒</p>
+            </a></li>
+          </ul>
+        </section>
+
+      </div>
+
+
+      <div class="row col444">
+        <section class="textLink2">
+          <h2 class="blockHeader deco">文字_條列式連結</h2>
           <ul>
             <li><a href="x">公文線上簽核系統</a></li>
             <li><a href="x">表單簽核流程系統</a></li>
@@ -739,23 +1226,82 @@
           </ul>
         </section>
 
-        <section class="bannerSlide">
-          <h2 class="blockHeader">圖片連結</h2>
-          <ul>
-            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item04.png"></a></li>
-            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-            <!-- <li><a href="x"><img src="publicData/item07.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item08.jpg"></a></li> -->
-          </ul>
+        <section class="adBannerSlideV">
+          <h2 class="blockHeader"><del>文字</del>圖片_垂直輪播連結</h2>
+          <div class="slick">
+            <div class="banner"><a href="x"><img src="publicData/ph10.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/ph09.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/ph08.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item03.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item04.png"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item05.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item06.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item07.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item08.jpg"></a></div>
+          </div>
         </section>
 
         <section class="calendar">
           <h2 class="blockHeader">月曆</h2>
         </section>
       </div>
+<!-- 
+      <div class="row">
+        <section class="adBannerSlide">
+          <span class="arrow left"></span>
+          <div class="slideArea">
+            <ul class="bannerList">
+              <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
+              <li><a href="x"><img src="publicData/ph09.jpg"></a></li>
+              <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item03.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item04.png"></a></li>
+              <li><a href="x"><img src="publicData/item05.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item06.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item07.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+            </ul>
+          </div>
+          <span class="arrow right"></span>
+        </section>
+      </div>
+ -->
 
+
+      <div class="row">
+        <section class="adBannerSlick">
+          <div class="slick">
+            <div class="banner"><a href="x"><img src="publicData/ph10.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/ph09.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/ph08.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item03.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item04.png"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item05.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item06.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item07.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="publicData/item08.jpg"></a></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="row">
+        <section class="adBanners">
+          <div class="bannerBox">
+            <ul class="bannerList">
+              <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
+              <li><a href="x"><img src="publicData/ph09.jpg"></a></li>
+              <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item03.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item04.png"></a></li>
+              <li><a href="x"><img src="publicData/item05.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item06.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item07.jpg"></a></li>
+              <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+            </ul>
+          </div>
+          <div class="more"><a href="x">更多連結<span class="arrow right"></span></a></div>
+        </section>
+      </div>
 
       <div class="function">
         <ul>

@@ -1,20 +1,20 @@
 // 登入區 ----------------------
 .loginHere{
-  display: none;
-  position: fixed; top: 80px;  z-index: 990; 
-  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*2); min-width: 710px;
-  padding:20px 40px; margin-left: $pdOuter*-.5;
+  // display: none; position: fixed; 
+  top: 80px;
+  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3);
+  min-width: 710px; padding:20px 40px;
   overflow: hidden; font-size: 1.2rem;
   background: #fff; box-shadow: rgba(0,0,0,.4) 0 0 36px;
   transform: translateY(0);
-  transition:transform .3s; 
+  transition:transform .6s; 
   &.show{
     transform: translateY(30px);
   }
   
   .blockHeader{text-align: left;}
 
-  .closeThis{ position: absolute; right: 5px;top: 5px; z-index: 9;
+  .closeThis{ 
     a{background: $gray;
       &:hover{background-color: $grayDark;}
     }

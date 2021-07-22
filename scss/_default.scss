@@ -33,3 +33,52 @@ body{
     &:hover{ text-decoration: none; }
   }
 }
+
+
+// 排版用橫列 ----------------------------------------------
+.row{
+  &[class*="col"]{
+    display: flex; justify-content: space-between;
+    &>section{flex-grow: 0; flex-shrink: 0;}
+  }
+
+  &.col66{
+    &>section{
+      flex:0 0 calc(50% - 12px); width: calc(50% - 12px);
+      &:first-child{ margin-right: 12px;}
+      &:last-child { margin-left: 12px;}
+    }
+  }
+
+  &.col84{
+    &>section{
+      &:first-child{
+        flex-basis: calc(66% - 8px); margin-right: 12px;
+      }
+      &:last-child{
+        flex-basis: calc(34% - 16px); margin-left: 12px;
+      }
+    }
+  }
+
+  &.col48{
+    &>section{
+      &:first-child{
+        flex-basis: calc(33% - 16px); margin-right: 12px;
+      }
+      &:last-child{
+        flex-basis: calc(67% - 8px); margin-left: 12px;
+      }
+    }
+  }
+
+  &.col444{
+    &>section{
+      &:nth-child(1), &:nth-child(2) {
+        flex-basis: calc(33% - 16px); margin-right: 24px;
+      }
+      &:nth-child(3){flex-basis: calc(34% - 16px);
+      }
+    }
+  }
+}

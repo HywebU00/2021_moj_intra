@@ -27,27 +27,111 @@ $(function(){
     )
   })
 
+
+    // ----------------------------------- 外掛套件 slick 參數設定
+    // 水平輪播小 banner
+    $('.adBannerSlick').find('.slick').slick({ 
+      arrows: true,                       //左右箭頭
+      autoplay: true,                    //自動播放
+      autoplaySpeed: 4000,                //自動播放秒數
+      dots: false,                        //顯示圓點
+      draggable: true,                    //滑鼠可以拖曳
+      infinite: true,                     //無限輪播
+      pauseOnHover: true,                 //滑鼠移過後暫停自動撥放
+      rtl: false,                         //改變輪播方向
+      slidesToShow: 3,                    //一次顯示幾張
+      slidesToScroll: 1,                  //一次輪播幾張
+      vertical: false,                   //改成垂直方向
+      mobileFirst:true,
+      responsive: [
+        {
+          breakpoint: 1174,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 1360,
+          settings: {
+            slidesToShow: 5
+          }
+        },
+        {
+          breakpoint: 1546,
+          settings: {
+            slidesToShow: 6
+          }
+        }
+      ]
+    });
+  
+    // 垂直輪播小 banner
+    $('.adBannerSlideV').find('.slick').slick({
+      arrows: true,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      dots: false,
+      draggable: false,
+      infinite: true,
+      pauseOnHover: true,
+      rtl: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      vertical: true,
+      mobileFirst:false,
+      responsive: []
+    });
+
   // 所屬單位清單 顯示／隱藏
-  var _allCourts = $('.allCourts');
-  var _courtsList = $('.courtsList');
-  var _closeCourtsList = _courtsList.find('.closeThis');
-  _allCourts.click(function(){
-    _courtsList.stop(true, false).slideDown(400);
-  })
-  _closeCourtsList.click(function(){
-    _courtsList.stop(true, false).slideUp(250);
-  })
+  // var _allCourts = $('.allCourts');
+  // var _courtsList = $('.courtsList');
+  // var _closeCourtsList = _courtsList.find('.closeThis');
+  // _allCourts.click(function(){
+  //   _courtsList.stop(true, false).slideDown(400);
+  // })
+  // _closeCourtsList.click(function(){
+  //   _courtsList.stop(true, false).slideUp(250);
+  // })
 
   // 登入區 顯示／隱藏
-  var _loginBtn = $('.loginBtn');
-  var _loginHere = $('.loginHere');
-  var _closeLogin = _loginHere.find('.closeThis');
-  _loginBtn.click(function(){
-    _loginHere.stop(true, false).slideDown(400).addClass('show');
+  // var _loginBtn = $('.loginBtn');
+  // var _loginHere = $('.loginHere');
+  // var _closeLogin = _loginHere.find('.closeThis');
+  // _loginBtn.click(function(){
+  //   _loginHere.stop(true, false).slideDown(400).addClass('show');
+  // })
+  // _closeLogin.click(function(){
+  //   _loginHere.stop(true, false).slideUp(250).removeClass('show');
+  // })
+
+
+
+  // 燈箱 --- 【所屬單位清單】 顯示／隱藏 ，【登入區】顯示／隱藏 ，【進階查詢】 顯示／隱藏 ，
+  var _showLightbox =  $('.showLightbox');
+  var _lightbox = $('.lightbox');
+  var _hideLightbox = _lightbox.find('.closeThis');
+  var _lightboxNow;
+  var _cover;
+  const speed = 400;
+
+  _lightbox.before('<div class="cover"></div>');
+  
+  _showLightbox.click(function(){
+    let boxID = $(this).attr('data-id');
+    _lightboxNow = _lightbox.filter( function(){ return $(this).attr('data-id') === boxID} );
+    _cover = _lightboxNow.prev('.cover');
+    _lightboxNow.stop(true, false).slideDown(speed).addClass('show');
+    _cover.fadeIn(speed);
   })
-  _closeLogin.click(function(){
-    _loginHere.stop(true, false).slideUp(250).removeClass('show');
+
+  _hideLightbox.click(function(){
+    _lightboxNow.stop(true, false).slideUp(speed).removeClass('show');
+    _cover.fadeOut(speed);
   })
+
+
+
+
 
   //go top and bottom------------------------------------------
 	var _goTop = $('.goTop');
@@ -115,7 +199,7 @@ $(function(){
   // 字體大小
   var _fontSize = $('.fontSize');
   var _sizeSelect = _fontSize.find('li');
-  var _fsArea = $('.contBox');
+  var _fsArea = $('.contBox').add('.row>section[class]');
   _sizeSelect.click(function(){
     $(this).addClass('active').siblings().removeClass('active');
     if ($(this).hasClass('large')) {
@@ -128,10 +212,5 @@ $(function(){
       _fsArea.css('font-size', '1rem')
     }
   })
-
-
-
-
-  
 
 })

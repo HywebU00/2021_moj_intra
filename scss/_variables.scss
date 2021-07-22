@@ -8,6 +8,8 @@ $sideBarWidth : 240px; //左側欄寬
 $pdInner:40px; //主要內容區左右邊界
 $pdOuter:30px; //主要內容區左右邊界
 
+//右欄寬 ＝ 100vw - 左欄寬 - 左右 margin
+$rightBlkWidth : calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
 
 %btnGradBg{
   background-color: #9ba1a2; color: #fff;
@@ -22,6 +24,6 @@ $pdOuter:30px; //主要內容區左右邊界
   margin: 20px 0; padding: 30px $pdInner; 
   background: #fff;font-size: 1.13rem;
 }
-.row.col21>section{
+.row[class*="col"]>section{
   margin-top: 10px; margin-bottom: 10px;
 }

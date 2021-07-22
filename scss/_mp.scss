@@ -13,34 +13,6 @@ $decoH : 8px;
   }
 }
 
-// 排版用橫列 ----------------------------------------------
-.row{
-  &.col21{
-    display: flex; justify-content: space-between;
-    &>section{
-      flex-grow: 0; flex-shrink: 1;
-      &:first-child{
-        flex-basis: calc(66% - 25px); margin-right: 25px;
-      }
-      &:last-child{
-        flex-basis: 34%;
-      }
-    }
-  }
-
-  &.col334{
-    display: flex; justify-content: space-between;
-    &>section{
-      flex:0 1 auto; margin: 10px 21px 10px 0;
-      &:nth-child(1), &:nth-child(2) {
-        flex-basis: calc(30% - 14px);
-      }
-      &:nth-child(3){margin-right: 0;flex-basis: calc(40% - 14px);
-      }
-
-    }
-  }
-}
 
 // 首頁最上方， 快速連結 和 登入／登出----------------------------------------------
 .mpTopMost{
@@ -104,26 +76,28 @@ $decoH : 8px;
 
 
 // 區塊共用屬性
-.myInfo, .bulletin, .directLink1, .directLink2, .disks, .imgBanners,
-.announce, .notice, .calendar, .directLink3, .bannerSlide {
+.myInfo, .bulletin, .bulletin2, .textLink1, .textLink2, .iconSqaure, .iconDisk, .imgLink,
+.announce, .notice, .calendar, .adBannerSlideV, .adBannerSlide, .adBanners {
   @extend %mpBlock;
 }
 
 // 個人訊息 ----------------------------------------------
 .myInfo{
-  @extend %mpBlock;
+  width: auto;
   display: flex; flex-flow:row wrap; justify-content: space-between;
   .blockHeader{
     flex:0 0 100%;
   }
   .leftDv{
-    flex: 0 0 auto; margin: 10px 3% 0 0; 
-    position: relative; padding-left: 106px ;
+    position: relative; 
+    flex: 0 1 48%; margin: 10px 2% 0 0; 
+    padding-left: 106px ;
+    min-width: 25em;
   }
   .rightDv{
     margin: 10px 0 0;
     // outline: 1px dashed pink;
-    flex: 1 1 47%; 
+    flex: 0 1 48%;
     max-width: 33em;
   }
 
@@ -150,23 +124,31 @@ $decoH : 8px;
   }
 
   .dutyOnOff{
-    clear: both; margin:1.3em 0 0;
-    // outline: 1px dashed pink; 
-    overflow: hidden;
-    dt, dd{float: left; margin: 0; padding: 0;}
-    dt{line-height: 1.9;}
-    dd{margin-left: .3em; font-size: 1.6em; color: $primaryColor; line-height: 1.1;}
-    dd + dt{ margin-left: 1.5em;}
+     margin:.8em 0 0; padding: 0;
+    overflow: hidden; list-style: none; white-space: nowrap;
+    li{display: inline-block; margin: 8px 1.2em 0 0; padding: 0;line-height: 1.9;
+      // background: #eee;
+      &:last-child{margin-right: 0;}
+    }
+    time{margin-left: .3em; font-size: 1.6em; color: $primaryColor; display: inline-block; vertical-align: bottom; line-height: 1.3;}
   }
 
   .toDoList{
     list-style: none; margin: 0; padding: 0;
-    display: flex;
+    display: flex; min-width: 25em;
+
     li{
       flex:0 0 calc(33.33% - 4px);
-      margin: 0 6px 0 0; padding: 12px 8px 15px;
+      margin: 0 6px 0 0;
       &:last-child{margin-right: 0;}
       background-color: $primaryColor; color: #fff; text-align: center;
+      a{
+        display: block; padding: 12px 8px 15px;
+        color: #fff; text-decoration: none; transition: .2s;
+        &:hover{
+          background-color: darken($primaryColor, 10) 
+        }
+      }
       .count, .label{display: block; }
       .count{
         margin: 0 auto;
@@ -178,55 +160,18 @@ $decoH : 8px;
   }
 }
 
-// 首頁查詢區 ----------------------------------------------
-.searchBlk{
-  @extend %mpBlock;
-  background: $primaryColor; color: #fff;
-  .formLayout{
-    // outline: 1px solid red; 
-    width: 100%; 
-    min-width: 400px;
-    input[type="text"], input[type="date"], input[type="number"],
-    select{border-color: #fff;
-      &:focus{border-color: #fff; box-shadow: $secondaryColor 0 0 0 3px;}
-    }
 
-    td{
-      &:nth-child(odd){text-align: left; width: 7em; white-space: nowrap;}
-      &:nth-child(even) {padding-bottom: 16px;}
-
-      &>input[type="text"]:only-child,
-      &>input[type="date"]:only-child,
-      &>input[type="number"]:only-child{width:98%;}
-      &>select:only-child{ width: calc(98% - 2em);}
-
-      .duration{width: calc(98% + 6px);}
-
-    }
-  }
-
-  .btnDv{
-    padding:15px 0 5px;
-    input[type="button"]{width: 6em; background: #fff; color: $font-color-dark; border: none;}
-  }
-
-  @media screen and (min-width: $wwWide){
-    margin-left: 8%; margin-right: 8%;
-  }
-
-
-}
-
-// 公布欄 ----------------------------------------------
+// 訊息_條列式(標題只顯示一行，超過顯示刪節號) ----------------------------------------------
 .bulletin {
-  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
+  // width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
+  width: $rightBlkWidth;
   .list{
     list-style: none; line-height: 1.5; margin:25px 0 0; padding: 0;
     li{ 
       margin: 5px 0; padding: 0;
       position: relative;
       a{
-        display: block; text-decoration: none; padding: 10px; overflow: hidden;
+        display: block; text-decoration: none; padding: 10px 5px; overflow: hidden;
         color: $font-color; border-bottom: 1px solid transparent; border-radius: 4px;
         transition: .2s;
         &:hover{ color: $font-color-dark; text-decoration: underline;
@@ -237,11 +182,12 @@ $decoH : 8px;
       p{
         margin: 0 0 0 7em; padding: 0;
       }
-      
     }
     
     &.ellipsis{
-      li {
+      // width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 - #{$pdInner}*2);
+      width: calc( $rightBlkWidth - #{$pdInner}*2);
+      li{
         p{
           text-overflow: ellipsis; white-space: nowrap; overflow: hidden; height: 1.4em;
         }
@@ -250,46 +196,126 @@ $decoH : 8px;
     &+.more{margin-top: 2em;}
   }
 }
+.col66>.bulletin{
+  .list.ellipsis{
+    // width:  calc(50vw - #{$sideBarWidth}/2 - #{$pdOuter}*1.5 - 12px - #{$pdInner}*2 );
+    width:calc(#{$rightBlkWidth}*.5 - 12px - #{$pdInner}*2) ;
+  }
+}
+.col84>.bulletin{
+  width: auto;
+  &:first-child{
+    .list.ellipsis{ 
+      width:calc(#{$rightBlkWidth}*.66 - 12px - #{$pdInner}*2);
+    }
+  }
+  &:last-child{
+    .list.ellipsis{ width:calc(#{$rightBlkWidth}*.34 - 12px - #{$pdInner}*2);}
+  }
+}
+.col48>.bulletin{
+  width: auto;
+  &:first-child{
+    .list.ellipsis{ width:calc(#{$rightBlkWidth}*.33 - 16px - #{$pdInner}*2);}
+  }
+  &:last-child{
+    width:calc(#{$rightBlkWidth}*.67 - 8px - #{$pdInner}*2);
+  }
+}
+.col444>.bulletin{
+  width: auto;
+  &:nth-child(1), &:nth-child(2){
+    .list.ellipsis{  width:calc(#{$rightBlkWidth}*.33 - 16px - #{$pdInner}*2);}
+  }
+  &:nth-child(3){
+    .list.ellipsis{  width:calc(#{$rightBlkWidth}*.34 - 16px - #{$pdInner}*2);}
+  }
+}
+
+// 訊息_條列訊息(標題+內文) ----------------------------------------------
+
+.bulletin2{
+  .simuTable {margin: 0;padding: 0; list-style: none; line-height: 1.8;
+    li{
+      margin:5px 0; padding: .8em 1em .7em; border-radius: 4px;
+      display: flex; flex-flow: row nowrap;
+      box-shadow: lighten($border-color, 10) 0 1px 1px 1px;
+      border-top: 1px solid $border-color-light;
+
+      time{ flex: 0 0 calc(6em + 2%);}
+      p{
+        margin: 0 1em 0 0; flex: 1 1 auto;
+        .title{ display: block; color: $font-color-dark;}
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+
+      .more{ flex: 0 0 7em; width: auto; margin: 0;
+        a{height: 2.1em; line-height: 2.2em;}
+      }
+
+      &:first-child{
+        padding: .5em 1em .4em; margin-bottom: 6px;
+        background-color: $primaryColor; color: #fff;
+        box-shadow: darken($primaryColor, 12) 0 1px 0 1px;
+        .th{ 
+          &:first-child{flex: 0 0 calc(6em + 2%)}
+        }
+      }
+  
+    }
+  }
+
+}
+
+
+
+
 
 // 資安宣導（不同底色） ----------------------------------------------
 .notice{
-  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
+  // width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
   background-color: #FDF7D6;
   box-shadow: rgba(0,0,0,.1) 5px 2px 0;
   article{
-    line-height: 2.4;
+    padding: 15px 0; line-height: 1.8;
     p{
-      margin: 0;padding: 0;line-height: inherit;
-      border-bottom: 1px solid rgba($color: $primaryColor, $alpha: .25);
-      &.ellipsis {
-        white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
-      }
+      margin:0;padding: 0;line-height: inherit;
+      &+p{margin-top: 1em;}
+      // border-bottom: 1px solid rgba($color: $primaryColor, $alpha: .25);
+      // &.ellipsis {
+      //   white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+      // }
     }
   }
 }
-.row.col21>.notice{
-  width: 500px;
-}
+// .row.col84>.notice{
+//   width: 500px;
+// }
 
 // 本校公布欄 （一則顯示不完整內容的訊息） ----------------------------------------------
 .announce{
   article{
-    line-height: 1.8;
+    line-height: 1.8; padding: 15px 0;
     h3{
-      font-size: 1em; color: $font-color-dark;
+      font-size: 1.15em; color: $font-color-dark; margin: 0 0 .6em; padding: 0; line-height: 1.3;
     }
     p{
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 5;
       overflow: hidden;
+      margin:0;
+      &+p{margin-top: 1em;}
     }
 
   }
 }
 
 // 快速連結 ----------------------------------------------
-.directLink1{
+.textLink1{
   ul{ list-style: none; margin: 0 auto; padding: 0;
     display: flex; flex-flow: row wrap; font-size: 1.1em;
   }
@@ -309,13 +335,46 @@ $decoH : 8px;
     &:nth-child(5n+3)>a{ @extend %gradient-3;}
     &:nth-child(5n+4)>a{ @extend %gradient-4;}
     &:nth-child(5n)  >a{ @extend %gradient-5;}
-
   }
+}
+.col66>.textLink1{
+  li{
+    flex: 0 0 calc(50% - 6px); width: calc(50% - 6px);
+    &:nth-child(2n){ margin-right: 0;}
+  }
+}
+.col444>.textLink1{
+  width: calc(33.33vw - #{$sideBarWidth}/3 - #{$pdOuter} - 20px);
+  li{
+   flex-basis: 100%; width: 100%;
+    &:nth-child(n){margin-left: auto;margin-right: auto;}
+    &>a{
+      // width: calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3)/3 - #{$pdInner}*2);
+      // width: 200px;
+      width: 100%;
+    }
+  }
+}
 
+
+// 文字連結
+.textLink2{
+  width: 200px;
+  ul{list-style: none; margin: 1em auto 0;padding: 0; text-align: center;}
+  li{ margin: 3px 0;
+    a{ display: block; height: 2.4em; line-height: 2.5; padding: 0 1em;
+      text-decoration: underline; color: $font-color;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      border-radius: 4px;
+      &:hover{
+        color: $linkColor; text-decoration: none; background-color: $bg-color-pale;
+      }
+    }
+  }
 }
 
 // 圖示＋文字連結（icon區塊_Nx4方形）
-.directLink2{
+.iconSqaure{
   ul{
     list-style: none; margin: 0 auto; padding: 0;
     display: flex; flex-flow: row wrap; 
@@ -343,7 +402,6 @@ $decoH : 8px;
         flex: 0 1  auto; 
         margin:0 ; padding:.1em .5em 0 0; line-height: 1.25;
       }
-      
     }
     &:nth-child(5n+1)>a>.icon{ @extend %gradient-1;}
     &:nth-child(5n+2)>a>.icon{ @extend %gradient-2;}
@@ -351,11 +409,24 @@ $decoH : 8px;
     &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
     &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
   }
+}
+.col66>.iconSqaure, .col84>.iconSqaure:first-child, .col48>.iconSqaure:last-child {
+  li{
+    flex: 0 0 calc(50% - 6px); width: calc(50% - 6px);
+    &:nth-child(2n){ margin-right: 0;}
+  }
+}
+.col444>.iconSqaure, .col48>.iconSqaure:first-child, .col84>.iconSqaure:last-child {
+  li{
+    flex-basis: 100%;width: 100%; margin-left: auto; margin-right: auto;
+    &:nth-child(n){ margin-right: 0; margin-left: 0; }
+  }
 
 }
 
+
 // 圓形圖示陣列（icon區塊_Nx6圓形）
-.disks{
+.iconDisk{
   ul{
     list-style: none; margin: 0;padding: 0;
     display: flex; flex-flow: row wrap;
@@ -384,57 +455,239 @@ $decoH : 8px;
   }
 
 }
-
+.col66>.iconDisk{
+  li{
+    flex:0 0 32.6%; margin:5px 1.1% 15px 0;
+    &:nth-child(3n){ margin-right: 0;}
+  }
+}
+.col444>.iconDisk{
+  ul{ justify-content: space-between; margin-left: -20px; margin-right: -20px;}
+  li{
+    flex-basis: 48%; 
+    &:nth-child(n){ margin-left: 0; margin-right: 0;}
+  }
+}
 
 // 小廣告圖（圖片_Nx4連結）
-.imgBanners{
-  ul{
-    list-style: none; margin: 0;padding: 0;
-    display: flex; flex-flow: row wrap;
-  }
-  li{
-    flex: 0 0 auto;
-    margin: 3px; padding: 0;
-    &>a{display: block;
-      img{display: block; width: 200px; height: 52px;}
-      transition: .2s;
-      &:hover{ transform: translateY(-2px); box-shadow: rgba(0,0,0,.2) 0 2px 8px;}
-
-    }
-
-  }
-}
-
-// 文字連結
-.directLink3{
-  width: 200px;
-  ul{list-style: none; margin: 1em auto 0;padding: 0; text-align: center;}
-  li{ margin: 3px 0;
-    a{ display: block; height: 2.4em; line-height: 2.5; padding: 0 1em;
-      text-decoration: underline; color: $font-color;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      border-radius: 4px;
-      &:hover{
-        color: $linkColor; text-decoration: none; background-color: $bg-color-pale;
+.imgLink{
+  .imgList{
+    list-style: none; margin: 0 auto;padding: 0;
+    display: flex; flex-flow: row wrap; 
+    justify-content:center;
+    max-width: 888px;
+    outline: 1px dotted red;
+    li{
+      margin:4px 3px 16px; padding: 0;
+      flex: 0 0 calc(25% - 6px);
+      max-width: 214px;
+      &>a{
+        width: 200px; height: 64px;
+        display: block; margin: 0 auto; 
+        transition: .2s;
+        &:hover{ transform: translateY(-2px); box-shadow:$border-color-dark 0 0 0 1px, rgba(0,0,0,.3) 0 2px 8px;}
+        img{display: block; width: 100%; height: 100%; margin: 0;}
+  
       }
     }
   }
 }
+.col66>.imgLink, .col48>.imgLink , .col84>.imgLink{
+  padding-left: 20px; padding-right: 20px;
+  .imgList{
+    max-width: 416px;
+    li{
+      flex: 0 0 200px;
+      margin: 4px;
+    }
+  }
+
+}
+
+// ---------------------------------------------------------------------------------------------------
+// 小圖 banner 
+// 小圖 banner 尺寸設定
+%banner{
+  a{display: block; width: 180px; height: 60px; margin: 0 auto;}
+  img{display: block; width: 100%; height: 100%;}
+}
+// 不輪播的小 banner, 以 ul, li 排版
+%bannerList{
+  list-style: none; margin: 0; padding: 0;
+  li{
+    margin: 0; padding: 0;width: 180px;
+    &:hover{ transform: translateY(-2px);}
+    @extend %banner;
+  }
+}
+
+
 
 // 垂直滑動的小廣告圖
-.bannerSlide{
-  ul{list-style: none; margin: 0;padding: 0;}
-  li{ margin: 8px 0; position: relative;
-    a{display: block;width: 200px;margin: 0 auto;
-      img{
-        display: block; width: 100%;height: 52px; 
+.adBannerSlideV{
+  position: relative;
+  .slick{position: relative; padding: 50px 0; outline: 1px dashed blue;}
+  .banner{
+    @extend %banner;
+    width: 100% !important; 
+    // outline: 1px dashed red;
+    margin:3px auto; padding: 0; transition: .2s;
+
+    a{transition: .2s;
+      &:hover{
+        box-shadow: $border-color 0 1px 5px, $border-color-dark 0 0 0 1px;
+        transform: translateY(-2px);
       }
-      transition: .2s;
-      &:hover{ transform: translateY(-1px);  box-shadow:#fff 0 0 0 1px, rgba(0,0,0,.4) 0 2px 12px;}
     }
-    &:hover{z-index: 99;}
+  }
+  button.slick-arrow{
+    position: absolute; left: 50%; margin-left: -22px; font-size: 0; 
+    border: none; background: none; box-shadow: none;
+    @extend .arrow;
+
+    &.slick-prev{ @extend .arrow.up; top: 4px;
+      &:hover{ top: 0;}
+    }
+    &.slick-next { @extend .arrow.down; bottom: 4px;
+      &:hover{ bottom: 0;}
+    }
+  }
+
+
+
+
+  // 
+  .arrow{position: absolute; left: 50%; margin-left: -22px;;
+    &.up{ top: 5px;}
+    &.down{ bottom: 5px;}
+    &:hover{
+      &.up{ top: 0;}
+      &.down{ bottom: 0;}
+    }
+  }
+  // 
+
+
+
+}
+
+// 水平滑動的小廣告圖
+.adBannerSlide{
+  position: relative;
+  background-color: transparent;
+  .slideArea{
+    position: relative;height: 78px;
+    overflow: hidden; margin-left: 10px; margin-right: 10px;
+  }
+  .arrow{
+    position: absolute; top: 50%; margin-top: -28px;
+    &.left { left: 3px;
+      &:hover{left: 0;}
+    }
+    &.right{ right: 3px;
+      &:hover{ right: 0;}
+    }
+ }
+
+ ul.bannerList{
+   @extend %bannerList;
+   display: flex; position: absolute;left: 0; top: 0;
+   li{
+     flex:0 0 auto; margin: 3px;transition: .2s;
+    }
+ }
+ 
+}
+
+
+
+
+// ********************************************************
+// ********************************************************
+// ********************************************************
+// 使用 slick 套件 
+.adBannerSlick{
+  margin: 30px 0;
+  // outline: 1px dashed powderblue;
+
+  .slick{
+    position: relative;
+    width: $rightBlkWidth;
+    min-width: 658px;
+    padding-left: 50px; padding-right: 50px;
+  
+  }
+
+  .banner{
+    margin:3px 3px 9px; padding: 0; transition: .2s;
+    &:hover{ transform: translateY(-2px);}
+    a{
+      display: block; margin: 0 auto; transition: .2s;
+      width: 180px; height: 60px;
+      &:hover{box-shadow: $border-color-dark 0 6px 8px -3px, $border-color-dark 0 0 0 1px;}
+    }
+    img{display: block; width: 100%; height: 100%; }
+  }
+
+  button.slick-arrow{
+    position: absolute; top: 8px; font-size: 0; 
+    border: none; background: none; box-shadow: none;
+    @extend .arrow;
+
+    &.slick-prev{ left: 4px;
+      &:hover{ left: 0;}
+    }
+    &.slick-next { @extend .arrow.right; right: 4px;
+      &:hover{ right: 0;}
+    }
   }
 }
+
+
+
+
+
+
+
+// 水平排列的小廣告圖，不輪播、不滑動
+.adBanners{
+  position: relative;
+  background-color: transparent; padding-left: 0;padding-right: 0;
+  // outline: 1px dashed powderblue;
+  .bannerBox{
+    // outline: 1px dashed powderblue;
+    position: relative;
+    height: 78px; 
+    overflow: hidden;
+    margin-right:160px;
+  }
+  ul.bannerList{ 
+    @extend %bannerList;
+    display: flex;position: absolute; left: 0; top: 0;
+    li{ flex: 0 0 auto; margin:3px;  transition: .2s; }
+  }
+
+  .more{ position: absolute; right: 10px; top: 38px;
+    a{
+      padding: 0 52px 0 4px;  width: 140px; 
+      height: 48px;line-height: 50px;
+      background: #fff; color: $font-color; box-shadow: none;
+      &:hover{
+        box-shadow: #fff 0 0 0 2px , rgba(0,0,0,.4) 0 0 12px ;
+        .arrow{background: $primaryColor; }
+      }
+    }
+    .arrow{
+      position: absolute; right: 0; top: 0; width: 48px; height: 48px;
+      background-color: $btn-bg1;
+      &::before, &::after{background-color: #fff;}
+    }
+  }
+ 
+
+
+}
+
 
 
 

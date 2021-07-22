@@ -63,7 +63,7 @@
     display: inline-block; margin: 0 3px 8px ; vertical-align: top;
     a{
       display: block; height: calc(2.4em + 6px); line-height: 2.8; padding: 0 1.3em; 
-      background:$secondaryColor; color: #fff;text-decoration: none;
+      background:$secondaryColor; color: #fff;text-decoration: none; cursor: pointer;
       &:hover{ background-color: darken($secondaryColor, 10);}
     }
   }
@@ -77,13 +77,13 @@
   background-position: 0 0;
   h1{
     float: left;padding:0 20px; margin: 0; line-height: 1; font-size: 2.5em;
-    width: calc(100% - 400px);
+    width: calc(100% - 400px - #{$pdOuter}*2);
     &>a{float: left;}
     img{
       float: left; width: 100%; height: 85px; object-fit: scale-down;
     }
   }
   .topSearch{
-    float: right; margin: 20px $pdOuter 0 0;
+    float: right; margin: 20px $pdOuter*2 0 0;
   }
 }

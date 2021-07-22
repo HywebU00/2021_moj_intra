@@ -243,3 +243,55 @@ table.formLayout{
 }
 
 
+//  //////////////////////////////////
+// 進階查詢 ----------------------------------------------
+.searchBlk{
+  // display: none; position: fixed; top: 80px; 
+  top: 0;
+  left: calc(#{$sideBarWidth} + #{$pdOuter});
+  width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3); min-width: 710px;
+  padding:50px $pdInner 30px;
+  background: $primaryColor; color: #fff;box-shadow: rgba(0,0,0,.4) 0 0 36px;
+  transform: translateY(0); transition:transform .6s; 
+  &.show{
+    transform: translateY(50px);
+  }
+  .formLayout{
+    width: 90%; 
+    min-width: 400px;
+    input[type="text"], input[type="date"], input[type="number"],
+    select{border-color: #fff;
+      &:focus{border-color: #fff; box-shadow: $secondaryColor 0 0 0 3px;}
+    }
+
+    td{
+      &:nth-child(odd){text-align: left; width: 7em; white-space: nowrap;}
+      &:nth-child(even) {padding-bottom: 16px;}
+
+      &>input[type="text"]:only-child,
+      &>input[type="date"]:only-child,
+      &>input[type="number"]:only-child{width:98%;}
+      &>select:only-child{ width: calc(98% - 2em);}
+
+      .duration{width: calc(98% + 6px);}
+
+    }
+  }
+
+  .btnDv{
+    padding:15px 0 5px;
+    input[type="button"]{width: 6em; background: #fff; color: $font-color-dark; border: none;}
+  }
+
+  .closeThis{ position: absolute; right: 5px;top: 5px; z-index: 9;
+    a{
+      cursor: pointer;
+      &:hover{background-color: rgba(0,0,0,.2);}
+    }
+  }
+
+  @media screen and (min-width: $wwWide){
+    margin-left: 8%; margin-right: 8%;
+  }
+
+}
