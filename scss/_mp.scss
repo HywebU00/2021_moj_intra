@@ -476,7 +476,7 @@ $decoH : 8px;
     display: flex; flex-flow: row wrap; 
     justify-content:center;
     max-width: 888px;
-    outline: 1px dotted red;
+    // outline: 1px dotted red;
     li{
       margin:4px 3px 16px; padding: 0;
       flex: 0 0 calc(25% - 6px);
@@ -526,7 +526,7 @@ $decoH : 8px;
 // 垂直滑動的小廣告圖
 .adBannerSlideV{
   position: relative;
-  .slick{position: relative; padding: 50px 0; outline: 1px dashed blue;}
+  .slick{position: relative; padding: 50px 0; }
   .banner{
     @extend %banner;
     width: 100% !important; 
