@@ -1,192 +1,131 @@
-.clearfix:before,
-.clearfix:after
-{
-    display: table;
-    visibility: hidden;
+.calendar-app {
+  #calandar-header {
+    padding: 15px 20px;
+      background-color: $primaryColor; color: #fff;
+      #header1 {
+        padding: 10px .6em 20px;
 
-    width: 0;
-    height: 0;
-
-    content: '';
-}
-.clearfix:after
-{
-    clear: both;
-}
-.clearfix
-{
-    zoom: 1;
-}
-
-@mixin transform($argu...) {
-    -webkit-transform: $argu;
-    -moz-transform: $argu;
-    -o-transform: $argu;
-    -ms-transform: $argu;
-    transform: $argu;
-}
-
-@mixin transition($argu...) {
-    -webkit-transition: $argu;
-    -moz-transition: $argu;
-    -o-transition: $argu;
-    -ms-transition: $argu;
-    transition: $argu;
-}
-
-// 0.618 golden ratio
-$calandar_w: 417;
-$calandar_h: 675;
-$main_color: #f47;
-body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 1000px;
-    box-sizing: border-box;
-    overflow: auto;
-    font-family: Arial, Microsoft YaHei, serif;
-    .calendar-app {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        background: #eaeaea;
-        #calandar {
-            width: $calandar_w + px;
-            height: $calandar_h + px;
-            background: #fff;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            #calandar-header {
-                width: 100%;
-                height: auto;
-                background-color: $main_color;
-                #header1 {
-                    padding: 20px 15px 15px 40px;
-                    #month {
-                        color: #fff;
-                        font-size: 35px;
-                        float: left;
-                        vertical-align: top;
-                    }
-                    #month-right-div {
-                        float: left;
-                        margin-left: 10px;
-                        vertical-align: top;
-                        #weekday {
-                            color: #fff;
-                            margin-bottom: 3px;
-                        }
-                        #year {
-                            color: #fff;
-                        }
-                    }
-                }
-                #header2 ul {
-                    list-style: none;
-                    margin: 0;
-                    padding: 0 15px 15px 20px;
-                    letter-spacing: -10px;
-                    li {
-                        display: inline-block;
-                        vertical-align: bottom;
-                        color: #fff;
-                        width: 14.28%;
-                        letter-spacing: normal;
-                        text-align: center;
-                    }
-                }
-            }
-            #calandar-body {
-                padding: 0 15px 0 20px;
-                overflow: auto;
-                .row {
-                    display: block;
-                    margin: 20px 0;
-                    letter-spacing: -10px;
-                    .cell {
-                        width: ($calandar_w - 35) / 7 + px;
-                        height: ($calandar_w - 35) / 7 + px;
-                        display: inline-block;
-                        vertical-align: top;
-                        letter-spacing: normal;
-                        font-size: 25px;
-                        text-align: center;
-                        line-height: 55.7px;
-                        border-radius: 50%;
-                        color: #222;
-                        box-sizing: border-box;
-                        @include transition(color 0.2s linear);
-                        &:hover {
-                            cursor: pointer;
-                            border-bottom: solid 1px $main_color;
-                        }
-                    }
-                    .cell-not-this-month {
-                        color: #aaa;
-                    }
-                    .today {
-                        background: $main_color;
-                        color: #fff;
-                        @include transition(all 0.2s linear);
-                        &:hover {
-                            opacity: 0.7;
-                        }
-                    }
-                }
-            }
-            #calandar-footer {
-                overflow: visible;
-                width: 100%;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                margin-bottom: 40px;
-                padding: 10px;
-                box-sizing: border-box;
-                .button {
-                    float: right;
-                    width: 20px;
-                    height: 20px;
-                    margin-right: 7px;
-                    box-sizing: border-box;
-                    @include transform(rotate(-45deg));
-                    &:hover {
-                        cursor: pointer;
-                        opacity: 0.7;
-                    }
-                }
-                #pre-month {
-                    border-top: solid 3px $main_color;
-                    border-left: solid 3px $main_color;
-                }
-                #next-month {
-                    border-bottom: solid 3px $main_color;
-                    border-right: solid 3px $main_color;
-                    margin-right: 30px;
-                }
-                #go-to-today {
-                    width: 50px;
-                    height: 20px;
-                    float: right;
-                    margin-right: 7px;
-                    p {
-                        margin: 0;
-                        text-align: center;
-                        font-size: 20px;
-                        line-height: 20px;
-                        color: $main_color;
-                        cursor: pointer;
-                    }
-                    &:hover {
-                        opacity: 0.7;
-                    }
-                }
-            }
+        #month {
+          float: left;
+          font-size: 2.8em; line-height: 1.1;
         }
+
+        #month-right-div {
+          float: left; line-height: 1.6;
+          margin-left: 12px;
+        }
+      }
+      #header2{ clear: both;
+        ul {
+          list-style: none; margin: 0; padding: 0; font-size: 1.2em;
+          display: flex; justify-content: space-between;
+          li {
+            flex: 0 0 2em;
+            color: #fff; text-align: center;
+          }
+        }
+      }
+  }
+  #calandar-body {
+    font-size: 1.2em; color: $font-color;
+
+    .row {
+      margin: 15px 20px;
+      display: flex; justify-content: space-between;
+
+      .cell {
+        position: relative; flex: 0 0 2em;
+        width: 2em; height: 2em; line-height: 2.1;
+        text-align: center; border-radius: 50%;
+        transition: .2s;
+
+        &:hover {
+          cursor: pointer;
+          background: $bg-color-light;
+        }
+      }
+
+      .cell-not-this-month {
+        color: lighten($font-color-light, 30) ;
+      }
+
+      .today {
+        background: $primaryColor; color: #fff;
+
+        &:hover {
+          background: $primaryColor;
+          box-shadow: $primaryColor 0 0 0 2px;
+        }
+      }
     }
+  }
+
+  #calandar-footer {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .button {
+      position: relative;
+      width: 44px; height: 44px; border-radius: 50%;
+      text-align: center;
+      cursor: pointer; transition: .2s;
+
+      &::before{
+        content: '';position: absolute; top: 50%; margin-top: -9px;;
+        width: 18px; height: 18px;box-sizing: border-box;
+        border: 3px solid $primaryColor;
+        transform: rotate(-45deg)
+      }
+      &::after{
+        position: absolute; top: -1em;
+        font-size: 12px; text-align: center;
+        width: 3.5em; opacity: 0; transition: .2s;
+      }
+
+      &:hover{background: $bg-color-light;
+        &::after{ opacity: 1; top: -1.5em;}
+      }
+    }
+
+    #pre-month {
+      &::before{
+        left: 16px;
+        border-right: none; border-bottom: none;
+      }
+
+      &::after{
+        content: '上個月'; left: 0; 
+      }
+    }
+
+    #next-month {
+      &::before{
+        right: 16px;
+        border-left: none; border-top: none;
+      }
+      
+      &::after{
+        content: '下個月'; right: 0;
+      }     
+    }
+
+    #go-to-today {
+      p {
+        margin: 0 5px; padding: 0 .7em;
+        text-align: center; font-size: 1.2em;
+        height: 1.8em; line-height: 1.85;
+        color: $primaryColor; border-radius: 2em;
+        cursor: pointer; transition: .2s;
+        &:hover {
+          background: $primaryColor;  color: #fff;
+        }
+      }
+
+    }
+  }
 }

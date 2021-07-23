@@ -12,7 +12,6 @@
   <script src="slick/slick.min.js"></script>
   <script src="js/effect.js"></script>
   <script src="js/tabs.js"></script>
-  <script src="js/calendar.js"></script>
 
 </head>
 <body>
@@ -1299,16 +1298,23 @@
           </div>
         </section>
 
+
+
+
+
+
+
+
         <section class="calendar">
-          <h2 class="blockHeader">月曆</h2>
+          <!-- 月曆套件產生的 html 元件 -->
           <div class="calendar-app" id="wrapper">
             <div id="calandar">
               <div id="calandar-header">
                 <div class="clearfix" id="header1">
-                  <div id="month">**</div>
+                  <div id="month">7月</div>
                   <div id="month-right-div">
-                    <div id="weekday">**</div>
-                    <div id="year">**</div>
+                    <div id="weekday">星期五</div>
+                    <div id="year">2021年</div>
                   </div>
                 </div>
                 <div id="header2">
@@ -1323,13 +1329,59 @@
                   </ul>
                 </div>
               </div>
-              <div id="calandar-body"></div>
+              <div id="calandar-body">
+                <div class="row">
+                  <div class="cell cell-not-this-month">27</div>
+                  <div class="cell cell-not-this-month">28</div>
+                  <div class="cell cell-not-this-month">29</div>
+                  <div class="cell cell-not-this-month">30</div>
+                  <div class="cell">1</div>
+                  <div class="cell">2</div>
+                  <div class="cell">3</div>
+                </div>
+                <div class="row">
+                  <div class="cell">4</div>
+                  <div class="cell">5</div>
+                  <div class="cell">6</div>
+                  <div class="cell">7</div>
+                  <div class="cell">8</div>
+                  <div class="cell">9</div>
+                  <div class="cell">10</div>
+                </div>
+                <div class="row">
+                  <div class="cell">11</div>
+                  <div class="cell">12</div>
+                  <div class="cell">13</div>
+                  <div class="cell">14</div>
+                  <div class="cell">15</div>
+                  <div class="cell">16</div>
+                  <div class="cell">17</div>
+                </div>
+                <div class="row">
+                  <div class="cell">18</div>
+                  <div class="cell">19</div>
+                  <div class="cell">20</div>
+                  <div class="cell">21</div>
+                  <div class="cell">22</div>
+                  <div class="cell today">23</div>
+                  <div class="cell">24</div>
+                </div>
+                <div class="row">
+                  <div class="cell">25</div>
+                  <div class="cell">26</div>
+                  <div class="cell">27</div>
+                  <div class="cell">28</div>
+                  <div class="cell">29</div>
+                  <div class="cell">30</div>
+                  <div class="cell">31</div>
+                </div>
+              </div>
               <div class="clearfix" id="calandar-footer">
-                <div class="button" id="next-month"></div>
+                <div class="button" id="pre-month"></div>
                 <div id="go-to-today">
                   <p>今天</p>
                 </div>
-                <div class="button" id="pre-month"></div>
+                <div class="button" id="next-month"></div>
               </div>
             </div>
           </div>

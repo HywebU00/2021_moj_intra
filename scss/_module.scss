@@ -63,21 +63,21 @@
     }
     &.goTop{ 
       position: fixed; z-index: 900;
-      right: 8px; bottom: -60px;text-indent: -20em; 
+      right: 3px; bottom: -60px;text-indent: -20em; 
       text-align: center; transition: .8s;
       &.show{bottom: 10px;transition: .4s;}
       a{ 
-        padding: 0; width: 44px; height: 44px;  overflow: hidden; border-radius: 50%;
-        background-color: rgba(50,50,50,.7);
+        padding: 0; width: 48px; height: 48px;  overflow: hidden; border-radius: 50%;
+        background-color: rgba(50,50,50,.6);
         background-image: none;
         box-shadow:none;
         &::before, &::after{content: '';position: absolute;}
         &::before{
-          left: 17px; top: 10px;
+          left: 19px; top: 12px;
           width: 8px; height: 8px; transform: rotate(45deg);
           border: 2px solid #fff; border-bottom: none; border-right: none;  
         }
-        &::after{content: 'TOP'; width: 44px;  left: 0; top: 10px; font-size: 11px; text-indent: 0; color: #fff;}
+        &::after{content: 'TOP'; width: 48px;  left: 0; top: 13px; font-size: 11px; text-indent: 0; color: #fff;}
 
         &:hover{
           box-shadow:rgba(50,50,50,1) 0 0 0 3px; background-color: rgba(50,50,50,1);
