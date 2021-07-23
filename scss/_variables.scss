@@ -16,14 +16,25 @@ $rightBlkWidth : calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 );
   text-decoration: none;
   background-image: linear-gradient(#afb4b4 0, #95999a 80%);
   box-shadow: rgba(0, 0, 0, 0) 0 0 0 inset, rgba(0, 0, 0, .2) 0 1px 2px;
-  transition: .2s;
-  &:hover{ box-shadow: rgba(0, 0, 0, .2) 0 -30px 30px  inset, rgba(0, 0, 0, .2) 0 1px 2px;}
+  transition: .1s;
+  &:hover{ box-shadow: rgba(0, 0, 0, .5) 0 45px 30px inset, rgba(0, 0, 0, .2) 0 1px 2px;}
 }
 
+// 首頁區塊
 %mpBlock {
   margin: 20px 0; padding: 30px $pdInner; 
   background: #fff;font-size: 1.13rem;
 }
 .row[class*="col"]>section{
   margin-top: 10px; margin-bottom: 10px;
+}
+.row.col66>section,
+.row.col444>section,
+.row.col84>section:last-child,
+.row.col48>section:first-child {
+  padding-left: $pdInner*.6; padding-right: $pdInner*.6;
+}
+.row.col48>section:last-child,
+.row.col84>section:first-child {
+  padding-left: $pdInner*.8; padding-right: $pdInner*.8;
 }

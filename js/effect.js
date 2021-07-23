@@ -29,7 +29,7 @@ $(function(){
 
 
     // ----------------------------------- 外掛套件 slick 參數設定
-    // 水平輪播小 banner
+    // 小圖 banner 水平輪播
     $('.adBannerSlick').find('.slick').slick({ 
       arrows: true,                       //左右箭頭
       autoplay: true,                    //自動播放
@@ -45,19 +45,19 @@ $(function(){
       mobileFirst:true,
       responsive: [
         {
-          breakpoint: 1174,
+          breakpoint: 1254,
           settings: {
             slidesToShow: 4
           }
         },
         {
-          breakpoint: 1360,
+          breakpoint: 1460,
           settings: {
             slidesToShow: 5
           }
         },
         {
-          breakpoint: 1546,
+          breakpoint: 1666,
           settings: {
             slidesToShow: 6
           }
@@ -65,7 +65,7 @@ $(function(){
       ]
     });
   
-    // 垂直輪播小 banner
+    // 小圖 banner 垂直輪播
     $('.adBannerSlideV').find('.slick').slick({
       arrows: true,
       autoplay: true,
@@ -81,6 +81,24 @@ $(function(){
       mobileFirst:false,
       responsive: []
     });
+
+    // 大圖 banner 水平輪播
+    $('.bigBannerSlick').find('.slick').slick({
+      arrows: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      dots: true,
+      draggable: true,
+      infinite: true,
+      pauseOnHover: true,
+      rtl: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      vertical: false,
+      mobileFirst:false,
+      responsive: []
+    });
+    
 
   // 所屬單位清單 顯示／隱藏
   // var _allCourts = $('.allCourts');
