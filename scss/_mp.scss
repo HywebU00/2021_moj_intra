@@ -352,6 +352,7 @@ $decoH : 8px;
     &:nth-child(5n+4)>a{ @extend %gradient-4;}
     &:nth-child(5n)  >a{ @extend %gradient-5;}
   }
+  .more{margin-top: 1em;}
 }
 .col66>.textLink1,
 .col84>.textLink1:first-child,
@@ -430,6 +431,7 @@ $decoH : 8px;
     &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
     &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
   }
+  .more{margin-top: 1em;}
 }
 .col66>.iconSqaure, .col84>.iconSqaure:first-child, .col48>.iconSqaure:last-child {
   li{
@@ -474,6 +476,7 @@ $decoH : 8px;
     &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
     &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
   }
+  .more{margin-top: .5em;}
 
 }
 .col66>.iconDisk,
@@ -516,6 +519,7 @@ $decoH : 8px;
       }
     }
   }
+  .more{margin-top: 1em;}
 }
 .col66>.imgLink, .col48>.imgLink , .col84>.imgLink{
   padding-left: 20px; padding-right: 20px;
@@ -664,6 +668,8 @@ $decoH : 8px;
       &:hover{ right: 0;}
     }
   }
+
+  .more{margin-top: 10px;}
 }
 
 
@@ -710,7 +716,7 @@ $decoH : 8px;
         position: absolute; left: 0; right: 0; top: 0; bottom: 0;
         box-shadow: none;
       }
-      &:hover::before{ box-shadow: $lightColor 0 0 0 2px inset;}
+      &:hover::before{ box-shadow: $border-color 0 0 0 2px inset;}
     }
     img{ display: block; width: 100%; height: 100%;}
   }
