@@ -231,4 +231,86 @@ $(function(){
     }
   })
 
+
+
+  var _marquee = $('.marquee');
+  _marquee.each(function(){
+    let _mq = $(this);
+    let _mqItem = _mq.find('li');
+    let _box = _mq.find('.mqBox');
+    let count = _mqItem.length;
+    let mqH = _mqItem.outerHeight();
+    let speed = 600;
+    let timer = 4000;
+    let i = 0, j;
+    let marqueeGo;
+    let _button = _mq.find('button');
+    
+    _box.innerHeight(mqH);
+    _mqItem.css({'top': mqH});
+    _mqItem.eq(i).css({'top':0, 'left':0});
+
+    if(count>1){
+      marqueeGo = setInterval(mqLoop, timer);
+      // _button.innerHeight(mqH).innerWidth(mqH).show();
+      mqHover();
+
+      _button.click(function(){
+        $(this).toggleClass('pause');
+        if($(this).hasClass('pause')){
+          clearInterval(marqueeGo);
+        } else {
+          marqueeGo = setInterval(mqLoop, timer);
+        }
+      });
+
+      _mqItem.find('a').focus(function(){
+        clearInterval(marqueeGo);
+        _mqItem.css({'top':'0','z-index':'-1'});
+        $(this).parent().css('z-index','99');
+        _mqItem.off('mouseenter mouseleave');
+      });
+
+      _mqItem.find('a').keydown(function(ev){
+        var keyX = ev.which || ev.keyCode;
+        i= $(this).parent().index();
+        if(keyX==9 && i==count-1 && ev.shiftKey==0){
+          _mqItem.removeAttr('style');
+          _mqItem.not(':last').css('top', mqH);
+          marqueeGo = setInterval(mqLoop, timer);
+          mqHover();
+        }
+        if(keyX==9 && i==0 && ev.shiftKey==1){
+          _mqItem.removeAttr('style');
+          _mqItem.not(':first').css('top', mqH);						
+          marqueeGo = setInterval(mqLoop, timer);
+          mqHover();
+        }
+      });
+    } else {
+      _button.hide();
+    }
+
+    function mqHover(){
+      _mqItem.hover(
+        function(){clearInterval(marqueeGo); },
+        function(){
+          if ( _button.hasClass('pause')) {return;}
+          else { marqueeGo = setInterval(mqLoop, timer); }
+        }
+      );
+    }
+
+    function mqLoop(){
+      j = (i+1)%count;
+      _mqItem.eq(j).stop(true,false).animate({'top': 0}, speed, 'linear');
+      _mqItem.eq(i).stop(true,false).animate({'top': -1*mqH}, speed, 'linear',
+        function(){
+          $(this).css('top', mqH);
+          i = j;
+        }
+      );
+    }
+  });
+
 })
