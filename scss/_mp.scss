@@ -166,7 +166,6 @@ $decoH : 8px;
 // 訊息_條列式 ----------------------------------------------
 // (標題只顯示一行，超過顯示刪節號)
 .bulletin1 {
-  width: $rightBlkWidth;
   .list{
     list-style: none; line-height: 1.5; margin:25px 0 0; padding: 0;
     li{ 
@@ -186,50 +185,27 @@ $decoH : 8px;
       }
     }
     
-    &.ellipsis{
-      // width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3 - #{$pdInner}*2);
-      width: calc( #{$rightBlkWidth} - #{$pdInner}*2);
+    &.ellipsis{ max-width: 100%; width: 100%;
       li{
         p{
-          text-overflow: ellipsis; white-space: nowrap; overflow: hidden; height: 1.4em;
+          text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+          height: 1.4em;
         }
       }
     }
   }
   .more{margin-top: 1em;}
 }
-.col66>.bulletin1{
-  .list.ellipsis{
-    width:calc(#{$rightBlkWidth}*.5 - 12px - #{$pdInner}*1.2) ;
-  }
-}
-.col84>.bulletin1{
-  width: auto;
-  &:first-child{
-    .list.ellipsis{ width:calc(#{$rightBlkWidth}*.66 - 12px - #{$pdInner}*1.6);}
-  }
-  &:last-child{
-    .list.ellipsis{ width:calc(#{$rightBlkWidth}*.34 - 16px - #{$pdInner}*1.2);}
-  }
-}
-.col48>.bulletin1{
-  width: auto;
-  &:first-child{
-    .list.ellipsis{ width:calc( #{$rightBlkWidth}*.33 - 16px - #{$pdInner}*1.2);}
-  }
-  &:last-child{
-    .list.ellipsis{ width:calc( #{$rightBlkWidth}*.67 - 12px - #{$pdInner}*1.6 );}
-  }
-}
-.col444>.bulletin1{
-  width: auto;
-  &:nth-child(1), &:nth-child(2){
-    .list.ellipsis{ width:calc(#{$rightBlkWidth}*.33 - 16px - #{$pdInner}*1.2);}
-  }
-  &:nth-child(3){
-    .list.ellipsis{ width:calc(#{$rightBlkWidth}*.34 - 16px - #{$pdInner}*1.2);}
-  }
-}
+
+// .col444>.bulletin1{
+//   width: auto;
+//   &:nth-child(1), &:nth-child(2){
+//     .list.ellipsis{ width:calc(#{$rightBlkWidth}*.33 - 16px - #{$pdInner}*1.2);}
+//   }
+//   &:nth-child(3){
+//     .list.ellipsis{ width:calc(#{$rightBlkWidth}*.34 - 16px - #{$pdInner}*1.2);}
+//   }
+// }
 
 .col66>.bulletin1,
 .col444>.bulletin1,
@@ -532,7 +508,7 @@ $decoH : 8px;
 // 大圖 banner，單張
 .bigBanner{
   margin: 24px 0; padding: 0;
-  width: $rightBlkWidth; height: calc( #{$rightBlkWidth}/3);
+  width: 100%; height: calc( #{$rightBlkWidth}/3);
   a{
     display: block; width: 100%; height: 100%; transition: .2s;
     &:hover{
@@ -572,13 +548,9 @@ $decoH : 8px;
 .adBanners{
   position: relative;
   background-color: transparent; padding-left: 0;padding-right: 0;
-  // outline: 1px dashed powderblue;
   .bannerBox{
-    // outline: 1px dashed powderblue;
-    position: relative;
-    height: 78px; 
-    overflow: hidden;
-    margin-right:150px;
+    position: relative; overflow: hidden;
+    height: 78px; margin-right:150px;
   }
   ul.bannerList{ 
     @extend %bannerList;
@@ -639,8 +611,7 @@ $decoH : 8px;
   background: #fff;
 
   .slick{
-    width: $rightBlkWidth;
-    min-width: 724px; // banner寬*3 + 100 
+    width: 100%;  min-width: 724px; // banner寬*3 + 100 
     padding-left: 50px; padding-right: 50px;  
   }
 
@@ -656,9 +627,7 @@ $decoH : 8px;
   }
 
   button.slick-arrow{
-  
     @extend .arrow; top: 14px;
-
     &.slick-prev{ left: 4px;
       &:hover{ left: 0;}
     }
@@ -720,7 +689,8 @@ $decoH : 8px;
   }
 
   .slick{
-    position: relative; width: $rightBlkWidth;
+    position: relative; width: 100%;
+    // width: $rightBlkWidth;
     button.slick-arrow{ 
       @extend .arrow; top: 50%; margin-top: -40px;
       background-color: rgba(#fff, .4);
