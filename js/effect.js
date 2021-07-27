@@ -129,22 +129,28 @@ $(function(){
   var _lightbox = $('.lightbox');
   var _hideLightbox = _lightbox.find('.closeThis');
   var _lightboxNow;
-  var _cover;
   const speed = 400;
 
   _lightbox.before('<div class="cover"></div>');
+  var _cover = $('.cover');
   
   _showLightbox.click(function(){
     let boxID = $(this).attr('data-id');
     _lightboxNow = _lightbox.filter( function(){ return $(this).attr('data-id') === boxID} );
-    _cover = _lightboxNow.prev('.cover');
     _lightboxNow.stop(true, false).slideDown(speed).addClass('show');
-    _cover.fadeIn(speed);
+    _lightboxNow.prev(_cover).fadeIn(speed);
+    _body.addClass('noScroll');
   })
 
   _hideLightbox.click(function(){
     _lightboxNow.stop(true, false).slideUp(speed).removeClass('show');
     _cover.fadeOut(speed);
+    _body.removeClass('noScroll');
+  })
+
+  _cover.click(function(){
+    $(this).add($(this).next(_lightbox)).fadeOut(speed);
+    _body.removeClass('noScroll');
   })
 
 
@@ -232,7 +238,7 @@ $(function(){
   })
 
 
-
+  // 跑馬燈
   var _marquee = $('.marquee');
   _marquee.each(function(){
     let _mq = $(this);
@@ -252,7 +258,6 @@ $(function(){
 
     if(count>1){
       marqueeGo = setInterval(mqLoop, timer);
-      // _button.innerHeight(mqH).innerWidth(mqH).show();
       mqHover();
 
       _button.click(function(){

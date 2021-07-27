@@ -4,6 +4,10 @@ body{
   color: $font-color; 
   min-width: 880px; // 此站是彈性寬度排版，但不支援此數值以下的小螢幕`-的排版
   overflow-y: scroll;
+
+  &.noScroll{
+    overflow: hidden; overflow-y:hidden;
+  }
 }
 *{
   box-sizing: border-box;
