@@ -20,22 +20,13 @@ $decoH : 8px;
   margin: 5px auto;
   
 
-  .jumpTo{ flex: 0 1 50%;}
+  .jumpTo{ flex: 0 1 50%;
+    select{ 
+      width: calc(100% - 5em - 10px); max-width: 28em;
+    }  
+  }
   .loginBtn{ flex:0 0 auto;}
   .logoutBtn{ flex:0 0 auto;}
-}
-
-// 快速連結 select
-.jumpTo{
-  white-space: nowrap; font-size: 1.2rem;
-  label{
-    line-height: 2em; height: 2em; vertical-align: middle; color: $font-color-dark;
-  }
-  select{ 
-    width: calc(100% - 5em - 10px); max-width: 28em;
-    height: 2.5em; line-height: 2.5;
-    box-sizing: border-box; border-color: #fff;
-  }
 }
 
 // 登入／登出 
@@ -75,11 +66,46 @@ $decoH : 8px;
 
 }
 
+// 快速連結 select
+.jumpTo{
+  white-space: nowrap; font-size: 1.2rem;
+  label{
+    display: inline-block;vertical-align: middle;
+    line-height: 2em; height: 2em; 
+    color: $font-color-dark;
+  }
+  select{ 
+    height: 2.5em; line-height: 2.5;
+    box-sizing: border-box; border-color: #fff;
+  }
+}
 
 
-// 區塊共用屬性 ----------------------------------------------
+// select 快速連結（所屬連結區塊） ----------------------------------------------
+.row>.jumpTo{ 
+  padding: 0 !important;
+  select{
+    width: 100%; margin: 0;
+  }
+}
+
+
+// 介接外部新聞 ----------------------------------------------
+.newsEmbed{
+  &>iframe{
+    margin:auto 0; padding: 0; display: block; border: none;
+    width: 100%;
+  }
+}
+.row>.newsEmbed{
+  padding:10px 0 !important;
+  min-height: 2.5em; 
+}
+
+
+// 區塊共用屬性 ----------------------------------------------------------------------
 .myInfo, .bulletin1, .bulletin2, .textLink1, .textLink2, .iconSqaure, .iconDisk, .imgLink,
-.announce, .notice, .calendar, .adBannerSlideV, .adBannerSlide, .adBanners {
+.announce, .notice, .calendar, .adBannerSlideV, .adBannerSlide, .adBanners, .chart {
   @extend %mpBlock;
 }
 // -------------------------------------------------------------------------------------
@@ -163,6 +189,9 @@ $decoH : 8px;
   }
 }
 
+
+
+
 // 訊息_條列式 ----------------------------------------------
 // (標題只顯示一行，超過顯示刪節號)
 .bulletin1 {
@@ -196,17 +225,6 @@ $decoH : 8px;
   }
   .more{margin-top: 1em;}
 }
-
-// .col444>.bulletin1{
-//   width: auto;
-//   &:nth-child(1), &:nth-child(2){
-//     .list.ellipsis{ width:calc(#{$rightBlkWidth}*.33 - 16px - #{$pdInner}*1.2);}
-//   }
-//   &:nth-child(3){
-//     .list.ellipsis{ width:calc(#{$rightBlkWidth}*.34 - 16px - #{$pdInner}*1.2);}
-//   }
-// }
-
 .col66>.bulletin1,
 .col444>.bulletin1,
 .col48>.bulletin1:first-child,
@@ -581,6 +599,81 @@ $decoH : 8px;
 }
 
 
+// 日曆 ----------------------------------------------
+// 使用套件 calendar.js ，完整 css 在 _calendar.scss
+.calendar{
+  padding: 0 0 5em !important;
+  position: relative;
+}
+
+// 跑馬燈 ----------------------------------------------
+.marquee{
+  position: relative; padding: 0 !important;
+  background-color: $primaryColor; color: #fff; font-size: 1.2em;
+  border-radius: 2em;
+  .mqBox{
+    position:relative; overflow:hidden;
+    height:52px; margin:0 54px 0 3px;
+  }
+  ul{ list-style: none; margin: 0; padding: 0;}
+  li{ position: absolute;margin:0; padding: 0; width: 100%;
+    a{
+      display:block; padding: 0 12px;margin:3px 0;
+      height:46px; line-height:46px; 
+      white-space:nowrap; text-overflow:ellipsis; overflow:hidden; 
+      text-decoration:none; color: #fff;border-radius: 24px;
+      transition: .2s;
+      &:hover{
+        text-decoration: underline; color:#fff; background: #0003;
+      }
+    }
+  }
+
+  button{
+    position:absolute; right:4px; top:50%; margin: -22px 0 0;
+    text-align:center; padding:0; 
+    width:44px !important; height:44px !important; border-radius:50%;
+    background: #fff3; box-shadow: none; border: none;
+    transition: .2s;
+    &:hover{
+      background:$secondaryColor;
+      &::before{opacity:1;}
+    }
+    &::after{
+      content:''; position: absolute; top: 15px; left: 17px; width:4px; height:14px; 
+      border:4px solid #fff; border-top:none; border-bottom:none; 
+    }
+    &::before{
+      content:'暫停輪播'; font-size:13px; opacity:0;
+      position:absolute; left:-5em; top:.7em; 
+      height:1.8em; line-height:1.8em; padding:0 .4em; 
+      background: $secondaryColor; color: #fff; border-radius:4px;
+      transition:.2s;
+    }
+    &.pause{ background:$secondaryColor;
+      &::after{
+        width:0; height:0; margin-left:2px;
+        border-style:solid; border-width:8px 0 8px 12px;
+        border-color:transparent transparent transparent #fff;
+      }
+      &::before{content:'繼續輪播'; background-color: $secondaryColor;}
+    }
+  }
+}
+
+// 統計專區 ----------------------------------------------
+.chart{
+  &>div[id]{ 
+    margin: 20px auto 0;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+}
+ 
+
+
+
 // ********************************************************
 // 以下使用 slick 套件 
 // ********************************************************
@@ -704,66 +797,3 @@ $decoH : 8px;
 // ********************************************************
 // 以上使用 slick 套件 
 // ********************************************************
-
-// 日曆
-.calendar{
-  padding: 0 0 5em !important;
-  position: relative;
-}
-
-// ********************************************************
-// 跑馬燈
-.marquee{
-  position: relative; padding: 0;
-  background-color: $primaryColor; color: #fff; font-size: 1.2em;
-  border-radius: 2em;
-  .mqBox{
-    position:relative; overflow:hidden;
-    height:52px; margin:0 54px 0 3px;
-  }
-  ul{ list-style: none; margin: 0; padding: 0;}
-  li{ position: absolute;margin:0; padding: 0; width: 100%;
-    a{
-      display:block; padding: 0 12px;margin:3px 0;
-      height:46px; line-height:46px; 
-      white-space:nowrap; text-overflow:ellipsis; overflow:hidden; 
-      text-decoration:none; color: #fff;border-radius: 24px;
-      transition: .2s;
-      &:hover{
-        text-decoration: underline; color:#fff; background: #0004;
-        box-shadow:#0005 0 0 5px inset ;
-      }
-    }
-  }
-
-  button{
-    position:absolute; right:4px; top:50%; margin: -22px 0 0;
-    text-align:center; padding:0; 
-    width:44px !important; height:44px !important; border-radius:50%;
-    background: #fff3; box-shadow: none; border: none;
-    transition: .2s;
-    &:hover{
-      background:$secondaryColor;
-      &::before{opacity:1;}
-    }
-    &::after{
-      content:''; position: absolute; top: 15px; left: 17px; width:4px; height:14px; 
-      border:4px solid #fff; border-top:none; border-bottom:none; 
-    }
-    &::before{
-      content:'暫停輪播'; font-size:13px; opacity:0;
-      position:absolute; left:-5em; top:.7em; 
-      height:1.8em; line-height:1.8em; padding:0 .4em; 
-      background: $secondaryColor; color: #fff; border-radius:4px;
-      transition:.2s;
-    }
-    &.pause{ background:$secondaryColor;
-      &::after{
-        width:0; height:0; margin-left:2px;
-        border-style:solid; border-width:8px 0 8px 12px;
-        border-color:transparent transparent transparent #fff;
-      }
-      &::before{content:'繼續輪播'; background-color: $secondaryColor;}
-    }
-  }
-}
