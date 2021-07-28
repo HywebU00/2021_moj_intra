@@ -1,6 +1,5 @@
 // 登入區 ----------------------
 .loginHere{
-  // display: none; position: fixed; 
   top: 80px;
   width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3);
   min-width: 710px; padding:20px 40px;

@@ -79,7 +79,7 @@ $decoH : 8px;
 
 // 區塊共用屬性 ----------------------------------------------
 .myInfo, .bulletin1, .bulletin2, .textLink1, .textLink2, .iconSqaure, .iconDisk, .imgLink,
-.announce, .notice, .calendar, .adBannerSlideV, .adBannerSlide, .adBanners, .marquee {
+.announce, .notice, .calendar, .adBannerSlideV, .adBannerSlide, .adBanners {
   @extend %mpBlock;
 }
 // -------------------------------------------------------------------------------------
@@ -715,46 +715,51 @@ $decoH : 8px;
 // 跑馬燈
 .marquee{
   position: relative; padding: 0;
+  background-color: $primaryColor; color: #fff; font-size: 1.2em;
+  border-radius: 2em;
   .mqBox{
     position:relative; overflow:hidden;
-    height:3em; margin:0 56px 0 15px;
+    height:52px; margin:0 54px 0 3px;
   }
   ul{ list-style: none; margin: 0; padding: 0;}
-  li{ position: absolute;margin: 0; padding: 0; width: 100%;
+  li{ position: absolute;margin:0; padding: 0; width: 100%;
     a{
-      display:block; height:3em; line-height:3.1em; 
+      display:block; padding: 0 12px;margin:3px 0;
+      height:46px; line-height:46px; 
       white-space:nowrap; text-overflow:ellipsis; overflow:hidden; 
-      text-decoration:none; color: $font-color; 
-      &:hover{text-decoration: underline; color: $font-color-dark;}
+      text-decoration:none; color: #fff;border-radius: 24px;
+      transition: .2s;
+      &:hover{
+        text-decoration: underline; color:#fff; background: #0004;
+        box-shadow:#0005 0 0 5px inset ;
+      }
     }
   }
-  &.B2T li{left:0;}
-  &.R2L li{top:0;}
 
   button{
-    position:absolute; right:4px; top:50%; margin: -20px 0 0;
-    text-align:center; font-size:0; padding:0; 
-    width:40px !important; height:40px !important; border-radius:50%;
-    background: transparentize($bg-color-dark, .6); box-shadow: none; border: none;
+    position:absolute; right:4px; top:50%; margin: -22px 0 0;
+    text-align:center; padding:0; 
+    width:44px !important; height:44px !important; border-radius:50%;
+    background: #fff3; box-shadow: none; border: none;
     transition: .2s;
     &:hover{
-      background:$bg-color-dark;
+      background:$secondaryColor;
       &::before{opacity:1;}
     }
     &::after{
-      content:''; display:inline-block; width:4px; height:14px; 
+      content:''; position: absolute; top: 15px; left: 17px; width:4px; height:14px; 
       border:4px solid #fff; border-top:none; border-bottom:none; 
     }
     &::before{
       content:'暫停輪播'; font-size:13px; opacity:0;
       position:absolute; left:-5em; top:.7em; 
       height:1.8em; line-height:1.8em; padding:0 .4em; 
-      background:$bg-color-dark; color: #fff; border-radius:4px;
+      background: $secondaryColor; color: #fff; border-radius:4px;
       transition:.2s;
     }
     &.pause{ background:$secondaryColor;
       &::after{
-        width:0; height:0; margin-left:4px;
+        width:0; height:0; margin-left:2px;
         border-style:solid; border-width:8px 0 8px 12px;
         border-color:transparent transparent transparent #fff;
       }
