@@ -61,7 +61,7 @@
         // outline: 1px solid red;
         position: relative;overflow: hidden;
         width: 100%; margin: 0 0 10px;
-        height: calc( (50vw - 50px - #{$sideBarWidth}*.5) );
+        height: calc( 50vw - #{$sideBarWidth}*.5 - #{$pdInner} - #{$pdOuter}*1.5 - 10px);
         background: #d5d8d9; border: #fff solid 3px;
         img{object-fit: contain;  transition: .4s;}
       }
@@ -92,7 +92,7 @@
       }
       // 相簿縮圖
       .imgThumb{
-        height: calc((100vw - 122px - #{$sideBarWidth})*.3333);
+        height: calc((100vw - #{$sideBarWidth} - #{$pdInner}*2 - #{$pdOuter}*3)*.3333 - 14px );
       }
     }
   }
@@ -105,10 +105,8 @@
       .vPreview{
         height: calc((25vw - 35px - #{$sideBarWidth}*.25)*.56);
       }
-            // 100% = 100vw - 80px - #{$sideBarWidth}
-
       .imgThumb{
-        height: calc((25vw - 35px - #{$sideBarWidth}*.25));
+        height: calc((25vw - #{$sideBarWidth}*.25 - #{$pdInner}*.5 - #{$pdOuter}*.75 - 15px));
       }
     }
   }
@@ -121,7 +119,9 @@
       .vPreview{
         height: calc((20vw - 32px - #{$sideBarWidth}*.2)*.56);
       }
+      .imgThumb{
+        height: calc((20vw - #{$sideBarWidth}*.2 - #{$pdInner}*.4 - #{$pdOuter}*.6 - 16px));
+      }
     }
   }
-  
 }
