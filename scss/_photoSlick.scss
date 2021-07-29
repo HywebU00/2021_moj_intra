@@ -1,0 +1,77 @@
+.photoSlick{
+  max-width: 1200px; min-width: 880px; 
+  margin: 0 auto; padding: 20px;
+  
+
+  button.slick-arrow{
+    @extend .arrow;  top: 50%;  border-radius: 50%;
+    &.slick-next { @extend .arrow.right; }
+  }
+
+  .photoShow{
+      width:880px; margin: 0 auto;
+      // box-shadow: $border-color 0 0 0 1px;
+    .image{
+      position: relative;
+      img{
+        display: block; margin: 0 auto; 
+        width:880px; height: 550px; object-fit: contain;
+      }
+      p{position: absolute; bottom: 0;left: 0;right: 0; 
+        line-height: 1.5; padding:.6em .5em .4em;margin: 0;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        background: #fffa; color: #000;
+      }
+      &:hover p{background: #fffd;
+        white-space:normal;
+      }
+    }
+
+    button.slick-arrow{ margin-top: -22px;
+      &:hover{background-color: #6772;}
+
+      &.slick-prev{ left: -44px;
+        &:hover{ left: -48px;}
+      }
+      &.slick-next {  right: -44px;
+        &:hover{ right: -48px;}
+      }
+    }
+  }
+
+  .photoNav{
+    position: relative; width: 750px; 
+    padding:5px 0;margin: 30px auto;
+ 
+    .image{ margin: 0; position: relative;
+      img{
+        display: block; width: 150px; height: 150px; object-fit: cover;
+        margin: 0 auto;
+      }
+
+      &::before{
+        content: ''; position: absolute;left: 0; right: 0;top: 0;bottom: 0;
+        box-shadow: #fff 0 0 0 2px inset;
+      }
+      &.slick-current {
+        &::before{
+          box-shadow: #000 0 0 0 3px inset, #fff 0 0 0 4px inset;
+        }
+      }
+    }
+
+    button.slick-arrow{
+      margin-top: -22px;
+      &:hover{background-color: #6772;}
+      &.slick-prev{ left: -44px;
+        &:hover{ left: -48px;}
+      }
+      &.slick-next { @extend .arrow.right; right: -44px;
+        &:hover{ right: -48px;}
+      }
+    }
+  }
+
+
+
+}

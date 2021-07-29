@@ -98,29 +98,27 @@ $(function(){
       mobileFirst:false,
       responsive: []
     });
+
+    // 相簿內頁
+    $('.photoSlick').find('.photoShow').slick({
+      asNavFor: '.photoNav',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      fade: true
+    });
+    $('.photoSlick').find('.photoNav').slick({
+      asNavFor: '.photoShow',
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      centerMode: false,
+      focusOnSelect: true
+    });
     
 
-  // 所屬單位清單 顯示／隱藏
-  // var _allCourts = $('.allCourts');
-  // var _courtsList = $('.courtsList');
-  // var _closeCourtsList = _courtsList.find('.closeThis');
-  // _allCourts.click(function(){
-  //   _courtsList.stop(true, false).slideDown(400);
-  // })
-  // _closeCourtsList.click(function(){
-  //   _courtsList.stop(true, false).slideUp(250);
-  // })
 
-  // 登入區 顯示／隱藏
-  // var _loginBtn = $('.loginBtn');
-  // var _loginHere = $('.loginHere');
-  // var _closeLogin = _loginHere.find('.closeThis');
-  // _loginBtn.click(function(){
-  //   _loginHere.stop(true, false).slideDown(400).addClass('show');
-  // })
-  // _closeLogin.click(function(){
-  //   _loginHere.stop(true, false).slideUp(250).removeClass('show');
-  // })
 
 
 
