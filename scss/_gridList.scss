@@ -49,7 +49,7 @@
       .vPreview{
         position: relative;
         width: 100%; margin: 0 0 10px;
-        height: calc( (50vw - 50px - #{$sideBarWidth}*.5)*.56 );
+        height: calc((50vw - #{$sideBarWidth}*.5 - #{$pdInner} - #{$pdOuter}*1.5 - 10px)*.56 );
         .playIcon{
           top: 50%; left: 50%; 
           margin: -24px auto auto -24px;
@@ -88,11 +88,11 @@
       &:nth-child(n){margin: 0 21px 21px 0;}
       &:nth-child(3n){ margin-right: 0;}
       .vPreview{
-        height: calc((100vw - 122px - #{$sideBarWidth})*.186);
+        height: calc(((100vw - #{$sideBarWidth} - #{$pdInner}*2 - #{$pdOuter}*3)/3 - 14px)*.56);
       }
       // 相簿縮圖
       .imgThumb{
-        height: calc((100vw - #{$sideBarWidth} - #{$pdInner}*2 - #{$pdOuter}*3)*.3333 - 14px );
+        height: calc((100vw - #{$sideBarWidth} - #{$pdInner}*2 - #{$pdOuter}*3)/3 - 14px);
       }
     }
   }
@@ -103,10 +103,10 @@
       &:nth-child(n){margin: 0 20px 20px 0;}
       &:nth-child(4n){ margin-right: 0;}
       .vPreview{
-        height: calc((25vw - 35px - #{$sideBarWidth}*.25)*.56);
+        height: calc((25vw - #{$sideBarWidth}*.25 - #{$pdInner}*.5 - #{$pdOuter}*.75 - 15px)*.56);
       }
       .imgThumb{
-        height: calc((25vw - #{$sideBarWidth}*.25 - #{$pdInner}*.5 - #{$pdOuter}*.75 - 15px));
+        height: calc(25vw - #{$sideBarWidth}*.25 - #{$pdInner}*.5 - #{$pdOuter}*.75 - 15px);
       }
     }
   }
@@ -117,10 +117,10 @@
       &:nth-child(n){margin-right: 20px;}
       &:nth-child(5n){ margin-right: 0;}
       .vPreview{
-        height: calc((20vw - 32px - #{$sideBarWidth}*.2)*.56);
+        height: calc((20vw - #{$sideBarWidth}*.2 - #{$pdInner}*.4 - #{$pdOuter}*.6 - 16px)*.56);
       }
       .imgThumb{
-        height: calc((20vw - #{$sideBarWidth}*.2 - #{$pdInner}*.4 - #{$pdOuter}*.6 - 16px));
+        height: calc(20vw - #{$sideBarWidth}*.2 - #{$pdInner}*.4 - #{$pdOuter}*.6 - 16px);
       }
     }
   }
