@@ -1,5 +1,4 @@
 .photoSlick{
-  max-width: 1200px; min-width: 880px; 
   margin: 0 auto; padding:0;
   .articleHeader{ 
     text-align: center; width: 880px; margin: 0 auto 15px;
@@ -13,11 +12,14 @@
     &.slick-next { @extend .arrow.right; }
   }
 
+
   .photoShow{
       width:880px; margin: 0 auto;
-      // box-shadow: $border-color 0 0 0 1px;
-    .image{
+      box-shadow: $border-color 0 0 0 1px;
+      .image{
       position: relative;
+      padding: 2.5em 0;
+
       img{
         display: block; margin: 0 auto; 
         width:880px; height: 550px; object-fit: contain;
@@ -25,11 +27,21 @@
       p{position: absolute; bottom: 0;left: 0;right: 0; 
         line-height: 1.5; padding:.6em .5em .4em;margin: 0;
         white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        background: #fffa; color: #000;
+        background: #fffa; color:$font-color-dark;
       }
       &:hover p{background: #fffd;
         white-space:normal;
       }
+      .photoCount{
+        position: absolute; right: 0; top: 3px;
+        color: $font-color;
+        padding: 0 .5em; height: 1.5em; line-height: 1.5;
+        em{
+          display: inline-block; font-style: normal; font-weight: bold;
+          color:$font-color-dark; margin-right: 3px;
+        }
+      }
+    
     }
 
     button.slick-arrow{ margin-top: -22px;
