@@ -525,16 +525,35 @@ $decoH : 8px;
 }
 // 大圖 banner，單張
 .bigBanner{
-  margin: 24px 0; padding: 0;
-  width: 100%; height: calc( #{$rightBlkWidth}/3);
+  margin: 24px 0; padding: 0; width: 100%; 
   a{
-    display: block; width: 100%; height: 100%; transition: .2s;
+    position: relative; display: block;
+     overflow: hidden; transition: .2s;
     &:hover{
       box-shadow: rgba($color: #000, $alpha: .3) 0 4px 16px;
-      img{ box-shadow:#fff 0 0 0 2px;}
+      &::before{opacity: 1;}
+    }
+    &::before{
+      opacity: 0;
+      content: ''; position: absolute; left: 0;right: 0;top: 0;bottom: 0;
+      box-shadow:#fff 0 0 0 2px inset;  transition: .2s;
     }
   }
-  img{ display: block; width: 100%; height: 100%;transition: .2s;}
+  img{
+    display: block; width: 100%; 
+    height: calc( #{$rightBlkWidth}/3); object-fit: fill;
+  }
+  p{
+    position: absolute; bottom: 0; left: 2px; right: 2px; z-index: 9;
+    transform: translateY(100%); transition: .2s;
+    padding: 10px; margin: 0;
+    background: #000a; color: #fff;
+  }
+
+  &:hover p{
+    transform: translateY(0);bottom: 2px; 
+  }
+
 }
 
 
@@ -766,6 +785,7 @@ $decoH : 8px;
 .bigBannerSlick{
   margin: 20px 0; padding: 0 0 10px;
   .image{
+    position: relative;
     // 寬 : 高 = 3:1
     width: 100%; height: calc( #{$rightBlkWidth}/3);
     a{
@@ -776,9 +796,20 @@ $decoH : 8px;
         position: absolute; left: 0; right: 0; top: 0; bottom: 0;
         box-shadow: none;
       }
-      &:hover::before{ box-shadow: $border-color 0 0 0 2px inset;}
+      &:hover::before{ box-shadow: #fff 0 0 0 2px inset;}
     }
     img{ display: block; width: 100%; height: 100%;}
+
+    p{
+      position: absolute; bottom: 0; left: 2px; right: 2px; z-index: 9;
+      transform: translateY(100%); transition: .3s;
+      padding: 10px; margin: 0;
+      background: #000a; color: #fff;
+    }
+
+    &:hover p{
+      transform: translateY(0); bottom: 2px;
+    }
   }
 
   .slick{
