@@ -525,7 +525,7 @@ $decoH : 8px;
 }
 // 大圖 banner，單張
 .bigBanner{
-  margin: 24px 0; padding: 0; width: 100%; 
+  margin: 24px 0; padding: 0; width: 100%;
   a{
     position: relative; display: block;
      overflow: hidden; transition: .2s;
@@ -555,6 +555,42 @@ $decoH : 8px;
   }
 
 }
+
+.col66>.bigBanner,
+.col48>.bigBanner,
+.col84>.bigBanner,
+.col66>.bigBannerSlick,
+.col48>.bigBannerSlick,
+.col84>.bigBannerSlick{
+  align-self: flex-start;
+  padding-left: 0!important; padding-right: 0!important;
+}
+.col66>.bigBanner{
+  img{
+    height:calc( (50vw - #{$sideBarWidth}*.5 - #{$pdOuter}*1.5 - 12px )/3) ;
+  }
+}
+.col48>.bigBanner:first-child{
+  img{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.11 - 5.3333px );
+  }
+}
+.col48>.bigBanner:last-child{
+  img{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.2233 - 2.6666px );
+  }
+}
+.col84>.bigBanner:first-child{
+  img{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.22 - 2.6666px);
+  }
+}
+.col84>.bigBanner:last-child{
+  img{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.1133 - 5.3333px );
+  }
+}
+
 
 
 // ---------------------------------------------------------------------------------------------------
@@ -824,6 +860,32 @@ $decoH : 8px;
     }
   }
 }
+.col66>.bigBannerSlick{
+  .image{
+    height:calc( (50vw - #{$sideBarWidth}*.5 - #{$pdOuter}*1.5 - 12px )/3) ;  
+  }
+}
+.col48>.bigBannerSlick:first-child{
+  .image{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.11 - 5.3333px );
+  }
+}
+.col48>.bigBannerSlick:last-child{
+  .image{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.2233 - 2.6666px );
+  }
+}
+.col84>.bigBannerSlick:first-child{
+  .image{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.22 - 2.6666px);
+  }
+}
+.col84>.bigBannerSlick:last-child{
+  .image{
+    height:calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3 )*.1133 - 5.3333px );
+  }
+}
+
 
 // ********************************************************
 // 以上使用 slick 套件 
