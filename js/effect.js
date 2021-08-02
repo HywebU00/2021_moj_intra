@@ -179,6 +179,8 @@ $(function(){
     })
   })
 
+
+  // 開合區 slideToggle
   var _slideToggle = $('.slideToggle');
   _slideToggle.each(function(){
     let _this = $(this);
@@ -186,6 +188,12 @@ $(function(){
     let _drawer = _this.find('.drawer');
     let text1 = _ctrl.text();
     let text2 = _ctrl.attr('data-altTitle');
+
+    if(_drawer.is(':hidden')) {
+      _ctrl.addClass('openIt').text(text2);
+    } else {
+      _ctrl.removeClass('openIt').text(text1);
+    }
 
     _ctrl.click(function(){
       if (_drawer.is(':visible')) {
