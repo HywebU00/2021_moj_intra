@@ -87,6 +87,7 @@ $(function(){
       arrows: true,
       autoplay: true,
       autoplaySpeed: 5000,
+      speed:800,
       dots: true,
       draggable: true,
       infinite: true,
@@ -116,7 +117,65 @@ $(function(){
       centerMode: false,
       focusOnSelect: true
     });
-    
+
+
+
+
+    // cp 頁圖檔附件
+    $('.related').find('.smallImages').slick({
+      asNavFor: '.largeImages',
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      dots: false,
+      centerMode: false,
+      draggable: false,
+      arrows: true,
+      focusOnSelect: true
+    });
+    // $('.related').find('.smallImages').unslick();
+
+    $('.related').find('.viewLarge').find('.largeImages').slick({
+      asNavFor: '.smallImages',
+      arrows: true,
+      autoplay: false,
+      dots: true,
+      draggable: true,
+      infinite: true,
+      rtl: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      speed: 400,
+      vertical: false,
+      mobileFirst:false,
+      responsive: []
+    });
+
+    var _cpRelatedImages = $('.related').has('.smallImages');
+    // console.log(_cpRelatedImages);
+    _cpRelatedImages.each(function(){
+      let _this = $(this);
+      let _viewEnlarge = _this.find('.viewEnlarge');
+      let _viewLarge = _this.find('.viewLarge');
+      let _closeView = _viewLarge.find('.closeThis>a');
+
+      _viewLarge.before('<div class="cover"></div>');
+      let _vCover = _this.find('.cover');
+
+      _viewEnlarge.click(function(){
+        setTimeout( function(){ _viewLarge.addClass('show') }, 300);
+        // _viewLarge.delay( 800 ).addClass('show');
+        _vCover.fadeIn(400);
+      })
+      _closeView.add(_vCover).click(function(){
+        _viewLarge.removeClass('show')
+        _vCover.hide();
+      })
+
+
+    })
+
+
+
 
 
 
@@ -130,7 +189,7 @@ $(function(){
   const speed = 400;
 
   _lightbox.before('<div class="cover"></div>');
-  var _cover = $('.cover');
+  var _cover = _lightbox.before('.cover');
   
   _showLightbox.click(function(){
     let boxID = $(this).attr('data-id');
