@@ -751,7 +751,7 @@ $decoH : 8px;
 }
 // 輪播點點
 .slick-dots{
-  list-style: none; margin: 10px auto; text-align: center;
+  list-style: none; margin: 10px auto; padding: 0; text-align: center;
   li{ display: inline-block; margin: 2px 8px;
     button{
       font-size: 0;  margin: 0; padding: 0; box-shadow: none; border: none;

@@ -122,62 +122,52 @@ $(function(){
 
 
     // cp 頁圖檔附件
-    $('.related').find('.smallImages').slick({
-      asNavFor: '.largeImages',
-      slidesToShow: 4,
+    var _cpRelatedImages = $('.related').has('.smallImages');
+    var _cpSmallImages = _cpRelatedImages.find('.smallImages');
+    var _enlargeThis = _cpSmallImages.find('.enlargeThis');
+    var _cpviewLargeHere = _cpRelatedImages.find('.viewLargeHere');
+    var _cpLargeImages = _cpviewLargeHere.find('.largeImages');
+    var _closeView = _cpviewLargeHere.find('.closeThis>a');
+
+    _cpSmallImages.slick({
+      asNavFor: _cpLargeImages,
+      slidesToShow: 5,
       slidesToScroll: 1,
-      dots: false,
-      centerMode: false,
-      draggable: false,
+      dots: true,
       arrows: true,
+      infinite: false,
+      draggable: false,
+      centerMode: false,
+      // centerPadding: '0px',
       focusOnSelect: true
     });
-    // $('.related').find('.smallImages').unslick();
-
-    $('.related').find('.viewLarge').find('.largeImages').slick({
-      asNavFor: '.smallImages',
+  
+    _cpLargeImages.slick({
+      asNavFor:  _cpSmallImages,
       arrows: true,
-      autoplay: false,
       dots: true,
-      draggable: true,
-      infinite: true,
-      rtl: false,
+      infinite: false,
+      draggable: false,
+      fade: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      speed: 400,
-      vertical: false,
-      mobileFirst:false,
-      responsive: []
+      speed: 400
     });
 
-    var _cpRelatedImages = $('.related').has('.smallImages');
-    // console.log(_cpRelatedImages);
-    _cpRelatedImages.each(function(){
-      let _this = $(this);
-      let _viewEnlarge = _this.find('.viewEnlarge');
-      let _viewLarge = _this.find('.viewLarge');
-      let _closeView = _viewLarge.find('.closeThis>a');
+    _cpviewLargeHere.before('<div class="cover"></div>');
+    var _vCover = _cpRelatedImages.find('.cover');
 
-      _viewLarge.before('<div class="cover"></div>');
-      let _vCover = _this.find('.cover');
+    console.log(_enlargeThis);
 
-      _viewEnlarge.click(function(){
-        setTimeout( function(){ _viewLarge.addClass('show') }, 300);
-        // _viewLarge.delay( 800 ).addClass('show');
-        _vCover.fadeIn(400);
-      })
-      _closeView.add(_vCover).click(function(){
-        _viewLarge.removeClass('show')
-        _vCover.hide();
-      })
-
-
+    _enlargeThis.click(function(){
+      console.log('yes');
+      _cpviewLargeHere.addClass('show');
+      _vCover.fadeIn(400);
     })
-
-
-
-
-
+    _closeView.add(_vCover).click(function(){
+      _cpviewLargeHere.removeClass('show')
+      _vCover.hide();
+    })
 
 
 
