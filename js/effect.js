@@ -178,7 +178,7 @@ $(function(){
   const speed = 400;
 
   _lightbox.before('<div class="cover"></div>');
-  var _cover = _lightbox.before('.cover');
+  var _cover = _lightbox.prev('.cover');
   
   _showLightbox.click(function(){
     let boxID = $(this).attr('data-id');
