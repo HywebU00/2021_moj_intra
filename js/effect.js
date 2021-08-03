@@ -138,7 +138,6 @@ $(function(){
       infinite: false,
       draggable: false,
       centerMode: false,
-      // centerPadding: '0px',
       focusOnSelect: true
     });
   

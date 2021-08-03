@@ -189,11 +189,12 @@ fieldset {
     flex: 0 0 1.2em;
   }
   input{
-    flex:0 1 calc(50% - .6em); padding-right: 34px;
-    background-image: url(../images/icon_calendar.png);
-    background-repeat: no-repeat;
-    background-position:  calc(100% - 8px) .5em;
-    background-size: 18px;
+    flex:0 1 calc(50% - .6em); 
+    // padding-right: 34px;
+    // background-image: url(../images/icon_calendar.png);
+    // background-repeat: no-repeat;
+    // background-position:  calc(100% - 8px) .5em;
+    // background-size: 18px;
     cursor: pointer;
   }
   input:last-child{ order: 2;}
