@@ -23,7 +23,7 @@ body{
   }
   .main{
     flex:1 1 auto; 
-    width: calc(100% - #{$sideBarWidth});
+    width: calc(100% - #{$sideBarWidth}); min-width: 820px;
     padding:15px $pdOuter*2 45px $pdOuter; 
     background: $bg-color;
     .contBox{

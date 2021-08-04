@@ -76,7 +76,38 @@
   }
 }
 .icon_poll a{ background-position: center 10px; }
-.icon_statistic a{ background-position: center -25px;}
+.icon_statistic a{ background-position: center -30px;}
 td>*[class*="icon_"]:only-child{
   width: 100%;
+}
+
+
+// 功能按鈕
+.btn_new{
+  display: inline-block; font-size: 1rem;
+
+  a{
+    position: relative; display: block;height: 44px; line-height: 45px; 
+    padding: 0 1em 0 50px;  border-radius: 2em; 
+    background-color: $btn-bg1;color: #fff; text-decoration: none;
+    transition: .2s;
+
+    &::before{
+      content: ''; position: absolute; left: 2px; top: 2px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background-image: url(../images/icons.png);
+      background-color: $btn-bg2;
+      background-position: center -72px;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      transition: .2s;
+  
+    }
+
+    &:hover{
+      background-color: $btn-bg2;
+      &::before{background-color: $lightColor;}
+    }
+  }
+
 }

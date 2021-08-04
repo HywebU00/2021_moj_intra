@@ -20,7 +20,7 @@
   box-sizing: border-box;
   height: 2.4em;
   line-height: 2.4em;
-  padding: 0 1.5em 0 6px;
+  padding: 0 24px 0 6px;
   margin: 3px;
   border: 1px solid $border-color;
   vertical-align: middle;
@@ -98,7 +98,7 @@ textarea {
   @extend %textInput;
   resize: vertical;
   line-height: 1.6;
-  height: 10em;
+  height: 8em;
 }
 
 // -----------------------------------------
@@ -231,13 +231,28 @@ fieldset {
 
 }
 table.formLayout{
-  // outline: 1px dashed pink;
-  margin: 0 auto;
+  margin: 0 auto; width: 100%; min-width: 700px;
   border: none; border-collapse: collapse;
-  width: auto; min-width: 700px;
   td{  vertical-align: top;
-    &:nth-child(odd){text-align: right; padding: .9em 8px 6px 0;}
+    &:nth-child(odd){text-align: right; padding: .9em 8px 6px 0; width: 20%;}
     &:nth-child(even){padding:6px 0;}
+   
+    textarea{width: 90%;}
+    .duration{ width: calc(90% + 6px);}
+
+    input.full{ width: 90%;}
+    select.full{ width: calc(90% - 32px);}
+
+    input.half{ width: 45%;}
+    select.half{ width: calc(45% - 32px);}
+
+    input.quarter{ width: 22%;}
+    select.quarter{ width: calc(22% - 32px);}
+
+  }
+  p.hint{ 
+    font-size: .85em; line-height: 1.4;
+    margin: .2em 3px .5em;
   }
 
   & ~ .btnDv{padding: 1.5em 0; margin-top: 1.5em; border-top: 1px solid $border-color;}

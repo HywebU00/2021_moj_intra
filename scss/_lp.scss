@@ -70,6 +70,7 @@
 
   // 表格條列
   table.list{
+    width: 100%;
     border-collapse: collapse; line-height: 1.6; margin: 10px 0 30px;
     border-top: 3px solid $border-color-light;
     border-bottom: 3px solid $border-color-light;
@@ -91,6 +92,9 @@
         &:hover{background: $bg-color-pale;}
       }
       td{vertical-align: top;
+        &.aCenter{text-align: center;}
+        &.aRight{text-align: right;}
+
         a{display: block; text-decoration: underline; color: $font-color-dark;
           &:hover{text-decoration: none; color: $linkColor; }
         }
