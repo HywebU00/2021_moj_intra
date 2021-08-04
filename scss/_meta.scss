@@ -20,6 +20,8 @@
     }
     td{
       text-align: left;
+      &.title{ font-size: 1.2em; color: $font-color-dark;}
+      &>p:first-child{ margin-top: 0;}
     }
   }
 

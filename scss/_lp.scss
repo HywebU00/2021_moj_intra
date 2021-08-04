@@ -98,7 +98,10 @@
           &::after{content: '.';}
 
         }
-        .source, time{display: block; text-align: center; color: $font-color;}
+        .source, time{
+          display: inline-block; text-align: center; color: $font-color;
+          &:only-child{display: block;}
+        }
         .source{min-width: 6.5em;}
 
         &>p{margin: 0;
