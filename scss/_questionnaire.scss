@@ -31,36 +31,102 @@
 
 }
 .contBox>.questionnaire{ margin-left: $pdInner*-.5;margin-right: $pdInner*-.5;}
-
-.question{
-  position: relative; margin: 5px 0 15px; padding: 30px 0 10px 3em;
-  line-height: 1.6;
-
-  &+.question{border-top: 1px dotted $border-color;}
-
-  .number{
-    position: absolute; left: 0; top: 35px;
-    width: 2.2em; font-weight: bold; text-align: right;
-    height: 1em; line-height: 1; color: $font-color-dark;
-    &::after{content: '.';}
-  }
-
-  p{margin: 0 0 1em;color: $font-color-dark;}
-}
-.yourAnswer{
-  label{
-    position: relative;
-    display: block; margin: 4px 0; padding:7px 0 7px 1.6em;
-    cursor: pointer;
-    &:hover{ color: $font-color-dark;}
-
-    input[type="radio"], input[type="checkbox"]{
-      position: absolute; left: 0; top: 10px;
+.questionSet{
+  .question{
+    position: relative; margin: 5px 0 15px; padding: 30px 0 10px 3em;
+    line-height: 1.6;
+  
+    &+.question{border-top: 1px dotted $border-color;}
+  
+    .number{
+      position: absolute; left: 0; top: 35px;
+      width: 2.2em; font-weight: bold; text-align: right;
+      height: 1em; line-height: 1; color: $font-color-dark;
+      &::after{content: '.';}
     }
-    input[type="text"], input[type="email"], input[type="number"]{
-      margin-top: -7px; margin-bottom:-7px; vertical-align: middle;
-      width: 30em;
+  
+    p{margin: 0 0 1em;color: $font-color-dark;}
+  }
+  .yourAnswer{
+    label{
+      position: relative;
+      display: block; margin: 4px 0; padding:7px 0 7px 1.6em;
+      cursor: pointer;
+      &:hover{ color: $font-color-dark;}
+  
+      input[type="radio"], input[type="checkbox"]{
+        position: absolute; left: 0; top: 10px;
+      }
+      input[type="text"], input[type="email"], input[type="number"]{
+        margin-top: -7px; margin-bottom:-7px; vertical-align: middle;
+        width: 30em;
+  
+      }
+    }
+  
+  }
+}
 
+
+
+// 問卷統計結果
+
+.qtSubject{ 
+  margin: 0 -.85*$pdInner 16px;
+  padding:20px $pdInner 10px;
+  overflow: hidden;
+  line-height: 1.5;
+  border-bottom: 3px solid $border-color-light;
+  .dt{ float: left; margin-right: 1em; line-height: 1.85;}
+  p{ 
+    position: relative; float: left;
+    margin:0; padding: 0 0 0 .9em; 
+    font-size: 1.2em; color: $font-color-dark;
+    &::before{
+      content: ''; position: absolute; left: 0; top: 0;
+      width: 2px; height: 100%;
+      background: $border-color-light;
+    }
+  }
+}
+.qtStatistic{
+  .topic{
+    line-height: 1.5;
+    margin:2em -.4*$pdInner 0; padding: 10px .5*$pdInner;
+    color: $font-color-dark; font-weight: normal;
+    border: 1px solid $border-color; border-radius: 2em;
+  }
+}
+table.barChart{
+  border-collapse: collapse; width: 100%;  margin: 10px 0 30px;
+  caption{
+    text-align: left; padding: 2em 0 .5em;
+    border-bottom: 3px solid $border-color-light;
+    .number{
+      display: inline-block;
+      width: 2em; padding-right: .2em; text-align: right; 
+      &::after{content: '.';}
+    }
+    .question{
+      display: inline-block; 
+    }
+  }
+  tr{ border-bottom: 1px solid $border-color-light;
+    &:hover{ background-color: $bg-color-pale;}
+  }
+  td{ padding: 8px;
+    &.answer{width: 38%; padding-left: 2.2em; }
+    &.count{ width: 5em; text-align: right;}
+    &.bar{
+      position: relative; text-align: left;
+      padding-left: 0; padding-right: 0; width:40%; 
+      .barWidth{
+        position: absolute; top: 50%; margin-top: -10px;height: 20px;
+        background: $lightColor; 
+      }
+    }
+    &.percentage{
+      text-align: right; font-family: monospace;
     }
   }
 

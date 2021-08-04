@@ -56,3 +56,27 @@
   &.left{ transform: rotate(0);}
 
 }
+
+// 功能圖示
+*[class^="icon_"]{
+  display: block; text-align: center; margin: 0;
+  a{
+    display: block; margin: 0 auto;
+    width: 44px; height: 44px; border-radius: 50%;
+    background-image: url(../images/icons.png);
+    background-color: $btn-bg2;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: .2s;
+    &:hover{
+      background-color: $btn-bg2;
+      box-shadow: $btn-bg2 0 0 0 2px;
+    }
+  }
+}
+.icon_poll a{ background-position: center 10px; }
+.icon_statistic a{ background-position: center -25px;}
+td>*[class*="icon_"]:only-child{
+  width: 100%;
+}
