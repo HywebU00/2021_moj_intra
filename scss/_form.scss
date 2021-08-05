@@ -325,3 +325,11 @@ table.formLayout{
 .meta + .simpleLogin{
   margin: 40px auto;
 }
+
+// 驗證碼，captcha
+.captchaSet{
+  display: flex;
+  flex-flow: row wrap;
+  img{ width: 130px; margin: 0 30px 0 10px; }
+}
+.formLayout td .captchaSet{ width: 90%;}

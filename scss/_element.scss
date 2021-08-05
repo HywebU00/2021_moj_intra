@@ -82,26 +82,48 @@ td>*[class*="icon_"]:only-child{
 }
 
 
-// 功能按鈕
-.btn_new{
-  display: inline-block; font-size: 1rem;
-
-  a{
-    position: relative; display: block;height: 44px; line-height: 45px; 
-    padding: 0 1em 0 50px;  border-radius: 2em; 
-    background-color: $btn-bg1;color: #fff; text-decoration: none;
+// 功能按鈕 button 或 span>a
+// <button class="btn_">XXX</button>
+button[class^='btn_']{
+  position: relative; display: inline-block; font-size: 1rem; 
+  height: 44px; line-height: 44px; margin:3px; padding: 0 1em 0 48px; 
+  background-color: $btn-bg1; color: #fff; border-radius: 22px;
+  border: none; box-shadow: none;
+  transition: .2s;
+  &::before{
+    content: ''; position: absolute; left: 2px; top: 2px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background-image: url(../images/icons.png);
+    background-color: $btn-bg2;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: 24px;
     transition: .2s;
+  }
+  &:hover{
+    background-color: $btn-bg2;
+    &::before{background-color: $lightColor;}
+  }
+}
+// <div class="btn_"><a>XXX</a></div>
+*[class^='btn_']{
+  display: inline-block; font-size: 1rem; margin: 0 3px;
+  a{
+    position: relative; display: block;
+    height: 44px; line-height: 44px; padding: 0 1em 0 48px; 
+    background-color: $btn-bg1;color: #fff; text-decoration: none; border-radius: 2em; 
+    transition: .2s;
+    &::selection{ background-color: transparent;}
 
     &::before{
       content: ''; position: absolute; left: 2px; top: 2px;
       width: 40px; height: 40px; border-radius: 50%;
       background-image: url(../images/icons.png);
       background-color: $btn-bg2;
-      background-position: center -72px;
+      background-position: center 0;
       background-repeat: no-repeat;
       background-size: 24px;
       transition: .2s;
-  
     }
 
     &:hover{
@@ -109,5 +131,7 @@ td>*[class*="icon_"]:only-child{
       &::before{background-color: $lightColor;}
     }
   }
-
 }
+.btn_new a::before, button.btn_new::before { background-position: center -72px; }
+.btn_change a::before, button.btn_change::before { background-position: center -112px; }
+.btn_voice a::before, button.btn_voice::before { background-position: center -152px; }
