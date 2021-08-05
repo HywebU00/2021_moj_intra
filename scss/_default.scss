@@ -12,6 +12,9 @@ body{
 *{
   box-sizing: border-box;
 }
+a{ color: $linkColor; text-decoration: underline;
+  &:hover{ text-decoration: none;}
+}
 
 ////////// 排版 //////////
 .center{ clear: both;

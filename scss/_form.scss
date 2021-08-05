@@ -216,6 +216,7 @@ fieldset {
       &:nth-child(odd){text-align: right; width: 18%; padding-right: 5px;}
       .duration{width: calc(90% + 6px);}
       &>input[type="text"]:only-child{width: 90%;}
+      &>select:only-child{width: calc(90% - 32px);}
     }
   }
   .slideHeader{ padding:8px $space; }

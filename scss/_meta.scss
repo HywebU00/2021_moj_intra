@@ -5,6 +5,11 @@
   table.data{
     margin: 0 auto; width: 100%;
     line-height: 1.5; border-collapse: collapse;
+    caption{
+      font-size: 1.2em; font-weight: bold;
+      padding: .7em 10px .3em;
+      border-bottom: 1px solid $border-color; color: $font-color-dark;
+    }
     tr{border-bottom: 1px solid $border-color-light;
       &:last-child{border: none;}
     }
