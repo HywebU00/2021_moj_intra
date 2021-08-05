@@ -159,7 +159,7 @@
         <ul>
           <li><a href="mp.html">首頁</a></li>
           <li><a href="x">功能</a></li>
-          <li><a href="x">註冊新帳號</a></li>
+          <li><a href="x">個人資訊</a></li>
         </ul>
       </div>
 
@@ -168,7 +168,7 @@
           <li class="back"><a href="hr_lp.html">回上一頁</a></li>
         </ul>
       </div>
-      <h2 class="pageHeader">註冊新帳號</h2>
+      <h2 class="pageHeader">個人資訊</h2>
 
       
       <div class="contBox">
@@ -191,7 +191,7 @@
               </tr>
               <tr>
                 <td><abbr class="required" title="必填欄位">*</abbr>員工編號</td>
-                <td><input class="half" type="text"><button type="button">驗證</button></td>
+                <td><input class="half" type="text" value="90249" readonly="readonly"></td>
               </tr>
               <tr>
                 <td>職稱</td>
@@ -206,13 +206,13 @@
               <tr>
                 <td><abbr class="required" title="必填欄位">*</abbr>姓氏</td>
                 <td>
-                  <input class="full" type="text">
+                  <input class="full" type="text" value="黃">
                 </td>
               </tr>
               <tr>
                 <td><abbr class="required" title="必填欄位">*</abbr>名字</td>
                 <td>
-                  <input class="full" type="text">
+                  <input class="full" type="text" value="君君">
                 </td>
               </tr>
               <tr>
@@ -221,13 +221,13 @@
               </tr>
               <tr>
                 <td><abbr class="required" title="必填欄位">*</abbr>密碼</td>
-                <td><input class="full" type="password"></td>
+                <td><input class="half" type="password" value="a1s2d3f4g5"></td>
               </tr>
               <tr>
                 <td><abbr class="required" title="必填欄位">*</abbr>性別</td>
                 <td>
                   <div class="optionGroup">
-                    <label><input name="xxx" type="radio">男</label>
+                    <label><input name="xxx" type="radio" checked>男</label>
                     <label><input name="xxx" type="radio">女</label>
                   </div>
                 </td>
@@ -237,7 +237,7 @@
                 <td>
                   <div class="optionGroup">
                     <label><input name="xxx1" type="radio">是</label>
-                    <label><input name="xxx1" type="radio">否</label>
+                    <label><input name="xxx1" type="radio" checked>否</label>
                   </div>
                 </td>
               </tr>
@@ -245,9 +245,9 @@
                 <td><abbr class="required" title="必填欄位">*</abbr>所屬單位</td>
                 <td>
                   <select class="full" name="所屬單位" id="所屬單位">
-                    <option value="0">請選擇所屬單位</option>
                     <option value="">所屬單位一</option>
                     <option value="">所屬單位二</option>
+                    <option value="" selected>行政科</option>
                     <option value="">...</option>
                   </select>
                 </td>
@@ -287,11 +287,11 @@
               </tr>
               <tr>
                 <td><abbr class="required" title="必填欄位">*</abbr>申請郵件帳號</td>
-                <td><input class="half" type="email">@mail.moj.gov.tw</td>
+                <td><input class="half" type="email" readonly="readonly" value="myMail">@mail.moj.gov.tw</td>
               </tr>
               <tr>
                 <td><abbr class="required" title="必填欄位">*</abbr>備用申請郵件帳號</td>
-                <td><input class="half" type="email">@mail.moj.gov.tw
+                <td><input class="half" type="email" readonly="readonly" value="myAnotherMail">@mail.moj.gov.tw
                   <p class="hint">申請郵件帳號如有重復，提供備用帳號供管理者備用</p>
                 </td>
               </tr>
