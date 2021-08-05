@@ -135,3 +135,23 @@ button[class^='btn_']{
 .btn_new a::before, button.btn_new::before { background-position: center -72px; }
 .btn_change a::before, button.btn_change::before { background-position: center -112px; }
 .btn_voice a::before, button.btn_voice::before { background-position: center -152px; }
+
+
+
+.notes{
+  background: lighten($bg-color-dark, 25); 
+   padding:15px 20px; line-height: 1.6;
+  font-size: 1rem;
+  border-radius: 6px;
+  p{
+    margin: 1em 0;
+    &:first-child{margin-top: 0;}
+  }
+  li{
+    margin: 0;
+    &+li{ margin-top: .5em;}
+  }
+}
+.formLayout + .notes{
+  margin-top: 1em;
+}

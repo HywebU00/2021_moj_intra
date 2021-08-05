@@ -61,6 +61,9 @@ input[type="time"],
 input[type="url"],
 input[type="week"] { @extend %textInput; }
 
+// 表單中，直接帶入的值
+.knownValue{ @extend %textInput;  border: none; }
+
 // 下拉選單
 select {
   -webkit-appearance: none;
@@ -330,6 +333,29 @@ table.formLayout{
 .captchaSet{
   display: flex;
   flex-flow: row wrap;
+  input{width: 10em;}
   img{ width: 130px; margin: 0 30px 0 10px; }
 }
 .formLayout td .captchaSet{ width: 90%;}
+
+.optionGroup{
+  margin:0 3px;
+  label{
+    position: relative;
+    display: inline-block; margin: 4px 0; padding:7px .5em 7px 1.6em;
+    cursor: pointer; border-radius: 4px;
+    &:hover{ color: $font-color-dark; box-shadow: $border-color-light 0 0 0 1px;}
+
+    input[type="radio"], input[type="checkbox"]{
+      position: absolute; left: 2px; top: 10px;
+    }
+    // input[type="text"], input[type="email"], input[type="number"]{
+    //   margin-top: -7px; margin-bottom:-7px; vertical-align: middle;
+    //   width: 30em;
+    // }
+
+    &+label {margin-left: 1em;}
+  }
+
+}
+
