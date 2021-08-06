@@ -35,7 +35,7 @@ $decoH : 8px;
   a{
     display: block; position: relative; cursor: pointer;
     height: 50px; line-height: 50px; padding: 0 15px 0 54px;
-    color: $font-color-dark;border-radius: 2em;
+    color: $font-color-dark;border-radius: 2em; text-decoration: none;
     transition: .2s;
     &:hover{background:#fff; }
   }

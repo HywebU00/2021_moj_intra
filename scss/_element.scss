@@ -152,6 +152,8 @@ button[class^='btn_']{
     &+li{ margin-top: .5em;}
   }
 }
+.formA fieldset + .notes{ margin-left:$pdInner*-.5 ; margin-right:$pdInner*-.5;}
+
 .formLayout + .notes{
   margin-top: 1.5em;
 }

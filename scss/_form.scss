@@ -172,14 +172,18 @@ fieldset {
 
 ////////////////////////////////////
 ////////// 表單送出按鈕群 //////////
-.btnDv{clear:both;text-align:center;margin:0 auto;
+.btnDv{
+  clear:both;text-align:center;
+  margin:0 auto;padding: 1.2em 0 1.5em;
   input[type="button"], input[type="submit"], input[type="reset"] {
-    margin: 4px;
+    margin: 4px; min-width: 6em;
     &:hover{
       //  box-shadow: none;
        transform: translateY(3px);
     }
+    &:only-child{min-width: 10em;}
   }
+  input[type="button"].showLightbox{ min-width: 7.5em;}
 }
 
 ////////// 日期區間 //////////
@@ -228,11 +232,18 @@ fieldset {
 ////////////////////////////////////
 // formLayout
 .formA{
-  // margin: 0 auto;
-  background: #fff;
+  &>fieldset, &>form>fieldset {
+    margin:0 $pdInner*-.5 2em;
+    padding: $pdInner*.5;
+    border-color: $border-color; border-radius: 0;
 
-  // outline: 1px solid red;
-
+    legend{
+      font-weight: normal; font-size: 1.2em; 
+      padding: 8px .8em; line-height: 1.1;
+      border: 1px solid $border-color;
+      border-radius: 2em;
+    }
+  }
 }
 table.formLayout{
   margin: 0 auto; width: 100%; min-width: 700px;
@@ -241,7 +252,7 @@ table.formLayout{
     &:nth-child(odd){text-align: right; padding: .9em 8px 6px 0; width: 20%;}
     &:nth-child(even){padding:6px 0;}
    
-    textarea{width: 90%;}
+    textarea, .knownValue{width: 90%;}
     .duration{ width: calc(90% + 6px);}
 
     input.full{ width: 90%;}
@@ -260,6 +271,15 @@ table.formLayout{
   }
 
   & ~ .btnDv{padding: 1.5em 0; margin-top: 1.5em; border-top: 1px solid $border-color;}
+}
+// 註冊新帳號:系統使用權限申請
+fieldset.authority{
+  table.formLayout{
+    td:first-child{width: 35%; padding-right: 1em;}
+    tr{border-bottom: 1px solid $border-color-light;
+      &:last-child{border-bottom: none;}
+    }
+  }
 }
 
 
@@ -354,9 +374,7 @@ table.formLayout{
     //   margin-top: -7px; margin-bottom:-7px; vertical-align: middle;
     //   width: 30em;
     // }
-
     &+label {margin-left: 1em;}
   }
-
 }
-
+.formLayout td .optionGroup{ width: 90%;}

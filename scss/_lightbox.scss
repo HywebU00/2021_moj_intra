@@ -5,10 +5,27 @@
   .closeThis {
     position: absolute; right: 5px;top: 5px; z-index: 9;
   }
+  h2{color: $font-color-dark;}
 }
 
 .cover {
   display: none; z-index: 9000;
   position: fixed;left: 0;right: 0;top: 0;bottom: 0;
   background-color: rgba(0, 0, 0, .5);
+}
+
+
+
+// 帳號申請列印
+.accountPrint{
+  background: #fff;
+  left: 4vw; top: 20px; bottom: 20px;
+  width: 92vw; padding:15px 30px;
+
+  .closeThis{
+    position: absolute; right: 4px; top: 4px;
+    background-color: #777;
+    &:hover{ background: #444;}
+  }
+
 }

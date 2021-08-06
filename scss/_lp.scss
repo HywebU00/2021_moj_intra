@@ -90,6 +90,9 @@
       tr{border-bottom: 1px solid $border-color-light; transition: .2s;
         &:last-child{border-bottom: none;}
         &:hover{background: $bg-color-pale;}
+        &[onclick]{ cursor: pointer; 
+          &:hover{ color: $linkColor; text-decoration: underline;}
+        }
       }
       td{vertical-align: top;
         &.aCenter{text-align: center;}

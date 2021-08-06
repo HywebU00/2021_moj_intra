@@ -22,7 +22,10 @@
   }
 
   .allCourts{position: absolute; left: 20px; top: 4px;
-    a{ display: block; cursor: pointer; border: 1px solid #fff8; line-height: 1.8; height: 1.8em; padding: 0 10px;
+    a{ 
+      display: block; cursor: pointer; text-decoration: none;
+      line-height: 1.8; height: 1.8em; padding: 0 10px;
+      border: 1px solid #fff8; 
       &:hover, &:focus{border: 1px solid #fff}
     }
   }
@@ -35,7 +38,9 @@
   }
   ul{float: left; line-height: 1;text-align: center;}
   li{float: left; margin: 0 2px; 
-    a{display: block; width: 1.5em; height: 1.5em; line-height: 1.55; border-radius: 50%; cursor: pointer;
+    a{
+      display: block; width: 1.5em; height: 1.5em; line-height: 1.55; 
+      border-radius: 50%; cursor: pointer; text-decoration: none;
       &:hover{background-color: rgba(0,0,0,.3);}
     }
     &.active a{background-color: #fff; color: $font-color-dark;}

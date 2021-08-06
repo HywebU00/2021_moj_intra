@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>註冊新帳號 法務部員工入口網</title>
+  <title>帳號條列 法務部員工入口網</title>
 
   <link rel="stylesheet" href="slick/slick.css"/>
   <link rel="stylesheet" href="css/styleA.css">
@@ -159,176 +159,125 @@
         <ul>
           <li><a href="mp.html">首頁</a></li>
           <li><a href="x">功能</a></li>
-          <li><a href="x">註冊新帳號</a></li>
+          <li><a href="x">帳號申請表單查詢作業</a></li>
         </ul>
       </div>
 
       <div class="function">
         <ul>
-          <li class="back"><a href="hr_lp.html">回上一頁</a></li>
+          <li class="back"><a href="javascript:;">回上一頁</a></li>
         </ul>
       </div>
-      <h2 class="pageHeader">註冊新帳號</h2>
+      <h2 class="pageHeader">帳號申請表單查詢作業</h2>
 
       
       <div class="contBox">
-
-        <section class="formA">
-          <form action="">
-            <table class="formLayout">
+  
+        <section class="search">
+          <form>
+            <table class="formlayout">
               <tr>
-                <td>登錄時間</td>
+                <td>尋找條件</td>
                 <td>
-                  <div class="knownValue">
-                    <time>2020/1/8</time> 上午
-                    <time>10:50:00</time>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>申請人</td>
-                <td><div class="knownValue">A12345****</div></td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>員工編號</td>
-                <td><input class="half" type="text"><button type="button">驗證</button></td>
-              </tr>
-              <tr>
-                <td>職稱</td>
-                <td>
-                  <select class="half" name="職稱" id="職稱">
-                    <option value="">職稱一</option>
-                    <option value="">職稱二</option>
-                    <option value="">...</option>
+                  <select>
+                    <option value="">請選擇</option>
+                    <option value="">已結案</option>
+                    <option value="">未結案</option>
                   </select>
                 </td>
               </tr>
               <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>姓氏</td>
-                <td>
-                  <input class="full" type="text">
-                </td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>名字</td>
-                <td>
-                  <input class="full" type="text">
-                </td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>身分證字號</td>
-                <td><div class="knownValue">A12345**** </div></td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>密碼</td>
-                <td><input class="half" type="password"></td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>性別</td>
+                <td>尋找條件</td>
                 <td>
                   <div class="optionGroup">
-                    <label><input name="xxx" type="radio">男</label>
-                    <label><input name="xxx" type="radio">女</label>
+                    <label><input type="radio" name="xxx">已結案</label>
+                    <label><input type="radio" name="xxx">未結案</label>
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>主管職</td>
-                <td>
-                  <div class="optionGroup">
-                    <label><input name="xxx1" type="radio">是</label>
-                    <label><input name="xxx1" type="radio">否</label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>所屬單位</td>
-                <td>
-                  <select class="full" name="所屬單位" id="所屬單位">
-                    <option value="0">請選擇所屬單位</option>
-                    <option value="">所屬單位一</option>
-                    <option value="">所屬單位二</option>
-                    <option value="">...</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>所屬科室</td>
-                <td>
-                  <select class="full" name="所屬科室" id="所屬科室">
-                    <option value="0">請選擇所屬科室</option>
-                    <option value="">科室名稱一</option>
-                    <option value="">科室名稱二</option>
-                    <option value="">...</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>上一層主管</td>
-                <td>
-                  <select class="full" name="上一層主管" id="上一層主管">
-                    <option value="">主管姓名一</option>
-                    <option value="">主管姓名二</option>
-                    <option value="">...</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>出生年月日</td>
-                <td><input class="half" type="date"></td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>到職日期</td>
-                <td><input class="half" type="date"></td>
-              </tr>
-              <tr>
-                <td>憑證註冊</td>
-                <td><button type="button">憑證上傳</button> </td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>申請郵件帳號</td>
-                <td><input class="half" type="email">@mail.moj.gov.tw</td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>備用申請郵件帳號</td>
-                <td><input class="half" type="email">@mail.moj.gov.tw
-                  <p class="hint">申請郵件帳號如有重復，提供備用帳號供管理者備用</p>
-                </td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>使用個人電腦之財產編號</td>
-                <td><input class="full" type="text"></td>
-              </tr>
-              <tr>
-                <td><abbr class="required" title="必填欄位">*</abbr>辦公室電話</td>
-                <td><input class="full" type="tel"></td>
-              </tr>
-              <tr>
-                <td>備註</td>
-                <td><input class="full" type="text"></td>
-              </tr>
-
             </table>
-
-            <div class="notes">
-              <p> 註：</p>
-              <ol>
-                <li><abbr class="required" title="必填欄位">*</abbr> 為必填欄位，其它欄位可不填寫。</li>
-                <li>密碼設定最少應有六位英數組成，密碼請小心保管，切勿洩漏。</li>
-              </ol>
-             </div>
-       
-      
-
-
             <div class="btnDv">
-              <input type="submit" value="儲存">
-              <input type="button" value="儲存並列印">
-              <input type="reset" value="重填">
-              <input type="button" value="取消">
+              <input type="button" value="查詢">
+              <input type="reset" value="清除">
             </div>
           </form>
         </section>
+
+        <div class="pagination">
+          <div class="total"> 共<em>308</em>筆資料，第<em>1/18</em>頁，</div>
+          <div class="items">每頁顯示
+            <ul>
+              <li class="active"><a href="javascript:;">20</a></li>
+              <li><a href="javascript:;">40</a></li>
+              <li><a href="javascript:;">60</a></li>
+            </ul> 筆
+          </div>
+        </div>
+        
+        <section class="lp">
+          <table class="list">
+            <thead>
+              <tr>
+                <th>申請人</th>
+                <th>表單名稱</th>
+                <th>申請日期</th>
+                <th>結案日期</th>
+                <th>內容簡述</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr onclick="location.href='account_new.html'">
+                <td><a href="account_new.html">方大大</a></td>
+                <td>系統帳號開立申請單</td>
+                <td>110/08/02</td>
+                <td></td>
+                <td>申請單位：資訊處 | 行政服務科 申請人：方大大<br>就職日期：110/08/02</td>
+              </tr>
+              <tr onclick="location.href='account_new.html'">
+                <td>王狠大</td>
+                <td>系統帳號開立申請單(主管)</td>
+                <td>110/07/27</td>
+                <td>110/07/27</td>
+                <td>申請單位：統計處 | 矯正統計科 申請人：王狠大<br>就職日期：110/07/27</td>
+              </tr>
+              <tr onclick="location.href='account_new.html'">
+                <td>賴珍大</td>
+                <td>系統帳號開立申請單</td>
+                <td>110/06/17</td>
+                <td>110/06/18</td>
+                <td>申請單位：保護司 | 犯罪防治科 申請人：方紀添<br>就職日期：110/06/17</td>
+              </tr>
+            </tbody>
+          </table>
+      
+        </section>
+
+        <div class="pagination">
+          <div class="total"> 共<em>308</em>筆資料，第<em>1/18</em>頁，</div>
+          <div class="items">每頁顯示
+            <ul>
+              <li class="active"><a href="javascript:;">20</a></li>
+              <li><a href="javascript:;">40</a></li>
+              <li><a href="javascript:;">60</a></li>
+            </ul> 筆
+          </div>
+          <ul class="page">
+            <li class="first"><a href="javascript:;">第一頁</a></li>
+            <li class="prev"><a href="javascript:;">回上一頁</a></li>
+            <li class="active"><a href="javascript:;">1</a></li>
+            <li><a href="javascript:;">2</a></li>
+            <li><a href="javascript:;">3</a></li>
+            <li><a href="javascript:;">4</a></li>
+            <li><a href="javascript:;">5</a></li>
+            <li><a href="javascript:;">6</a></li>
+            <li><a href="javascript:;">7</a></li>
+            <li><a href="javascript:;">8</a></li>
+            <li><a href="javascript:;">9</a></li>
+            <li><a href="javascript:;">10</a></li>
+            <li class="next"><a href="javascript:;">下一頁</a></li>
+            <li class="last"><a href="javascript:;">最後一頁</a></li>
+          </ul>
+        </div>
 
       </div>
 

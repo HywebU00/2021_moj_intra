@@ -22,11 +22,14 @@
         content: ''; position: absolute; right: 0; top: 4px; bottom: 4px;
         width: 3px; background-color: $border-color-light;
       }
+      &:nth-last-child(4), &:nth-child(3) {width: 15%;}
     }
     td{
       text-align: left;
       &.title{ font-size: 1.2em; color: $font-color-dark;}
       &>p:first-child{ margin-top: 0;}
+      &+th{border-left: 1px solid $border-color-light;}
+      &:nth-last-child(3), &:nth-child(4) {width: 35%;}
     }
   }
 
