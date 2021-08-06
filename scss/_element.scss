@@ -6,18 +6,18 @@
   position: absolute;
   a{
     position: relative; display: block; width: 46px; height: 46px;
+    background-color: #6669;
     cursor: pointer; transition: .2s;
     &::before, &::after{
       content: ''; position: absolute; top: 50%; left: 50%;
       width: 28px; height: 2px; margin: -1px auto auto -14px;
-      background: #eee;
+      background: #fff;
     }
     &::before{ transform: rotate(45deg);}
     &::after{transform: rotate(135deg);}
   
     &:hover{
-      // transform: scale(1.25);
-      &::before, &::after{ background: #fff;}
+      background-color: #666;
     }
 
   }
@@ -61,7 +61,7 @@
 *[class^="icon_"]{
   display: block; text-align: center; margin: 0;
   a{
-    display: block; margin: 0 auto;
+    display: block; margin: 0 auto; cursor: pointer;
     width: 44px; height: 44px; border-radius: 50%;
     background-image: url(../images/icons.png);
     background-color: $btn-bg2;
@@ -77,6 +77,8 @@
 }
 .icon_poll a{ background-position: center 10px; }
 .icon_statistic a{ background-position: center -30px;}
+.icon_photo a{ background-position: center -190px;}
+
 td>*[class*="icon_"]:only-child{
   width: 100%;
 }

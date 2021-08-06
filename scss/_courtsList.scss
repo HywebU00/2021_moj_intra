@@ -5,7 +5,7 @@
   // min-height: 100vh;
   padding: 40px 3vw 60px;
   overflow-y: auto;
-  background: #222e; box-shadow: rgba(0,0,0,.8) 0 0 25px;
+  background: #222e; box-shadow: none;
   h2{
     font-size: 1.9rem; text-align: left; margin: 0; padding: 0 0 .2em; 
     border-bottom: 1px solid #777; color: #fff; letter-spacing: 3px;
@@ -40,8 +40,10 @@
 
 
   .closeThis{
-    position: fixed; right:3vw; transition: .2s;
-    background-color: #555d;
-      &:hover{background-color: #666e;}
+    position: fixed; right:3vw;
+    a{
+      background-color: #5558;
+        &:hover{background-color: #555;}
+    }
   }
 }
