@@ -19,6 +19,12 @@
     ul, ol{ line-height: inherit; margin-bottom: 1.8em;}
     li + li{margin-top: .6em;}
 
+
+    table.MsoNormalTable , &>table{
+      margin-left: 5px; margin-right: 5px;
+      max-width:calc(100% - 15px);
+    }
+
   }
   .articleHeader{
     margin: 0 0 1.2em;
