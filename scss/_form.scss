@@ -367,7 +367,7 @@ fieldset.authority{
   margin:0 3px;
   label{
     position: relative;
-    display: inline-block; margin: 4px 0; padding:7px .5em 7px 1.6em;
+    display: inline-block; margin: 4px 1em 4px 0; padding:7px .5em 7px 1.6em;
     cursor: pointer; border-radius: 4px;
     &:hover{ color: $font-color-dark; box-shadow: $border-color-light 0 0 0 1px;}
 
@@ -378,7 +378,7 @@ fieldset.authority{
     //   margin-top: -7px; margin-bottom:-7px; vertical-align: middle;
     //   width: 30em;
     // }
-    &+label {margin-left: 1em;}
+    &:last-child {margin-right: 0;}
   }
 }
 .formLayout td .optionGroup{ width: 90%;}

@@ -125,4 +125,20 @@
 }
 
 
+// 列印欄位，單列
+.printOption{
+  display: flex; align-items: center;
+  padding: 5px 10px; margin: 15px 0;
+  background-color: $bg-color-pale; box-shadow: $border-color-light 0 0 0 1px;
+  .label{
+    font-weight: bold; color: $font-color-dark; white-space: nowrap;
+  }
+  .optionGroup{ flex: 1 1 auto;}
 
+  .btnDv{ 
+    flex: 1 1 25%; margin: 0 0 0 1.2em; padding: 0;
+    display: flex; justify-content: flex-end; flex-flow: row wrap;
+    input{min-width: 3em; flex: 1 1 45%; max-width: 7em;}
+  }
+
+}
