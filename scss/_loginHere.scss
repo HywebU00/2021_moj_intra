@@ -28,46 +28,124 @@
   }
 
   .formLayout{
-    float: left;width:calc(60% - 40px) ; margin: 0;
+    // float: left;width:calc(60% - 40px) ;
+    margin:25px 20px 0; width:calc(100% - 40px) ;
     min-width: 0;
     td{
       &:nth-child(odd){ padding-top: 1em; white-space: nowrap; color: $font-color-dark;}
       input{width: calc(96% - 50px);}
       p.hint{font-size: 1rem; margin: .3em 4px;}
     }
+    &~.btnDv{ margin:20px 20px 0; padding-top: 20px;}
   }
 
-  .btnDv{
-    clear: none; float: right; width: calc(40% - 60px);
-    margin: 0 20px 0 0 !important; padding: 0 !important; border:none !important;
-    input{
-      display: block; margin: 5px auto 10px; height: 2.8em; line-height: 2.8em; border-radius: 4px;
-      width:98% ; min-width: 6em;
-    }
-
-    &::after{
-      content: ''; position: absolute; left:calc(60% - 20px) ; top: 10px; bottom: 10px; 
-      width: 1px; background: $border-color;  
-    }
-  }
 
   .logLinks{
-    list-style: none; display: inline-block;
-    width: calc(40% - 30px);
-    margin: 0 0 0 calc(60% + 20px); padding:25px 0 10px;
-    text-align: center; font-size: 1rem;
-    border-top: 1px solid $border-color;
+    list-style: none; padding:0 0 5px; margin:15px 0 0; text-align: right;
     li{display: inline-block; margin: 0;
-      &+li{margin-left: 5px;}
+      &:last-child{margin-right: -4px;}
+      &+li{margin-left: 8px;}
       a {
         display: block; padding: 0 1em; width: 7em;
         height: 2em; line-height: 2em;
         box-shadow: $border-color 0 0 0 1px; background: #fff;color: $font-color; 
-        text-decoration: none; text-align: center; border-radius: 3px;
+        text-decoration: none; text-align: center; border-radius: 4px; cursor: pointer;
         &:hover{box-shadow: $border-color-dark 0 0 0 1px; color: $font-color-dark;}
+
+
+        &.slideCtrl{
+          position: relative; top: 0; padding-right: 1.3em; padding-left: .7em;
+          &:hover{box-shadow: $secondaryColor 0 0 0 1px; background-color: transparent;}
+          &:not(.openIt){
+            box-shadow: $secondaryColor 0 0 0 1px; background-color: $secondaryColor; color: #fff;
+            &::before{border-color: #fff;}
+            &::after{
+              content: ''; position: absolute; left: -1px; right: -1px; bottom: -5px; height: 8px;
+              background: $secondaryColor;
+            }
+          }
+
+        }
       }
     }
   }
+  
+
+  // 登入燈箱內頁籤
+  .tabs{
+    &::before{
+      display: none;
+    }
+  
+    .tabItem{
+       margin: 0 4px 0 0; height: auto; line-height: auto; font-size: 1.1em;
+       &::before{display: none;}
+      &>a{
+        background-color: darken($bg-color-pale , 5) ; color: $font-color; border-radius: 8px 8px 0 0;
+        height: 2.6em; line-height: 2.8; margin-top: 5px;
+        transition: .2s;
+        &:hover{background-color: darken($bg-color-pale , 10) ;  color: $font-color-dark;}
+      }
+  
+      &.active{
+        a{
+          background-color: $primaryColor; color: #fff; cursor: default;
+          height: calc(2.6em + 5px); margin-top: 0; line-height: 3;
+        }
+      }
+    }
+  
+    .tabContent {
+      box-shadow: $primaryColor 0 0 0 1px inset;
+
+      &::before{
+        content: ''; background-color: $primaryColor;
+        position: absolute; top: 0; left: 0;right: 0; height: 5px;
+      }
+    }
+
+    .notes{
+      background: none; border: none; box-shadow: none; color: $importantColor; 
+    }
+  }
+
+  &.lightbox{display: block;  top: -200px; height: 0; 
+    &.show{ height: auto; top: 80px; max-height: calc(100vh - 120px);}
+  }
+
+  .slideToggle{
+    .drawer{display: none;}
+  }
+}
+
+// 忘記密碼
+.fetchPassword{
+  display: flex; flex-flow: row wrap; justify-content: space-between;
+  padding:20px;
+  box-shadow: $secondaryColor 0 0 0 1px inset;
+
+  h3{ 
+    flex: 0 0 100%; margin: 0 0 12px; padding: 0 0 5px;
+    color: $font-color-dark; border-bottom: 3px solid $secondaryColor;
+  }
+
+  .formLayout{
+    flex: 0 1 68%; margin: 0;
+    border-right: 1px solid $border-color;
+    td input{width: 90%;}
+    
+    &+.btnDv{
+      flex: 0 1 30%;
+      margin: 0; padding: 0; border: none; 
+      input{width: 80%; margin:9px 0;}
+    }
+    
+  }
+
+  .hint{ font-size: 1rem; margin: 2em 0 0;}
+
 
 
 }
+
+

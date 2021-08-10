@@ -173,12 +173,12 @@ $(function(){
   // 燈箱 --- 【所屬單位清單】 顯示／隱藏 ，【登入區】顯示／隱藏 ，【進階查詢】 顯示／隱藏 ，
   var _showLightbox =  $('.showLightbox');
   var _lightbox = $('.lightbox');
-  var _hideLightbox = _lightbox.find('.closeThis');
+  var _hideLightbox = _lightbox.find('.closeThis, .hideLightbox');
   var _lightboxNow;
   const speed = 400;
 
   _lightbox.before('<div class="cover"></div>');
-  var _cover = _lightbox.prev('.cover');
+  var _cover = $('.cover');
   
   _showLightbox.click(function(){
     let boxID = $(this).attr('data-id');
@@ -189,13 +189,30 @@ $(function(){
   })
 
   _hideLightbox.click(function(){
-    _lightboxNow.stop(true, false).slideUp(speed).removeClass('show');
-    _cover.fadeOut(speed);
+    let _targetLbx = $(this).parents('.lightbox');
+    _targetLbx.stop(true, false).slideUp(speed,
+      function(){
+          _targetLbx.removeClass('show');
+          if( _targetLbx.has('.tabs')){
+            _targetLbx.removeAttr('style');
+          }
+        }
+      );
+      _targetLbx.prev(_cover).fadeOut(speed);
     _body.removeClass('noScroll');
   })
 
   _cover.click(function(){
-    $(this).add($(this).next(_lightbox)).fadeOut(speed);
+    let _targetLbx = $(this).next('.lightbox');
+    $(this).fadeOut(speed);
+    _targetLbx.fadeOut(speed,
+      function(){
+        _targetLbx.removeClass('show');
+        if( _targetLbx.has('.tabs')){
+          _targetLbx.removeAttr('style');
+        }
+      }
+    );
     _body.removeClass('noScroll');
   })
 

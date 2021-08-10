@@ -219,34 +219,90 @@
       <section class="loginHere lightbox" data-id="loginHere">
         <span class="closeThis"><a title="關閉"></a></span>
         <h2 class="blockHeader">行政資訊入口網</h2>
-        <form action="">
-          <table class="formLayout">
-            <tr>
-              <td>員工帳號</td>
-              <td>
-                <input type="text" value="90249">
-                <p class="hint">請輸入您在系統上的員工帳號（非身分證字號）</p>
-              </td>
-            </tr>
-            <tr>
-              <td>密碼</td>
-              <td>
-                <input type="password">
-                <span class="viewIcon" title="完整顯示"></span>
-              </td>
-            </tr>
-          </table>
-          <div class="btnDv">
-            <input type="button" value="一般登入">
-            <input type="button" value="憑證登入">
-          </div>
 
+        <div class="tabs equal">
+          <span class="tabItem active"><a>一般登入</a></span>
+          <div class="tabContent">
+            <form action=""><!-- 如果需要 form 元件，請加在這裡，若不需要，可刪除。 -->
+              <table class="formLayout">
+                <tr>
+                  <td>員工帳號</td>
+                  <td>
+                    <input type="text" value="90249">
+                    <p class="hint">請輸入您在系統上的員工帳號（非身分證字號）</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>密碼</td>
+                  <td>
+                    <input type="password">
+                    <span class="viewIcon" title="完整顯示"></span>
+                  </td>
+                </tr>
+              </table>
+              <div class="btnDv">
+                <input type="submit" value="確定">
+                <input type="reset" value="取消" class="hideLightbox">
+              </div>
+            </form>
+          </div>
+          <span class="tabItem"><a>憑證登入</a></span>
+          <div class="tabContent">
+            <form action=""><!-- 如果需要 form 元件，請加在這裡，若不需要，可刪除。 -->
+              <table class="formLayout">
+                <tr>
+                  <td>請輸入您的PIN Code</td>
+                  <td>
+                    <input type="password">
+                    <span class="viewIcon" title="完整顯示"></span>
+                  </td>
+                  </tr>
+              </table>
+              <div class="btnDv">
+                <input type="submit" value="確定">
+                <input type="reset" value="取消" class="hideLightbox">
+              </div>
+            </form>
+            <div class="notes">
+              <p>重要：</p>
+              <ol>
+                <li>請注意大小寫的不同</li>
+                <li>連續輸入三次錯誤的密碼將鎖卡</li>
+              </ol>
+            </div>
+
+          </div>
+        </div>
+
+        
+        <div class="slideToggle">
           <ul class="logLinks">
-            <li><a href="x">註冊新帳號</a></li>
-            <li><a href="x">忘記密碼</a></li>
+            <li><a href="account_new.html">註冊新帳號</a></li>
+            <li><a class="slideCtrl" data-altTitle="忘記密碼">忘記密碼</a></li>
           </ul>
-          
-        </form>
+          <div class="drawer">
+            <form action=""><!-- 如果需要 form 元件，請加在這裡，若不需要，可刪除。 -->
+              <section class="fetchPassword">
+                <h3>忘記密碼</h3>
+                <table class="formLayout">
+                  <tr>
+                    <td>員工編號</td>
+                    <td><input type="text" class="full"></td>
+                  </tr>
+                  <tr>
+                    <td>出生年/月/日</td>
+                    <td><input type="date">(094/01/01)</td>
+                  </tr>
+                </table>
+                <div class="btnDv">
+                  <input type="submit" value="確定">
+                  <input type="reset" value="清除">
+                </div>
+                <p class="hint">**請輸入身分驗證之二項資料：員工編號、出生年月日，在資料後將自動寄發密碼到您的個人信箱中</p>
+              </section>
+            </form>
+          </div>
+        </div>
 
       </section>
       
@@ -1746,6 +1802,7 @@
       </li>
     </ul>
   </nav>
+
 
 </body>
 </html>
