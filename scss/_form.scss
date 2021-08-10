@@ -209,11 +209,10 @@ fieldset {
 
 ////////// 條件查詢 //////////
 .search{
-  $space : 15px;
-  margin: 0 0 $space*2;
+  margin: 0 0 30px; padding: 1px 20px;
   box-shadow: rgba(0,0,0,.3) 0 0 4px;
   .formlayout{
-    width: calc(100% - #{$space}*2); margin: .5em auto 1em;
+    margin: 1em auto; width: 100%;
     td{
       padding: 3px 0;
       &:nth-child(even){ padding-right: 20px;}
@@ -223,9 +222,13 @@ fieldset {
       &>select:only-child{width: calc(90% - 32px);}
     }
   }
-  .slideHeader{ padding:8px $space; }
+  .slideHeader{ padding:6px 0; }
 
-  .btnDv{border-top: 1px solid $border-color-light; margin: 0 15px;}
+  .btnDv{border-top: 1px solid $border-color-light; margin: 0 auto;}
+
+  .drawer{
+    .formlayout{ margin-top: 5px;}
+  }
 }
 
 
@@ -268,6 +271,7 @@ table.formLayout{
   p.hint{ 
     font-size: .85em; line-height: 1.4;
     margin: .2em 3px .5em;
+    em{ font-style: normal; color: $importantColor;}
   }
 
   & ~ .btnDv{padding: 1.5em 0; margin-top: 1.5em; border-top: 1px solid $border-color;}

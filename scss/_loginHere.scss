@@ -43,7 +43,7 @@
   .logLinks{
     list-style: none; padding:0 0 5px; margin:15px 0 0; text-align: right;
     li{display: inline-block; margin: 0;
-      &:last-child{margin-right: -4px;}
+      &:last-child{margin-right: -3px;}
       &+li{margin-left: 8px;}
       a {
         display: block; padding: 0 1em; width: 7em;
