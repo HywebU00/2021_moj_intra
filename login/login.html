@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登入「法務部內部網站管理系統」</title>
+  <link rel="stylesheet" href="../css/admLogin.css">
+
+</head>
+<body>
+
+  <section class="admLogin">
+    <h1>法務部內部網站管理系統</h1>
+    <form action="">
+      <label class="id">
+        <input type="text" placeholder="請輸入帳號">
+      </label>
+      <label class="pw">
+        <input type="password" placeholder="請輸入密碼">
+      </label>
+      <span class="forget"><a href="x">忘記密碼</a></span>
+
+      <div class="captchaSet">
+        <img alt="驗證碼" id="imgCaptcha" src="../images/CaptchaImage.jpg">
+        <button type="button" class="btn_change" onclick="changeCaptcha()" data-title="更換驗證碼"></button>
+        <input autocomplete="off" id="Captcha" name="Captcha" type="text" placeholder="請輸入驗證碼">
+      </div>
+
+      <p class="warning" style="display: none">您輸入的帳號、密碼或驗證碼錯誤</p>
+
+      <div class="btnDv">
+        <input class="submit" type="submit" value="登入">
+        <input type="reset" value="清除">
+      </div>
+    </form>
+
+
+  </section>
+  
+</body>
+</html>
