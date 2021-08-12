@@ -1,15 +1,20 @@
 $primaryColor: #B282CF; //主色
 $secondaryColor: #644799; //輔色
 $lightColor: #FFCA3E; //點綴
-$linkColor: #0381a4; //連結
+$linkColor: #2c1779; //連結
+$linkColor2: #ffe298; //深色底用
 $importantColor: #d11; //重要
+
+$myInfo_em: #FFCA3E; //個人訊息em用
+$myInfo_time: #5C5175; //個人訊息time用
+
 
 %topBarStyle{
   background-color: #E5D2F4; color: #333;
   a {color: #333;}
 }
 %menubg{
-  background-image: linear-gradient( #D4B9E8 10%,  #B282CF 60%);
+  background-image: linear-gradient( #D6BDE9 10%,  #B387CE 60%);
   li a{color: #222;}
 }
 
@@ -17,22 +22,42 @@ $font-color: #666;
 $font-color-light:#7b8383;
 $font-color-dark:#000;
 
-$bg-color:#FBF2FF;
-$bg-color-pale: #eaf6f4;
-$bg-color-light:#dce7e8;
-$bg-color-dark:#909ea2;
+$bg-color:#f5f0f9;
+$bg-color-pale: #fdf6ff;
+$bg-color-light:#c5b9c9;
+$bg-color-dark:#b7a2bf;
+$bg_notice: #feee91; //便利貼底色
 
-$border-color: #afbabb;
-$border-color-light: #d7dfdd;
-$border-color-dark:#778b8e;
 
-$btn-bg1:#69BBAB;
-$btn-bg2: $primaryColor;
+$border-color: #bbb;
+$border-color-light: #e3e3e3;
+$border-color-dark:#777;
 
-$gray: #989e9f;
-$grayDark: #666c6c;
+$btn-bg1:#B282CF;
+$btn-bg2: #644799;
+
+$gray: #9d989f;
+$grayDark: #69666a;
 
 
 .topSearch{
   input[type="button"]{ background-image: url(../images/icon_searchB.png);}
+}
+
+// -----------------------------------
+
+%gradient-1{
+  background:#AE8FF0 linear-gradient(180deg, #AE8FF0 0%, #7849DB 100%);
+}
+%gradient-2{
+  background: linear-gradient(180deg, #E388BA 0%, #9347AD 100%);
+}
+%gradient-3{
+  background: linear-gradient(180deg, #7FD5F0 0%, #1CBA9D 100%);
+}
+%gradient-4{
+  background: linear-gradient(180deg, #F3D158 0%, #DEB111 100%);
+}
+%gradient-5{
+  background: linear-gradient(180deg, #FF8989 0%, #DE3860 100%);
 }

@@ -159,7 +159,7 @@ $decoH : 8px;
       // background: #eee;
       &:last-child{margin-right: 0;}
     }
-    time{margin-left: .3em; font-size: 1.6em; color: $primaryColor; display: inline-block; vertical-align: bottom; line-height: 1.3;}
+    time{margin-left: .3em; font-size: 1.6em; color: $myInfo_time; display: inline-block; vertical-align: bottom; line-height: 1.3;}
   }
 
   .toDoList{
@@ -170,7 +170,7 @@ $decoH : 8px;
       flex:0 0 calc(33.33% - 4px);
       margin: 0 6px 0 0;
       &:last-child{margin-right: 0;}
-      background-color: $primaryColor; color: #fff; text-align: center;
+      background-color: $secondaryColor; color: #fff; text-align: center;
       a{
         display: block; padding: 12px 8px 15px;
         color: #fff; text-decoration: none; transition: .2s;
@@ -184,12 +184,13 @@ $decoH : 8px;
         font-size:2.2rem; height: 1.3em; line-height: 1.3; letter-spacing: 5px;
       }
       .label{ margin: 5px auto 0; white-space: nowrap;}
-      em{font-style: normal; color: $secondaryColor;}
+      em{font-style: normal; color: $myInfo_em;}
     }
   }
 }
 
-
+// $myInfo_em: #FFCA3E; //個人訊息em用
+// $myInfo_time: #5C5175; //個人訊息time用
 
 
 // 訊息_條列式 ----------------------------------------------
@@ -287,7 +288,7 @@ $decoH : 8px;
 
 // 資安宣導（不同底色） ----------------------------------------------
 .notice{
-  background-color: #FDF7D6;
+  background-color: $bg_notice;
   box-shadow: rgba(0,0,0,.1) 5px 2px 0;
   article{
     padding: 15px 0; line-height: 1.8;
