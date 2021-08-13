@@ -89,8 +89,10 @@ $grayDark: #807d7b;
 .footer{
   color: $font-color !important;
 }
-// -----------------------------------
 
+
+// -----------------------------------
+// 五組漸層色
 %gradient-1{
   background:#AE8FF0 linear-gradient(180deg, #AE8FF0 0%, #7849DB 100%);
 }

@@ -2,7 +2,7 @@ $primaryColor: #B488CF; //主色
 $primGdC: #E5D2F4; //主色漸層二色
 $secondaryColor: #644799; //輔色
 $lightColor: #FFCA3E; //點綴
-$linkColor: #250968; //連結
+$linkColor: #341a6f; //連結
 $linkColor2: $linkColor; // footer 用
 $importantColor: #d11; //重要
 
@@ -26,8 +26,8 @@ $border-color: #bbb;
 $border-color-light: #e3e3e3;
 $border-color-dark:#777;
 
-$btn-bg1:#B282CF;
-$btn-bg2: #644799;
+$btn-bg1:$primaryColor;
+$btn-bg2: lighten($secondaryColor, 12);
 
 $gray: #dfdae0;
 $grayDark: #8a858a;
