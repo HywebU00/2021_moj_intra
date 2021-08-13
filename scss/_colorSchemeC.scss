@@ -3,7 +3,7 @@ $primGdC: #FFBDA7; //主色漸層二色
 $secondaryColor: #AF340B; //輔色
 $lightColor: #FFCA3E; //點綴
 $linkColor: #791766; //連結
-$linkColor2: #ffe298; //深色底用
+$linkColor2: $linkColor; // footer 用
 $importantColor: #d11; //重要
 
 $myInfo_em: #FFCA3E; //個人訊息em用
@@ -14,11 +14,13 @@ $font-color: #555;
 $font-color-light:#888;
 $font-color-dark:#000;
 
+
 $bg-color:#FFF5F2;
 $bg-color-pale: #f7eee2;
 $bg-color-light:#dfd8d4;
 $bg-color-dark:#a5947b;
-$bg_notice: #d1f4bb; //便利貼底色
+$bg_notice: #ffe8c6; //便利貼底色
+$bgCalandar: darken($primaryColor, 14);
 
 
 $border-color: #bbb;
@@ -28,8 +30,8 @@ $border-color-dark:#777;
 $btn-bg1:#AF340B;
 $btn-bg2: #e65321;
 
-$gray: #9d989f;
-$grayDark: #69666a;
+$gray: #dfdddb;
+$grayDark: #807d7b;
 
 
 // 最上方導覽區
@@ -75,14 +77,17 @@ $grayDark: #69666a;
   }
 }
 
-//便利貼
+// 便利貼
 .notice{
-  .blockHeader.deco::after{ background-color: #6884;}
+  .blockHeader.deco::after{ background-color: darken($bg_notice, 15);}
 }
 
 // 條列訊息
 .bulletin2{
   .simuTable li.header{color: $font-color-dark !important}
+}
+.footer{
+  color: $font-color !important;
 }
 // -----------------------------------
 

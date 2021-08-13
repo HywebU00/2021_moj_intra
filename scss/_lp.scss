@@ -54,7 +54,7 @@
     &>li{position: relative; padding: 5px 0 5px 3.2em; margin: 0;
       &>a{display: block; padding:.7em 5px;
         text-decoration: none; color: $font-color;
-        &:hover{ background: $bg-color-pale;}
+        &:hover{ background: $bg-color-pale; color: $linkColor;}
   
       }
       &+li{border-top: 1px solid $border-color-light;}

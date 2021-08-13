@@ -46,7 +46,7 @@ $decoH : 8px;
     &::before{
       content: ''; position: absolute; left: 3px; top: 3px;
       width: 44px; height: 44px;border-radius: 50%;
-      background: $gray url(../images/icon_login.png) no-repeat center center;
+      background: darken($gray , 12) url(../images/icon_login.png) no-repeat center center;
       background-size: 30px;
       transition: .2s;
     }
@@ -206,8 +206,9 @@ $decoH : 8px;
         display: block; text-decoration: none; padding: 10px 5px; overflow: hidden;
         color: $font-color; border-bottom: 1px solid transparent; border-radius: 4px;
         transition: .2s;
-        &:hover{ color: $font-color-dark; text-decoration: underline;
-          background-color: $bg-color-pale;
+        &:hover{ 
+          color: $linkColor; background-color: $bg-color-pale;
+          text-decoration: underline;
         }
       }
       time{ float: left; }
@@ -292,7 +293,7 @@ $decoH : 8px;
   background-color: $bg_notice;
   // box-shadow: rgba(0,0,0,.1) 5px 2px 0;
   // .blockHeader.deco::after{ background-color: darken( $bg_notice , 15);}
-  box-shadow: #3333 0 8px 10px -5px;
+  box-shadow: #00000012 3px 6px 0 -1px;
   article{
     padding: 15px 0; line-height: 1.8;
     p{
@@ -627,7 +628,7 @@ $decoH : 8px;
   background-color: transparent;
   padding-left: 0; padding-right: 0;
   .slideCtrl{
-    background: #fff; margin: 0;
+    background: #fff; margin: 0; border-radius: 0;
     width: 200px; height: 64px; 
     padding-left: 35px; text-align: left;
     position: relative; top: 0;left: 0; right: auto;
@@ -700,7 +701,7 @@ $decoH : 8px;
     position:absolute; right:4px; top:50%; margin: -22px 0 0;
     text-align:center; padding:0; 
     width:44px !important; height:44px !important; border-radius:50%;
-    background: none; box-shadow: none; border: none;
+    box-shadow: none; border: none;
     transition: .2s;
     &:hover{
       // background:$secondaryColor;

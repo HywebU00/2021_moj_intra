@@ -1,7 +1,7 @@
 .calendar-app {
   #calandar-header {
     padding: 15px 20px;
-      background-color: $primaryColor; color: #fff;
+      background-color: $bgCalandar; color: #fff;
       #header1 {
         padding: 10px .6em 20px;
 
@@ -41,7 +41,7 @@
 
         &:hover {
           cursor: pointer;
-          background: $bg-color-light;
+          box-shadow: $bgCalandar 0 0 0 2px;
         }
       }
 
@@ -50,11 +50,11 @@
       }
 
       .today {
-        background: $primaryColor; color: #fff;
+        background: $bgCalandar; color: #fff;
 
         &:hover {
-          background: $primaryColor;
-          box-shadow: $primaryColor 0 0 0 2px;
+          background: $bgCalandar;
+          // box-shadow: $bgCalandar 0 0 0 2px;
         }
       }
     }
@@ -78,7 +78,7 @@
       &::before{
         content: '';position: absolute; top: 50%; margin-top: -9px;;
         width: 18px; height: 18px;box-sizing: border-box;
-        border: 3px solid $primaryColor;
+        border: 3px solid $bgCalandar;
         transform: rotate(-45deg)
       }
       &::after{
@@ -87,7 +87,7 @@
         width: 3.5em; opacity: 0; transition: .2s;
       }
 
-      &:hover{background: $bg-color-light;
+      &:hover{background: $gray;
         &::after{ opacity: 1; top: -1.5em;}
       }
     }
@@ -119,10 +119,10 @@
         margin: 0 5px; padding: 0 .7em;
         text-align: center; font-size: 1.2em;
         height: 1.8em; line-height: 1.85;
-        color: $primaryColor; border-radius: 2em;
+        color: $bgCalandar; border-radius: 2em;
         cursor: pointer; transition: .2s;
         &:hover {
-          background: $primaryColor;  color: #fff;
+          background: $bgCalandar;  color: #fff;
         }
       }
 

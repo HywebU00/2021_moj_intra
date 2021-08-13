@@ -43,17 +43,15 @@ a{ color: $linkColor; text-decoration: underline;
   p{ margin:.8em 0;
     &+p{margin-top: 1.5em;}
   }
-  a{color: #fff;
-    &:hover{ text-decoration: none; }
+  a{text-decoration: underline; color: $linkColor2;
+    &:hover{ text-decoration: none;}
   }
 
   .footerLink{
     list-style: none; margin:.8em 0; padding: 0;
     li{
       display: inline-block; margin: 0 .5em;
-      a{ display: block; color: $linkColor2; text-decoration: none;
-        &:hover{color:$linkColor2 ; text-decoration: underline;}
-      }
+      a{ display: block;}
     }
   }
 }

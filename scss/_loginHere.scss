@@ -21,10 +21,13 @@
 
   .viewIcon{
     display: inline-block; vertical-align: top; cursor: pointer;
-    width: 42px; height: 42px; border-radius: 50%; margin: 2px;
-    background:  $gray url(../images/icon_eye.png) no-repeat center center;
-    background-size: 32px;
-    &:hover{ background-color:  $grayDark;}
+    width: 42px; height: 42px; border-radius: 50%; margin:4px 2px 0;
+    background:  $grayDark url(../images/icon_eye.png) no-repeat center center;
+    background-size: 32px; transition: .2s;
+    &:hover{ 
+      // background-color:  darken($grayDark, 8);
+      box-shadow: $grayDark 0 0 0 2px;
+    }
   }
 
   .formLayout{
@@ -81,15 +84,15 @@
        margin: 0 4px 0 0; height: auto; line-height: auto; font-size: 1.1em;
        &::before{display: none;}
       &>a{
-        background-color: darken($bg-color-pale , 5) ; color: $font-color; border-radius: 8px 8px 0 0;
+        background-color: $gray ; color: $font-color; border-radius: 8px 8px 0 0;
         height: 2.6em; line-height: 2.8; margin-top: 5px;
         transition: .2s;
-        &:hover{background-color: darken($bg-color-pale , 10) ;  color: $font-color-dark;}
+        &:hover{background-color: darken($gray , 6) ;  color: $font-color-dark;}
       }
   
       &.active{
         a{
-          background-color: $primaryColor; color: #fff; cursor: default;
+          background-color: $primaryColor; color: #fff; color: $linkColor2; cursor: default;
           height: calc(2.6em + 5px); margin-top: 0; line-height: 3;
         }
       }

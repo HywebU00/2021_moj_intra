@@ -2,22 +2,24 @@ $primaryColor: #B488CF; //主色
 $primGdC: #E5D2F4; //主色漸層二色
 $secondaryColor: #644799; //輔色
 $lightColor: #FFCA3E; //點綴
-$linkColor: #2c1779; //連結
-$linkColor2: #ffe298; //深色底用
+$linkColor: #250968; //連結
+$linkColor2: $linkColor; // footer 用
 $importantColor: #d11; //重要
 
 $myInfo_em: #FFCA3E; //個人訊息em用
 $myInfo_time: #5C5175; //個人訊息time用
 
 $font-color: #666;
-$font-color-light:#7b8383;
+$font-color-light:#817c82;
 $font-color-dark:#000;
 
 $bg-color:#f5f0f9;
-$bg-color-pale: #fdf6ff;
+// $bg-color-pale: #fbf8fd;
+$bg-color-pale: #fff0e4;
 $bg-color-light:#c5b9c9;
 $bg-color-dark:#b7a2bf;
-$bg_notice: #b8ecf7; //便利貼底色
+$bg_notice: #fcdfcd; //便利貼底色
+$bgCalandar: $primaryColor; // 小月曆頭
 
 
 $border-color: #bbb;
@@ -27,8 +29,8 @@ $border-color-dark:#777;
 $btn-bg1:#B282CF;
 $btn-bg2: #644799;
 
-$gray: #9d989f;
-$grayDark: #69666a;
+$gray: #dfdae0;
+$grayDark: #8a858a;
 
 
 // 最上方導覽區
@@ -65,21 +67,25 @@ $grayDark: #69666a;
 
 // 跑馬燈
 %marqueeStyle{
-  background-color: $primaryColor;
+  background-color: $primGdC;
   a{color: #000;
-    &:hover{background-color: $secondaryColor; color: #fff; }
+    &:hover{background-color: $primaryColor; color: #fff; }
   }
   button{
-    background: none;
+    background-color: $primaryColor;
     &:hover{background-color: $secondaryColor}
-    &::before{/*  background-color: transparentize($secondaryColor, .1); */ color: $secondaryColor;}
+    &::before{ color: $secondaryColor;}
   }
 }
 
-// 便利貼
-.notice{
-  .blockHeader.deco::after{ background-color: #6784;}
+.footerLink{
+  li{
+    a{  color: $linkColor2;
+      &:hover{color:$linkColor2;}
+    }
+  }
 }
+
 
 
 // -----------------------------------
