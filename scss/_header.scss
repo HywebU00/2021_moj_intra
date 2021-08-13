@@ -41,7 +41,7 @@
     a{
       display: block; width: 1.5em; height: 1.5em; line-height: 1.55; 
       border-radius: 50%; cursor: pointer; text-decoration: none;
-      &:hover{background-color: rgba(0,0,0,.3);}
+      &:hover{background-color: rgba(255,255,255,.3);}
     }
     &.active a{background-color: #fff; color: $font-color-dark;}
   }
@@ -62,7 +62,7 @@
     background-repeat: no-repeat; background-color: transparent;
     background-position: center center; background-size:24px;
      border: none; box-shadow: none;
-    &:hover{background-color:rgba(0,0,0,.6); box-shadow: none;}
+    &:hover{background-color:#0001; box-shadow: none;}
   }
   .btn{
     display: inline-block; margin: 0 3px 8px ; vertical-align: top;

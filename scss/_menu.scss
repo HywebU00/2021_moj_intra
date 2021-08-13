@@ -1,13 +1,13 @@
 .menu{z-index: 99;
   // background-image: linear-gradient($gradient-p2 5%, $gradient-p1 50%, $gradient-p0 95%);
-  @extend %menubg;
-  background-color: $primaryColor;
+  @extend %menuStyle;
+  // background-color: $primaryColor;
   ul, li{list-style: none; margin: 0; padding: 0; line-height: 1.2;}
   li{ 
     position: relative;
     a{
       display: block;text-decoration: none;
-      &:hover, &:focus{background-color: rgba(0,0,0,.2);}
+      // &:hover, &:focus{background-color: rgba(0,0,0,.2);}
       &:focus{outline: none;}
     }
     &.hasChild{
@@ -16,30 +16,29 @@
         &::before{
           content: ''; position: absolute; right: 12px; top: 1.05em; 
           width: 9px; height: 9px;transform: rotate(45deg);
-          border: 3px solid $lightColor; border-left: none; border-bottom: none;
+          border-width: 3px; border-style: solid; border-left: none; border-bottom: none;
         }
       }
     }
-    li.hasChild{
-      a::before{border-color: $lightColor;}
-    }
+    // li.hasChild{
+    //   a::before{border-color: $lightColor;}
+    // }
   }
   &>ul>li{
-    font-size: 18px; border-bottom: 1px solid #fff6;
+    font-size: 18px; border-bottom-width: 1px; border-bottom-style: solid;
+    // border-bottom: 1px solid #fff4;
     &>a{
       padding:.9em 20px .8em; transition:background-color .2s;
     }
-    ul{position: absolute; width: 220px; font-size: 16px; z-index: 9;
+    ul{position: absolute; width: 220px; font-size: 16px; z-index: 99;
        box-shadow: rgba(0,0,0,.3) 1px 2px 12px;
-       background-color: $primaryColor;
-     
-       li{border-bottom: 1px solid rgba(255,255,255,.4); 
+       li{border-bottom: 1px solid #fff4;
         &:last-child{border-bottom: none;}
       }
       a{ padding:.9em 1em .8em; transition: .15s;}
     }
   }
-  ul ul{ left: 16rem; top: 0; display: none;}
+  ul ul{ left: 16rem; top: 0; display: none; }
   ul ul ul{ left: 220px;}
 
 

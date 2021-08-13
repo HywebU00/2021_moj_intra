@@ -9,7 +9,7 @@ $decoH : 8px;
 
   &.deco{
     padding-bottom: 18px;
-    &::after{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: $decoH; border-radius: $decoH*.5; background: $primaryColor;}
+    &::after{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: $decoH; border-radius: $decoH*.5; background: transparentize($primaryColor, .4) }
   }
 }
 
@@ -175,7 +175,8 @@ $decoH : 8px;
         display: block; padding: 12px 8px 15px;
         color: #fff; text-decoration: none; transition: .2s;
         &:hover{
-          background-color: darken($primaryColor, 10) 
+          // background-color: darken($primaryColor, 10) 
+          box-shadow: $secondaryColor 0 0 0 2px;
         }
       }
       .count, .label{display: block; }
@@ -259,10 +260,10 @@ $decoH : 8px;
         a{height: 2.1em; line-height: 2.2em; padding-left: .8em; padding-right: .8em;}
       }
 
-      &:first-child{
+      &.header{
         padding-top: .5em ;padding-bottom: .4em; margin-bottom: 6px;
         background-color: $primaryColor; color: #fff;
-        box-shadow: darken($primaryColor, 12) 0 1px 0 1px;
+        box-shadow: darken($primaryColor, 8) 0 1px 0 1px;
         border-top: none;
         .th{ 
           &:first-child{flex: 0 0 calc(5.5em + 1%)}
@@ -289,7 +290,9 @@ $decoH : 8px;
 // 資安宣導（不同底色） ----------------------------------------------
 .notice{
   background-color: $bg_notice;
-  box-shadow: rgba(0,0,0,.1) 5px 2px 0;
+  // box-shadow: rgba(0,0,0,.1) 5px 2px 0;
+  // .blockHeader.deco::after{ background-color: darken( $bg_notice , 15);}
+  box-shadow: #3333 0 8px 10px -5px;
   article{
     padding: 15px 0; line-height: 1.8;
     p{
@@ -494,7 +497,8 @@ $decoH : 8px;
   .imgList{
     list-style: none; margin: 0 auto;padding: 0;
     display: flex; flex-flow: row wrap; 
-    justify-content:center;
+    // justify-content:center;
+    justify-content:flex-start;
     max-width: 888px;
     // outline: 1px dotted red;
     li{
@@ -674,24 +678,21 @@ $decoH : 8px;
 
 // 跑馬燈 ----------------------------------------------
 .marquee{
+  @extend %marqueeStyle;
   position: relative; padding: 0 !important;
-  background-color: $primaryColor; color: #fff; font-size: 1.2em;
-  border-radius: 2em;
+  font-size: 1.2em; border-radius: 2em;
   .mqBox{
     position:relative; overflow:hidden;
-    height:52px; margin:0 54px 0 3px;
+    height:52px; margin:0 54px 0 4px;
   }
   ul{ list-style: none; margin: 0; padding: 0;}
   li{ position: absolute;margin:0; padding: 0; width: 100%;
     a{
-      display:block; padding: 0 12px;margin:3px 0;
-      height:46px; line-height:46px; 
+      display:block; padding: 0 12px;margin:4px 0;
+      height:44px; line-height:44px; 
       white-space:nowrap; text-overflow:ellipsis; overflow:hidden; 
-      text-decoration:none; color: #fff;border-radius: 24px;
+      text-decoration:none;border-radius: 24px;
       transition: .2s;
-      &:hover{
-        text-decoration: underline; color:#fff; background: #0003;
-      }
     }
   }
 
@@ -699,10 +700,10 @@ $decoH : 8px;
     position:absolute; right:4px; top:50%; margin: -22px 0 0;
     text-align:center; padding:0; 
     width:44px !important; height:44px !important; border-radius:50%;
-    background: #fff3; box-shadow: none; border: none;
+    background: none; box-shadow: none; border: none;
     transition: .2s;
     &:hover{
-      background:$secondaryColor;
+      // background:$secondaryColor;
       &::before{opacity:1;}
     }
     &::after{
@@ -710,19 +711,24 @@ $decoH : 8px;
       border:4px solid #fff; border-top:none; border-bottom:none; 
     }
     &::before{
-      content:'暫停輪播'; font-size:13px; opacity:0;
-      position:absolute; left:-5em; top:.7em; 
-      height:1.8em; line-height:1.8em; padding:0 .4em; 
-      background: $secondaryColor; color: #fff; border-radius:4px;
+      content:'暫停輪播'; font-size:13px; opacity:0; white-space: nowrap;
+      position:absolute; left:-5em; top:0; 
+      left: -.5em;
+      height:1.1em; line-height:1.1em; padding:0 .4em; padding: 0;
+      // background: $secondaryColor; color: #fff; 
+      border-radius:4px;
       transition:.2s;
     }
+    &:hover::before{top: -1.6em;}
     &.pause{ background:$secondaryColor;
       &::after{
-        width:0; height:0; margin-left:2px;
+        width:0; height:0; margin-left:2px; top: 14px;
         border-style:solid; border-width:8px 0 8px 12px;
         border-color:transparent transparent transparent #fff;
       }
-      &::before{content:'繼續輪播'; background-color: $secondaryColor;}
+      &::before{content:'繼續輪播'; 
+        // background-color: $secondaryColor;
+      }
     }
   }
 }

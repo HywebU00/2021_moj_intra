@@ -1,0 +1,103 @@
+$primaryColor: #FFBDA7; //主色
+$primGdC: #FFBDA7; //主色漸層二色
+$secondaryColor: #AF340B; //輔色
+$lightColor: #FFCA3E; //點綴
+$linkColor: #791766; //連結
+$linkColor2: #ffe298; //深色底用
+$importantColor: #d11; //重要
+
+$myInfo_em: #FFCA3E; //個人訊息em用
+$myInfo_time: #5C5175; //個人訊息time用
+
+
+$font-color: #555;
+$font-color-light:#888;
+$font-color-dark:#000;
+
+$bg-color:#FFF5F2;
+$bg-color-pale: #f7eee2;
+$bg-color-light:#dfd8d4;
+$bg-color-dark:#a5947b;
+$bg_notice: #d1f4bb; //便利貼底色
+
+
+$border-color: #bbb;
+$border-color-light: #e3e3e3;
+$border-color-dark:#777;
+
+$btn-bg1:#AF340B;
+$btn-bg2: #e65321;
+
+$gray: #9d989f;
+$grayDark: #69666a;
+
+
+// 最上方導覽區
+%topBarStyle{
+  background-color: $primaryColor; color: #333;
+  a {color: #7A3E2B;}
+}
+
+
+// 主選單
+%menuStyle{
+  background-color: $primaryColor;
+  li a{color: #222;
+    &:hover{ background-color: #fff7;}
+  }
+  li.hasChild a::before{
+    border-color: #AF340B;
+  }
+  &>ul>li{
+    border-bottom-color: #fff7;
+    ul{
+      background-color: $primaryColor; // 下層單背景色
+      li{border-bottom-color: #fff7;}
+    }
+  }
+}
+
+// 共用查詢區
+.topSearch{
+  input[type="button"]{ background-image: url(../images/icon_searchC.png);}
+}
+
+// 跑馬燈
+%marqueeStyle{
+  background-color: $primaryColor; color: #222;
+  a{color: #222;
+    &:hover{background-color: #fff8; }
+  }
+  button{
+    background: none;
+    &:hover{background-color: $secondaryColor}
+    &::before{ color:  $secondaryColor;}
+  }
+}
+
+//便利貼
+.notice{
+  .blockHeader.deco::after{ background-color: #6884;}
+}
+
+// 條列訊息
+.bulletin2{
+  .simuTable li.header{color: $font-color-dark !important}
+}
+// -----------------------------------
+
+%gradient-1{
+  background:#AE8FF0 linear-gradient(180deg, #AE8FF0 0%, #7849DB 100%);
+}
+%gradient-2{
+  background: linear-gradient(180deg, #E388BA 0%, #9347AD 100%);
+}
+%gradient-3{
+  background: linear-gradient(180deg, #7FD5F0 0%, #1CBA9D 100%);
+}
+%gradient-4{
+  background: linear-gradient(180deg, #F3D158 0%, #DEB111 100%);
+}
+%gradient-5{
+  background: linear-gradient(180deg, #FF8989 0%, #DE3860 100%);
+}

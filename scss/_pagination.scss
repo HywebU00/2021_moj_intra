@@ -6,7 +6,7 @@
     ul, ol{list-style: none; margin: 0; padding: 0;}
     em {
         font-style: normal; font-weight: bold; font-size: 1.15em;
-        margin: 0 .3em;
+        margin: 0 .3em; color: $font-color-dark;
     }
     .total {
         display: inline-block; vertical-align: middle;
@@ -40,13 +40,13 @@
           border-left: 1px solid $border-color; font-weight: bold;
           &:first-child{border-left: none;}
           &.active{
-            a{background-color: $bg-color-dark; color: #fff;}
+            a{background-color: $btn-bg1; color: #fff;}
           }
         }
         a{
             display: block; padding: 0 6px; border-radius: 3px;
-            color: $font-color;  
-            &:hover{background-color: $bg-color-light;}
+            color: $font-color-dark;
+            &:hover{background-color: lighten($btn-bg1, 55);}
         }
     }
 
@@ -64,14 +64,14 @@
                 border: 1px solid $border-color-light;
                transition: .1s;
                 &:hover, &:focus {
-                  border-color: $primaryColor;
+                  border-color: $btn-bg1;
                 }
             }
             &.active {
                 a {
-                  background:$primaryColor;color: #fff; 
-                  box-shadow: $primaryColor 0 0 0 1px;
-                  border-color: $primaryColor;
+                  background:$btn-bg1;color: #fff; 
+                  box-shadow: $btn-bg1 0 0 0 1px;
+                  border-color: $btn-bg1;
                 }
             }
             %arrow {

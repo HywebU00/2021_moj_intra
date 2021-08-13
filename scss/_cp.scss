@@ -1,15 +1,16 @@
 .cp{
   .published{
-    font-size: 1rem;
-    text-align: right; margin:15px 0 30px; padding: 0; color: $font-color-light;
-    li{ display: inline-block; margin-left: 1em;
-      em{display: inline-block; font-style: normal; color: $font-color;}
+    font-size: .98rem; line-height: 1.1;
+    margin:0 0 .7em; padding: 0; color: $font-color-light;
+    li{ display: inline-block; 
+      &+li{margin-left: 1.5em;}
+      em, time{display: inline-block; font-style: normal; color: $font-color;}
     }
   }
   article ~ .published{margin-top: 30px; margin-bottom: 0;}
   &>article{
     overflow: hidden; line-height: 1.8;
-    padding: 0 0 2em; text-align: justify;
+    padding: .8em 0 2em; text-align: justify;
     .image{
       float: left; margin: .5em 25px .5em 0;
       img{ max-width: 40vw; max-height: 40vw;}
@@ -27,7 +28,7 @@
 
   }
   .articleHeader{
-    margin: 0 0 1.2em;
+    margin: 0 0 1em;
     font-size: 1.2em; color: $font-color-dark; line-height: 1.5;
     h3{ font-size: inherit; margin: 0;}
   }

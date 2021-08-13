@@ -1,4 +1,5 @@
 $primaryColor: #07847C; //主色
+$primGdC: #1F9D8C; //主色漸層二色
 $secondaryColor: #FCA824; //輔色
 $lightColor: #FCA824; //點綴
 $linkColor: #007284; //連結
@@ -7,8 +8,8 @@ $importantColor: #d11; //重要
 $myInfo_em: #333; //個人訊息em用
 $myInfo_time: #333; //個人訊息time用
 
-$font-color: #666;
-$font-color-light:#7b8383;
+$font-color: #555;
+$font-color-light:#878a8a;
 $font-color-dark:#000;
 
 $bg-color:#dff9f4;
@@ -27,6 +28,51 @@ $btn-bg2: $primaryColor;
 $gray: #989e9f;
 $grayDark: #666c6c;
 
+// 最上方導覽區
+%topBarStyle{
+  background-color: $primaryColor; color: #fff;
+  a {color: #fff;}
+}
+
+// 主選單
+%menuStyle{
+  background-color: $primaryColor;
+  background-image: linear-gradient( $primGdC 0%, $primaryColor 45%);
+  li a{color: #fff;
+    &:hover{ background-color: #00635d;}
+  }
+  li.hasChild a::before{
+    border-color: $lightColor;
+  }
+  &>ul>li{
+    border-bottom-color: #fff4;
+    ul{
+      background-image: linear-gradient( $primGdC 0%, $primaryColor 100%); // 下層選單背景色
+      li{border-bottom-color: #fff4;}
+    }
+  }
+}
+
+// 共用查詢區
+.topSearch{
+  input[type="button"]{ background-image: url(../images/icon_searchA.png);}
+}
+
+// 跑馬燈
+%marqueeStyle{
+  background-color: $primaryColor; color: #fff;
+  a{color: #fff;
+    &:hover{background-color: #fff3;}
+  }
+  button{
+    background: none;
+    &:hover{background-color:#fff3}
+    &::before{ /* background-color: transparentize($primaryColor, .2) ; */ color: $primaryColor;}
+  }
+}
+
+
+
 %gradient-1{
   background:#0DA0B6 linear-gradient(90deg, #0DA0B6 -4.86%, #0E8CB9 67.78%);
 }
@@ -43,17 +89,3 @@ $grayDark: #666c6c;
   background: linear-gradient(132.9deg, rgba(0, 217, 204, 0.82) 1.3%, #3BE995 98.06%);
 }
 
-
-%topBarStyle{
-  background-color: $primaryColor; color: #fff;
-  a {color: #fff;}
-}
-
-%menubg{
-  background-image: linear-gradient( #1F9D8C 0%, #07847C 45%);
-  li a{color: #fff;}
-}
-
-.topSearch{
-  input[type="button"]{ background-image: url(../images/icon_searchA.png);}
-}

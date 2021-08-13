@@ -1,4 +1,5 @@
-$primaryColor: #B282CF; //主色
+$primaryColor: #B488CF; //主色
+$primGdC: #E5D2F4; //主色漸層二色
 $secondaryColor: #644799; //輔色
 $lightColor: #FFCA3E; //點綴
 $linkColor: #2c1779; //連結
@@ -8,16 +9,6 @@ $importantColor: #d11; //重要
 $myInfo_em: #FFCA3E; //個人訊息em用
 $myInfo_time: #5C5175; //個人訊息time用
 
-
-%topBarStyle{
-  background-color: #E5D2F4; color: #333;
-  a {color: #333;}
-}
-%menubg{
-  background-image: linear-gradient( #D6BDE9 10%,  #B387CE 60%);
-  li a{color: #222;}
-}
-
 $font-color: #666;
 $font-color-light:#7b8383;
 $font-color-dark:#000;
@@ -26,7 +17,7 @@ $bg-color:#f5f0f9;
 $bg-color-pale: #fdf6ff;
 $bg-color-light:#c5b9c9;
 $bg-color-dark:#b7a2bf;
-$bg_notice: #feee91; //便利貼底色
+$bg_notice: #b8ecf7; //便利貼底色
 
 
 $border-color: #bbb;
@@ -40,9 +31,56 @@ $gray: #9d989f;
 $grayDark: #69666a;
 
 
+// 最上方導覽區
+%topBarStyle{
+  background-color: $primGdC; color: #333;
+  a {color: #333;}
+}
+
+
+// 主選單
+%menuStyle{
+  background-color: $primaryColor;
+  background-image: linear-gradient( $primGdC -20%,  $primaryColor 70%);
+  li a{color: #000;
+    &:hover{ background-color: $secondaryColor; color: #fff;}
+  }
+  li.hasChild a{
+    &::before{border-color: $secondaryColor;}
+    &:hover::before{border-color: $lightColor;}
+  }
+  &>ul>li{
+    border-bottom-color: #fff6;
+    ul{
+      background-image: linear-gradient( $primGdC 0%, $primaryColor 100%); // 下層選單背景色
+      li{border-bottom-color: #fff6;}
+    }
+  }
+}
+
+// 共用查詢區
 .topSearch{
   input[type="button"]{ background-image: url(../images/icon_searchB.png);}
 }
+
+// 跑馬燈
+%marqueeStyle{
+  background-color: $primaryColor;
+  a{color: #000;
+    &:hover{background-color: $secondaryColor; color: #fff; }
+  }
+  button{
+    background: none;
+    &:hover{background-color: $secondaryColor}
+    &::before{/*  background-color: transparentize($secondaryColor, .1); */ color: $secondaryColor;}
+  }
+}
+
+// 便利貼
+.notice{
+  .blockHeader.deco::after{ background-color: #6784;}
+}
+
 
 // -----------------------------------
 
