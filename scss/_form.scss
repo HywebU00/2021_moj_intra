@@ -113,7 +113,7 @@ textarea[disabled]:focus,
 input[disabled],
 input[disabled]:hover,
 input[disabled]:focus {
-  background-color: #f3f4f5;
+  background-color: $gray;
   border-color: $border-color-light;
   color: $disabled-color;
   box-shadow: none;
@@ -127,7 +127,7 @@ textarea[readonly]:focus,
 input[readonly],
 input[readonly]:hover,
 input[readonly]:focus {
-  background-color: #f3f4f5;
+  background-color: lighten($gray, 8);
   border-color: $border-color;
   box-shadow: none;
 }
