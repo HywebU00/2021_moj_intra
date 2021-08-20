@@ -35,7 +35,7 @@ $grayDark: #8a858a;
 
 // 最上方導覽區
 %topBarStyle{
-  background-color: $primGdC; color: #333;
+  background-color: $primGdC; color: #333; font-weight: bold;
   a {color: #333;}
 }
 
@@ -44,6 +44,7 @@ $grayDark: #8a858a;
 %menuStyle{
   background-color: $primaryColor;
   background-image: linear-gradient( $primGdC -20%,  $primaryColor 70%);
+  font-weight: bold;
   li a{color: #000;
     &:hover{ background-color: $secondaryColor; color: #fff;}
   }

@@ -553,7 +553,7 @@ $decoH : 8px;
     position: absolute; bottom: 0; left: 2px; right: 2px; z-index: 9;
     transform: translateY(100%); transition: .2s;
     padding: 10px; margin: 0;
-    background: #000a; color: #fff;
+    background: #000a; color: #fff; text-align: center;
   }
 
   &:hover p{
