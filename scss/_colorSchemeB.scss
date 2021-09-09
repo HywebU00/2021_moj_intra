@@ -3,7 +3,7 @@ $primGdC: #E5D2F4; //主色漸層二色
 $secondaryColor: #644799; //輔色
 $lightColor: #FFCA3E; //點綴
 $linkColor: #341a6f; //連結
-$linkColor2: $linkColor; // footer 用
+$linkColor2: #1e0065; // footer 用
 $importantColor: #d11; //重要
 
 $myInfo_em: #FFCA3E; //個人訊息em用
@@ -79,12 +79,16 @@ $grayDark: #8a858a;
   }
 }
 
-.footerLink{
-  li{
-    a{  color: $linkColor2;
-      &:hover{color:$linkColor2;}
-    }
-  }
+.footer{
+  color: #000 !important;
+  a{  color: $linkColor2;}
+  // .footerLink{
+  //   li{
+  //     a{ color: $linkColor2;
+  //       &:hover{color:$linkColor2;}
+  //     }
+  //   }
+  // }
 }
 
 
