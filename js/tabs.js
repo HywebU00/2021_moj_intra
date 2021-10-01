@@ -17,7 +17,7 @@ $(function(){
   _tabs.each(function(){
     let _this = $(this);
     let _tabItem = _this.find('.tabItem');
-    let _tabItemA = _tabItem.find('button, a');
+    let _tabItemA = _tabItem.find('button');
     let _tabContent = _this.find('.tabContent');
     let tabwidth; // 整組頁籤寬度
     let tabItemHeight; // 頁籤項高度

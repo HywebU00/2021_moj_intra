@@ -44,7 +44,7 @@ $grayDark: #807d7b;
 // 主選單
 %menuStyle{
   background-color: $primaryColor;
-  font-weight: bold;
+  // font-weight: bold;
   li a{color: #222;
     &:hover{ background-color: #fff7;}
   }

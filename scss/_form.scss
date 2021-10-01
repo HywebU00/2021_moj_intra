@@ -267,11 +267,12 @@ table.formLayout{
     select.quarter{ width: calc(22% - 32px);}
 
   }
-  p.hint{ 
+  p.hint, p.warning{ 
     font-size: .85em; line-height: 1.4;
     margin: .2em 3px .5em;
     em{ font-style: normal; color: $importantColor;}
   }
+  p.warning{color: $importantColor;}
 
   & ~ .btnDv{padding: 1.5em 0; margin-top: 1.5em; border-top: 1px solid $border-color;}
 }

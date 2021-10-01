@@ -44,7 +44,7 @@ $grayDark: #8a858a;
 %menuStyle{
   background-color: $primaryColor;
   background-image: linear-gradient( $primGdC -20%,  $primaryColor 70%);
-  font-weight: bold;
+  // font-weight: bold;
   li a{color: #000;
     &:hover{ background-color: $secondaryColor; color: #fff;}
   }
