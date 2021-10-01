@@ -408,12 +408,15 @@ $decoH : 8px;
       &:hover{ transform: translateY(-2px); box-shadow: rgba(0,0,0,.2) 0 4px 8px;}
 
       &>.icon{ 
-        flex: 0 0 52px; align-self: stretch;
+        flex: 0 0 52px;
+        align-self: stretch;
         margin-right: 12px;width:52px; min-height: 52px;
         position: relative; 
         img{
-          position: absolute; left: 50%; top: 50%; 
-          width: 32px; height: 32px; margin:-16px auto auto -16px; object-fit: contain;
+          position: absolute;left: 50%;top: 50%;
+          width: 32px;height: 32px;
+          margin:-16px auto auto -16px;
+          object-fit: contain;
         }
       }
       &>p{
