@@ -173,7 +173,8 @@ $(function(){
   // 燈箱 --- 【所屬單位清單】 顯示／隱藏 ，【登入區】顯示／隱藏 ，【進階查詢】 顯示／隱藏 ，
   var _showLightbox =  $('.showLightbox');
   var _lightbox = $('.lightbox');
-  var _hideLightbox = _lightbox.find('.closeThis, .hideLightbox');
+  _lightbox.filter('.courtsList').append('<div class="overlayForClose"></div>');
+  var _hideLightbox = _lightbox.find('.closeThis, .hideLightbox, .overlayForClose');
   var _lightboxNow;
   const speed = 400;
 
@@ -192,13 +193,13 @@ $(function(){
     let _targetLbx = $(this).parents('.lightbox');
     _targetLbx.stop(true, false).slideUp(speed,
       function(){
-          _targetLbx.removeClass('show');
-          if( _targetLbx.has('.tabs')){
-            _targetLbx.removeAttr('style');
-          }
+        _targetLbx.removeClass('show');
+        if( _targetLbx.has('.tabs')){
+          _targetLbx.removeAttr('style');
         }
-      );
-      _targetLbx.prev(_cover).fadeOut(speed);
+      }
+    );
+    _targetLbx.prev(_cover).fadeOut(speed);
     _body.removeClass('noScroll');
   })
 

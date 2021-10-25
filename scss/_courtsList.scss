@@ -1,8 +1,5 @@
-.courtsList{  
-  // position: absolute !important;
+.courtsList{
   left: 0; top: 0; right: 0; bottom: 0;
-  // height: 100%;
-  // min-height: 100vh;
   padding: 40px 3vw 60px;
   overflow-y: auto;
   background: #222e; box-shadow: none;
@@ -10,6 +7,7 @@
     font-size: 1.9rem; text-align: left; margin: 0; padding: 0 0 .2em; 
     border-bottom: 1px solid #777; color: #fff; letter-spacing: 3px;
   }
+  ul{position: relative;z-index: 90;}
   ul, li{list-style: none; margin: 0; padding: 0;}
   &>ul{ margin: 0 auto; color: #ddd;}
   &>ul>li{ 
@@ -45,5 +43,13 @@
       background-color: #5558;
         &:hover{background-color: #555;}
     }
+  }
+
+
+  .overlayForClose{
+    position: fixed; left: 0;right: 0;top: 0;bottom: 0;
+    height: 100%;
+    z-index: 1;
+    background-color: transparent;
   }
 }

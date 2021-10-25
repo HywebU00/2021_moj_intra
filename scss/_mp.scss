@@ -197,7 +197,7 @@ $decoH : 8px;
 // 訊息_條列式 ----------------------------------------------
 // (標題只顯示一行，超過顯示刪節號)
 .bulletin1 {
-  .list{
+  ul.list{
     list-style: none; line-height: 1.5; margin:25px 0 0; padding: 0;
     li{ 
       margin: 5px 0; padding: 0;
@@ -226,6 +226,55 @@ $decoH : 8px;
       }
     }
   }
+
+  // 表格條列
+  table.list{
+    width: 99%;
+    border-collapse: collapse; line-height: 1.6; margin: .5em auto;
+    // border-bottom: 1px solid $border-color;
+
+    th, td{ padding:.5em 1em; }
+    thead{
+      border-bottom: 1px solid $border-color;
+      th{ white-space: nowrap;}
+    }
+    tbody{
+      tr{border-bottom: 1px solid $border-color-light; transition: .2s;
+        &:hover{ 
+          background-color: $bg-color-pale;
+        }
+      }
+      // tr{border-bottom: 1px solid $border-color-light; transition: .2s;
+      //   &:last-child{border-bottom: none;}
+      //   &:hover{background: $bg-color-pale;}
+      //   &[onclick]{ cursor: pointer; 
+      //     &:hover{ color: $linkColor; text-decoration: underline;}
+      //   }
+      // }
+      td{vertical-align: top;
+        &.aCenter{text-align: center;}
+        &.aRight{text-align: right;}
+
+        a{display: block; text-decoration: none; color: $font-color;
+          &:hover{text-decoration: underline; color: $linkColor; }
+        }
+        &.number{ text-align: right;
+          &::after{content: '.';}
+
+        }
+        .source, time{
+          display: inline-block; text-align: center; color: $font-color;
+          &:only-child{display: block;}
+        }
+        .source{min-width: 6.5em;}
+
+        &>p{margin: 0;
+          &+p{margin-top: 1em;}
+        }
+      }
+    }
+  }
+  
   .more{margin-top: 1em;}
 }
 .col66>.bulletin1,
