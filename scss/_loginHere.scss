@@ -83,15 +83,16 @@
     .tabItem{
        margin: 0 4px 0 0; height: auto; line-height: auto; font-size: 1.1em;
        &::before{display: none;}
-      &>a{
+      &>button{
+        display: block; width: 100%; font-weight: normal;
         background-color: $gray ; color: $font-color; border-radius: 8px 8px 0 0;
-        height: 2.6em; line-height: 2.8; margin-top: 5px;
+        height: 2.6em; line-height: 2.8; margin: 5px 0 0;
         transition: .2s;
         &:hover{background-color: darken($gray , 6) ;  color: $font-color-dark;}
       }
   
       &.active{
-        a{
+        &>button{
           background-color: $primaryColor; color: #fff; color: $linkColor2; cursor: default;
           height: calc(2.6em + 5px); margin-top: 0; line-height: 3;
         }
