@@ -2,18 +2,15 @@
 // 頁籤樣式
 .tabs{
   position:relative;overflow:hidden;margin:0;
-  // outline: 1px dashed pink;
   $tabItemH : 3em;
 
   &::before{
     content: ''; position: absolute; top: calc( #{$tabItemH} - #{$decoH} ); left: 0; right: 0;
     height: $decoH; border-radius: $decoH*.5;
     background: $bg-color-light;
-    // box-shadow: rgba(0,0,0,.2) 0 0 3px inset;
   }
   .tabItem{
     position:relative;  float:left;  text-align:center; 
-    // padding-right: 2em;
     display: flex; justify-content: center;
     height:$tabItemH; line-height: $tabItemH - .5em;
     &>button{
