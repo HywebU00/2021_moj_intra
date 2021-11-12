@@ -23,17 +23,16 @@
   }
 }
 
-.more{ text-align: center;
+.more{ text-align: center; margin: 10px auto 0;
   &>a{
     display: inline-block; height: 2.4em; line-height: 2.5; padding: 0 1.2em;
-    @extend %btnGradBg;
-    border-radius: 0;
+    @extend %btnGradBg; border-radius: 0;
   }
 }
 
 
 .arrow{
-  position: relative; width: 44px; height: 44px; 
+  position: relative; width: 44px; height: 44px;
   cursor: pointer;display: inline-block; transition: .2s;
   &::before, &::after{
     content: ''; position: absolute; left: 50%; top: 50%;
