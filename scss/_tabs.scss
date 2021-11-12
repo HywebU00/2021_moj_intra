@@ -7,7 +7,7 @@
   &::before{
     content: ''; position: absolute; top: calc( #{$tabItemH} - #{$decoH} ); left: 0; right: 0;
     height: $decoH; border-radius: $decoH*.5;
-    background: $bg-color-light;
+    background: darken($bg-color-light, 20%);
   }
   .tabItem{
     position:relative;  float:left;  text-align:center; 

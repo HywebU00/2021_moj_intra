@@ -5,7 +5,7 @@ $decoH : 8px;
 .blockHeader{
   text-align: center; font-size: 1.35em; color: $font-color-dark;
   line-height: 1.3; position: relative;
-  margin: 0 auto 10px; padding: 10px 0;
+  margin: 0 auto 8px; padding: 0;
 
   &.deco{
     padding-bottom: 18px;
@@ -198,13 +198,13 @@ $decoH : 8px;
 // (標題只顯示一行，超過顯示刪節號)
 .bulletin1 {
   ul.list{
-    list-style: none; line-height: 1.5; margin:25px 0 0; padding: 0;
+    list-style: none; line-height: 1.5; margin:0; padding:5px 0 0;
     li{ 
-      margin: 5px 0; padding: 0;
-      position: relative;
+      margin: 0; padding: 0; position: relative;
+      border-bottom: 1px solid $border-color-light;
       a{
-        display: block; text-decoration: none; padding: 10px 5px; overflow: hidden;
-        color: $font-color; border-bottom: 1px solid transparent; border-radius: 4px;
+        display: block; text-decoration: none; padding: 5px; overflow: hidden;
+        color: $font-color; border-bottom:none; border-radius: 4px;
         transition: .2s;
         &:hover{ 
           color: $linkColor; background-color: $bg-color-pale;
@@ -233,7 +233,7 @@ $decoH : 8px;
     border-collapse: collapse; line-height: 1.6; margin: .5em auto;
     // border-bottom: 1px solid $border-color;
 
-    th, td{ padding:.5em 1em; }
+    th, td{ padding:5px 1em; }
     thead{
       border-bottom: 1px solid $border-color;
       th{ white-space: nowrap;}
@@ -275,7 +275,7 @@ $decoH : 8px;
     }
   }
   
-  .more{margin-top: 1em;}
+  // .more{margin-top: 8px;}
 }
 .col66>.bulletin1,
 .col444>.bulletin1,
@@ -323,7 +323,7 @@ $decoH : 8px;
   }
 
 
-  &>.more{margin-top: 1.5em;}
+ // &>.more{margin-top: 12px;}
 
 }
 .col66>.bulletin2, .col444>.bulletin2, .col48>.bulletin2:first-child, .col84>.bulletin2:last-child{
@@ -340,9 +340,7 @@ $decoH : 8px;
 // 資安宣導（不同底色） ----------------------------------------------
 .notice{
   background-color: $bg_notice;
-  // box-shadow: rgba(0,0,0,.1) 5px 2px 0;
-  // .blockHeader.deco::after{ background-color: darken( $bg_notice , 15);}
-  box-shadow: #00000012 3px 6px 0 -1px;
+  // box-shadow: #00000012 3px 6px 0 -1px;
   article{
     padding: 15px 0; line-height: 1.8;
     p{
@@ -372,7 +370,7 @@ $decoH : 8px;
       &+p{margin-top: 1em;}
     }
   }
-  .more{margin-top: 1em;}
+  // .more{margin-top: 1em;}
 }
 
 // 文字連結 ----------------------------------------------
@@ -397,7 +395,7 @@ $decoH : 8px;
     &:nth-child(5n+4)>a{ @extend %gradient-4;}
     &:nth-child(5n)  >a{ @extend %gradient-5;}
   }
-  .more{margin-top: 1em;}
+  // .more{margin-top: 1em;}
 }
 .col66>.textLink1,
 .col84>.textLink1:first-child,
@@ -437,7 +435,7 @@ $decoH : 8px;
       }
     }
   }
-  .more{margin-top: 1.5em;}
+  // .more{margin-top: 1em;}
 }
 
 // 圖示＋文字連結（icon區塊_Nx4方形） ----------------------------------------------
@@ -479,7 +477,7 @@ $decoH : 8px;
     &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
     &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
   }
-  .more{margin-top: 1em;}
+  // .more{margin-top: 1em;}
 }
 .col66>.iconSqaure, .col84>.iconSqaure:first-child, .col48>.iconSqaure:last-child {
   li{
@@ -524,7 +522,7 @@ $decoH : 8px;
     &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
     &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
   }
-  .more{margin-top: .5em;}
+  // .more{margin-top: .5em;}
 
 }
 .col66>.iconDisk,
@@ -567,7 +565,7 @@ $decoH : 8px;
       }
     }
   }
-  .more{margin-top: 1em;}
+  // .more{margin-top: 1em;}
 }
 .col66>.imgLink, .col48>.imgLink , .col84>.imgLink{
   padding-left: 20px; padding-right: 20px;
@@ -582,7 +580,7 @@ $decoH : 8px;
 }
 // 大圖 banner，單張
 .bigBanner{
-  margin: 24px 0; padding: 0; width: 100%;
+  margin: 0; padding: 0; width: 100%;
   a{
     position: relative; display: block;
      overflow: hidden; transition: .2s;
@@ -697,13 +695,14 @@ $decoH : 8px;
   }
 
   .bannerBox{
-    position: relative; overflow: hidden;
-    padding-bottom: 10px;
+    position: relative; 
+    // overflow: hidden;
+    // padding-bottom: 10px;
   }
 
   ul.bannerList{ 
     @extend %bannerList;
-    display: flex; flex-flow: row wrap;
+    display: flex; flex-flow: row wrap; margin: -3px;
 
     li{
       flex: 0 0 auto;
@@ -810,7 +809,7 @@ $decoH : 8px;
 }
 // 輪播點點
 .slick-dots{
-  list-style: none; margin: 10px auto; padding: 0; text-align: center;
+  list-style: none; margin: 4px auto 16px; padding: 0; text-align: center;
   li{ display: inline-block; margin: 2px 8px;
     button{
       font-size: 0;  margin: 0; padding: 0; box-shadow: none; border: none;
@@ -824,7 +823,7 @@ $decoH : 8px;
 
 // 小圖 banner，水平輪播 ----------------------------------------------
 .adBannerSlick{
-  padding: 30px 0;
+  padding: 15px 0;
   background: #fff;
 
   .slick{
@@ -853,7 +852,7 @@ $decoH : 8px;
     }
   }
 
-  .more{margin-top: 10px;}
+  // .more{margin-top: 10px;}
 }
 
 
@@ -888,7 +887,7 @@ $decoH : 8px;
 
 // 大圖 banner，水平輪播 ----------------------------------------------
 .bigBannerSlick{
-  margin: 20px 0; padding: 0 0 10px;
+  margin: 0; padding: 0;
   .image{
     position: relative;
     // 寬 : 高 = 3:1
