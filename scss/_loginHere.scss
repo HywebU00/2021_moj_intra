@@ -38,6 +38,11 @@
       &:nth-child(odd){ padding-top: 1em; white-space: nowrap; color: $font-color-dark;}
       input{width: calc(96% - 50px);}
       p.hint{font-size: 1rem; margin: .3em 4px;}
+
+    }
+    .captchaSet{
+      width: 100%;
+      input{width: 8em;}
     }
     &~.btnDv{ margin:20px 20px 0; padding-top: 20px;}
   }
@@ -48,7 +53,7 @@
     li{display: inline-block; margin: 0;
       &:last-child{margin-right: -3px;}
       &+li{margin-left: 8px;}
-      a {
+      a{
         display: block; padding: 0 1em; width: 7em;
         height: 2em; line-height: 2em;
         box-shadow: $border-color 0 0 0 1px; background: #fff;color: $font-color; 
