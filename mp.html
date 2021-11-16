@@ -254,6 +254,18 @@
                     <span class="viewIcon" title="完整顯示"></span>
                   </td>
                 </tr>
+                <tr>
+                  <td><abbr class="required" title="必填欄位">*</abbr>驗證碼</td>
+                  <td>
+                    <div class="captchaSet">
+                      <input autocomplete="off" id="Captcha" name="Captcha" type="text" value="">
+                      <img alt="驗證碼" id="imgCaptcha" src="images/CaptchaImage.jpg">
+                      <button type="button" class="btn_voice" id="VoiceCaptcha">語音播放</button>
+                      <button type="button" class="btn_change" onclick="changeCaptcha()">更換驗證碼</button>
+                    </div>
+                  </td>
+                </tr>
+  
               </table>
               <div class="btnDv">
                 <input type="submit" value="確定">

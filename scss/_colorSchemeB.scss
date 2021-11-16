@@ -1,4 +1,4 @@
-$primaryColor: #B488CF; //主色
+$primaryColor: #B488CF; // 主色
 $primGdC: #E5D2F4; //主色漸層二色
 $secondaryColor: #644799; //輔色
 $lightColor: #FFCA3E; //點綴
@@ -42,8 +42,9 @@ $grayDark: #8a858a;
 
 // 主選單
 %menuStyle{
-  background-color: $primaryColor;
-  background-image: linear-gradient( $primGdC -20%,  $primaryColor 70%);
+  background-color: $primGdC; //20211116
+  // background-color: $primaryColor; 20211116
+  // background-image: linear-gradient( $primGdC -20%,  $primaryColor 70%); 20211116
   // font-weight: bold;
   li a{color: #000;
     &:hover{ background-color: $secondaryColor; color: #fff;}
@@ -53,13 +54,16 @@ $grayDark: #8a858a;
     &:hover::before{border-color: $lightColor;}
   }
   &>ul>li{
-    border-bottom-color: #fff6;
+    border-bottom-color: #fff8;
     ul{
-      background-image: linear-gradient( $primGdC 0%, $primaryColor 100%); // 下層選單背景色
-      li{border-bottom-color: #fff6;}
+      // background-image: linear-gradient( $primGdC 0%, $primaryColor 100%);20211116 
+      background-color: $primGdC; //20211116
+      li{border-bottom-color: #fff8;}
     }
   }
 }
+
+.center .sideBar{ background-color: $primGdC !important;}
 
 // 共用查詢區
 .topSearch{
