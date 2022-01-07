@@ -16,7 +16,7 @@
 
 </head>
 <body>
-  <header class="webHeader" style="background-image: url(publicData/header_bg1.jpg); background-color: #fff;">
+  <header class="webHeader" style="background-image: url(publicData/header_bg3.jpg); background-color: #fff;">
     <div class="topBar">
       <span class="allCourts showLightbox" data-id="courtsList"><a>法務部暨所屬機關網站清單</a></span>
       
@@ -255,6 +255,18 @@
                     <span class="viewIcon" title="完整顯示"></span>
                   </td>
                 </tr>
+                <tr>
+                  <td><abbr class="required" title="必填欄位">*</abbr>驗證碼</td>
+                  <td>
+                    <div class="captchaSet">
+                      <input autocomplete="off" id="Captcha" name="Captcha" type="text" value="">
+                      <img alt="驗證碼" id="imgCaptcha" src="images/CaptchaImage.jpg">
+                      <button type="button" class="btn_voice" id="VoiceCaptcha">語音播放</button>
+                      <button type="button" class="btn_change" onclick="changeCaptcha()">更換驗證碼</button>
+                    </div>
+                  </td>
+                </tr>
+  
               </table>
               <div class="btnDv">
                 <input type="submit" value="確定">
@@ -324,7 +336,7 @@
       
       <div class="row">
         <section class="myInfo">
-          <h2 class="blockHeader">個人訊息</h2>
+          <!-- <h2 class="blockHeader">個人訊息</h2> -->
           <div class="leftDv">
             <img class="avatar" src="publicData/avatar1.png" alt="登入者頭像">
             <h3 class="myName">黃君君</h3>
@@ -462,7 +474,7 @@
 
       <div class="row">
         <section class="bulletin1">
-          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <!-- <h2 class="blockHeader deco">訊息_條列式</h2> -->
           <ul class="list ellipsis">
             <li><a href="x">
                 <time>2020/12/28</time>
@@ -491,7 +503,7 @@
 
       <div class="row">
         <section class="bulletin1">
-          <h2 class="blockHeader">訊息_頁籤式</h2>
+          <!-- <h2 class="blockHeader">訊息_頁籤式</h2> -->
           <div class="tabs equal">
             <span class="tabItem active">
               <button type="button">＊公文待辦</button>
@@ -644,7 +656,7 @@
 
       <div class="row">
         <section class="bulletin1">
-          <h2 class="blockHeader">訊息_頁籤式</h2>
+          <!-- <h2 class="blockHeader">訊息_頁籤式</h2> -->
           <div class="tabs equal">
             <span class="tabItem active"><button type="button">電子公布欄</button></span>
             <div class="tabContent">
@@ -725,7 +737,7 @@
 
       <div class="row col48">
         <section class="bulletin1">
-          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <!-- <h2 class="blockHeader deco">訊息_條列式</h2> -->
           <ul class="list ellipsis" >
             <li><a href="x">
                 <time>2020/12/28</time>
@@ -752,7 +764,7 @@
         </section>
 
         <section class="bulletin1">
-          <h2 class="blockHeader">訊息_頁籤式</h2>
+          <!-- <h2 class="blockHeader">訊息_頁籤式</h2> -->
           <div class="tabs equal">
             <span class="tabItem active">
               <button type="button">公文待辦</button>
@@ -836,7 +848,7 @@
 
       <div class="row">
         <section class="bulletin2">
-          <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2>
+          <!-- <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2> -->
           <ul class="simuTable">
             <li class="header">
               <span class="th">日期</span>
@@ -882,7 +894,7 @@
       
       <div class="row col66">
         <section class="bulletin2">
-          <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2>
+          <!-- <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2> -->
           <ul class="simuTable">
             <li class="header">
               <span class="th">日期</span>
@@ -924,7 +936,7 @@
           <div class="more"><a href="x">更多資料</a></div>
         </section>
         <section class="bulletin2">
-          <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2>
+          <!-- <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2> -->
           <ul class="simuTable">
             <li class="header">
               <span class="th">日期</span>
@@ -995,7 +1007,7 @@
       </div>
 
 
-      <div class="row col84">
+      <div class="row col48">
         <section class="notice">
           <h2 class="blockHeader deco">便利貼樣式</h2>
           <article>
@@ -1092,7 +1104,7 @@
 
       <div class="row">
         <section class="textLink1">
-          <h2 class="blockHeader">文字_Nx4區塊連結</h2>
+          <!-- <h2 class="blockHeader">文字_Nx4區塊連結</h2> -->
           <ul>
             <li><a href="x">司處業務</a></li>
             <li><a href="x">單一窗口連線作業</a></li>
@@ -1388,24 +1400,6 @@
         </section>
       </div>
 
-
-      <div class="row">
-        <section class="imgLink">
-          <h2 class="blockHeader">圖片_Nx4連結</h2>
-          <ul class="imgList">
-            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
-            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item04.png"></a></li>
-            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-            <!-- <li><a href="x"><img src="publicData/item07.jpg"></a></li> -->
-            <!-- <li><a href="x"><img src="publicData/item08.jpg"></a></li> -->
-          </ul>
-          <div class="more"><a href="x">更多資料</a></div>
-        </section>
-      </div>
-
       <div class="row col66">
         <section class="imgLink">
           <h2 class="blockHeader">圖片_Nx4連結</h2>
@@ -1679,6 +1673,23 @@
         </section>
       </div>
 
+
+      <div class="row">
+        <section class="imgLink">
+          <h2 class="blockHeader">圖片_Nx4連結</h2>
+          <ul class="imgList">
+            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
+            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item04.png"></a></li>
+            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
+            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
+            <!-- <li><a href="x"><img src="publicData/item07.jpg"></a></li> -->
+            <!-- <li><a href="x"><img src="publicData/item08.jpg"></a></li> -->
+          </ul>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+      </div>
 
       <div class="row">
         <section class="adBanners slideToggle">
