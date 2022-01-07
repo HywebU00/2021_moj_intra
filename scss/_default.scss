@@ -21,8 +21,8 @@ a{ color: $linkColor; text-decoration: underline;
   clear: both;
   display: flex; flex-flow: row nowrap;
   .sideBar{ 
-    flex:0 0 16rem; background: $primaryColor;
-    flex-basis:240px;
+    background: $primaryColor;
+    flex:0 0 16rem; flex-basis:240px;
     min-height:calc(100vh - 270px) ;
   }
   .main{

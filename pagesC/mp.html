@@ -4,19 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="../">
   <title>法務部員工入口網</title>
   
-  <link rel="stylesheet" href="slick/slick.css"/>
-  <link rel="stylesheet" href="css/styleC.css">
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="slick/slick.min.js"></script>
-  <script src="js/effect.js"></script>
-  <script src="js/tabs.js"></script>
+  <link rel="stylesheet" href="../slick/slick.css"/>
+  <link rel="stylesheet" href="../css/styleC.css">
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../slick/slick.min.js"></script>
+  <script src="../js/effect.js"></script>
+  <script src="../js/tabs.js"></script>
 
 </head>
 <body>
-  <header class="webHeader" style="background-image: url(publicData/header_bg1.jpg); background-color: #fff;">
+  <header class="webHeader" style="background-image: url(../publicData/header_bg1.jpg); background-color: #fff;">
     <div class="topBar">
       <span class="allCourts showLightbox" data-id="courtsList"><a>法務部暨所屬機關網站清單</a></span>
       
@@ -38,7 +37,7 @@
         </ul>
       </div>
     </div>
-    <h1><a href="mp.html"><img src="publicData/logo.png" alt="法務部"></a></h1>
+    <h1><a href="mp.html"><img src="../publicData/logo.png" alt="法務部"></a></h1>
 
     <section class="topSearch">
       <form action="" class="searchForm">
@@ -227,7 +226,7 @@
 
         </section>
         <div class="loginBtn showLightbox" data-id="loginHere"><a>登入</a></div>
-        <div class="logoutBtn"><a><img class="avatar" src="publicData/avatar1.png" alt="登入者頭像">登出</a></div>    
+        <div class="logoutBtn"><a><img class="avatar" src="../publicData/avatar1.png" alt="登入者頭像">登出</a></div>    
 
       </div>
 
@@ -255,6 +254,18 @@
                     <span class="viewIcon" title="完整顯示"></span>
                   </td>
                 </tr>
+                <tr>
+                  <td><abbr class="required" title="必填欄位">*</abbr>驗證碼</td>
+                  <td>
+                    <div class="captchaSet">
+                      <input autocomplete="off" id="Captcha" name="Captcha" type="text" value="">
+                      <img alt="驗證碼" id="imgCaptcha" src="images/CaptchaImage.jpg">
+                      <button type="button" class="btn_voice" id="VoiceCaptcha">語音播放</button>
+                      <button type="button" class="btn_change" onclick="changeCaptcha()">更換驗證碼</button>
+                    </div>
+                  </td>
+                </tr>
+  
               </table>
               <div class="btnDv">
                 <input type="submit" value="確定">
@@ -324,9 +335,9 @@
       
       <div class="row">
         <section class="myInfo">
-          <h2 class="blockHeader">個人訊息</h2>
+          <!-- <h2 class="blockHeader">個人訊息</h2> -->
           <div class="leftDv">
-            <img class="avatar" src="publicData/avatar1.png" alt="登入者頭像">
+            <img class="avatar" src="../publicData/avatar1.png" alt="登入者頭像">
             <h3 class="myName">黃君君</h3>
             <ul class="myLinks">
               <li><a href="x">通訊錄</a></li>
@@ -444,16 +455,16 @@
         <div class="row">
           <section class="bigBannerSlick">
             <div class="slick">
-              <div class="image"><a href="x"><img src="publicData/bb01.jpg">
+              <div class="image"><a href="x"><img src="../publicData/bb01.jpg">
                 <p>圖說圖說圖說圖說圖說圖說</p>
               </a></div>
-              <div class="image"><a href="x"><img src="publicData/bb02.png">
+              <div class="image"><a href="x"><img src="../publicData/bb02.png">
                 <p>圖說克反什研常是種視改相少雙灣軍，當要速海變滿。邊三交喜做太學提！傷有生飯後農麼向口很些舉為一廣否今算半收其去會舉士只！是票人然後史有中個無整和身機相感樹。</p>
               </a></div>
-              <div class="image"><a href="x"><img src="publicData/ph08.jpg">
+              <div class="image"><a href="x"><img src="../publicData/ph08.jpg">
                 <p>如果沒有圖說文字，請刪除此Ｐ元件</p>
               </a></div>
-              <div class="image"><a href="x"><img src="publicData/ph07.jpg">
+              <div class="image"><a href="x"><img src="../publicData/ph07.jpg">
                 <p>物滿進生角開再事文農技省接個、團政前家手消要風</p>
               </a></div>
             </div>
@@ -462,7 +473,7 @@
 
       <div class="row">
         <section class="bulletin1">
-          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <!-- <h2 class="blockHeader deco">訊息_條列式</h2> -->
           <ul class="list ellipsis">
             <li><a href="x">
                 <time>2020/12/28</time>
@@ -491,7 +502,7 @@
 
       <div class="row">
         <section class="bulletin1">
-          <h2 class="blockHeader">訊息_頁籤式</h2>
+          <!-- <h2 class="blockHeader">訊息_頁籤式</h2> -->
           <div class="tabs equal">
             <span class="tabItem active">
               <button type="button">＊公文待辦</button>
@@ -644,7 +655,7 @@
 
       <div class="row">
         <section class="bulletin1">
-          <h2 class="blockHeader">訊息_頁籤式</h2>
+          <!-- <h2 class="blockHeader">訊息_頁籤式</h2> -->
           <div class="tabs equal">
             <span class="tabItem active"><button type="button">電子公布欄</button></span>
             <div class="tabContent">
@@ -725,7 +736,7 @@
 
       <div class="row col48">
         <section class="bulletin1">
-          <h2 class="blockHeader deco">訊息_條列式</h2>
+          <!-- <h2 class="blockHeader deco">訊息_條列式</h2> -->
           <ul class="list ellipsis" >
             <li><a href="x">
                 <time>2020/12/28</time>
@@ -752,7 +763,7 @@
         </section>
 
         <section class="bulletin1">
-          <h2 class="blockHeader">訊息_頁籤式</h2>
+          <!-- <h2 class="blockHeader">訊息_頁籤式</h2> -->
           <div class="tabs equal">
             <span class="tabItem active">
               <button type="button">公文待辦</button>
@@ -836,7 +847,7 @@
 
       <div class="row">
         <section class="bulletin2">
-          <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2>
+          <!-- <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2> -->
           <ul class="simuTable">
             <li class="header">
               <span class="th">日期</span>
@@ -882,7 +893,7 @@
       
       <div class="row col66">
         <section class="bulletin2">
-          <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2>
+          <!-- <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2> -->
           <ul class="simuTable">
             <li class="header">
               <span class="th">日期</span>
@@ -924,7 +935,7 @@
           <div class="more"><a href="x">更多資料</a></div>
         </section>
         <section class="bulletin2">
-          <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2>
+          <!-- <h2 class="blockHeader">訊息_條列訊息(標題+內文)</h2> -->
           <ul class="simuTable">
             <li class="header">
               <span class="th">日期</span>
@@ -995,7 +1006,7 @@
       </div>
 
 
-      <div class="row col84">
+      <div class="row col48">
         <section class="notice">
           <h2 class="blockHeader deco">便利貼樣式</h2>
           <article>
@@ -1056,7 +1067,7 @@
       <div class="row"><!-- 大圖，單張 -->
         <section class="bigBanner">
           <div class="image"><a href="x">
-            <img src="publicData/ph10.jpg">
+            <img src="../publicData/ph10.jpg">
             <p>圖說，如果沒有圖說文字，請刪除此Ｐ元件</p>
           </a></div>
         </section>
@@ -1066,23 +1077,23 @@
       <div class="row col66">
         <section class="bigBanner">
           <div class="image"><a href="x">
-            <img src="publicData/bb02.png">
+            <img src="../publicData/bb02.png">
             <p>圖說，如果沒有圖說文字，請刪除此Ｐ元件</p>
           </a></div>
         </section>
 
         <section class="bigBannerSlick">
           <div class="slick">
-            <div class="image"><a href="x"><img src="publicData/bb01.jpg">
+            <div class="image"><a href="x"><img src="../publicData/bb01.jpg">
               <p>圖說圖說圖說圖說圖說圖說</p>
             </a></div>
-            <div class="image"><a href="x"><img src="publicData/bb02.png">
+            <div class="image"><a href="x"><img src="../publicData/bb02.png">
               <p>圖說克反什研常是種視改相少雙灣軍，當要速海變滿。邊三交喜做太學提！傷有生飯後農麼向口很些舉為一廣否今算半收其去會舉士只！是票人然後史有中個無整和身機相感樹。</p>
             </a></div>
-            <div class="image"><a href="x"><img src="publicData/ph08.jpg">
+            <div class="image"><a href="x"><img src="../publicData/ph08.jpg">
               <p>如果沒有圖說文字，請刪除此Ｐ元件</p>
             </a></div>
-            <div class="image"><a href="x"><img src="publicData/ph07.jpg">
+            <div class="image"><a href="x"><img src="../publicData/ph07.jpg">
               <p>物滿進生角開再事文農技省接個、團政前家手消要風</p>
             </a></div>
           </div>
@@ -1092,7 +1103,7 @@
 
       <div class="row">
         <section class="textLink1">
-          <h2 class="blockHeader">文字_Nx4區塊連結</h2>
+          <!-- <h2 class="blockHeader">文字_Nx4區塊連結</h2> -->
           <ul>
             <li><a href="x">司處業務</a></li>
             <li><a href="x">單一窗口連線作業</a></li>
@@ -1110,31 +1121,31 @@
           <h2 class="blockHeader">icon區塊_Nx4方形</h2>
           <ul>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_32x32.png"></span>
+              <span class="icon"><img src="../publicData/icon_32x32.png"></span>
               <p>圖示尺寸建議64x64像素</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp02.png"></span>
               <p>公文線上簽核系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp03.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp03.png"></span>
               <p>新表單簽核流程系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp04.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp04.png"></span>
               <p>線上簽核電子服務台</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp05.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp05.png"></span>
               <p>經費結報系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp06.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp06.png"></span>
               <p>法務語音辨識系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>步能集李的體件品北一老解一沒工</p>
             </a></li>
           </ul>
@@ -1147,43 +1158,43 @@
           <h2 class="blockHeader">icon區塊 Nx6 圓形</h2>
           <ul>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_40x40.png"></span>
+              <span class="icon"><img src="../publicData/icon_40x40.png"></span>
               <p>圖示尺寸建議80x80像素</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp02.png"></span>
               <p>我們選種兩的業送獲</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>員制洋強</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>運界氣親取靈本</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>有至社止人</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>濟願對時問神</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>濟願對時問</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>濟願對時</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>問神上年跑我的北及一著</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>大指一相</p>
             </a></li>
           </ul>
@@ -1208,27 +1219,27 @@
           <h2 class="blockHeader">icon區塊 Nx6 圓形</h2>
           <ul>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_40x40.png"></span>
+              <span class="icon"><img src="../publicData/icon_40x40.png"></span>
               <p>圖示尺寸建議80x80像素</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp02.png"></span>
               <p>我們選種兩的業送獲</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>員制洋強</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>運界氣親取靈本</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>有至社止人</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>濟願對時問神</p>
             </a></li>
           </ul>
@@ -1242,31 +1253,31 @@
           <h2 class="blockHeader">icon區塊_Nx4方形</h2>
           <ul>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_32x32.png"></span>
+              <span class="icon"><img src="../publicData/icon_32x32.png"></span>
               <p>圖示尺寸建議64x64像素</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp02.png"></span>
               <p>公文線上簽核系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp03.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp03.png"></span>
               <p>新表單簽核流程系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp04.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp04.png"></span>
               <p>線上簽核電子服務台</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp05.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp05.png"></span>
               <p>經費結報系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp06.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp06.png"></span>
               <p>法務語音辨識系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>步能集李的體件品北一老解一沒</p>
             </a></li>
           </ul>
@@ -1276,31 +1287,31 @@
           <h2 class="blockHeader">icon區塊_Nx4方形</h2>
           <ul>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_32x32.png"></span>
+              <span class="icon"><img src="../publicData/icon_32x32.png"></span>
               <p>圖示尺寸建議64x64像素</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp02.png"></span>
               <p>公文線上簽核系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp03.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp03.png"></span>
               <p>新表單簽核流程系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp04.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp04.png"></span>
               <p>線上簽核電子服務台</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp05.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp05.png"></span>
               <p>經費結報系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp06.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp06.png"></span>
               <p>法務語音辨識系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>步能集李的體件品北一老解一沒</p>
             </a></li>
           </ul>
@@ -1326,27 +1337,27 @@
           <h2 class="blockHeader">icon區塊 Nx6 圓形</h2>
           <ul>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_40x40.png"></span>
+              <span class="icon"><img src="../publicData/icon_40x40.png"></span>
               <p>圖示尺寸建議80x80像素</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp02.png"></span>
               <p>我們選種兩的業送獲</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>員制洋強濟願對時</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>運界氣親取靈本</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>有至社止人</p>
             </a></li>
             <li><a href="x">
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>濟願對時問神</p>
             </a></li>
           </ul>
@@ -1356,51 +1367,33 @@
           <h2 class="blockHeader">icon區塊_Nx4方形</h2>
           <ul>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_32x32.png"></span>
+              <span class="icon"><img src="../publicData/icon_32x32.png"></span>
               <p>圖示尺寸建議64x64像素</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp02.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp02.png"></span>
               <p>公文線上簽核系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp03.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp03.png"></span>
               <p>新表單簽核流程系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp04.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp04.png"></span>
               <p>線上簽核電子服務台</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp05.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp05.png"></span>
               <p>經費結報系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp06.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp06.png"></span>
               <p>法務語音辨識系統</p>
             </a></li>
             <li><a href="x"> 
-              <span class="icon"><img src="publicData/icon_sp01.png"></span>
+              <span class="icon"><img src="../publicData/icon_sp01.png"></span>
               <p>步能集李的體件品北一老解一沒</p>
             </a></li>
-          </ul>
-          <div class="more"><a href="x">更多資料</a></div>
-        </section>
-      </div>
-
-
-      <div class="row">
-        <section class="imgLink">
-          <h2 class="blockHeader">圖片_Nx4連結</h2>
-          <ul class="imgList">
-            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
-            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item04.png"></a></li>
-            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-            <!-- <li><a href="x"><img src="publicData/item07.jpg"></a></li> -->
-            <!-- <li><a href="x"><img src="publicData/item08.jpg"></a></li> -->
           </ul>
           <div class="more"><a href="x">更多資料</a></div>
         </section>
@@ -1410,28 +1403,28 @@
         <section class="imgLink">
           <h2 class="blockHeader">圖片_Nx4連結</h2>
           <ul class="imgList">
-            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
-            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item04.png"></a></li>
-            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item07.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/ph10.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/ph08.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item03.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item04.png"></a></li>
+            <li><a href="x"><img src="../publicData/item05.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item06.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item07.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item08.jpg"></a></li>
           </ul>
           <div class="more"><a href="x">更多資料</a></div>
         </section>
         <section class="imgLink">
           <h2 class="blockHeader">圖片_Nx4連結</h2>
           <ul class="imgList">
-            <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
-            <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item04.png"></a></li>
-            <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item07.jpg"></a></li>
-            <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/ph10.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/ph08.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item03.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item04.png"></a></li>
+            <li><a href="x"><img src="../publicData/item05.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item06.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item07.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item08.jpg"></a></li>
           </ul>
           <div class="more"><a href="x">更多資料</a></div>
         </section>       
@@ -1454,15 +1447,15 @@
         <section class="adBannerSlideV">
           <h2 class="blockHeader"><del>文字</del>圖片_垂直輪播連結</h2>
           <div class="slick">
-            <div class="banner"><a href="x"><img src="publicData/ph10.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/ph09.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/ph08.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item03.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item04.png"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item05.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item06.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item07.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item08.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/ph10.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/ph09.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/ph08.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item03.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item04.png"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item05.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item06.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item07.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item08.jpg"></a></div>
           </div>
           <div class="more"><a href="x">更多資料</a></div>
         </section>
@@ -1665,15 +1658,15 @@
       <div class="row">
         <section class="adBannerSlick">
           <div class="slick">
-            <div class="banner"><a href="x"><img src="publicData/ph10.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/ph09.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/ph08.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item03.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item04.png"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item05.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item06.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item07.jpg"></a></div>
-            <div class="banner"><a href="x"><img src="publicData/item08.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/ph10.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/ph09.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/ph08.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item03.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item04.png"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item05.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item06.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item07.jpg"></a></div>
+            <div class="banner"><a href="x"><img src="../publicData/item08.jpg"></a></div>
           </div>
           <div class="more"><a href="x">更多連結</a></div>
         </section>
@@ -1681,18 +1674,35 @@
 
 
       <div class="row">
+        <section class="imgLink">
+          <h2 class="blockHeader">圖片_Nx4連結</h2>
+          <ul class="imgList">
+            <li><a href="x"><img src="../publicData/ph10.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/ph08.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item03.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item04.png"></a></li>
+            <li><a href="x"><img src="../publicData/item05.jpg"></a></li>
+            <li><a href="x"><img src="../publicData/item06.jpg"></a></li>
+            <!-- <li><a href="x"><img src="../publicData/item07.jpg"></a></li> -->
+            <!-- <li><a href="x"><img src="../publicData/item08.jpg"></a></li> -->
+          </ul>
+          <div class="more"><a href="x">更多資料</a></div>
+        </section>
+      </div>
+
+      <div class="row">
         <section class="adBanners slideToggle">
           <div class="bannerBox">
             <ul class="bannerList">
-              <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
-              <li><a href="x"><img src="publicData/ph09.jpg"></a></li>
-              <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
-              <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-              <li><a href="x"><img src="publicData/item04.png"></a></li>
-              <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-              <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-              <li><a href="x"><img src="publicData/item07.jpg"></a></li>
-              <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/ph10.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/ph09.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/ph08.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/item03.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/item04.png"></a></li>
+              <li><a href="x"><img src="../publicData/item05.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/item06.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/item07.jpg"></a></li>
+              <li><a href="x"><img src="../publicData/item08.jpg"></a></li>
               <li><button type="button" class="slideCtrl" data-altTitle="更多連結">較少連結</button></li>
             </ul>
           </div>
@@ -1701,29 +1711,29 @@
             <div class="bannerBox">
               <h2 class="blockHeader">其他相關連結一</h2>
               <ul class="bannerList">
-                <li><a href="x"><img src="publicData/item01.jpg"></a></li>
-                <li><a href="x"><img src="publicData/ph10.jpg"></a></li>
-                <li><a href="x"><img src="publicData/ph09.jpg"></a></li>
-                <li><a href="x"><img src="publicData/ph08.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item04.png"></a></li>
-                <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item07.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item08.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item01.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/ph10.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/ph09.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/ph08.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item03.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item04.png"></a></li>
+                <li><a href="x"><img src="../publicData/item05.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item06.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item07.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item08.jpg"></a></li>
               </ul>
             </div>
   
             <div class="bannerBox">
               <h2 class="blockHeader">其他相關連結二</h2>
               <ul class="bannerList">
-                <li><a href="x"><img src="publicData/item08.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item07.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item06.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item05.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item04.png"></a></li>
-                <li><a href="x"><img src="publicData/item03.jpg"></a></li>
-                <li><a href="x"><img src="publicData/item01.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item08.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item07.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item06.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item05.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item04.png"></a></li>
+                <li><a href="x"><img src="../publicData/item03.jpg"></a></li>
+                <li><a href="x"><img src="../publicData/item01.jpg"></a></li>
               </ul>
             </div>
           </div>

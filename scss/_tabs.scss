@@ -7,7 +7,8 @@
   &::before{
     content: ''; position: absolute; top: calc( #{$tabItemH} - #{$decoH} ); left: 0; right: 0;
     height: $decoH; border-radius: $decoH*.5;
-    background: darken($bg-color-light, 20%);
+    // background: darken($bg-color-light, 20%);
+    background:linear-gradient( $border-color-light -50%, $border-color 140%);
   }
   .tabItem{
     position:relative;  float:left;  text-align:center; 
@@ -33,7 +34,7 @@
     }
 
     &.active{
-      &>button{ color: $secondaryColor; }
+      // &>button{ color: $secondaryColor; }
       &::before{background: $secondaryColor;}
       & + .tabContent{z-index: 90; display: block;}
     }

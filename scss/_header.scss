@@ -25,8 +25,8 @@
     a{ 
       display: block; cursor: pointer; text-decoration: none;
       line-height: 1.8; height: 1.8em; padding: 0 10px;
-      border: 1px solid #fff8; 
-      &:hover, &:focus{border: 1px solid #fff}
+      border: 1px solid $border-color-dark; 
+      &:hover, &:focus{border: 1px solid $secondaryColor}
     }
   }
 }
