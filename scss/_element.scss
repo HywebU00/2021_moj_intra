@@ -103,7 +103,7 @@ button[class^='btn_']{
   }
   &:hover{
     background-color: $btn-bg2;
-    &::before{background-color: $lightColor;}
+    &::before{background-color: darken($btn-bg1, 6%);}
   }
 }
 // <div class="btn_"><a>XXX</a></div>
@@ -129,7 +129,7 @@ button[class^='btn_']{
 
     &:hover{
       background-color: $btn-bg2;
-      &::before{background-color: $lightColor;}
+      &::before{background-color: darken($btn-bg1, 6%);}
     }
   }
 }
