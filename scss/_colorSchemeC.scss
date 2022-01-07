@@ -1,5 +1,4 @@
 $primaryColor: #FFBDA7; //主色
-// $primGdC: #FFBDA7; //主色漸層二色
 $secondaryColor: #AF340B; //輔色
 $lightColor: #FFCA3E; //點綴
 $linkColor: #7b041a; //連結
@@ -20,8 +19,7 @@ $bg-color-pale: #fff8ee;
 $bg-color-light:#dfd8d4;
 $bg-color-dark:#a5947b;
 $bg_notice: #ffeac5; //便利貼底色
-// $bgCalandar: darken($primaryColor, 14);
-$bgCalandar:$secondaryColor;
+$bgCalandar:$secondaryColor; //小月曆
 
 $border-color: #bbb;
 $border-color-light: #e3e3e3;
@@ -89,20 +87,3 @@ $txt1bgc-3:#D96612;
 $txt1bgc-4:#E29A2C;
 $txt1bgc-5:#FB8746;
 $txt1bgc-6:#EC9E56;
-
-// 五組漸層色
-// %gradient-1{
-//   background:#AE8FF0 linear-gradient(180deg, #AE8FF0 0%, #7849DB 100%);
-// }
-// %gradient-2{
-//   background: linear-gradient(180deg, #E388BA 0%, #9347AD 100%);
-// }
-// %gradient-3{
-//   background: linear-gradient(180deg, #7FD5F0 0%, #1CBA9D 100%);
-// }
-// %gradient-4{
-//   background: linear-gradient(180deg, #F3D158 0%, #DEB111 100%);
-// }
-// %gradient-5{
-//   background: linear-gradient(180deg, #FF8989 0%, #DE3860 100%);
-// }
