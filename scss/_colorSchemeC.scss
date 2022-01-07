@@ -1,8 +1,7 @@
 $primaryColor: #FFBDA7; //主色
-$primGdC: #FFBDA7; //主色漸層二色
 $secondaryColor: #AF340B; //輔色
 $lightColor: #FFCA3E; //點綴
-$linkColor: #791766; //連結
+$linkColor: #7b041a; //連結
 $linkColor2: $linkColor; // footer 用
 $importantColor: #d11; //重要
 
@@ -19,13 +18,12 @@ $bg-color:#FFF5F2;
 $bg-color-pale: #fff8ee;
 $bg-color-light:#dfd8d4;
 $bg-color-dark:#a5947b;
-$bg_notice: #ffe8c6; //便利貼底色
-$bgCalandar: darken($primaryColor, 14);
-
+$bg_notice: #ffeac5; //便利貼底色
+$bgCalandar:$secondaryColor; //小月曆
 
 $border-color: #bbb;
 $border-color-light: #e3e3e3;
-$border-color-dark:#777;
+$border-color-dark:#94908c;
 
 $btn-bg1:#AF340B;
 $btn-bg2: #e65321;
@@ -36,8 +34,8 @@ $grayDark: #807d7b;
 
 // 最上方導覽區
 %topBarStyle{
-  background-color: $primaryColor; color: #333; font-weight: bold;
-  a {color: #7A3E2B;}
+  background-color: $primaryColor; color: darken($font-color, 20%);
+  a {color: darken($font-color, 20%);}
 }
 
 
@@ -45,11 +43,12 @@ $grayDark: #807d7b;
 %menuStyle{
   background-color: $primaryColor;
   // font-weight: bold;
-  li a{color: #222;
-    &:hover{ background-color: #fff7;}
+  li a{color: darken($font-color, 20%);
+    &:hover{ background-color: $secondaryColor; color: #fff;}
   }
-  li.hasChild a::before{
-    border-color: #AF340B;
+  li.hasChild{
+    a::before{border-color: $secondaryColor;}
+    a:hover::before{border-color: #fff}
   }
   &>ul>li{
     border-bottom-color: #fff7;
@@ -65,47 +64,26 @@ $grayDark: #807d7b;
   input[type="button"]{ background-image: url(../images/icon_searchC.png);}
 }
 
-// 跑馬燈
-%marqueeStyle{
-  background-color: $primaryColor; color: #222;
-  a{color: #222;
-    &:hover{background-color: #fff8; }
-  }
-  button{
-    background: none;
-    &:hover{background-color: $secondaryColor}
-    &::before{ color:  $secondaryColor;}
-  }
-}
 
 // 便利貼
-.notice{
-  .blockHeader.deco::after{ background-color: darken($bg_notice, 15);}
-}
+// .notice{
+//   .blockHeader.deco::after{ background-color: darken($bg_notice, 15);}
+// }
 
-// 條列訊息
-.bulletin2{
-  .simuTable li.header{color: $font-color-dark !important}
-}
+// // 條列訊息 20220106
+// .bulletin2{
+//   .simuTable li.header{color: $font-color-dark !important}
+// }
 .footer{
   color: $font-color !important;
 }
 
 
 // -----------------------------------
-// 五組漸層色
-%gradient-1{
-  background:#AE8FF0 linear-gradient(180deg, #AE8FF0 0%, #7849DB 100%);
-}
-%gradient-2{
-  background: linear-gradient(180deg, #E388BA 0%, #9347AD 100%);
-}
-%gradient-3{
-  background: linear-gradient(180deg, #7FD5F0 0%, #1CBA9D 100%);
-}
-%gradient-4{
-  background: linear-gradient(180deg, #F3D158 0%, #DEB111 100%);
-}
-%gradient-5{
-  background: linear-gradient(180deg, #FF8989 0%, #DE3860 100%);
-}
+// 20220106 快速連結文字底色
+$txt1bgc-1:#D34111;
+$txt1bgc-2:#D34111;
+$txt1bgc-3:#D96612;
+$txt1bgc-4:#E29A2C;
+$txt1bgc-5:#FB8746;
+$txt1bgc-6:#EC9E56;

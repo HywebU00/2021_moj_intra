@@ -295,7 +295,9 @@ fieldset.authority{
   left: calc(#{$sideBarWidth} + #{$pdOuter});
   width: calc(100vw - #{$sideBarWidth} - #{$pdOuter}*3); min-width: 710px;
   padding:50px $pdInner 30px;
-  background: $primaryColor; color: #fff;box-shadow: rgba(0,0,0,.4) 0 0 36px;
+  // background: $primaryColor; color: #fff;
+  background: #fff;
+  box-shadow: rgba(0,0,0,.4) 0 0 36px;
   transform: translateY(0); transition:transform .6s; 
   &.show{
     transform: translateY(50px);
@@ -304,9 +306,9 @@ fieldset.authority{
     width: 90%; 
     min-width: 400px;
     input[type="text"], input[type="date"], input[type="number"],
-    select{border-color: #fff;
-      &:focus{border-color: #fff; box-shadow: $secondaryColor 0 0 0 3px;}
-    }
+    // select{border-color: #fff;
+    //   &:focus{border-color: #fff; box-shadow: $secondaryColor 0 0 0 3px;}
+    // }
 
     td{
       &:nth-child(odd){text-align: left; width: 7em; white-space: nowrap;}
@@ -324,13 +326,13 @@ fieldset.authority{
 
   .btnDv{
     padding:15px 0 5px;
-    input[type="button"]{width: 6em; background: #fff; color: $font-color-dark; border: none;}
+    input[type="button"]{width: 6em; /* background: #fff; color: $font-color-dark; */ border: none;}
   }
 
   .closeThis{ 
     a{
-      cursor: pointer; background-color: transparent;
-      &:hover{background-color: #0004}
+      // cursor: pointer;
+      // &:hover{background-color: #0004}
     }
   }
 }

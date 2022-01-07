@@ -1,7 +1,6 @@
 $primaryColor: #07847C; //主色
-$primGdC: #1F9D8C; //主色漸層二色
-$secondaryColor: #FCA824; //輔色
-$lightColor: #FCA824; //點綴
+$secondaryColor: #1F9D8C; //輔色
+$lightColor: #fcab29; //點綴
 $linkColor: #007284; //連結
 $linkColor2: #fee039; //深色底用
 $importantColor: #d11; //重要
@@ -23,8 +22,8 @@ $border-color: #afbbb9;
 $border-color-light: #dee6e4;
 $border-color-dark:#778e8c;
 
-$btn-bg1:#69BBAB;
-$btn-bg2: $primaryColor;
+$btn-bg1: $primaryColor;
+$btn-bg2: $secondaryColor;
 
 $gray: #d1d6d8;
 $grayDark: #666c6c;
@@ -37,10 +36,10 @@ $grayDark: #666c6c;
 
 // 主選單
 %menuStyle{
-  background-color: $primaryColor;
-  background-image: linear-gradient( $primGdC 0%, $primaryColor 45%);
+  background-color: $secondaryColor;
+  background-image: linear-gradient( $secondaryColor 0%, $primaryColor 45%);
   li a{color: #fff;
-    &:hover{ background-color: #00635d;}
+    &:hover{ background-color: darken($primaryColor, 5%);}
   }
   li.hasChild a::before{
     border-color: $lightColor;
@@ -48,7 +47,7 @@ $grayDark: #666c6c;
   &>ul>li{
     border-bottom-color: #fff4;
     ul{
-      background-image: linear-gradient( $primGdC 0%, $primaryColor 100%); // 下層選單背景色
+      background-image: linear-gradient( $secondaryColor 0%, $primaryColor 100%); // 下層選單背景色
       li{border-bottom-color: #fff4;}
     }
   }
@@ -59,34 +58,60 @@ $grayDark: #666c6c;
   input[type="button"]{ background-image: url(../images/icon_searchA.png);}
 }
 
+// 法務部暨所屬機關網站清單
+.webHeader .topBar{
+  .allCourts>a{ border-color: #fff5; 
+    &:hover, &:focus{border-color: #fff9;}
+  }
+}
+
+.center .myInfo .toDoList li { background-color: $primaryColor;}
+
 // 跑馬燈
-%marqueeStyle{
-  background-color: $primaryColor; color: #fff;
-  a{color: #fff;
-    &:hover{background-color: #fff3;}
+.center .marquee{
+  color: #fff;
+    a{color: #fff;
+    &:hover{background-color: #fff2;}
   }
   button{
-    background: none;
-    &:hover{background-color:#fff3}
-    &::before{ /* background-color: transparentize($primaryColor, .2) ; */ color: $primaryColor;}
+    &:hover{background-color:#fff2}
+    &::after{
+      border-color:#fff 
+    }
   }
 }
 
-
-
-%gradient-1{
-  background:#0DA0B6 linear-gradient(90deg, #0DA0B6 -4.86%, #0E8CB9 67.78%);
-}
-%gradient-2{
-  background: linear-gradient(321.69deg, #B78AFF 0%, #5404FE 100%);
-}
-%gradient-3{
-  background: linear-gradient(321.69deg, #FF6188 0%, #FFB199 100%);
-}
-%gradient-4{
-  background: linear-gradient(321.69deg, #6B94DA 0%, #1AB3E8 100%);
-}
-%gradient-5{
-  background: linear-gradient(132.9deg, rgba(0, 217, 204, 0.82) 1.3%, #3BE995 98.06%);
+.center .tabs{
+  .tabItem{
+    &.active::before{ background-color: $lightColor;}
+    .count.em a{ background-color: $lightColor; border-color: $lightColor;
+      &:hover{box-shadow: $lightColor 0 0 0 2px;}
+    }
+  }
 }
 
+.center .bulletin2 .simuTable li.header { color: #fff; }
+
+// 20220106 快速連結文字底色
+$txt1bgc-1:#5DB299;
+$txt1bgc-2:#3D9C81;
+$txt1bgc-3:#307964;
+$txt1bgc-4:#0096C4;
+$txt1bgc-5:#007295;
+$txt1bgc-6:#005067;
+
+// %gradient-1{
+//   background:#0DA0B6 linear-gradient(90deg, #0DA0B6 -4.86%, #0E8CB9 67.78%);
+// }
+// %gradient-2{
+//   background: linear-gradient(321.69deg, #B78AFF 0%, #5404FE 100%);
+// }
+// %gradient-3{
+//   background: linear-gradient(321.69deg, #FF6188 0%, #FFB199 100%);
+// }
+// %gradient-4{
+//   background: linear-gradient(321.69deg, #6B94DA 0%, #1AB3E8 100%);
+// }
+// %gradient-5{
+//   background: linear-gradient(132.9deg, rgba(0, 217, 204, 0.82) 1.3%, #3BE995 98.06%);
+// }

@@ -1,6 +1,6 @@
 // 必填欄位星號
 .required{text-decoration: none;color: $importantColor ;font-size: 1.3em;line-height: .6; margin-right: 3px;}
-::selection{ background: $btn-bg1; color: #fff;}
+// ::selection{ background: $btn-bg1; color: #fff;}
 
 .closeThis{
   position: absolute;
@@ -103,7 +103,7 @@ button[class^='btn_']{
   }
   &:hover{
     background-color: $btn-bg2;
-    &::before{background-color: $lightColor;}
+    &::before{background-color: darken($btn-bg1, 6%);}
   }
 }
 // <div class="btn_"><a>XXX</a></div>
@@ -129,7 +129,7 @@ button[class^='btn_']{
 
     &:hover{
       background-color: $btn-bg2;
-      &::before{background-color: $lightColor;}
+      &::before{background-color: darken($btn-bg1, 6%);}
     }
   }
 }

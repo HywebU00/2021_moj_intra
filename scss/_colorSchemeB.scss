@@ -1,8 +1,8 @@
-$primaryColor: #B488CF; // 主色
-$primGdC: #E5D2F4; //主色漸層二色
-$secondaryColor: #644799; //輔色
+$primaryColor: #FBCBED; // 主色
+// $primGdC: #FBCBED; //主色漸層二色
+$secondaryColor: #844799; //輔色
 $lightColor: #FFCA3E; //點綴
-$linkColor: #341a6f; //連結
+$linkColor: #7d0438; //連結
 $linkColor2: #1e0065; // footer 用
 $importantColor: #d11; //重要
 
@@ -13,20 +13,20 @@ $font-color: #666;
 $font-color-light:#817c82;
 $font-color-dark:#000;
 
-$bg-color:#f5f0f9;
+$bg-color:#FBF2FF;
 // $bg-color-pale: #fbf8fd;
-$bg-color-pale: #fff0e4;
-$bg-color-light:#c5b9c9;
-$bg-color-dark:#b7a2bf;
-$bg_notice: #fcdfcd; //便利貼底色
-$bgCalandar: $primaryColor; // 小月曆頭
+$bg-color-pale: #faf0f8;
+$bg-color-light:#cec2ca;
+$bg-color-dark:#b69ba8;
+$bg_notice: lighten($primaryColor, 6%); //便利貼底色
+$bgCalandar: $secondaryColor; // 小月曆頭
 
 
 $border-color: #bbb;
 $border-color-light: #e3e3e3;
-$border-color-dark:#777;
+$border-color-dark:#8e8489;
 
-$btn-bg1:$primaryColor;
+$btn-bg1:$secondaryColor;
 $btn-bg2: lighten($secondaryColor, 12);
 
 $gray: #dfdae0;
@@ -35,82 +35,54 @@ $grayDark: #8a858a;
 
 // 最上方導覽區
 %topBarStyle{
-  background-color: $primGdC; color: #333; font-weight: bold;
-  a {color: #333;}
+  background-color: $primaryColor; color: darken($font-color, 20%);
+  a {color: darken($font-color, 20%);}
 }
 
 
 // 主選單
 %menuStyle{
-  background-color: $primGdC; //20211116
-  // background-color: $primaryColor; 20211116
-  // background-image: linear-gradient( $primGdC -20%,  $primaryColor 70%); 20211116
-  // font-weight: bold;
-  li a{color: #000;
+  background-color: $primaryColor; //20211116
+  li a{color: darken($font-color, 20%);
     &:hover{ background-color: $secondaryColor; color: #fff;}
   }
   li.hasChild a{
     &::before{border-color: $secondaryColor;}
-    &:hover::before{border-color: $lightColor;}
+    &:hover::before{border-color: #fff;}
   }
   &>ul>li{
     border-bottom-color: #fff8;
     ul{
       // background-image: linear-gradient( $primGdC 0%, $primaryColor 100%);20211116 
-      background-color: $primGdC; //20211116
+      background-color: $primaryColor; //20211116, 20220106
       li{border-bottom-color: #fff8;}
     }
   }
 }
 
-.center .sideBar{ background-color: $primGdC !important;}
 
 // 共用查詢區
 .topSearch{
   input[type="button"]{ background-image: url(../images/icon_searchB.png);}
 }
 
-// 跑馬燈
-%marqueeStyle{
-  background-color: $primGdC;
-  a{color: #000;
-    &:hover{background-color: $primaryColor; color: #fff; }
-  }
-  button{
-    background-color: $primaryColor;
-    &:hover{background-color: $secondaryColor}
-    &::before{ color: $secondaryColor;}
-  }
+
+.tabs{
+  .tabItem.active::before{background: #D081EC !important;}
 }
 
 .footer{
   color: #000 !important;
   a{  color: $linkColor2;}
-  // .footerLink{
-  //   li{
-  //     a{ color: $linkColor2;
-  //       &:hover{color:$linkColor2;}
-  //     }
-  //   }
-  // }
 }
 
 
 
 // -----------------------------------
-
-%gradient-1{
-  background:#AE8FF0 linear-gradient(180deg, #AE8FF0 0%, #7849DB 100%);
-}
-%gradient-2{
-  background: linear-gradient(180deg, #E388BA 0%, #9347AD 100%);
-}
-%gradient-3{
-  background: linear-gradient(180deg, #7FD5F0 0%, #1CBA9D 100%);
-}
-%gradient-4{
-  background: linear-gradient(180deg, #F3D158 0%, #DEB111 100%);
-}
-%gradient-5{
-  background: linear-gradient(180deg, #FF8989 0%, #DE3860 100%);
-}
+// 20220106 快速連結文字底色
+$txt1bgc-1:#C37DDC;
+$txt1bgc-2:#9B4898;
+$txt1bgc-3:#8466D9;
+$txt1bgc-4:#A0007D;
+$txt1bgc-5:#612F93;
+$txt1bgc-6:#412C7D;
