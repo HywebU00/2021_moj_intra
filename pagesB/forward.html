@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="../">
+
   <title>轉寄 法務部員工入口網</title>
 
-  <link rel="stylesheet" href="../slick/slick.css"/>
-  <link rel="stylesheet" href="../css/styleB.css">
-  <script src="../js/jquery-3.6.0.min.js"></script>
-  <script src="../slick/slick.min.js"></script>
-  <script src="../js/effect.js"></script>
-  <script src="../js/tabs.js"></script>
+  <link rel="stylesheet" href="slick/slick.css"/>
+  <link rel="stylesheet" href="css/styleB.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="js/effect.js"></script>
+  <script src="js/tabs.js"></script>
 
 </head>
 <body>
-    <header class="webHeader" style="background-image: url(publicData/header_bg1.jpg); background-color: #def8f2;">
+  <header class="webHeader" style="background-image: url(publicData/header_bg2.jpg); background-color: #fff;">
 
     <div class="topBar">
       
@@ -191,7 +193,7 @@
                 <td>
                   <div class="captchaSet">
                     <input autocomplete="off" id="Captcha" name="Captcha" type="text" value="">
-                    <img alt="驗證碼" id="imgCaptcha" src="../images/CaptchaImage.jpg">
+                    <img alt="驗證碼" id="imgCaptcha" src="images/CaptchaImage.jpg">
                     <button type="button" class="btn_voice" id="VoiceCaptcha">語音播放</button>
                     <button type="button" class="btn_change" onclick="changeCaptcha()">更換驗證碼</button>
                   </div>
@@ -233,113 +235,6 @@
     <p>@<a href="x">法務部</a>版權所有 更新日期 110/03/29</p>
   </footer>
 
-
-  <!-- 燈箱：帳號申請列印 -->
-  <section class="accountPrint lightbox" data-id="accountPrint">
-    <span class="closeThis"><a title="關閉"></a></span>
-    <h2>帳號申請列印</h2>
-    <div class="meta">
-      <table class="data">
-        <tr>
-          <th>申請人</th>
-          <td>A12345****</td>
-          <th>登錄時間</th>
-          <td><time>2020/1/8</time> 上午 <time>10:50:00</time></td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>員工編號</th>
-          <td>123456</td>
-          <th><abbr class="required" title="必填欄位">*</abbr>身分證字號</th>
-          <td>A12345****</td>
-        </tr>
-        <tr>
-          <th>職稱</th>
-          <td>職稱一</td>
-          <th><abbr class="required" title="必填欄位">*</abbr>姓氏</th>
-          <td>黃</td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>名字</th>
-          <td>君君</td>
-          <th><abbr class="required" title="必填欄位">*</abbr>密碼</th>
-          <td>*********</td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>性別</th>
-          <td>男</td>
-          <th><abbr class="required" title="必填欄位">*</abbr>主管職</th>
-          <td>否</td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>所屬單位</th>
-          <td>所屬單位一</td>
-          <th>所屬科室</th>
-          <td>科室名稱一</td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>上一層主管</th>
-          <td>上層主管姓名</td>
-          <th>出生年月日</th>
-          <td>066年09月01日</td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>到職日期</th>
-          <td>110年08月20日</td>
-          <th>憑證註冊</th>
-          <td><button type="button">憑證上傳</button> </td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>申請郵件帳號</th>
-          <td>somebody123@mail.moj.gov.tw</td>
-          <th><abbr class="required" title="必填欄位">*</abbr>備用申請郵件帳號</th>
-          <td>someone456@mail.moj.gov.tw </td>
-        </tr>
-        <tr>
-          <th><abbr class="required" title="必填欄位">*</abbr>使用個人電腦之財產編號</th>
-          <td>x103951357</td>
-          <th><abbr class="required" title="必填欄位">*</abbr>辦公室電話</th>
-          <td>03-12345678</td>
-        </tr>
-        <tr>
-          <th>備註</th>
-          <td>備註備註備註備註備註備註備註備註</td>
-          <th></th><td></td>
-        </tr>
-      </table>
-    </div>
-    <div class="meta">
-      <table class="data">
-        <caption>系統使用權限</caption>
-        <tr>
-          <th>人事服務園地</th>
-          <td>不需要</td>
-          <th>會議室登錄系統</th>
-          <td>一般使用者 </td>
-        </tr>
-        <tr>
-          <th>問題反應單管理系統</th>
-          <td>一般使用者 </td>
-          <th>數立學習平台</th>
-          <td>系統管理者 </td>
-        </tr>
-        <tr>
-          <th>公文電子公布欄</th>
-          <td>一般使用者 </td>
-          <th>電子目錄服務（通訊錄）</th>
-          <td>一般使用者 </td>
-        </tr>
-        <tr>
-          <th>帳號表單</th>
-          <td>一般使用者 </td>
-          <th>線上學習系統</th>
-          <td>不需要 </td>
-        </tr>
-      </table>
-    </div>
-    <div class="btnDv">
-      <input type="button" value="列印">
-    </div>
-  </section>
 
   
 </body>
