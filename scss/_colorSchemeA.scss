@@ -65,7 +65,9 @@ $grayDark: #666c6c;
   }
 }
 
-.center .myInfo .toDoList li { background-color: $primaryColor;}
+.center .myInfo .toDoList li { background-color: $primaryColor;
+  a:hover{box-shadow: $primaryColor 0 0 0 2px;}
+}
 
 // 跑馬燈
 .center .marquee{
