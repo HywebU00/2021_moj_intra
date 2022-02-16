@@ -573,16 +573,13 @@ $decoH : 8px;
 .imgLink{
   .imgList{
     list-style: none; margin: 0 auto;padding: 0;
-    display: flex; flex-flow: row wrap; 
-    // justify-content:center;
-    justify-content:flex-start;
-    // max-width: 888px;
+    display: flex; flex-flow: row wrap; justify-content:flex-start;
     li{
+      flex: 0 0 calc(25% - 6px); 
       margin:4px 3px 16px; padding: 0;
-      flex: 0 0 calc(25% - 6px);
       max-width: 214px;
       &>a{
-        width: 200px; height: 64px;
+        height: 64px; width: 100%;
         display: block; margin: 0 auto; 
         transition: .2s;
         &:hover{ transform: translateY(-2px); box-shadow:$border-color-dark 0 0 0 1px, rgba(0,0,0,.3) 0 2px 8px;}
@@ -590,19 +587,24 @@ $decoH : 8px;
       }
     }
   }
-  // .more{margin-top: 1em;}
+}
+.col444>.imgLink{
+  .imgList{display: block;
+    li{ flex: none; margin: 8px auto;}
+  }
 }
 .col66>.imgLink, .col48>.imgLink , .col84>.imgLink{
   padding-left: 20px; padding-right: 20px;
-  .imgList{
-    max-width: 416px;
-    li{
-      flex: 0 0 200px;
-      margin: 4px;
+  .imgList{ max-width: 416px;
+    li{flex: 1 1 calc(50% - 8px); margin: 4px;
+      // flex: 0 0 200px;
     }
   }
 
 }
+
+
+
 // 大圖 banner，單張
 .bigBanner{
   margin: 0; padding: 0; width: 100%;
