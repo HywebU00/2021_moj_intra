@@ -284,7 +284,7 @@ $decoH : 8px;
 .col66>.bulletin1,
 .col444>.bulletin1,
 .col48>.bulletin1:first-child,
-.col84>.bulletin1:last-child{
+.col84>.bulletin1:nth-child(2){
   li {
     p{ margin-left: 6.2em;}
   }
