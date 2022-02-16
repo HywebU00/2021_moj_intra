@@ -446,7 +446,6 @@ $decoH : 8px;
       }
     }
   }
-  // .more{margin-top: 1em;}
 }
 
 // 圖示＋文字連結（icon區塊_Nx4方形） ----------------------------------------------
@@ -482,12 +481,6 @@ $decoH : 8px;
         margin:0 ; padding:.1em .5em 0 0; line-height: 1.25;
       }
     }
-    // &:nth-child(5n+1)>a>.icon{ @extend %gradient-1;}
-    // &:nth-child(5n+2)>a>.icon{ @extend %gradient-2;}
-    // &:nth-child(5n+3)>a>.icon{ @extend %gradient-3;}
-    // &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
-    // &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
-    // 20220106
     &:nth-child(6n+1)>a>.icon{ background-color: $txt1bgc-1; }
     &:nth-child(6n+2)>a>.icon{ background-color: $txt1bgc-2; }
     &:nth-child(6n+3)>a>.icon{ background-color: $txt1bgc-3; }
@@ -496,7 +489,6 @@ $decoH : 8px;
     &:nth-child(6n)  >a>.icon{ background-color: $txt1bgc-6; }
     
   }
-  // .more{margin-top: 1em;}
 }
 .col66>.iconSqaure, .col84>.iconSqaure:first-child, .col48>.iconSqaure:last-child {
   li{
@@ -534,12 +526,6 @@ $decoH : 8px;
       }
       p{margin: 0;}
     }
-    // &:nth-child(5n+1)>a>.icon{ @extend %gradient-1;}
-    // &:nth-child(5n+2)>a>.icon{ @extend %gradient-2;}
-    // &:nth-child(5n+3)>a>.icon{ @extend %gradient-3;}
-    // &:nth-child(5n+4)>a>.icon{ @extend %gradient-4;}
-    // &:nth-child(5n)  >a>.icon{ @extend %gradient-5;}
-    // 20220106
     &:nth-child(6n+1)>a>.icon{ background-color: $txt1bgc-1; }
     &:nth-child(6n+2)>a>.icon{ background-color: $txt1bgc-2; }
     &:nth-child(6n+3)>a>.icon{ background-color: $txt1bgc-3; }
@@ -547,7 +533,6 @@ $decoH : 8px;
     &:nth-child(6n+5)>a>.icon{ background-color: $txt1bgc-5; }
     &:nth-child(6n)  >a>.icon{ background-color: $txt1bgc-6; } 
   }
-  // .more{margin-top: .5em;}
 
 }
 .col66>.iconDisk,
