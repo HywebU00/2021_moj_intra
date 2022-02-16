@@ -219,15 +219,15 @@ $decoH : 8px;
       }
       time{ float: left; }
       p{
-        margin: 0 0 0 7em; padding: 0;
+        margin: 0 0 0 7em; padding: 0; 
       }
     }
     
-    &.ellipsis{ max-width: 100%; width: 100%;
+    &.ellipsis{ max-width: 100%; 
       li{
         p{
           text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
-          height: 1.4em;
+          height: 1.4em; 
         }
       }
     }
@@ -279,9 +279,7 @@ $decoH : 8px;
         }
       }
     }
-  }
-  
-  // .more{margin-top: 8px;}
+  }  
 }
 .col66>.bulletin1,
 .col444>.bulletin1,
@@ -332,7 +330,7 @@ $decoH : 8px;
  // &>.more{margin-top: 12px;}
 
 }
-.col66>.bulletin2, .col444>.bulletin2, .col48>.bulletin2:first-child, .col84>.bulletin2:last-child{
+.col66>.bulletin2, .col444>.bulletin2, .col48>:first-child, .col84>.bulletin2:last-child{
   .simuTable{
     li{ 
       .more{

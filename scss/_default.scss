@@ -78,7 +78,6 @@ a{ color: $linkColor; text-decoration: underline;
       &:first-child{
         flex-basis: calc(33% - 4px); width: calc(33% - 4px);
         margin-right: 4px;
-        /*  margin-right: 12px; */
       }
       &:last-child{
         flex-basis: calc(67% - 4px); width: calc(67% - 4px); 
@@ -89,16 +88,10 @@ a{ color: $linkColor; text-decoration: underline;
 
   &.col84{
     &>section{
-      &:first-child{
-        flex-basis: 66%;
-        // flex-basis: calc(66% - 4px); width: calc(66% - 4px); margin-right: 4px;
-      }
-      &:last-child{
-        flex-basis: calc(34% - 8px); width: calc(34% - 8px); margin-left: 8px;
-      }
+      &:first-child{flex-basis: 66%; width: 66%;}
+      &:last-child{flex-basis: calc(34% - 8px); width: calc(34% - 8px); margin-left: 8px;}
     }
   }
-
 
   &.col444{
     &>section{
