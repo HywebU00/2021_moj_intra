@@ -272,8 +272,8 @@ table.formLayout{
     margin: .2em 3px .5em;
     em{ font-style: normal; color: $importantColor;}
   }
-  p.warning{color: $importantColor;}
-
+  p.warning, span.warning{color: $importantColor;}
+  span.warning{display: block;}
   & ~ .btnDv{padding: 1.5em 0; margin-top: 1.5em; border-top: 1px solid $border-color;}
 }
 // 註冊新帳號:系統使用權限申請

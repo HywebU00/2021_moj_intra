@@ -375,7 +375,7 @@ $decoH : 8px;
   // .more{margin-top: 1em;}
 }
 
-// 文字連結 ----------------------------------------------
+// 文字連結 .textLink1 ----------------------------------------------
 .textLink1{
   ul{ list-style: none; margin: 0 auto; padding: 0;
     display: flex; flex-flow: row wrap; font-size: 1.1em;
@@ -406,9 +406,10 @@ $decoH : 8px;
   }
   // .more{margin-top: 1em;}
 }
+
 .col66>.textLink1,
 .col84>.textLink1:first-child,
-.col48>.textLink1:last-child {
+.col48>.textLink1:nth-child(2) {
   li{
     flex: 0 0 calc(50% - 6px); width: calc(50% - 6px);
     &:nth-child(2n){ margin-right: 0;}
@@ -416,23 +417,22 @@ $decoH : 8px;
 }
 .col444>.textLink1,
 .col48>.textLink1:first-child,
-.col84>.textLink1:last-child {
+.col84>.textLink1:nth-child(2),
+.col84>.stack:nth-child(2)>.textLink1 {
   width: calc(33.33vw - #{$sideBarWidth}/3 - #{$pdOuter} - 20px);
-  li{
-   flex-basis: 100%; width: 100%;
+  li{flex-basis: 100%; width: 100%;
     &:nth-child(n){margin-left: auto;margin-right: auto;}
-    &>a{
-      // width: calc((100vw - #{$sideBarWidth} - #{$pdOuter}*3)/3 - #{$pdInner}*2);
-      // width: 200px;
-      width: 100%;
-    }
+    &>a{width: 100%;}
   }
+}
+.row[class*="col"]>.stack>.textLink1{
+  width: auto !important;
 }
 
 
 // 文字連結 ----------------------------------------------
 .textLink2{
-  width: 200px;
+  // width: 200px;
   ul{list-style: none; margin: 1em auto 0;padding: 0; text-align: center;}
   li{ margin: 3px 0;
     a{ display: block; height: 2.4em; line-height: 2.5; padding: 0 1em;
@@ -488,13 +488,16 @@ $decoH : 8px;
     
   }
 }
-.col66>.iconSqaure, .col84>.iconSqaure:first-child, .col48>.iconSqaure:last-child {
+.col66>.iconSqaure, .col84>.iconSqaure:first-child, .col48>.iconSqaure:nth-child(2),
+.col84>.stack:first-child>.iconSqaure,
+.col48>.stack:nth-child(2)>.iconSqaure {
   li{
     flex: 0 0 calc(50% - 6px); width: calc(50% - 6px);
     &:nth-child(2n){ margin-right: 0;}
   }
 }
-.col444>.iconSqaure, .col48>.iconSqaure:first-child, .col84>.iconSqaure:last-child {
+.col444>.iconSqaure, .col48>.iconSqaure:first-child, .col84>.iconSqaure:nth-child(2),
+.col84>.stack:nth-child(2)>.iconSqaure {
   li{
     flex-basis: 100%;width: 100%; margin-left: auto; margin-right: auto;
     &:nth-child(n){ margin-right: 0; margin-left: 0; }
@@ -534,19 +537,22 @@ $decoH : 8px;
 
 }
 .col66>.iconDisk,
-.col48>.iconDisk:last-child,
-.col84>.iconDisk:first-child {
+.col48>.iconDisk:nth-child(2),
+.col48>.stack:nth-child(2)>.iconDisk,
+.col84>.iconDisk:first-child,
+.col84>.stack:first-child>.iconDisk {
   li{
     flex:0 0 32.6%; margin:5px 1.1% 15px 0;
     &:nth-child(3n){ margin-right: 0;}
   }
 }
 .col444>.iconDisk,
-.col84>.iconDisk:last-child,
-.col48>.iconDisk:first-child {
+.col84>.iconDisk:nth-child(2),
+.col84>.stack:nth-child(2)>.iconDisk,
+.col48>.iconDisk:first-child,
+.col48>.stack:first-child>.iconDisk {
   ul{ justify-content: space-between; }
-  li{
-    flex-basis: 48%; 
+  li{ flex-basis: 48%; 
     &:nth-child(n){ margin-left: 0; margin-right: 0;}
   }
 }
@@ -570,21 +576,37 @@ $decoH : 8px;
     }
   }
 }
-.col444>.imgLink{
+.col444>.imgLink,
+.col84>.imgLink:nth-child(2),
+.col84>.stack:nth-child(2)>.imgLink,
+.col48>.imgLink:first-child,
+.col48>.stack:first-child>.imgLink {
   .imgList{display: block;
     li{ flex: none; margin: 8px auto;}
   }
 }
-.col66>.imgLink, .col48>.imgLink , .col84>.imgLink{
+// .col48>.imgLink:nth-child(2),
+// .col48>.stack:nth-child(2)>.imgLink,
+// .col84>.imgLink:first-child,
+// .col84>.stack:first-child>.imgLink,
+.col66>.imgLink {
   padding-left: 20px; padding-right: 20px;
-  .imgList{ max-width: 416px;
-    li{flex: 1 1 calc(50% - 8px); margin: 4px;
-      // flex: 0 0 200px;
-    }
+  .imgList{ max-width: 444px;
+    li{flex: 0 1 calc(50% - 8px); margin: 4px;}
   }
-
 }
 
+.col48>.imgLink:nth-child(2),
+.col48>.stack:nth-child(2)>.imgLink,
+.col84>.imgLink:first-child,
+.col84>.stack:first-child>.imgLink{
+  padding-left: 10px; padding-right: 10px;
+  .imgList{ 
+    outline: 1px solid red; 
+    max-width: 666px;
+    li{flex: 0 1 calc(33.33% - 8px); margin: 4px;}
+  }
+}
 
 
 // 大圖 banner，單張

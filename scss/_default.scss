@@ -61,7 +61,7 @@ a{ color: $linkColor; text-decoration: underline;
 .row{ margin: 8px 0;
   &[class*="col"]{
     display: flex; justify-content: space-between;
-    &>section{flex-grow: 0; flex-shrink: 0;}
+    &>section &>.stack{flex-grow: 0; flex-shrink: 0;}
   }
   // 兩欄的第二欄 section 不要用:last-child，如果上稿只有一個section時會錯誤，改用:nth-child(2)
   &.col66{
@@ -73,7 +73,7 @@ a{ color: $linkColor; text-decoration: underline;
   }
   
   &.col48{
-    &>section{
+    &>section, .stack{
       &:first-child{
         flex-basis: calc(33% - 4px); width: calc(33% - 4px);
         margin-right: 4px;
@@ -86,11 +86,31 @@ a{ color: $linkColor; text-decoration: underline;
   }
 
   &.col84{
-    &>section{
+    &>section, &>.stack{
       &:first-child{flex-basis: 66%; width: 66%;}
       &:nth-child(2){flex-basis: calc(34% - 8px); width: calc(34% - 8px); margin-left: 8px;}
     }
   }
+  .stack{
+    display: flex; flex-flow: column nowrap;
+    &>section{ flex: 1 1 auto;}
+    &>section:nth-child(2){ margin-top: 8px;}
+  }
+  // &.col84m{ height: auto;
+  //   flex-flow: row wrap; 
+  //   outline: 1px solid red;
+  //   &>section{ 
+  //     &:first-child{flex-basis: 66% ; width: 66%;}
+  //     &:nth-child(2){
+  //       flex-basis: calc(34% - 8px); 
+  //       width: calc(34% - 8px); margin-left: 8px;
+  //     }
+  //     &:nth-child(3){
+  //       flex-basis: calc(34% - 8px); 
+  //       width: calc(34% - 8px); margin-left: 8px;
+  //     }
+  //   }
+  // }
 
   &.col444{
     &>section{
@@ -101,5 +121,18 @@ a{ color: $linkColor; text-decoration: underline;
       &:nth-child(2){margin-left: 4px;}
       &:nth-child(3){flex-basis: calc(34% - 8px); width: calc(34% - 8px); margin-left: 8px;}
     }
+  }
+
+  &.col84m{
+
+    // &>section{ 
+    //   //  border: 1px solid #eee; 
+    //    margin: 0; width: 50%; padding: 15px 20px;
+    // }
+   
+    // outline: 1px solid red;
+    &>section:nth-child(1){ }
+    &>section:nth-child(2), &>section:nth-child(3){outline: 1px solid blue;}
+    &>section:nth-child(3){ margin-top: 20px;}
   }
 }

@@ -5,42 +5,38 @@
     a{text-decoration: none;}
     ul, ol{list-style: none; margin: 0; padding: 0;}
     em {
-        font-style: normal; font-weight: bold; font-size: 1.15em;
+        font-style: normal; font-weight: bold; font-size: 1em;
         margin: 0 .3em; color: $font-color-dark;
     }
     .total {
         display: inline-block; vertical-align: middle;
-        select {
-            margin: 0 .5em;
-        }
+        line-height: 1.5em; line-height: 1.5em;
+        select {margin: 0 .5em;}
         input[type="button"] {
-            border: 1px solid #CCC;
-            color: #222;
-            padding: .4em 1em;
-            min-width: 3em;
-            display: inline-block;
-            vertical-align: middle;
-            box-shadow: none;
-            text-shadow: none;
+            display: inline-block;vertical-align: middle;
+            box-shadow: none;text-shadow: none;
+            border: 1px solid #CCC;color: #222;
+            padding: .4em 1em;min-width: 3em;
             &:hover, &:focus {
-                color: #fff;
-                background: #ccc;
+                color: #fff; background: #ccc;
             }
         }
     }
     .items {
         display: inline-block;vertical-align: middle;
-        line-height: 1.4em; line-height: 1.5em;
-        ul{
-          display: inline-block; overflow: hidden;vertical-align: middle;
-          box-shadow: #fff 0 0 0 1px;border-radius: 3px; padding: 2px 0;
+        line-height: 1.5em; line-height: 1.5em;
+        ul{ line-height: inherit;
+          display: inline-block; overflow: hidden;vertical-align: top;
+          box-shadow: #fff 0 0 0 1px;border-radius: 3px; padding: 0;
         }
         li{ 
           float: left; margin: 0 2px 0 0; padding-left: 2px; 
           border-left: 1px solid $border-color; font-weight: bold;
           &:first-child{border-left: none;}
           &.active{
-            a{background-color: $btn-bg1; color: #fff;}
+            a{background-color: $btn-bg1; color: #fff; line-height: inherit;
+                height: 1.4em; line-height: 1.4;
+            }
           }
         }
         a{
