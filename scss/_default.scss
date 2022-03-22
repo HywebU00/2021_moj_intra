@@ -2,8 +2,9 @@ html{ font-size: 15px;}
 body{
   margin: 0;padding: 0; font-family:'微軟正黑體', Arial, Helvetica, sans-serif;
   color: $font-color; 
-  min-width: 880px; // 此站是彈性寬度排版，但不支援此數值以下的小螢幕`-的排版
+  min-width: 880px; // 此站是彈性寬度排版，但不支援此數值以下的小螢幕排版
   overflow-y: scroll;
+  // overflow-y: hidden;
 
   &.noScroll{
     overflow: hidden; overflow-y:hidden;
@@ -22,7 +23,7 @@ a{ color: $linkColor; text-decoration: underline;
   display: flex; flex-flow: row nowrap;
   .sideBar{ 
     background: $primaryColor;
-    flex:0 0 16rem; flex-basis:240px;
+    flex:0 0 240px;
     min-height:calc(100vh - 270px) ;
   }
   .main{

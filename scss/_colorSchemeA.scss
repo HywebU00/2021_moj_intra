@@ -38,9 +38,10 @@ $grayDark: #666c6c;
 %menuStyle{
   background-color: $secondaryColor;
   background-image: linear-gradient( $secondaryColor 0%, $primaryColor 45%);
-  li a{color: #fff;
+  li{
     &:hover{ background-color: darken($primaryColor, 5%);}
-  }
+    a{color: #fff;}
+  } 
   li.hasChild a::before{
     border-color: $lightColor;
   }

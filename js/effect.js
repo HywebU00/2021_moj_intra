@@ -14,18 +14,58 @@ $(function(){
   var _menu = $('.menu');
   _menu.find('li').has('ul').addClass('hasChild');
   var  _hasChildMenu = _menu.find('.hasChild');
+
   _hasChildMenu.each(function(){
     let _this = $(this);
     let _subMenu = _this.children('ul');
     _this.hover(
       function(){
-        _subMenu.stop(true, false).slideDown(250);
+        _subMenu.show();
+        let mtth =  _subMenu.offset().top - _window.scrollTop() + _subMenu.innerHeight();
+        let translate;
+        if( mtth > _window.height() ) {
+          translate = 'translateY(' + String(_window.height() - mtth)+ 'px)';
+          _subMenu.css('transform', translate );
+        }
       },
       function(){
-        _subMenu.stop(true, false).slideUp(150);
+        _subMenu.removeAttr('style');
       }
     )
   })
+
+  function ifHasSubMenu(subX){
+    if (subX.children('.hasChild').length > 0) {
+
+      // console.log('has child menu');
+
+      let _hasChildLi = subX.children('.hasChild');
+      _hasChildLi.each( function(){
+        let _thisLi = $(this);
+        let _subMenuUl = _thisLi.children('ul');
+        let subMenuUlHeight = _subMenuUl.innerHeight();
+        _thisLi.hover(
+          function(){
+            console.log( subMenuUlHeight + _thisLi.offset().top - _window.scrollTop(), _window.height());
+            if (subMenuUlHeight + _thisLi.offset().top - _window.scrollTop() > _window.height()) {
+              _subMenuUl.css({
+                position: 'fixed', bottom: 0, top:'auto', 
+                left: subX.offset().left + subX.width()
+              });
+              _subMenuUl.stop(true, false).fadeIn(200);
+            } else {
+              _subMenuUl.stop(true, true).slideDown(250);
+            }
+          },
+          function(){
+            _subMenuUl.stop(true, true).fadeOut(200, function(){
+              _subMenuUl.removeAttr('style');
+            });
+          }
+        )
+      })
+    }
+  }
 
 
     // ----------------------------------- 外掛套件 slick 參數設定
@@ -155,8 +195,6 @@ $(function(){
 
     _cpviewLargeHere.before('<div class="cover"></div>');
     var _vCover = _cpRelatedImages.find('.cover');
-
-    console.log(_enlargeThis);
 
     _enlargeThis.click(function(){
       console.log('yes');
