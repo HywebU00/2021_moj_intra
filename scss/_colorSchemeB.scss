@@ -51,11 +51,11 @@ $grayDark: #8a858a;
     &:hover::before{border-color: #fff;}
   }
   &>ul>li{
-    border-bottom-color: #fff8;
+    border-bottom-color: rgba(255,255,255, .5);
     ul{
       // background-image: linear-gradient( $primGdC 0%, $primaryColor 100%);20211116 
       background-color: $primaryColor; //20211116, 20220106
-      li{border-bottom-color: #fff8;}
+      li{border-bottom-color: rgba(255,255,255, .5) }
     }
   }
 }

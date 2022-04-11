@@ -29,7 +29,7 @@
         white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         background: #fffa; color:$font-color-dark;
       }
-      &:hover p{background: #fffd;
+      &:hover p{background: rgba(255,255,255,.85);
         white-space:normal;
       }
       .photoCount{

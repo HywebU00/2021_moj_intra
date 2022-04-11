@@ -622,7 +622,7 @@ $decoH : 8px;
     position: absolute; bottom: 0; left: 2px; right: 2px; z-index: 9;
     transform: translateY(100%); transition: .2s;
     padding: 10px; margin: 0;
-    background: #000a; color: #fff; text-align: center;
+    background: rgba(0,0,0,.7); color: #fff; text-align: center;
   }
 
   &:hover p{
@@ -766,18 +766,7 @@ $decoH : 8px;
   position: relative;
 }
 
-// 跑馬燈 ----------------------------------------------
-// %marqueeStyle{
-//   background-color: $primaryColor; color: $font-color-dark;
-//   a{color:  $font-color-dark;
-//     &:hover{background-color: #fff8; }
-//   }
-//   button{
-//     background: none;
-//     &:hover{background-color: $secondaryColor}
-//     &::before{ color:  $secondaryColor;}
-//   }
-// }
+
 .marquee{
   // @extend %marqueeStyle;
 
@@ -786,7 +775,7 @@ $decoH : 8px;
 
   background-color: $primaryColor; color: $font-color-dark;
   a{color:  $font-color-dark;
-    &:hover{background-color: #fff8; }
+    &:hover{background-color: rgba(255,255,255, .5); }
   }
   .mqBox{
     position:relative; overflow:hidden;
@@ -970,7 +959,7 @@ $decoH : 8px;
       position: absolute; bottom: 0; left: 2px; right: 2px; z-index: 9;
       transform: translateY(100%); transition: .3s;
       padding: 10px; margin: 0;
-      background: #000a; color: #fff; text-align: center;
+      background:rgba(0,0,0,.7); color: #fff; text-align: center;
     }
 
     &:hover p{

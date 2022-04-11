@@ -73,7 +73,7 @@
         position: absolute; bottom: 0; left:0; right:0; z-index: 9;
         transform: translateY(100%); transition: .2s;
         padding: 10px; margin: 0;
-        background: #000a; color: #fff; font-size: 1rem;
+        background: rgba(0,0,0, .7); color: #fff; font-size: 1rem;
       }
       &:hover p{
         transform: translateY(0);
@@ -81,9 +81,9 @@
     }
 
     button.slick-arrow{
-      position: absolute; background: #0006;
+      position: absolute; background: rgba(0,0,0,.4);
       &::before, &::after{ background-color: #fff;}
-      &:hover{background: #000a;
+      &:hover{background: rgba(0,0,0,.7);
         &::before, &::after{background-color: #fff;}
       }
       @extend .arrow;  top: 50%; margin-top: -48px;  border-radius: 50%; 
@@ -121,15 +121,15 @@
         &:hover p {transform: translateY(0);}
       }
       p{
-        background-color: #fff9; color: #000; margin: 0; padding: 10px 20px;
+        background-color: rgba(255,255,255,.6); color: #000; margin: 0; padding: 10px 20px;
         position: absolute; bottom: 0; left: 0; right: 0; z-index: 99;
         text-align: center;
         transform: translateY(100%); transition: .2s;
       }
   
       button.slick-arrow{
-        position: absolute; background: #fff8;
-        &:hover{background: #fffa;}
+        position: absolute; background: rgba(255,255,255,.5);
+        &:hover{background: rgba(255,255,255,.7);}
         @extend .arrow;  top: 50%; margin-top: -22px;  border-radius: 50%; 
         &.slick-prev {left: 4px;}
         &.slick-next { @extend .arrow.right; right: 4px;}

@@ -52,7 +52,7 @@ body{
       flex:0 0 49%;
       a{
         display: block; height: 2.5em; line-height: 2.5;
-        box-shadow: #fff6 0 0 0 1px; color: #fff;
+        box-shadow: rgba(255,255,255, .4) 0 0 0 1px; color: #fff;
         text-decoration: none; transition: .2s;
         outline: none;
         &:hover, &:focus{

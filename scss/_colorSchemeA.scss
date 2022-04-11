@@ -46,10 +46,10 @@ $grayDark: #666c6c;
     border-color: $lightColor;
   }
   &>ul>li{
-    border-bottom-color: #fff4;
+    border-bottom-color: rgba(255,255,255,.25);
     ul{
       background-image: linear-gradient( $secondaryColor 0%, $primaryColor 100%); // 下層選單背景色
-      li{border-bottom-color: #fff4;}
+      li{border-bottom-color: rgba(255,255,255,.25);}
     }
   }
 }
@@ -62,7 +62,7 @@ $grayDark: #666c6c;
 // 法務部暨所屬機關網站清單
 .webHeader .topBar{
   .allCourts>a{ border-color: #fff5; 
-    &:hover, &:focus{border-color: #fff9;}
+    &:hover, &:focus{border-color: rgba(255,255,255,.6);}
   }
 }
 
@@ -74,10 +74,10 @@ $grayDark: #666c6c;
 .center .marquee{
   color: #fff;
     a{color: #fff;
-    &:hover{background-color: #fff2;}
+    &:hover{background-color: rgba(255,255,255,.15);}
   }
   button{
-    &:hover{background-color:#fff2}
+    &:hover{background-color:rgba(255,255,255,.15)}
     &::after{
       border-color:#fff 
     }

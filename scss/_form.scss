@@ -333,18 +333,12 @@ fieldset.authority{
     input[type="button"]{width: 6em; /* background: #fff; color: $font-color-dark; */ border: none;}
   }
 
-  .closeThis{ 
-    a{
-      // cursor: pointer;
-      // &:hover{background-color: #0004}
-    }
-  }
 }
 
 // 調查統計 - 登入 ----------------------------------------------
 .simpleLogin{
   background: #fff; 
-  box-shadow: #0003 0 0 25px;
+  box-shadow: rgba(0,0,0,.2) 0 0 25px;
   padding: 35px 15px 10px;
   
   .formLayout{

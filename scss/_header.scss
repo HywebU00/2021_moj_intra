@@ -62,7 +62,7 @@
     background-repeat: no-repeat; background-color: transparent;
     background-position: center center; background-size:24px;
      border: none; box-shadow: none;
-    &:hover{background-color:#0001; box-shadow: none;}
+    &:hover{background-color:rgba(0,0,0,.06); box-shadow: none;}
   }
   .btn{
     display: inline-block; margin: 0 3px 8px ; vertical-align: top;
