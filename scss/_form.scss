@@ -16,8 +16,9 @@
 }
 
 %selectStyle {
+  appearance: none;
   -webkit-appearance: none;
-  -ms-appearance: none;
+  -moz-appearance: none;
   box-sizing: border-box;
   height: 2.4em;
   line-height: 2.4em;
@@ -67,9 +68,11 @@ input[type="week"] { @extend %textInput; }
 
 // 下拉選單
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   @extend %selectStyle;
+}
+/*IE隱藏箭頭樣式*/
+select::-ms-expand { 
+  display: none; 
 }
 
 // 按鈕樣式
