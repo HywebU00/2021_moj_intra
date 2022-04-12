@@ -75,8 +75,8 @@
 }
 
 .webHeader{
-  height: 120px;padding:0; 
-  overflow: hidden;
+  // height: 120px;
+  padding:0; overflow: hidden;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: right 0;
@@ -84,11 +84,7 @@
     float: left;padding:0 20px; margin: 0; line-height: 1; font-size: 2.5em;
     width: calc(100% - 400px - #{$pdOuter}*2);
     &>a{float: left;}
-    img{
-      float: left; width: 100%; height: 85px; object-fit: scale-down;
-    }
+    img{ float: left; width: 100%; height: 85px; object-fit: scale-down; }
   }
-  .topSearch{
-    float: right; margin: 20px $pdOuter*2 0 0;
-  }
+  .topSearch{ float: right; margin: 20px $pdOuter*2 0 0; }
 }
