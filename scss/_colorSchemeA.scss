@@ -61,7 +61,7 @@ $grayDark: #666c6c;
 
 // 法務部暨所屬機關網站清單
 .webHeader .topBar{
-  .allCourts>a{ border-color: #fff5; 
+  .allCourts>a{ border-color: rgba(255,255,255,.3); 
     &:hover, &:focus{border-color: rgba(255,255,255,.6);}
   }
 }

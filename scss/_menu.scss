@@ -25,7 +25,7 @@
       padding:.9em 20px .8em; transition:background-color .2s;
     }
     &>ul{ left: 240px;
-       li{border-bottom: 1px solid #fff4;
+       li{border-bottom: 1px solid rgba(255,255,255,.25);
         &:last-child{border-bottom: none;}
       }
       a{ padding:.9em 1em .8em; transition: .15s;}
