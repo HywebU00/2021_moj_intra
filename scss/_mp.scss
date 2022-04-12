@@ -162,7 +162,7 @@ $decoH : 8px;
     list-style: none; margin: 0; padding: 0;
     display: flex; justify-content: flex-end;
     li{
-      flex:0 0 calc(33.33% - 4px); max-width: 11em;
+      flex:0 0 calc(33.33% - 4px); width: calc(33.33% - 4px); max-width: 11em;
       margin: 0 6px 0 0; padding: 0; text-align: center;
       background-color: $secondaryColor; color: #fff; 
       
