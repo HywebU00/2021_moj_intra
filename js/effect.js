@@ -363,45 +363,61 @@ $(function(){
     let _button = _mq.find('button');
     
     _box.innerHeight(mqH);
-    _mqItem.css({'top': mqH});
-    _mqItem.eq(i).css({'top':0, 'left':0});
+    _mqItem.eq(i).css('top', 0).siblings().css('top', mqH);
 
     if(count>1){
       marqueeGo = setInterval(mqLoop, timer);
       mqHover();
 
       _button.click(function(){
-        $(this).toggleClass('pause');
         if($(this).hasClass('pause')){
-          clearInterval(marqueeGo);
-        } else {
+          $(this).removeClass('pause');
+
+          if( _mq.find('.active').length != 0 ) {
+            _mqItem.css({'z-index': 0, 'top': mqH});
+            _mqItem.filter('.active').css('top', 0).removeClass('active');
+          }
+
           marqueeGo = setInterval(mqLoop, timer);
+        } else {
+          clearInterval(marqueeGo);
+          $(this).addClass('pause');
         }
       });
 
-      _mqItem.find('a').focus(function(){
+      _mqItem.find('a').click(function(){
         clearInterval(marqueeGo);
-        _mqItem.css({'top':'0','z-index':'-1'});
-        $(this).parent().css('z-index','99');
+        i = $(this).parent().index();
+        $(this).parent().addClass('active');
+        _button.addClass('pause');
         _mqItem.off('mouseenter mouseleave');
       });
 
+      _mqItem.find('a').focus(function () {
+        i = $(this).parent().index();
+        _mqItem.css({'z-index': '-1', 'top':0}).eq(i).css('z-index', '0');
+        clearInterval(marqueeGo);
+        _mqItem.off('mouseenter mouseleave');
+      });
+      
       _mqItem.find('a').keydown(function(ev){
-        var keyX = ev.which || ev.keyCode;
-        i= $(this).parent().index();
+        clearInterval(marqueeGo);
+
+        let keyX = ev.which || ev.keyCode;
+        i = $(this).parent().index();
+
         if(keyX==9 && i==count-1 && ev.shiftKey==0){
-          _mqItem.removeAttr('style');
-          _mqItem.not(':last').css('top', mqH);
+          _mqItem.removeAttr('style').css({'z-index' : 0, 'top': mqH }).eq(i).css('top', 0);
           marqueeGo = setInterval(mqLoop, timer);
           mqHover();
         }
         if(keyX==9 && i==0 && ev.shiftKey==1){
-          _mqItem.removeAttr('style');
-          _mqItem.not(':first').css('top', mqH);						
+          _mqItem.removeAttr('style').css({'z-index' : 0, 'top': mqH }).eq(i).css('top', 0);
           marqueeGo = setInterval(mqLoop, timer);
           mqHover();
         }
       });
+      
     } else {
       _button.hide();
     }
@@ -418,8 +434,8 @@ $(function(){
 
     function mqLoop(){
       j = (i+1)%count;
-      _mqItem.eq(j).stop(true,false).animate({'top': 0}, speed, 'linear');
-      _mqItem.eq(i).stop(true,false).animate({'top': -1*mqH}, speed, 'linear',
+      _mqItem.eq(j).stop(true, false).animate({'top': 0}, speed, 'linear');
+      _mqItem.eq(i).stop(true, false).animate({'top': -1*mqH}, speed, 'linear',
         function(){
           $(this).css('top', mqH);
           i = j;

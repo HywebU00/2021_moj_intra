@@ -67,17 +67,17 @@ $grayDark: #666c6c;
 }
 
 .center .myInfo .toDoList li { background-color: $primaryColor;
-  a:hover{box-shadow: $primaryColor 0 0 0 2px;}
+  a:hover, a:focus{box-shadow: $primaryColor 0 0 0 2px;outline: none;}
 }
 
 // 跑馬燈
 .center .marquee{
   color: #fff;
     a{color: #fff;
-    &:hover{background-color: rgba(255,255,255,.15);}
+    &:hover, &:focus{background-color: rgba(255,255,255,.15);}
   }
   button{
-    &:hover{background-color:rgba(255,255,255,.15)}
+    &:hover, &:focus{background-color:rgba(255,255,255,.15)}
     &::after{
       border-color:#fff 
     }

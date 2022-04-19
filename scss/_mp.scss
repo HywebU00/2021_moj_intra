@@ -769,26 +769,29 @@ $decoH : 8px;
 
 .marquee{
   // @extend %marqueeStyle;
-
   position: relative; padding: 0 !important;
   font-size: 1.2em; border-radius: 2em;
-
   background-color: $primaryColor; color: $font-color-dark;
-  a{color:  $font-color-dark;
-    &:hover{background-color: rgba(255,255,255, .5); }
-  }
+
   .mqBox{
-    position:relative; overflow:hidden;
+    position:relative; top: 0; overflow:hidden;
     height:52px; margin:0 54px 0 4px;
   }
   ul{ list-style: none; margin: 0; padding: 0;}
-  li{ position: absolute;margin:0; padding: 0; width: 100%;
+  li{ position: absolute;left: 0; top: 0;margin:0; padding: 0; width: 100%;
     a{
       display:block; padding: 0 12px;margin:4px 0;
       height:44px; line-height:44px; 
+      color:  $font-color-dark;
+
       white-space:nowrap; text-overflow:ellipsis; overflow:hidden; 
-      text-decoration:none;border-radius: 24px;
+      text-decoration:none;border-radius: 24px; outline: none;
       transition: .2s;
+      &:hover {background-color: rgba(255,255,255, .3); }
+      &:focus{box-shadow: rgba(255,255,255, .5) 0 0 0 1px inset; }
+    }
+    &.active{
+      a{box-shadow: #fff 0 0 0 2px inset;}
     }
   }
 
@@ -798,7 +801,7 @@ $decoH : 8px;
     position:absolute; right:4px; top:50%; margin: -22px 0 0;
     text-align:center; padding:0; 
     width:44px !important; height:44px !important; border-radius:50%;
-    box-shadow: none; border: none;
+    box-shadow: none; border: none;outline: none;
     transition: .2s;
 
     &::before{ color:  $secondaryColor;}
