@@ -5,13 +5,14 @@ $(function(){
 
   var ww = _window.width();
   var wh = _window.height();
-  var wwNew = ww;
-  var wwMedium = 700; //此值以下是手機
-  var wwWide = 1000;  //此值以上是電腦
-  var wwMaximum = 1300;
-  var wwSlim = 500;
+  // var wwNew = ww;
+  // var wwMedium = 700; //此值以下是手機
+  // var wwWide = 1000;  //此值以上是電腦
+  // var wwMaximum = 1300;
+  // var wwSlim = 500;
 
-  var _menu = $('.menu');
+  var _sideBar = $('.sideBar')
+  var _menu = _sideBar.find('.menu');
   _menu.find('li').has('ul').addClass('hasChild');
   var  _hasChildMenu = _menu.find('.hasChild');
 
@@ -23,49 +24,28 @@ $(function(){
         _subMenu.show();
         let mtth =  _subMenu.offset().top - _window.scrollTop() + _subMenu.innerHeight();
         let translate;
-        if( mtth > _window.height() ) {
+        wh = _window.height();
+
+        if( mtth > wh ) {
           translate = 'translateY(' + String(_window.height() - mtth)+ 'px)';
           _subMenu.css('transform', translate );
         }
+        if (_subMenu.innerHeight() > wh ) {
+          _subMenu.css('transform', 'translateY(0)')
+
+          translate = 'translateY(' + String((_subMenu.offset().top)*-1) + 'px)';
+          _subMenu.css('transform', translate );
+          if (_subMenu.innerHeight() > _body.innerHeight()) {
+            _sideBar.height(_subMenu.innerHeight() - $('.webHeader').innerHeight() );
+          }
+        }
       },
       function(){
-        _subMenu.removeAttr('style');
+        _subMenu.add(_sideBar).removeAttr('style');
       }
     )
   })
 
-  function ifHasSubMenu(subX){
-    if (subX.children('.hasChild').length > 0) {
-
-      // console.log('has child menu');
-
-      let _hasChildLi = subX.children('.hasChild');
-      _hasChildLi.each( function(){
-        let _thisLi = $(this);
-        let _subMenuUl = _thisLi.children('ul');
-        let subMenuUlHeight = _subMenuUl.innerHeight();
-        _thisLi.hover(
-          function(){
-            console.log( subMenuUlHeight + _thisLi.offset().top - _window.scrollTop(), _window.height());
-            if (subMenuUlHeight + _thisLi.offset().top - _window.scrollTop() > _window.height()) {
-              _subMenuUl.css({
-                position: 'fixed', bottom: 0, top:'auto', 
-                left: subX.offset().left + subX.width()
-              });
-              _subMenuUl.stop(true, false).fadeIn(200);
-            } else {
-              _subMenuUl.stop(true, true).slideDown(250);
-            }
-          },
-          function(){
-            _subMenuUl.stop(true, true).fadeOut(200, function(){
-              _subMenuUl.removeAttr('style');
-            });
-          }
-        )
-      })
-    }
-  }
 
 
     // ----------------------------------- 外掛套件 slick 參數設定

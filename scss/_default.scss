@@ -4,23 +4,20 @@ body{
   color: $font-color; 
   min-width: 880px; // 此站是彈性寬度排版，但不支援此數值以下的小螢幕排版
   overflow-y: scroll;
-  // overflow-y: hidden;
 
   &.noScroll{
     overflow: hidden; overflow-y:hidden;
   }
 }
-*{
-  box-sizing: border-box;
-}
+*{ box-sizing: border-box; }
 a{ color: $linkColor; text-decoration: underline;
   &:hover{ text-decoration: none; }
 }
 
 ////////// 排版 //////////
 .center{
-  clear: both;
-  display: flex; flex-flow: row nowrap;
+  clear: both;  display: flex; flex-flow: row nowrap;
+  
   .sideBar{ 
     background: $primaryColor;
     flex:0 0 240px;
@@ -97,21 +94,7 @@ a{ color: $linkColor; text-decoration: underline;
     &>section{ flex: 1 1 auto;}
     &>section:nth-child(2){ margin-top: 8px;}
   }
-  // &.col84m{ height: auto;
-  //   flex-flow: row wrap; 
-  //   outline: 1px solid red;
-  //   &>section{ 
-  //     &:first-child{flex-basis: 66% ; width: 66%;}
-  //     &:nth-child(2){
-  //       flex-basis: calc(34% - 8px); 
-  //       width: calc(34% - 8px); margin-left: 8px;
-  //     }
-  //     &:nth-child(3){
-  //       flex-basis: calc(34% - 8px); 
-  //       width: calc(34% - 8px); margin-left: 8px;
-  //     }
-  //   }
-  // }
+
 
   &.col444{
     &>section{
@@ -125,15 +108,6 @@ a{ color: $linkColor; text-decoration: underline;
   }
 
   &.col84m{
-
-    // &>section{ 
-    //   //  border: 1px solid #eee; 
-    //    margin: 0; width: 50%; padding: 15px 20px;
-    // }
-   
-    // outline: 1px solid red;
-    &>section:nth-child(1){ }
-    &>section:nth-child(2), &>section:nth-child(3){outline: 1px solid blue;}
     &>section:nth-child(3){ margin-top: 20px;}
   }
 }
