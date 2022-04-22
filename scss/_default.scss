@@ -21,7 +21,7 @@ a{ color: $linkColor; text-decoration: underline;
   .sideBar{ 
     background: $primaryColor;
     flex:0 0 240px;
-    min-height:calc(100vh - 270px) ;
+    min-height:calc(100vh - 206px) ;
   }
   .main{
     flex:1 1 auto; 
