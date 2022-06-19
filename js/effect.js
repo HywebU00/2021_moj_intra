@@ -1,6 +1,6 @@
 $(function(){
 
-  var _body = $('body, html');
+  var _body = $('html, body');
   var _window = $(window);
 
   var ww = _window.width();
@@ -21,26 +21,45 @@ $(function(){
     let _subMenu = _this.children('ul');
     _this.hover(
       function(){
+        // _subMenu.stop(true, false).fadeIn(200);
         _subMenu.show();
-        let mtth =  _subMenu.offset().top - _window.scrollTop() + _subMenu.innerHeight();
+        let _offset1 = _window.scrollTop() + _window.height();
+        let _offset2 = _subMenu.offset().top + _subMenu.innerHeight();
         let translate;
-        wh = _window.height();
-
-        if( mtth > wh ) {
-          translate = 'translateY(' + String(_window.height() - mtth)+ 'px)';
-          _subMenu.css('transform', translate );
-        }
-        if (_subMenu.innerHeight() > wh ) {
-          _subMenu.css('transform', 'translateY(0)')
-
-          translate = 'translateY(' + String((_subMenu.offset().top)*-1) + 'px)';
-          _subMenu.css('transform', translate );
-          if (_subMenu.innerHeight() > _body.innerHeight()) {
-            _sideBar.height(_subMenu.innerHeight() - $('.webHeader').innerHeight() );
+        // _body_below_window_height =  _body.innerHeight() - _window.scrollTop() - _window.height();
+        if (_offset2 > _offset1) {
+          if (_subMenu.innerHeight() <= _window.height()) {
+            translate = 'translateY(' + String(  _offset1 - _offset2 ) + 'px)';
+          } else {
+            translate ='translateY(' + String( _window.scrollTop() - _subMenu.offset().top) + 'px)';
+            if ( _subMenu.innerHeight() > _body.innerHeight() - _window.scrollTop() ) {
+              _sideBar.height( _sideBar.height() + _subMenu.innerHeight() - _body.innerHeight() + _window.scrollTop() );
+            }
           }
+          _subMenu.css('transform', translate );
         }
+        // let mtth =  _subMenu.offset().top - _window.scrollTop() + _subMenu.innerHeight();
+        // let translate;
+        // wh = _window.height(); 
+
+        // if( mtth > wh ) {
+        //   translate = 'translateY(' + String(_window.height() - mtth)+ 'px)';
+        //   _subMenu.css('transform', translate );
+        // }
+        // if (_subMenu.innerHeight() > wh ) {
+        //   _subMenu.css('transform', 'translateY(0)')
+
+        //   // translate = 'translateY(' + String(( _subMenu.offset().top)*-1) + 'px)';
+        //   translate = 'translateY(' + String(  _window.scrollTop() - _subMenu.offset().top ) + 'px)';
+        //   console.log(translate);
+        //   _subMenu.css('transform', translate );
+        //   if (_subMenu.innerHeight() > _body.innerHeight()) {
+        //     _sideBar.height(_subMenu.innerHeight() - $('.webHeader').innerHeight() );
+        //   }
+        // }
       },
       function(){
+        // _subMenu.stop(true, false).hide();
         _subMenu.add(_sideBar).removeAttr('style');
       }
     )

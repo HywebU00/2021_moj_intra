@@ -24,7 +24,8 @@
     &>a{
       padding:.9em 20px .8em; transition:background-color .2s;
     }
-    &>ul{ left: 240px;
+    &>ul{
+      left: 240px;position: absolute;
        li{border-bottom: 1px solid rgba(255,255,255,.25);
         &:last-child{border-bottom: none;}
       }
