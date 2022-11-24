@@ -9,7 +9,7 @@
 
   button.slick-arrow{
     @extend .arrow;  top: 50%;  border-radius: 50%;
-    &.slick-next { @extend .arrow.right; }
+    &.slick-next { @extend .right; }
   }
 
 
@@ -83,7 +83,9 @@
       &.slick-prev{ left: -44px;
         &:hover{ left: -48px;}
       }
-      &.slick-next { @extend .arrow.right; right: -44px;
+      &.slick-next { 
+        @extend .right;
+        left: auto;right: -44px;
         &:hover{ right: -48px;}
       }
     }

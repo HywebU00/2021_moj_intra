@@ -51,12 +51,13 @@
     }
   }
   .smallImages{
-    overflow: hidden;
+    overflow: hidden; padding: 0;
     .enlargeThis{ 
       position: relative; 
       overflow: hidden;
-      width: 220px; margin:5px 8px 15px;
-      height: 220px;
+      margin:5px 8px 15px;
+      // width: 220px;height: 220px; 
+      height: calc(20vw - 98px);
       box-shadow: $border-color-light 0 0 0 1px;
       transition: .3s; cursor: pointer;
       &:hover{
@@ -66,7 +67,12 @@
         box-shadow:#fff  0 0 0 1px, $border-color-dark 0 0 0 4px;
       }
       img{
-        display: block;width: 100%; height: 100%; object-fit: contain;
+        display: block;
+        // width: 100%; height: 100%; object-fit: contain;
+        position: absolute; left: 0;top: 0;right: 0;bottom: 0;
+        max-width: 100%; max-height: 100%;
+        // width: 100%; height: 100%;
+        margin: auto;
       }
       
       p{// 圖說文字
@@ -88,7 +94,11 @@
       }
       @extend .arrow;  top: 50%; margin-top: -48px;  border-radius: 50%; 
       &.slick-prev {left: 0;}
-      &.slick-next { @extend .arrow.right; right: 0;}
+      &.slick-next { 
+        // @extend .arrow, .right; right: 0;
+        @extend .right;
+        left: auto; right: 0;
+      }
       &.slick-disabled{ opacity: .2 ;}
     }
   }
@@ -108,8 +118,6 @@
 
     .closeThis{
       position: absolute; right: 4px; top: 4px;
-      // background-color: #777;
-      // &:hover{ background: #444;}
     }
      
     .largeImages{
@@ -129,10 +137,10 @@
   
       button.slick-arrow{
         position: absolute; background: rgba(255,255,255,.5);
-        &:hover{background: rgba(255,255,255,.7);}
         @extend .arrow;  top: 50%; margin-top: -22px;  border-radius: 50%; 
+        &:hover{background: rgba(255,255,255,.7);}
         &.slick-prev {left: 4px;}
-        &.slick-next { @extend .arrow.right; right: 4px;}
+        &.slick-next { @extend .right; right: 4px; left: auto;}
         &.slick-disabled{ opacity: .2 ;}
       }
     }

@@ -901,7 +901,7 @@ $decoH : 8px;
     &.slick-prev{ left: 4px;
       &:hover{ left: 0;}
     }
-    &.slick-next { @extend .arrow.right; right: 4px;
+    &.slick-next { @extend .right; right: 4px;
       &:hover{ right: 0;}
     }
   }
@@ -915,10 +915,10 @@ $decoH : 8px;
   .slick.slick-slider{
     button.slick-arrow{
       @extend .arrow; left: 50%; margin-left: -22px;
-      &.slick-prev{ @extend .arrow.up; top: 4px;
+      &.slick-prev{ @extend .arrow, .up; top: 4px;
         &:hover{ top: 0;}
       }
-      &.slick-next { @extend .arrow.down; bottom: 4px;
+      &.slick-next { @extend .arrow, .down; bottom: 4px;
         &:hover{ bottom: 0;}
       }
     }  
@@ -977,7 +977,7 @@ $decoH : 8px;
       @extend .arrow; top: 50%; margin-top: -40px;
       background-color: rgba(#fff, .4);
       &.slick-prev{ left: 2px;}
-      &.slick-next{ right: 2px; @extend .arrow.right}
+      &.slick-next{ right: 2px; @extend .arrow, .right}
       &:hover{background-color: rgba(#fff, .8);}
     }
   }
