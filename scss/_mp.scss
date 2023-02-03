@@ -977,7 +977,7 @@ $decoH : 8px;
       @extend .arrow; top: 50%; margin-top: -40px;
       background-color: rgba(#fff, .4);
       &.slick-prev{ left: 2px;}
-      &.slick-next{ right: 2px; @extend .arrow, .right}
+      &.slick-next{ right: 2px; @extend .right;}
       &:hover{background-color: rgba(#fff, .8);}
     }
   }
