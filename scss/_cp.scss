@@ -20,6 +20,11 @@
     ul, ol{ line-height: inherit; margin-bottom: 1.8em;}
     li + li{margin-top: .6em;}
 
+    ol[style="list-style-type: cjk-ideographic;"]{
+      padding-left: 4em;
+
+    }
+
 
     table.MsoNormalTable , &>table{
       margin-left: 5px; margin-right: 5px;
